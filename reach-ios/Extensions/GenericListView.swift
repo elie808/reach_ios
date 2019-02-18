@@ -70,5 +70,4 @@ class GenericCollectionDataSource<T: GenericCollectionCell<U>, U>: NSObject, UIC
         
         return cell
     }
-    
 }
