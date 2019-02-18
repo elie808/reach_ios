@@ -31,9 +31,11 @@ class HomeViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var profilePicture: ProfilePictureProgressView!
     @IBOutlet weak var collectionView : UICollectionView!
     
-    
+    // MARK: - Views Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +46,12 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = collectionDataSource
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        profilePicture.animateProgress()
+    }
+    
     /*
     // MARK: - Navigation
 

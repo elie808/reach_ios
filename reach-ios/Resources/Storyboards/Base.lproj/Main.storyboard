@@ -351,12 +351,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiQ-4T-Gdt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-d3-y6h">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-d3-y6h" customClass="ProfilePictureProgressView" customModule="reach_ios" customModuleProvider="target">
                                         <rect key="frame" x="123.5" y="0.0" width="128" height="128"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="u45-2d-am2">
+                                                <rect key="frame" x="16" y="16" width="96" height="96"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="48"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="Bce-xl-3C4"/>
+                                            <constraint firstItem="u45-2d-am2" firstAttribute="leading" secondItem="2sf-d3-y6h" secondAttribute="leading" constant="16" id="J3H-fS-OcZ"/>
+                                            <constraint firstItem="u45-2d-am2" firstAttribute="top" secondItem="2sf-d3-y6h" secondAttribute="top" constant="16" id="a9L-D2-8r6"/>
+                                            <constraint firstAttribute="bottom" secondItem="u45-2d-am2" secondAttribute="bottom" constant="16" id="eif-yn-wNh"/>
                                             <constraint firstAttribute="width" constant="128" id="j7U-iG-xrQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="u45-2d-am2" secondAttribute="trailing" constant="16" id="zep-J4-jky"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -364,6 +379,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="profilePicture" destination="u45-2d-am2" id="a4b-Uq-rn6"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -393,6 +411,7 @@
                     <navigationItem key="navigationItem" id="ui9-ZP-4D0"/>
                     <connections>
                         <outlet property="collectionView" destination="zO1-A6-XCN" id="qdf-zx-nOv"/>
+                        <outlet property="profilePicture" destination="2sf-d3-y6h" id="ufv-9B-GpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auQ-Db-Gvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -728,4 +747,7 @@
             <point key="canvasLocation" x="1357.5999999999999" y="517.6911544227886"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dummy_profile_pic" width="634" height="490"/>
+    </resources>
 </document>
