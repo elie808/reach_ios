@@ -1,0 +1,40 @@
+PODS:
+  - EAIntroView (2.12.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
+  - SkyFloatingLabelTextField (3.6.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyUserDefaults (3.0.1)
+  - "UITextView+Placeholder (1.2.1)"
+  - ZKUDID (2.0)
+
+DEPENDENCIES:
+  - EAIntroView
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SVProgressHUD
+  - SwiftyUserDefaults
+  - "UITextView+Placeholder"
+  - ZKUDID
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - EAIntroView
+    - EARestrictedScrollView
+    - SkyFloatingLabelTextField
+    - SVProgressHUD
+    - SwiftyUserDefaults
+    - "UITextView+Placeholder"
+    - ZKUDID
+
+SPEC CHECKSUMS:
+  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  ZKUDID: f283dbf371b9561c8a6d516c9f1274276ec17e89
+
+PODFILE CHECKSUM: 1b3b7238f19957120cf6ff3a74ad43d0315754a1
+
+COCOAPODS: 1.5.0

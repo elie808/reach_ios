@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FF1F1C9D2A94E01A871B158 /* Pods_reach_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */; };
+		4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746C2215AC0E007B4BBE /* AppearanceManager.swift */; };
+		4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */; };
+		472774712215B86D007B4BBE /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472774702215B86D007B4BBE /* URLManager.swift */; };
+		47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A41221A239B00C9B3D4 /* GenericListView.swift */; };
+		47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A43221A252300C9B3D4 /* HomeViewController.swift */; };
 		4783580C2214058D00B33025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783580B2214058D00B33025 /* AppDelegate.swift */; };
-		4783580E2214058D00B33025 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783580D2214058D00B33025 /* ViewController.swift */; };
 		478358112214058D00B33025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4783580F2214058D00B33025 /* Main.storyboard */; };
 		478358132214058F00B33025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478358122214058F00B33025 /* Assets.xcassets */; };
 		478358162214058F00B33025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478358142214058F00B33025 /* LaunchScreen.storyboard */; };
+		4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582822140C7300B33025 /* UIStoryboards+Helpers.swift */; };
+		4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582A22140F6100B33025 /* UIViewController+Helpers.swift */; };
+		4783582D2214104C00B33025 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582C2214104C00B33025 /* Banner.swift */; };
+		4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582E221416BB00B33025 /* AuthenticationManager.swift */; };
+		4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4727746C2215AC0E007B4BBE /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = "reach-ios/Managers/AppearanceManager.swift"; sourceTree = SOURCE_ROOT; };
+		4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		472774702215B86D007B4BBE /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		47421A41221A239B00C9B3D4 /* GenericListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListView.swift; sourceTree = "<group>"; };
+		47421A43221A252300C9B3D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		478358082214058D00B33025 /* reach-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reach-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4783580B2214058D00B33025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4783580D2214058D00B33025 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		478358102214058D00B33025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		478358122214058F00B33025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		478358152214058F00B33025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		478358172214058F00B33025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4783582822140C7300B33025 /* UIStoryboards+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboards+Helpers.swift"; sourceTree = "<group>"; };
+		4783582A22140F6100B33025 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
+		4783582C2214104C00B33025 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		4783582E221416BB00B33025 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
+		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF1F1C9D2A94E01A871B158 /* Pods_reach_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,8 @@
 			children = (
 				4783580A2214058D00B33025 /* reach-ios */,
 				478358092214058D00B33025 /* Products */,
+				562F2F89AA6AC1EF3905F9B4 /* Pods */,
+				5CD7B9B6A5466760CE518A0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +80,135 @@
 			isa = PBXGroup;
 			children = (
 				4783580B2214058D00B33025 /* AppDelegate.swift */,
-				4783580D2214058D00B33025 /* ViewController.swift */,
-				4783580F2214058D00B33025 /* Main.storyboard */,
-				478358122214058F00B33025 /* Assets.xcassets */,
-				478358142214058F00B33025 /* LaunchScreen.storyboard */,
-				478358172214058F00B33025 /* Info.plist */,
+				47835830221417D600B33025 /* Constants */,
+				4783581F2214083D00B33025 /* Extensions */,
+				478358202214084600B33025 /* Managers */,
+				478358212214084E00B33025 /* Models */,
+				4783581D2214081E00B33025 /* ViewControllers */,
+				4783581E2214082600B33025 /* Views */,
+				478358222214086E00B33025 /* Resources */,
 			);
 			path = "reach-ios";
+			sourceTree = "<group>";
+		};
+		4783581D2214081E00B33025 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47421A43221A252300C9B3D4 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4783581E2214082600B33025 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4783582C2214104C00B33025 /* Banner.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4783581F2214083D00B33025 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				47421A41221A239B00C9B3D4 /* GenericListView.swift */,
+				4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */,
+				4783582822140C7300B33025 /* UIStoryboards+Helpers.swift */,
+				4783582A22140F6100B33025 /* UIViewController+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		478358202214084600B33025 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4727746C2215AC0E007B4BBE /* AppearanceManager.swift */,
+				4783582E221416BB00B33025 /* AuthenticationManager.swift */,
+				478358272214093E00B33025 /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		478358212214084E00B33025 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		478358222214086E00B33025 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				478358242214089F00B33025 /* Assets */,
+				478358232214087D00B33025 /* Storyboards */,
+				47835825221408AF00B33025 /* Supporting files */,
+				47835826221408CF00B33025 /* Xibs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		478358232214087D00B33025 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				478358142214058F00B33025 /* LaunchScreen.storyboard */,
+				4783580F2214058D00B33025 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		478358242214089F00B33025 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				478358122214058F00B33025 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		47835825221408AF00B33025 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				478358172214058F00B33025 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		47835826221408CF00B33025 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		478358272214093E00B33025 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */,
+				472774702215B86D007B4BBE /* URLManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		47835830221417D600B33025 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */,
+				641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5CD7B9B6A5466760CE518A0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4783581A2214058F00B33025 /* Build configuration list for PBXNativeTarget "reach-ios" */;
 			buildPhases = (
+				1B24E5F9FEBB0C39E84E6C6F /* [CP] Check Pods Manifest.lock */,
 				478358042214058D00B33025 /* Sources */,
 				478358052214058D00B33025 /* Frameworks */,
 				478358062214058D00B33025 /* Resources */,
+				F9FBC4550E03D00AFEFAD8B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +279,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B24E5F9FEBB0C39E84E6C6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-reach-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9FBC4550E03D00AFEFAD8B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+				"${BUILT_PRODUCTS_DIR}/ZKUDID/ZKUDID.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZKUDID.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		478358042214058D00B33025 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4783580E2214058D00B33025 /* ViewController.swift in Sources */,
+				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
+				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
+				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
+				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
+				4783582D2214104C00B33025 /* Banner.swift in Sources */,
+				47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */,
+				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
+				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
+				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
+				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,11 +489,12 @@
 		};
 		4783581B2214058F00B33025 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6WQVEM27Z;
-				INFOPLIST_FILE = "reach-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/reach-ios/Resources/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,17 +502,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Elie.reach-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4783581C2214058F00B33025 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6WQVEM27Z;
-				INFOPLIST_FILE = "reach-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/reach-ios/Resources/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Elie.reach-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
