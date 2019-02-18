@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2FF1F1C9D2A94E01A871B158 /* Pods_reach_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */; };
+		4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712DBCB221B368700D66D98 /* NewsFeedCell.swift */; };
+		4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712DBCD221B668D00D66D98 /* SideMenu.swift */; };
+		4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712DBCF221B7CCD00D66D98 /* SideMenuCell.swift */; };
 		4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746C2215AC0E007B4BBE /* AppearanceManager.swift */; };
 		4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */; };
 		472774712215B86D007B4BBE /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472774702215B86D007B4BBE /* URLManager.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4712DBCB221B368700D66D98 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		4712DBCD221B668D00D66D98 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		4712DBCF221B7CCD00D66D98 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		4727746C2215AC0E007B4BBE /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = "reach-ios/Managers/AppearanceManager.swift"; sourceTree = SOURCE_ROOT; };
 		4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		472774702215B86D007B4BBE /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
@@ -64,6 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4712DBD1221B7D0200D66D98 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4712DBCB221B368700D66D98 /* NewsFeedCell.swift */,
+				4712DBCF221B7CCD00D66D98 /* SideMenuCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4712DBD2221B7D0A00D66D98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4712DBCD221B668D00D66D98 /* SideMenu.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		478357FF2214058D00B33025 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				47421A43221A252300C9B3D4 /* HomeViewController.swift */,
+				4712DBD2221B7D0A00D66D98 /* Views */,
+				4712DBD1221B7D0200D66D98 /* Cells */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -347,8 +372,10 @@
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
+				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
+				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
 				4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */,
 				4783582D2214104C00B33025 /* Banner.swift in Sources */,
 				47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */,
@@ -358,6 +385,7 @@
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
+				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
