@@ -348,62 +348,57 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiQ-4T-Gdt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiQ-4T-Gdt" customClass="CurvedBottomView" customModule="reach_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="WyD-wW-YrW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-d3-y6h" customClass="ProfilePictureProgressView" customModule="reach_ios" customModuleProvider="target">
+                                <rect key="frame" x="123.5" y="8" width="128" height="128"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-d3-y6h" customClass="ProfilePictureProgressView" customModule="reach_ios" customModuleProvider="target">
-                                        <rect key="frame" x="123.5" y="0.0" width="128" height="128"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="u45-2d-am2">
-                                                <rect key="frame" x="16" y="16" width="96" height="96"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="48"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="Bce-xl-3C4"/>
-                                            <constraint firstItem="u45-2d-am2" firstAttribute="leading" secondItem="2sf-d3-y6h" secondAttribute="leading" constant="16" id="J3H-fS-OcZ"/>
-                                            <constraint firstItem="u45-2d-am2" firstAttribute="top" secondItem="2sf-d3-y6h" secondAttribute="top" constant="16" id="a9L-D2-8r6"/>
-                                            <constraint firstAttribute="bottom" secondItem="u45-2d-am2" secondAttribute="bottom" constant="16" id="eif-yn-wNh"/>
-                                            <constraint firstAttribute="width" constant="128" id="j7U-iG-xrQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="u45-2d-am2" secondAttribute="trailing" constant="16" id="zep-J4-jky"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dummy_profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="u45-2d-am2">
+                                        <rect key="frame" x="16" y="16" width="96" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="64"/>
+                                                <integer key="value" value="48"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="profilePicture" destination="u45-2d-am2" id="a4b-Uq-rn6"/>
-                                        </connections>
-                                    </view>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="2sf-d3-y6h" firstAttribute="top" secondItem="wiQ-4T-Gdt" secondAttribute="top" id="Ab0-5V-gqf"/>
-                                    <constraint firstAttribute="height" constant="77.5" id="WyD-wW-YrW"/>
+                                    <constraint firstAttribute="height" constant="128" id="jUx-nU-jDv"/>
+                                    <constraint firstAttribute="width" constant="128" id="w0z-Jb-O4B"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="64"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="profilePicture" destination="u45-2d-am2" id="a4b-Uq-rn6"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wiQ-4T-Gdt" firstAttribute="top" secondItem="26j-cC-l6K" secondAttribute="top" id="3xh-dl-0ca"/>
-                            <constraint firstItem="2sf-d3-y6h" firstAttribute="centerX" secondItem="26j-cC-l6K" secondAttribute="centerX" id="53n-sV-oHL"/>
                             <constraint firstItem="wiQ-4T-Gdt" firstAttribute="leading" secondItem="26j-cC-l6K" secondAttribute="leading" id="6A5-ap-cjf"/>
                             <constraint firstItem="sfu-qW-T5B" firstAttribute="top" secondItem="zO1-A6-XCN" secondAttribute="bottom" constant="48" id="7P6-XN-SYG"/>
                             <constraint firstItem="zO1-A6-XCN" firstAttribute="leading" secondItem="26j-cC-l6K" secondAttribute="leading" id="B3S-k5-5sN"/>
                             <constraint firstItem="zO1-A6-XCN" firstAttribute="top" secondItem="ePM-5g-N1v" secondAttribute="bottom" constant="16" id="Nv6-oW-0Gh"/>
+                            <constraint firstItem="2sf-d3-y6h" firstAttribute="centerX" secondItem="26j-cC-l6K" secondAttribute="centerX" id="QCp-ZS-f1r"/>
                             <constraint firstItem="wiQ-4T-Gdt" firstAttribute="trailing" secondItem="26j-cC-l6K" secondAttribute="trailing" id="djh-qZ-9jX"/>
                             <constraint firstItem="26j-cC-l6K" firstAttribute="trailing" secondItem="sfu-qW-T5B" secondAttribute="trailing" constant="16" id="eiO-WU-aeH"/>
                             <constraint firstItem="sfu-qW-T5B" firstAttribute="leading" secondItem="26j-cC-l6K" secondAttribute="leading" constant="16" id="gqW-NH-WMy"/>
                             <constraint firstItem="zO1-A6-XCN" firstAttribute="trailing" secondItem="26j-cC-l6K" secondAttribute="trailing" id="kGi-hN-dzm"/>
                             <constraint firstItem="ePM-5g-N1v" firstAttribute="centerX" secondItem="26j-cC-l6K" secondAttribute="centerX" id="t2H-pD-Eqb"/>
+                            <constraint firstItem="2sf-d3-y6h" firstAttribute="top" secondItem="26j-cC-l6K" secondAttribute="top" constant="8" id="vC0-E4-2yy"/>
                             <constraint firstItem="26j-cC-l6K" firstAttribute="bottom" secondItem="sfu-qW-T5B" secondAttribute="bottom" constant="32" id="wh8-lJ-NhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="26j-cC-l6K"/>
