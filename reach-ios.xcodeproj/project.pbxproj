@@ -24,6 +24,8 @@
 		4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582A22140F6100B33025 /* UIViewController+Helpers.swift */; };
 		4783582D2214104C00B33025 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582C2214104C00B33025 /* Banner.swift */; };
 		4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582E221416BB00B33025 /* AuthenticationManager.swift */; };
+		478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9003221C4F6700245CF1 /* PerformanceViewController.swift */; };
+		478C9007221CBD2C00245CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9006221CBD2C00245CF1 /* Constants.swift */; };
 		4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */; };
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
@@ -49,6 +51,8 @@
 		4783582A22140F6100B33025 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		4783582C2214104C00B33025 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		4783582E221416BB00B33025 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		478C9003221C4F6700245CF1 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
+		478C9006221CBD2C00245CF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
@@ -123,9 +127,8 @@
 		4783581D2214081E00B33025 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				47421A43221A252300C9B3D4 /* HomeViewController.swift */,
-				4712DBD2221B7D0A00D66D98 /* Views */,
-				4712DBD1221B7D0200D66D98 /* Cells */,
+				478C9002221C4F4500245CF1 /* HomeViewController */,
+				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,8 +227,27 @@
 		47835830221417D600B33025 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				478C9006221CBD2C00245CF1 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		478C9002221C4F4500245CF1 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47421A43221A252300C9B3D4 /* HomeViewController.swift */,
+				4712DBD2221B7D0A00D66D98 /* Views */,
+				4712DBD1221B7D0200D66D98 /* Cells */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		478C9005221C4F6C00245CF1 /* PerformanceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				478C9003221C4F6700245CF1 /* PerformanceViewController.swift */,
+			);
+			path = PerformanceViewController;
 			sourceTree = "<group>";
 		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
@@ -370,10 +392,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
+				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
+				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
 				4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */,
