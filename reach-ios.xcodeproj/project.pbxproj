@@ -26,6 +26,7 @@
 		4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582E221416BB00B33025 /* AuthenticationManager.swift */; };
 		478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9003221C4F6700245CF1 /* PerformanceViewController.swift */; };
 		478C9007221CBD2C00245CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9006221CBD2C00245CF1 /* Constants.swift */; };
+		478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */; };
 		4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */; };
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
@@ -53,6 +54,7 @@
 		4783582E221416BB00B33025 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		478C9003221C4F6700245CF1 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		478C9006221CBD2C00245CF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSaleViewController.swift; sourceTree = "<group>"; };
 		4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				478C9002221C4F4500245CF1 /* HomeViewController */,
 				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
+				478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				4783582D2214104C00B33025 /* Banner.swift in Sources */,
 				47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */,
 				4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */,
+				478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
 				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
