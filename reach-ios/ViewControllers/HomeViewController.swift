@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var pointsLabel : UILabel!
     @IBOutlet weak var profilePicture: ProfilePictureProgressView!
     @IBOutlet weak var collectionView : UICollectionView!
@@ -31,15 +32,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionDataSource.data = [Person(firstName: "Greatest", lastName: "Ever"), Person(firstName: "Zabre Greatest", lastName: "Ever"), Person(firstName: "Greatest", lastName: "Pop")]
-        
+        collectionDataSource.data = [Person(firstName: "Greatest", lastName: "Ever"), Person(firstName: "Zabre Greatest", lastName: "Ever")]
         collectionView.dataSource = collectionDataSource
         
-        sideMenu.tableView = sideMenuTableView
+        
         sideMenuDataSource.data = [SideMenuItem(name: "Home", image: ""), SideMenuItem(name: "Help", image: ""), SideMenuItem(name: "FAQs", image: ""), SideMenuItem(name: "About Us", image: ""), SideMenuItem(name: "Contact Us", image: ""), SideMenuItem(name: "Terms & Conditions", image: ""), SideMenuItem(name: "Settings", image: "")]
         
+        sideMenu.tableView = sideMenuTableView
         sideMenuTableView.dataSource = sideMenuDataSource
         sideMenuTableView.delegate = self
+        
+        self.navigationItem.titleView = searchBar
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +54,6 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didTapHamburger(_ sender: UIBarButtonItem) {
-        
         sideMenu.showSideMenu()
     }
     
@@ -76,5 +78,26 @@ extension HomeViewController : UITableViewDelegate {
             
             print(self.sideMenuDataSource.data[indexPath.row].name)
         }
+    }
+}
+
+extension HomeViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        //TODO: SEGUE
+//        performSegue(withIdentifier: "zbre", sender: nil)
     }
 }

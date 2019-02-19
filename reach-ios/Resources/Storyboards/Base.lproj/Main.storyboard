@@ -183,7 +183,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="XdW-bU-fkl" kind="show" id="cby-uL-BZd"/>
+                                                    <segue destination="XdW-bU-fkl" kind="show" identifier="" id="cby-uL-BZd"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-Db-ZAj">
@@ -442,6 +442,7 @@
                         <outlet property="collectionView" destination="zO1-A6-XCN" id="qdf-zx-nOv"/>
                         <outlet property="pointsLabel" destination="ADQ-0S-WHM" id="JHd-s9-6uK"/>
                         <outlet property="profilePicture" destination="2sf-d3-y6h" id="ufv-9B-GpL"/>
+                        <outlet property="searchBar" destination="jN0-Ke-9tK" id="ZWD-WI-Jlh"/>
                         <outlet property="sideMenuTableView" destination="ssI-bl-XZp" id="IJb-2M-2Ia"/>
                     </connections>
                 </viewController>
@@ -506,6 +507,18 @@
                         </tableViewCell>
                     </prototypes>
                 </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="search products" translucent="NO" id="jN0-Ke-9tK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <offsetWrapper key="searchTextPositionAdjustment" horizontal="8" vertical="0.0"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="kSu-N1-SeP" id="uHP-4F-EEW"/>
+                    </connections>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="2319.1999999999998" y="-918.89055472263874"/>
         </scene>
