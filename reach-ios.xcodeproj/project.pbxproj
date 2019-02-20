@@ -35,6 +35,8 @@
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
+		47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */; };
+		47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC452221E139E001FE2D5 /* DailyReportCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
+		47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
+		47CCC452221E139E001FE2D5 /* DailyReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportCell.swift; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +144,7 @@
 				478C9002221C4F4500245CF1 /* HomeViewController */,
 				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
 				478C900C221CCFEF00245CF1 /* ReportSaleViewController */,
+				47CCC451221E126C001FE2D5 /* DailyReportViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +276,15 @@
 				47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */,
 			);
 			path = ReportSaleViewController;
+			sourceTree = "<group>";
+		};
+		47CCC451221E126C001FE2D5 /* DailyReportViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */,
+				47CCC452221E139E001FE2D5 /* DailyReportCell.swift */,
+			);
+			path = DailyReportViewController;
 			sourceTree = "<group>";
 		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
@@ -420,9 +434,11 @@
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
 				47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */,
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
+				47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
+				47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,

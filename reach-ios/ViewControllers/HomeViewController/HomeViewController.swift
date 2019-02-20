@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sideMenuTableView : UITableView!
     
     // MARK: - Properties
+    
     let sideMenu = SideMenu()
     var collectionDataSource = GenericCollectionDataSource<NewsFeedCell,Person>()
     var sideMenuDataSource = GenericTableDataSource<SideMenuCell,SideMenuItem>()
