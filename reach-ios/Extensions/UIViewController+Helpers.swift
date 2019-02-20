@@ -15,6 +15,9 @@ extension UIViewController {
     
     enum BannerMessage : String {
         case CheckinSuccess = "Participant(s) succesfully checked-in"
+        case CachingSuccess = "Could not reach server. Check-in saved on device"
+        case CacheSyncSuccess = "Check-ins successfully uploaded to server"
+        case DBRefreshSuccess = "Database successfully updated"
     }
     
     // MARK: - AlertControllers
