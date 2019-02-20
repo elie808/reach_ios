@@ -20,6 +20,11 @@ struct Product {
 
 class ReportSaleViewController: UITableViewController {
 
+    // MARK: - Properties
+    
+    var viewModel = ReportSaleModel()
+    var productDataSource : [Product] = []
+    
     // MARK: - Outlets
     
     @IBOutlet weak var productNameLabel: UILabel!
@@ -27,18 +32,13 @@ class ReportSaleViewController: UITableViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var infoTextfield: UITextField!
     
-    // MARK: - Properties
-    
-    var viewModel = ReportSaleModel()
-    let productDataSource = GenericTableDataSource<GenericTableCell<Product>, Product>()
-    
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeView()
         
-        productDataSource.data = [Product(name: "Product 1"), Product(name: "Product 2")]
+        productDataSource = [Product(name: "Product 1"), Product(name: "Product 2")]
     }
     
     func initializeView() {
@@ -123,7 +123,7 @@ class ReportSaleViewController: UITableViewController {
             
         case Segue.ReportSale.toProductList:
             let vc : ProductListTableViewController = segue.destination as! ProductListTableViewController
-            vc.tableView.dataSource = productDataSource
+            vc.dataSource = productDataSource
             
         default: return
         }

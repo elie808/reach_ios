@@ -8,28 +8,35 @@
 
 import UIKit
 
-class ProductListCell: GenericTableCell<Product> {
-
-    override var model : Product! {
-        didSet {
-            textLabel?.text = model.name
-        }
-    }
-}
-
 class ProductListTableViewController: UITableViewController {
 
+    // MARK: - Properties
+    
+    var dataSource : [Product] = []
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var searchBar : UISearchBar!
+    
+    // MARK: - Views Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellID", for: indexPath)
+        cell.textLabel?.text = dataSource[indexPath.row].name
         
-        if tableView.dataSource is GenericTableDataSource<GenericTableCell<Product>, Product> {
-
-            let prod : Product = ((tableView.dataSource as! GenericTableDataSource<GenericTableCell<Product>, Product>).data)[indexPath.row]
-            performSegue(withIdentifier: Segue.ProductList.toReportSale, sender: prod)
-        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Segue.ProductList.toReportSale, sender: dataSource[indexPath.row])
     }
     
     // MARK: - Navigation
@@ -49,5 +56,20 @@ class ProductListTableViewController: UITableViewController {
         default: return
         }
     }
+}
 
+extension ProductListTableViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+        if let query = searchBar.text {
+        
+            let filteredCandies = dataSource.filter({( candy : Product) -> Bool in
+                return candy.name.lowercased().contains(query)
+            })
+            
+            print(filteredCandies.first)
+        }
+    }
+    
 }
