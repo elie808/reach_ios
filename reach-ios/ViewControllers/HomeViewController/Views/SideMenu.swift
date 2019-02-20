@@ -32,7 +32,7 @@ class SideMenu : NSObject {
         
         if let window = UIApplication.shared.keyWindow {
             
-            darkBackground.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            darkBackground.backgroundColor = .darkGray
             darkBackground.frame = window.frame
             darkBackground.alpha = 0
             darkBackground.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissMenuOnTap) ))
@@ -43,8 +43,8 @@ class SideMenu : NSObject {
             window.addSubview(tableView)
             
             UIView.animate(withDuration: animationDuration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.darkBackground.alpha = 1
                 self.tableView.frame = CGRect(x: 0, y: 0, width: self.collectionWidth, height: self.tableView.frame.height)
+                self.darkBackground.alpha = 0.7
             }, completion: nil)
             
         }

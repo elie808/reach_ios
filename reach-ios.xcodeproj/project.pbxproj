@@ -27,6 +27,7 @@
 		478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9003221C4F6700245CF1 /* PerformanceViewController.swift */; };
 		478C9007221CBD2C00245CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9006221CBD2C00245CF1 /* Constants.swift */; };
 		478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */; };
+		478C900B221CCF3500245CF1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478C900A221CCF3500245CF1 /* Home.storyboard */; };
 		4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */; };
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
@@ -55,6 +56,7 @@
 		478C9003221C4F6700245CF1 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		478C9006221CBD2C00245CF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSaleViewController.swift; sourceTree = "<group>"; };
+		478C900A221CCF3500245CF1 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 			children = (
 				478C9002221C4F4500245CF1 /* HomeViewController */,
 				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
-				478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */,
+				478C900C221CCFEF00245CF1 /* ReportSaleViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				478358142214058F00B33025 /* LaunchScreen.storyboard */,
+				478C900A221CCF3500245CF1 /* Home.storyboard */,
 				4783580F2214058D00B33025 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -251,6 +254,14 @@
 				478C9003221C4F6700245CF1 /* PerformanceViewController.swift */,
 			);
 			path = PerformanceViewController;
+			sourceTree = "<group>";
+		};
+		478C900C221CCFEF00245CF1 /* ReportSaleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */,
+			);
+			path = ReportSaleViewController;
 			sourceTree = "<group>";
 		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
@@ -333,6 +344,7 @@
 				478358162214058F00B33025 /* LaunchScreen.storyboard in Resources */,
 				478358132214058F00B33025 /* Assets.xcassets in Resources */,
 				478358112214058D00B33025 /* Main.storyboard in Resources */,
+				478C900B221CCF3500245CF1 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
