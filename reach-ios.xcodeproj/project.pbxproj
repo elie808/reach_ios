@@ -32,6 +32,7 @@
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
 		4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */; };
+		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBottomView.swift; sourceTree = "<group>"; };
+		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */,
+				47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */,
 			);
 			path = ReportSaleViewController;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
+				47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

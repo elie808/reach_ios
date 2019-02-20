@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct ReportSaleModel {
+    var serialNumber : String = ""
+}
+
 class ReportSaleViewController: UITableViewController {
 
     // MARK: - Outlets
@@ -19,11 +23,17 @@ class ReportSaleViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var viewModel = ReportSaleModel()
+    
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initializeView()
+    }
+    
+    func initializeView() {
+        productIDLabel.text = viewModel.serialNumber
     }
     
     // MARK: - Actions
@@ -32,6 +42,7 @@ class ReportSaleViewController: UITableViewController {
     }
     
     @IBAction func didTapScan(_ sender: UIButton) {
+        performSegue(withIdentifier: Segue.ReportSale.toQRScannerVC, sender: nil)
     }
     
     @IBAction func didTapAddPhoto(_ sender: UITapGestureRecognizer) {
@@ -40,14 +51,20 @@ class ReportSaleViewController: UITableViewController {
     @IBAction func didTapSubmit(_ sender: UIButton) {
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindToReportSaleVC(segue: UIStoryboardSegue) {
+        productIDLabel.text = viewModel.serialNumber 
+        tableView.reloadData()
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        switch segue.identifier {
+        case Segue.ReportSale.toQRScannerVC:
+            print("qr")
+        default: return
+        }
+    }
 
 }

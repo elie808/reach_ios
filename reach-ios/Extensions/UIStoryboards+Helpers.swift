@@ -12,9 +12,9 @@ public enum StoryboardIdentifier: String {
     case Main = "Main"
 }
 
-public enum ViewControllerStoryboardIdentifier: String {
-    case Checkin = "CheckinViewController"
-}
+//public enum ViewControllerStoryboardIdentifier: String {
+//    case ReportSale = "ReportSaleViewController"
+//}
 
 extension UIStoryboard {
     
@@ -28,15 +28,12 @@ extension UIStoryboard {
 
 struct Segue {
     
-    struct Checkin {
-        static let toQRScannerVC = "CheckinToQRScannerVC"
-        static let toDuplicatesVC = "CheckinToDuplicatesVC"
-        static let toGroupCheckinVC = "CheckinToGroupCheckinVC"
-        static let toSpecialGroupCheckinVC = "CheckinToSpecialGroupCheckinVC"
-        static let toParticipantCheckinVC = "CheckinToParticipantCheckinVC"
+    struct ReportSale {
+        static let toQRScannerVC = "ReportSaleToQRScannerVC"
     }
     
-    enum zabre : String {
-        case toShi = "Bla"
+    struct QRScanner {
+        static let toReportSale = "QRScannerToReportSaleVC"
     }
+
 }
