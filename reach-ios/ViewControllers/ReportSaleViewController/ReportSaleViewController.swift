@@ -9,8 +9,13 @@
 import UIKit
 
 struct ReportSaleModel {
+    var productName : String = ""
     var serialNumber : String = ""
     var additionalInfo : String = ""
+}
+
+struct Product {
+    let name : String
 }
 
 class ReportSaleViewController: UITableViewController {
@@ -25,16 +30,21 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Properties
     
     var viewModel = ReportSaleModel()
+    let productDataSource = GenericTableDataSource<GenericTableCell<Product>, Product>()
     
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeView()
+        
+        productDataSource.data = [Product(name: "Product 1"), Product(name: "Product 2")]
     }
     
     func initializeView() {
+        productNameLabel.text = viewModel.productName
         productIDLabel.text = viewModel.serialNumber
+        infoTextfield.text = viewModel.additionalInfo
     }
     
     func formValid() -> Bool {
@@ -64,6 +74,7 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Actions
 
     @IBAction func didTapProduct(_ sender: UIButton) {
+        performSegue(withIdentifier: Segue.ReportSale.toProductList, sender: nil)
     }
     
     @IBAction func didTapScan(_ sender: UIButton) {
@@ -89,7 +100,18 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Navigation
 
     @IBAction func unwindToReportSaleVC(segue: UIStoryboardSegue) {
-        productIDLabel.text = viewModel.serialNumber
+
+        switch segue.identifier {
+        
+        case Segue.ProductList.toReportSale:
+            productNameLabel.text = viewModel.productName
+            
+        case Segue.QRScanner.toReportSale:
+            productIDLabel.text = viewModel.serialNumber
+        
+        default: return
+        }
+        
         tableView.reloadData()
     }
     
@@ -97,8 +119,12 @@ class ReportSaleViewController: UITableViewController {
 
         switch segue.identifier {
             
-        case Segue.ReportSale.toQRScannerVC:
-            print("qr")
+//        case Segue.ReportSale.toQRScannerVC:
+            
+        case Segue.ReportSale.toProductList:
+            let vc : ProductListTableViewController = segue.destination as! ProductListTableViewController
+            vc.tableView.dataSource = productDataSource
+            
         default: return
         }
     }

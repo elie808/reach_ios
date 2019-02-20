@@ -254,6 +254,7 @@
                         <outlet property="productNameLabel" destination="SSt-Qs-ejH" id="whp-uJ-gUo"/>
                         <segue destination="3qO-7k-87s" kind="show" identifier="ReportSaleToDailyReport" id="ljQ-g1-vwG"/>
                         <segue destination="B49-R0-dXM" kind="show" identifier="ReportSaleToQRScannerVC" id="iGK-p3-Qcu"/>
+                        <segue destination="s0O-L6-Jom" kind="show" identifier="ReportSaleToProductList" id="7sO-3I-0mh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JD2-Du-MFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,6 +270,52 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2192.8000000000002" y="517.6911544227886"/>
+        </scene>
+        <!--Product List Table View Controller-->
+        <scene sceneID="J3c-TN-0B5">
+            <objects>
+                <tableViewController id="s0O-L6-Jom" customClass="ProductListTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgG-RN-WIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Bl4-Dt-3Vo">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCellID" textLabel="hUa-vB-7wO" style="IBUITableViewCellStyleDefault" id="Xt5-tC-4tH" customClass="ProductListCell" customModule="reach_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xt5-tC-4tH" id="pKH-VR-hJn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hUa-vB-7wO">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s0O-L6-Jom" id="Us6-x9-iAc"/>
+                            <outlet property="delegate" destination="s0O-L6-Jom" id="Ezo-3W-oPw"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="pqG-Le-5QH" kind="unwind" identifier="ProductListToReportSaleVC" unwindAction="unwindToReportSaleVCWithSegue:" id="5sK-30-IvG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfy-7U-cIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pqG-Le-5QH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="518"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="EiK-47-pL9">
@@ -311,7 +358,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRq-bs-k53" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="uhS-Jr-QGA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="1261"/>
+            <point key="canvasLocation" x="2966" y="1283"/>
         </scene>
         <!--Profile-->
         <scene sceneID="AEy-2k-1Z1">
