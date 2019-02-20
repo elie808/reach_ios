@@ -13,6 +13,7 @@ class ProductListTableViewController: UITableViewController {
     // MARK: - Properties
     
     var dataSource : [Product] = []
+    var completeDataSource : [Product] = [] // use to revert back after done messing around with filtering
     
     // MARK: - Outlets
     
@@ -22,6 +23,8 @@ class ProductListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        completeDataSource = dataSource
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,15 +64,48 @@ class ProductListTableViewController: UITableViewController {
 extension ProductListTableViewController : UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if let query = searchBar.text {
-        
-            let filteredCandies = dataSource.filter({( candy : Product) -> Bool in
-                return candy.name.lowercased().contains(query)
-            })
-            
-            print(filteredCandies.first)
+        if (searchText.count > 0) && searchBar.text?.isEmpty == false {
+            displayResults(for: searchText)
+        } else {
+            resetDataSource()
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        resetDataSource()
+        reset(searchBar)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetDataSource()
+        reset(searchBar)
+    }
+    
+    // MARK: - Helpers
+    
+    fileprivate func displayResults(for text: String) {
+        
+        let filteredData = dataSource.filter({( product : Product) -> Bool in
+            return product.name.lowercased().contains(text)
+        })
+        
+        dataSource = filteredData
+        tableView.reloadData()
+    }
+    
+    fileprivate func resetDataSource() {
+        dataSource = completeDataSource
+        tableView.reloadData()
+    }
+    
+    fileprivate func reset(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
 }
