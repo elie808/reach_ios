@@ -85,4 +85,29 @@ extension UIViewController {
     
     // MARK: - Helpers
     
+    func openCamera() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
 }

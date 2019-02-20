@@ -30,6 +30,7 @@ struct Segue {
     
     struct ReportSale {
         static let toQRScannerVC = "ReportSaleToQRScannerVC"
+        static let toDailyReport = "ReportSaleToDailyReport"
     }
     
     struct QRScanner {

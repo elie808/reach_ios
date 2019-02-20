@@ -33,6 +33,7 @@
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
 		4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
+		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBottomView.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */,
 				4783582822140C7300B33025 /* UIStoryboards+Helpers.swift */,
 				4783582A22140F6100B33025 /* UIViewController+Helpers.swift */,
+				47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
+				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
