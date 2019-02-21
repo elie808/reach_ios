@@ -17,6 +17,7 @@
 		47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A41221A239B00C9B3D4 /* GenericListView.swift */; };
 		47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A43221A252300C9B3D4 /* HomeViewController.swift */; };
 		47784EFB221F0A20000FD327 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47784EFA221F0A20000FD327 /* Login.storyboard */; };
+		47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47784F00221F151B000FD327 /* LoginTableViewController.swift */; };
 		4783580C2214058D00B33025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783580B2214058D00B33025 /* AppDelegate.swift */; };
 		478358112214058D00B33025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4783580F2214058D00B33025 /* Main.storyboard */; };
 		478358132214058F00B33025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478358122214058F00B33025 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		47421A41221A239B00C9B3D4 /* GenericListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListView.swift; sourceTree = "<group>"; };
 		47421A43221A252300C9B3D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47784EFA221F0A20000FD327 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		47784F00221F151B000FD327 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		478358082214058D00B33025 /* reach-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reach-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4783580B2214058D00B33025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		478358102214058D00B33025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		47784EFE221F14C2000FD327 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				47784F00221F151B000FD327 /* LoginTableViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		47784EFF221F14F2000FD327 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
 		478357FF2214058D00B33025 = {
 			isa = PBXGroup;
 			children = (
@@ -145,11 +163,12 @@
 		4783581D2214081E00B33025 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				478C9002221C4F4500245CF1 /* HomeViewController */,
-				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
-				478C900C221CCFEF00245CF1 /* ReportSaleViewController */,
-				47CCC451221E126C001FE2D5 /* DailyReportViewController */,
-				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
+				47784EFE221F14C2000FD327 /* Login */,
+				478C9002221C4F4500245CF1 /* Home */,
+				478C9005221C4F6C00245CF1 /* Performance */,
+				478C900C221CCFEF00245CF1 /* Report Sale */,
+				47CCC451221E126C001FE2D5 /* Daily Report */,
+				47784EFF221F14F2000FD327 /* Feedback */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -256,41 +275,41 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		478C9002221C4F4500245CF1 /* HomeViewController */ = {
+		478C9002221C4F4500245CF1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				47421A43221A252300C9B3D4 /* HomeViewController.swift */,
 				4712DBD2221B7D0A00D66D98 /* Views */,
 				4712DBD1221B7D0200D66D98 /* Cells */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		478C9005221C4F6C00245CF1 /* PerformanceViewController */ = {
+		478C9005221C4F6C00245CF1 /* Performance */ = {
 			isa = PBXGroup;
 			children = (
 				478C9003221C4F6700245CF1 /* PerformanceViewController.swift */,
 			);
-			path = PerformanceViewController;
+			path = Performance;
 			sourceTree = "<group>";
 		};
-		478C900C221CCFEF00245CF1 /* ReportSaleViewController */ = {
+		478C900C221CCFEF00245CF1 /* Report Sale */ = {
 			isa = PBXGroup;
 			children = (
 				478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */,
 				47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */,
 				47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */,
 			);
-			path = ReportSaleViewController;
+			path = "Report Sale";
 			sourceTree = "<group>";
 		};
-		47CCC451221E126C001FE2D5 /* DailyReportViewController */ = {
+		47CCC451221E126C001FE2D5 /* Daily Report */ = {
 			isa = PBXGroup;
 			children = (
 				47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */,
 				47CCC452221E139E001FE2D5 /* DailyReportCell.swift */,
 			);
-			path = DailyReportViewController;
+			path = "Daily Report";
 			sourceTree = "<group>";
 		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
@@ -447,6 +466,7 @@
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
 				47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */,
+				47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
