@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="DE8-rg-Syg">
             <objects>
-                <viewController storyboardIdentifier="homeVC" id="kSu-N1-SeP" customClass="HomeViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kSu-N1-SeP" customClass="HomeViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQ7-Z7-0dc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -699,7 +700,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JF-MM-zhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-901"/>
+            <point key="canvasLocation" x="2945" y="-773"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D7T-Th-ua7">
@@ -1277,7 +1278,7 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="494" y="-772"/>
+            <point key="canvasLocation" x="1638" y="-8"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3RX-SR-ib9">
@@ -1307,7 +1308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXG-TC-vve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="-808"/>
+            <point key="canvasLocation" x="1639" y="-773"/>
         </scene>
     </scenes>
     <resources>
