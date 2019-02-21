@@ -37,6 +37,7 @@
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
 		47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */; };
 		47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC452221E139E001FE2D5 /* DailyReportCell.swift */; };
+		47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
 		47CCC452221E139E001FE2D5 /* DailyReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportCell.swift; sourceTree = "<group>"; };
+		47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormTableViewController.swift; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				478C9005221C4F6C00245CF1 /* PerformanceViewController */,
 				478C900C221CCFEF00245CF1 /* ReportSaleViewController */,
 				47CCC451221E126C001FE2D5 /* DailyReportViewController */,
+				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
