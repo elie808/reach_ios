@@ -227,8 +227,8 @@
 		478358232214087D00B33025 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				478358142214058F00B33025 /* LaunchScreen.storyboard */,
 				478C900A221CCF3500245CF1 /* Home.storyboard */,
+				478358142214058F00B33025 /* LaunchScreen.storyboard */,
 				47784EFA221F0A20000FD327 /* Login.storyboard */,
 				4783580F2214058D00B33025 /* Main.storyboard */,
 			);
