@@ -37,6 +37,8 @@
 		47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */; };
 		47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */; };
 		47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */; };
+		47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */; };
+		47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -80,6 +82,8 @@
 		47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpenSkillsViewController.swift; sourceTree = "<group>"; };
+		47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpenSkillsCell.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
 				478C900C221CCFEF00245CF1 /* Report Sale */,
 				47ADFF632223026000AEFBD7 /* Profile */,
+				47ADFF66222343D800AEFBD7 /* Sharpen Skills */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -343,6 +348,15 @@
 				47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		47ADFF66222343D800AEFBD7 /* Sharpen Skills */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
+				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
+			);
+			path = "Sharpen Skills";
 			sourceTree = "<group>";
 		};
 		47CCC451221E126C001FE2D5 /* Daily Report */ = {
@@ -520,6 +534,7 @@
 				4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */,
 				478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */,
 				47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */,
+				47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
 				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
@@ -527,6 +542,7 @@
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
+				47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */,
 				47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */,
 				47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */,
 				47ED4C512220CEAB00D7EA09 /* RegisterViewController.swift in Sources */,
