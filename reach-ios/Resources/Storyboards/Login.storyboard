@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gSc-D6-dVR">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gSc-D6-dVR">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-Wc-gRP">
-                                    <rect key="frame" x="89" y="8" width="197" height="71"/>
+                                    <rect key="frame" x="89" y="8" width="197" height="7"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -271,7 +271,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="366" height="443"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="RbQ-WL-QDs">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="RbQ-WL-QDs">
                             <rect key="frame" x="0.0" y="132" width="366" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -501,8 +501,37 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hYZ-mn-Psc" id="G6K-rZ-gjM">
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-Jk-ETT">
+                                                    <rect key="frame" x="24" y="36" width="56" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hew-zc-ugz">
+                                                    <rect key="frame" x="260" y="26" width="78" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ft3-p9-YzQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" title="M"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGh-3F-dU5">
+                                                            <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" title="F"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hew-zc-ugz" secondAttribute="bottom" constant="3" id="8Oc-GR-d29"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hew-zc-ugz" secondAttribute="trailing" constant="12" id="IgK-tW-QUE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GFp-Jk-ETT" secondAttribute="bottom" constant="3" id="PuO-Na-npy"/>
+                                                <constraint firstItem="hew-zc-ugz" firstAttribute="top" secondItem="G6K-rZ-gjM" secondAttribute="topMargin" constant="15" id="UE4-YA-4L3"/>
+                                                <constraint firstItem="GFp-Jk-ETT" firstAttribute="leading" secondItem="G6K-rZ-gjM" secondAttribute="leadingMargin" constant="8" id="YOU-YZ-xZg"/>
+                                                <constraint firstItem="GFp-Jk-ETT" firstAttribute="top" secondItem="G6K-rZ-gjM" secondAttribute="topMargin" constant="25" id="edA-bG-EpM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.76695421009999998" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Gnj-7S-abc" userLabel="First Name">
                                         <rect key="frame" x="0.0" y="70" width="366" height="70"/>
