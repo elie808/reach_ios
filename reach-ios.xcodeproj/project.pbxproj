@@ -34,6 +34,8 @@
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
 		4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */; };
+		47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */; };
+		47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -74,6 +76,8 @@
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBottomView.swift; sourceTree = "<group>"; };
+		47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -172,12 +176,13 @@
 		4783581D2214081E00B33025 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				47784EFE221F14C2000FD327 /* Login */,
-				478C9002221C4F4500245CF1 /* Home */,
-				478C9005221C4F6C00245CF1 /* Performance */,
-				478C900C221CCFEF00245CF1 /* Report Sale */,
 				47CCC451221E126C001FE2D5 /* Daily Report */,
 				47784EFF221F14F2000FD327 /* Feedback */,
+				478C9002221C4F4500245CF1 /* Home */,
+				47784EFE221F14C2000FD327 /* Login */,
+				478C9005221C4F6C00245CF1 /* Performance */,
+				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
+				478C900C221CCFEF00245CF1 /* Report Sale */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +315,15 @@
 				47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */,
 			);
 			path = "Report Sale";
+			sourceTree = "<group>";
+		};
+		47ADFF5D2222A74B00AEFBD7 /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */,
+				47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */,
+			);
+			path = Promotions;
 			sourceTree = "<group>";
 		};
 		47CCC451221E126C001FE2D5 /* Daily Report */ = {
@@ -474,6 +488,7 @@
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
+				47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */,
 				47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */,
 				47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
@@ -484,6 +499,7 @@
 				47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */,
 				4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */,
 				478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */,
+				47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
 				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
