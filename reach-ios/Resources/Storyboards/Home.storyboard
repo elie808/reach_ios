@@ -155,20 +155,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="263" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYs-Is-WJH">
-                                                    <rect key="frame" x="110" y="85" width="42" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-2H-KOs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="263" height="150"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AVe-2q-zX9">
+                                                    <rect key="frame" x="16" y="95" width="231" height="39"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQT-Tm-pcv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="231" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pro-X6-LND">
+                                                            <rect key="frame" x="0.0" y="22" width="231" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.54901960780000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="WYs-Is-WJH" firstAttribute="leading" secondItem="JHT-9Y-HSX" secondAttribute="leadingMargin" constant="102" id="G91-XM-f6s"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="WYs-Is-WJH" secondAttribute="bottom" constant="56" id="eWu-eb-Zp1"/>
-                                            <constraint firstItem="WYs-Is-WJH" firstAttribute="top" secondItem="JHT-9Y-HSX" secondAttribute="topMargin" constant="57" id="fk6-mQ-BnW"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="WYs-Is-WJH" secondAttribute="trailing" constant="103" id="xb8-Xq-0A1"/>
+                                            <constraint firstAttribute="trailing" secondItem="C8z-2H-KOs" secondAttribute="trailing" id="3jZ-Gw-4jG"/>
+                                            <constraint firstItem="C8z-2H-KOs" firstAttribute="leading" secondItem="JHT-9Y-HSX" secondAttribute="leading" id="MRp-WQ-MTf"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="AVe-2q-zX9" secondAttribute="trailing" constant="8" id="Pjf-TC-Uil"/>
+                                            <constraint firstItem="C8z-2H-KOs" firstAttribute="top" secondItem="JHT-9Y-HSX" secondAttribute="top" id="aWo-ru-UMk"/>
+                                            <constraint firstAttribute="bottom" secondItem="C8z-2H-KOs" secondAttribute="bottom" id="ldS-SH-Unb"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="AVe-2q-zX9" secondAttribute="bottom" constant="8" id="niZ-D4-OVY"/>
+                                            <constraint firstItem="AVe-2q-zX9" firstAttribute="leading" secondItem="JHT-9Y-HSX" secondAttribute="leadingMargin" constant="8" id="ovK-mB-9NY"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -177,7 +194,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="textLabel" destination="WYs-Is-WJH" id="vZQ-in-Khw"/>
+                                            <outlet property="imageView" destination="C8z-2H-KOs" id="1Nd-si-cLU"/>
+                                            <outlet property="subtitleLabel" destination="Pro-X6-LND" id="A6d-va-qpZ"/>
+                                            <outlet property="textLabel" destination="WQT-Tm-pcv" id="1dw-Ib-kZq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

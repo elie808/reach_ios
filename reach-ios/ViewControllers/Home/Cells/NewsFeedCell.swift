@@ -8,13 +8,17 @@
 
 import UIKit
 
-class NewsFeedCell: GenericCollectionCell<Person> {
+class NewsFeedCell: GenericCollectionCell<NewsFeedItem> {
     
+    @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var textLabel : UILabel!
+    @IBOutlet weak var subtitleLabel : UILabel!
     
-    override var model : Person! {
+    override var model : NewsFeedItem! {
         didSet {
-            textLabel?.text = model.firstName
+            textLabel?.text = model.title
+            subtitleLabel?.text = model.subtitle
+            imageView.image = UIImage(named: model.imageName)
         }
     }
 }

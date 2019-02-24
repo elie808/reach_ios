@@ -12,6 +12,10 @@ struct Person {
     let firstName, lastName : String
 }
 
+struct NewsFeedItem {
+    let imageName, title, subtitle : String
+}
+
 class HomeViewController: UIViewController {
     
     // MARK: - Outlets
@@ -25,7 +29,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     
     let sideMenu = SideMenu()
-    var collectionDataSource = GenericCollectionDataSource<NewsFeedCell,Person>()
+    var collectionDataSource = GenericCollectionDataSource<NewsFeedCell,NewsFeedItem>()
     var sideMenuDataSource = GenericTableDataSource<SideMenuCell,SideMenuItem>()
     
     // MARK: - Views Life Cycle
@@ -33,9 +37,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionDataSource.data = [Person(firstName: "Greatest", lastName: "Ever"), Person(firstName: "Zabre Greatest", lastName: "Ever")]
+        collectionDataSource.data = [NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM") ]
         collectionView.dataSource = collectionDataSource
-        
         
         sideMenuDataSource.data = [SideMenuItem(name: "Home", image: ""), SideMenuItem(name: "Help", image: ""), SideMenuItem(name: "FAQs", image: ""), SideMenuItem(name: "About Us", image: ""), SideMenuItem(name: "Contact Us", image: ""), SideMenuItem(name: "Terms & Conditions", image: ""), SideMenuItem(name: "Settings", image: "")]
         
