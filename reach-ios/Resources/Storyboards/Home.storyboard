@@ -749,7 +749,6 @@
                                                 </stackView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.54901960780000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="XU8-qx-AJP" secondAttribute="trailing" constant="8" id="ANJ-f5-cpp"/>
                                             <constraint firstItem="HsH-SU-KDM" firstAttribute="leading" secondItem="1yx-vv-BDF" secondAttribute="leading" id="GE4-PQ-tab"/>
@@ -769,7 +768,6 @@
                                             <outlet property="imageView" destination="HsH-SU-KDM" id="gBA-Uj-lji"/>
                                             <outlet property="subtitleLabel" destination="Rfc-4v-Nk9" id="Mqr-zL-pVB"/>
                                             <outlet property="titleLabel" destination="IJA-Sv-Hr8" id="7Bd-Sb-Xg6"/>
-                                            <segue destination="3bD-dt-2kk" kind="show" id="3BC-WF-Ic3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -789,6 +787,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="wYe-fF-4GJ" id="T2w-8D-HR8"/>
+                        <segue destination="3bD-dt-2kk" kind="show" identifier="PromotionsListToPromotionPDFVC" id="U09-6O-LwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJK-e6-0Br" userLabel="First Responder" sceneMemberID="firstResponder"/>

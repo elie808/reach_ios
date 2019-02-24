@@ -321,9 +321,17 @@
 			isa = PBXGroup;
 			children = (
 				47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */,
-				47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */,
+				47ADFF602222ABE400AEFBD7 /* Cells */,
 			);
 			path = Promotions;
+			sourceTree = "<group>";
+		};
+		47ADFF602222ABE400AEFBD7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		47CCC451221E126C001FE2D5 /* Daily Report */ = {

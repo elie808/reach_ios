@@ -36,6 +36,15 @@ class PromotionsViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Segue.PromotionsList.toPromotionPDF:
+            if let promotion = sender {
+                if promotion is Promotion {
+                    
+                }
+            }
+        default: return
+        }
     }
 
 }
@@ -43,7 +52,8 @@ class PromotionsViewController: UIViewController {
 extension PromotionsViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(dataSource.data[indexPath.row])
+        let promotion = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.PromotionsList.toPromotionPDF, sender: promotion)
     }
     
 }
