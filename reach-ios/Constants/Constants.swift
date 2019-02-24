@@ -13,3 +13,11 @@ struct Constants {
     static let pointsEmail = "points@channelpro.co"
 }
 
+extension String {
+    
+    // MARK: - Text Fields Local Error Messages'
+    
+    static var cantBeEmpty: String {
+        return NSLocalizedString("Field cannot be empty", comment: "error message")
+    }
+}
