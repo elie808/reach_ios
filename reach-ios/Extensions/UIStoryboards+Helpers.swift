@@ -27,11 +27,9 @@ extension UIStoryboard {
 }
 
 struct Segue {
-    
-    struct ReportSale {
-        static let toQRScannerVC = "ReportSaleToQRScannerVC"
-        static let toDailyReport = "ReportSaleToDailyReport"
-        static let toProductList = "ReportSaleToProductList"
+   
+    struct BrandFeedback {
+        static let toFeedbackForm = "BrandFeedbackToFeedbackFormVC"
     }
     
     struct ProductList {
@@ -44,6 +42,12 @@ struct Segue {
     
     struct QRScanner {
         static let toReportSale = "QRScannerToReportSaleVC"
+    }
+    
+    struct ReportSale {
+        static let toQRScannerVC = "ReportSaleToQRScannerVC"
+        static let toDailyReport = "ReportSaleToDailyReport"
+        static let toProductList = "ReportSaleToProductList"
     }
 
 }

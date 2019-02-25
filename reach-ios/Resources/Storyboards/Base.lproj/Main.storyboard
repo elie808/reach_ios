@@ -206,13 +206,13 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-sp-eiI">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-sp-eiI">
                                                             <rect key="frame" x="323" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="6wn-1K-hI9"/>
                                                                 <constraint firstAttribute="height" constant="20" id="RUW-Ro-o0I"/>
                                                             </constraints>
-                                                            <state key="normal" title="V"/>
+                                                            <state key="normal" image="down_arrow"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -1179,6 +1179,7 @@
     <resources>
         <image name=" " width="16" height="16"/>
         <image name="camera_frame" width="354" height="344"/>
+        <image name="down_arrow" width="10" height="5"/>
         <image name="dummy_profile_pic" width="634" height="490"/>
     </resources>
     <inferredMetricsTieBreakers>

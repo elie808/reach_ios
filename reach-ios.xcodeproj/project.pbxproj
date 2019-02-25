@@ -41,6 +41,8 @@
 		47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */; };
 		47ADFF6A222355F000AEFBD7 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF69222355F000AEFBD7 /* NewsViewController.swift */; };
 		47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6C222359A900AEFBD7 /* NewsCell.swift */; };
+		47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */; };
+		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -88,6 +90,8 @@
 		47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpenSkillsCell.swift; sourceTree = "<group>"; };
 		47ADFF69222355F000AEFBD7 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		47ADFF6C222359A900AEFBD7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackViewController.swift; sourceTree = "<group>"; };
+		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		47784EFF221F14F2000FD327 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */,
+				47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */,
 				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
 			);
 			path = Feedback;
@@ -542,6 +548,7 @@
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
 				47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
+				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
@@ -564,6 +571,7 @@
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
+				47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
 				47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */,
