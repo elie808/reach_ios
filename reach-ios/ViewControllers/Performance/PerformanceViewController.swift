@@ -22,7 +22,7 @@ class PerformanceCell: GenericTableCell<PerformanceItem> {
     @IBOutlet weak var pointsLabel : UILabel!
     @IBOutlet weak var pointsView : UIView!
     @IBOutlet weak var statusLabel : UILabel!
-    @IBOutlet weak var statusView : UIView!
+    @IBOutlet weak var statusView : UIImageView!
     
     override var model : PerformanceItem! {
         didSet {
@@ -33,11 +33,11 @@ class PerformanceCell: GenericTableCell<PerformanceItem> {
             if model.status == true {
                 statusLabel.text = "Approved"
                 statusLabel.textColor = .reachGreen
-                statusView.backgroundColor = .reachGreen
+                statusView.image = UIImage(named: "iconGreenTick")
             } else {
                 statusLabel.text = "Pending"
                 statusLabel.textColor = .gray
-                statusView.backgroundColor = .gray
+                statusView.image = UIImage(named: "iconGreyArrow")
             }
         }
     }
