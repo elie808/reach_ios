@@ -75,8 +75,6 @@ class PerformanceViewController: UIViewController {
     
     @IBAction func didTapApprovedPoints(_ sender: UIButton) {
         
-        print("SHERHEHREH")
-        
         let mailComposer = configureMailController()
         
         if MFMailComposeViewController.canSendMail() == true {

@@ -9,8 +9,9 @@
 import UIKit
 
 struct Constants {
-    static let reachEmail = "reach@channelpro.co"
-    static let pointsEmail = "points@channelpro.co"
+    static let reachEmail   = "reach@channelpro.co"
+    static let pointsEmail  = "points@channelpro.co"
+    static let supportEmail = "support@channelpro.co"
 }
 
 extension String {

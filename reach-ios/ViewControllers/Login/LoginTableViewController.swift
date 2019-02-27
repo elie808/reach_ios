@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class LoginTableViewController: UITableViewController {
 
@@ -20,6 +21,15 @@ class LoginTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func didTapNeedHelp(_ sender: UIButton) {
+    
+        let mailComposer = configureMailController()
+        
+        if MFMailComposeViewController.canSendMail() == true {
+            self.present(mailComposer, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -31,3 +41,28 @@ class LoginTableViewController: UITableViewController {
     */
 
 }
+
+extension LoginTableViewController : MFMailComposeViewControllerDelegate {
+    
+    func configureMailController() -> MFMailComposeViewController {
+        
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients([Constants.supportEmail])
+        composeVC.setSubject("Need help for login")
+        
+        return composeVC
+    }
+    
+    func showMailError() {
+        let sendMailErrorAlert = UIAlertController(title: "Error", message: "Device doesn't support sending e-mail", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "OK", style: .default, handler: nil)
+        sendMailErrorAlert.addAction(dismiss)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+

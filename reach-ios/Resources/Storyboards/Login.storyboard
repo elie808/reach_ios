@@ -211,6 +211,9 @@
                                                     <state key="normal" title="Need Help ?">
                                                         <color key="titleColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapNeedHelp:" destination="MmC-B5-ycb" eventType="touchDown" id="61h-8Z-mcZ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -881,6 +884,6 @@
     <resources>
         <image name=" " width="16" height="16"/>
         <image name="eye-on" width="24" height="24"/>
-        <image name="eye_off" width="17" height="17"/>
+        <image name="eye_off" width="26.5" height="26.5"/>
     </resources>
 </document>
