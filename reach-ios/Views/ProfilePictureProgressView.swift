@@ -25,7 +25,7 @@ class ProfilePictureProgressView: UIView {
     
         circleProgressLayer = CircularProgress(center: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2),
                                                radius: (self.frame.size.width/2) - 8,
-                                               color: UIColor.reachGreen, startAngle: 150, endAngle: 30)
+                                               color: UIColor.reachGreen, startAngle: 180, endAngle: 0)
         self.layer.addSublayer(circleProgressLayer!)
     }
     
