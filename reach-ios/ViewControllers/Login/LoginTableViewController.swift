@@ -8,17 +8,68 @@
 
 import UIKit
 import MessageUI
+import SkyFloatingLabelTextField
 
 class LoginTableViewController: UITableViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+
+    // MARK: - Properties
+    
+    var showPassword = false
+    
+    // MARK: - Views Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Helpers
+    
+    private func formValid() -> Bool {
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        var isValid = true
+        
+        guard let username = usernameTextField.text else { return false }
+        guard let password = passwordTextField.text else { return false }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if username.isEmpty {
+            usernameTextField.errorMessage = String.cantBeEmpty
+            isValid = false
+        }
+        
+        if !username.isEmpty && !username.isValidEmail() {
+            usernameTextField.errorMessage = String.emailFormatNotValid
+            isValid = false
+        }
+        
+        if password.isEmpty {
+            passwordTextField.errorMessage = String.passwordRequired
+            isValid = false
+        }
+        
+        if !password.isEmpty && password.count < 6 {
+            passwordTextField.errorMessage = String.sixMinimumCharacters
+            isValid = false
+        }
+        
+        return isValid
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func didTapLogin(_ sender: UIButton) {
+    }
+    
+    @IBAction func didTapCreateAccount(_ sender: UIButton) {
+    }
+    
+    @IBAction func didTapPasswordToggle(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !sender.isSelected
     }
 
     @IBAction func didTapNeedHelp(_ sender: UIButton) {
@@ -30,15 +81,10 @@ class LoginTableViewController: UITableViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
 

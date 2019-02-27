@@ -21,4 +21,16 @@ extension String {
     static var cantBeEmpty: String {
         return NSLocalizedString("Field cannot be empty", comment: "error message")
     }
+    
+    static var passwordRequired: String {
+        return NSLocalizedString("Password Required", comment: "error message")
+    }
+    
+    static var sixMinimumCharacters: String {
+        return NSLocalizedString("Minimum 6 characters", comment: "error message")
+    }
+    
+    static var emailFormatNotValid: String {
+        return NSLocalizedString("Email format is not valid", comment: "error message")
+    }
 }
