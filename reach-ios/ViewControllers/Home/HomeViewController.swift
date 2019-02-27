@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
         collectionDataSource.data = [NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM") ]
         collectionView.dataSource = collectionDataSource
         
-        sideMenuDataSource.data = [SideMenuItem(name: "Home", image: ""), SideMenuItem(name: "Help", image: ""), SideMenuItem(name: "FAQs", image: ""), SideMenuItem(name: "About Us", image: ""), SideMenuItem(name: "Contact Us", image: ""), SideMenuItem(name: "Terms & Conditions", image: ""), SideMenuItem(name: "Settings", image: "")]
+        sideMenuDataSource.data = [SideMenuItem(name: "Home", image: "SideMenuHome"), SideMenuItem(name: "Help", image: "SideMenuHelp"), SideMenuItem(name: "FAQs", image: "SideMenuFAQ"), SideMenuItem(name: "About Us", image: "SideMenuAbout"), SideMenuItem(name: "Contact Us", image: "SideMenuContact"), SideMenuItem(name: "Terms & Conditions", image: "SideMenuTerms"), SideMenuItem(name: "Settings", image: "SideMenuSettings")]
         
         sideMenu.tableView = sideMenuTableView
         sideMenuTableView.dataSource = sideMenuDataSource

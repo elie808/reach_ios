@@ -10,13 +10,13 @@ import UIKit
 
 class SideMenuCell: GenericTableCell<SideMenuItem> {
     
-    //    @IBOutlet weak var imageView : UIImageView!
-    //    @IBOutlet weak var textLabel : UILabel!
+    @IBOutlet weak var cellImageView : UIImageView!
+    @IBOutlet weak var cellTextLabel : UILabel!
     
     override var model : SideMenuItem! {
         didSet {
-            textLabel?.text = model.name
-            imageView?.image = UIImage(named: model.image)
+            cellTextLabel?.text = model.name
+            cellImageView?.image = UIImage(named: model.image)
         }
     }
 }
