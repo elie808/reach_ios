@@ -24,13 +24,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wFf-N5-BLJ">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-jY-vTa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-jY-vTa">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                 <color key="backgroundColor" red="0.0" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="78" id="5QT-4n-1ae"/>
                                                     <constraint firstAttribute="height" constant="78" id="DmT-Vg-1mb"/>
                                                 </constraints>
+                                                <state key="normal" image="MainTrainingIcon"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="39"/>
@@ -52,13 +53,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-ff-s6g">
                                         <rect key="frame" x="88.5" y="0.0" width="78" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61M-av-VU3">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61M-av-VU3">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                 <color key="backgroundColor" red="0.96862745098039216" green="0.7803921568627451" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="78" id="282-oY-FlX"/>
                                                     <constraint firstAttribute="width" constant="78" id="zSv-Fw-7xy"/>
                                                 </constraints>
+                                                <state key="normal" image="MainPerformanceIcon"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="39"/>
@@ -80,13 +82,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-u5-LoA">
                                         <rect key="frame" x="176.5" y="0.0" width="78" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-3w-u3A">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-3w-u3A">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                 <color key="backgroundColor" red="0.9882352941176471" green="0.50588235294117645" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="78" id="9YP-E1-Xhx"/>
                                                     <constraint firstAttribute="height" constant="78" id="mKc-sW-cKA"/>
                                                 </constraints>
+                                                <state key="normal" image="MainBrandIcon"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="39"/>
@@ -108,13 +111,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UJZ-3R-z7O">
                                         <rect key="frame" x="265" y="0.0" width="78" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-0Q-Yjs">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-0Q-Yjs">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                 <color key="backgroundColor" red="0.0" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="78" id="Cfq-yG-jOA"/>
                                                     <constraint firstAttribute="width" constant="78" id="h6C-mc-Tap"/>
                                                 </constraints>
+                                                <state key="normal" image="MainPromotionIcon"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="39"/>
@@ -1472,6 +1476,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MainBrandIcon" width="40" height="40"/>
+        <image name="MainPerformanceIcon" width="40" height="40"/>
+        <image name="MainPromotionIcon" width="40" height="40"/>
+        <image name="MainTrainingIcon" width="40" height="40"/>
         <image name="NavSideMenu" width="21.5" height="21.5"/>
         <image name="REACH_logo" width="328.75201416015625" height="143.5679931640625"/>
         <image name="dummy_profile_pic" width="634" height="490"/>
