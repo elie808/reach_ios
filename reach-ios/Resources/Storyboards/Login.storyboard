@@ -18,24 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gSc-D6-dVR">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gSc-D6-dVR">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-Wc-gRP">
-                                    <rect key="frame" x="89" y="8" width="197" height="7"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reach_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-Wc-gRP">
+                                    <rect key="frame" x="60" y="8" width="255" height="84"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="fqC-Wc-gRP" firstAttribute="centerX" secondItem="gSc-D6-dVR" secondAttribute="centerX" id="69P-vI-qWE"/>
-                                <constraint firstAttribute="bottom" secondItem="fqC-Wc-gRP" secondAttribute="bottom" constant="72" id="DwX-ur-p2G"/>
-                                <constraint firstItem="fqC-Wc-gRP" firstAttribute="leading" secondItem="gSc-D6-dVR" secondAttribute="leading" constant="89" id="J4h-pz-sam"/>
+                                <constraint firstAttribute="bottom" secondItem="fqC-Wc-gRP" secondAttribute="bottom" constant="59" id="DwX-ur-p2G"/>
+                                <constraint firstItem="fqC-Wc-gRP" firstAttribute="leading" secondItem="gSc-D6-dVR" secondAttribute="leading" constant="60" id="J4h-pz-sam"/>
                                 <constraint firstItem="fqC-Wc-gRP" firstAttribute="top" secondItem="gSc-D6-dVR" secondAttribute="top" constant="8" id="Nf6-YH-Eq9"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="rVT-WC-OtJ">
-                            <rect key="frame" x="0.0" y="504" width="375" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="rVT-WC-OtJ">
+                            <rect key="frame" x="0.0" y="521" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -166,16 +166,19 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="cRx-tP-fxr">
-                                        <rect key="frame" x="0.0" y="291" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="cRx-tP-fxr">
+                                        <rect key="frame" x="0.0" y="291" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cRx-tP-fxr" id="Zwf-2e-re7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXC-Yh-Er9">
-                                                    <rect key="frame" x="32" y="8" width="311" height="54"/>
+                                                    <rect key="frame" x="32" y="25" width="311" height="54"/>
                                                     <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="inK-nK-i1E"/>
+                                                    </constraints>
                                                     <state key="normal" title="Login">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
@@ -193,13 +196,12 @@
                                             <constraints>
                                                 <constraint firstItem="sXC-Yh-Er9" firstAttribute="leading" secondItem="Zwf-2e-re7" secondAttribute="leading" constant="32" id="00l-Hf-Moy"/>
                                                 <constraint firstAttribute="trailing" secondItem="sXC-Yh-Er9" secondAttribute="trailing" constant="32" id="Hxb-i1-wAt"/>
-                                                <constraint firstItem="sXC-Yh-Er9" firstAttribute="top" secondItem="Zwf-2e-re7" secondAttribute="top" constant="8" id="gM0-rc-WzM"/>
                                                 <constraint firstAttribute="bottom" secondItem="sXC-Yh-Er9" secondAttribute="bottom" constant="8" id="yTb-sT-Tbv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="llm-oC-WfC">
-                                        <rect key="frame" x="0.0" y="361" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="378" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="llm-oC-WfC" id="TZy-dq-Dt9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -207,7 +209,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0B-Nj-vvg">
                                                     <rect key="frame" x="73" y="8" width="229" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <state key="normal" title="Need Help ?">
                                                         <color key="titleColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -225,7 +227,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="99" id="eCB-gK-ZbQ">
-                                        <rect key="frame" x="0.0" y="405" width="375" height="99"/>
+                                        <rect key="frame" x="0.0" y="422" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCB-gK-ZbQ" id="pCf-Hd-0p0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
@@ -883,6 +885,7 @@
     </scenes>
     <resources>
         <image name=" " width="16" height="16"/>
+        <image name="Reach_logo_white" width="193.5" height="83.5"/>
         <image name="eye-on" width="24" height="24"/>
         <image name="eye_off" width="26.5" height="26.5"/>
     </resources>
