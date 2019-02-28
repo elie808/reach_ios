@@ -719,7 +719,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gDX-RU-MlZ">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gDX-RU-MlZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1211,6 +1211,6 @@
         <image name="dummy_profile_pic" width="634" height="490"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t5x-JO-oaR"/>
+        <segue reference="ljQ-g1-vwG"/>
     </inferredMetricsTieBreakers>
 </document>
