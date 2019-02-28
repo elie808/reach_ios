@@ -44,6 +44,7 @@
 		47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */; };
 		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0128E2226369900F2C305 /* String+Helpers.swift */; };
+		47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -94,6 +95,7 @@
 		47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackViewController.swift; sourceTree = "<group>"; };
 		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47B0128E2226369900F2C305 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */,
 				47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */,
 				47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */,
+				47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				47ADFF6A222355F000AEFBD7 /* NewsViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
+				47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
 				47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */,
 				4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */,
