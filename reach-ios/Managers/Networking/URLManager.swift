@@ -11,14 +11,16 @@ import Foundation
 struct NetworkingConstants {
     
     private struct Domains {
-        static let baseURL = "https://www.premieronline.com/"
+        static let baseURL = "http://18.185.199.168:3000/"
     }
     
-    private struct Routes {
-        static let index = "webservice/checkin/index.php"
-        static let sync = "webservice/checkin/sync.php"
-        static let about = "event/walkon2018"
+    private struct Static {
+        static let faq   = "static/faq"
+        static let terms = "static/terms"
+        static let contact = "static/contact"
+        static let about = "static/about"
+        static let privacy = "static/privacy"
+        static let banners = "static/banners"
     }
     
-    static let eventURL = Domains.baseURL + Routes.index
 }

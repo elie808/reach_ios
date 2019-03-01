@@ -48,6 +48,7 @@
 		47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EC22279A97005DE571 /* T&CViewController.swift */; };
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
 		47CCC1F12228CC7F005DE571 /* BrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */; };
+		47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1F82228D23D005DE571 /* Ressource.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -102,6 +103,7 @@
 		47CCC1EC22279A97005DE571 /* T&CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "T&CViewController.swift"; sourceTree = "<group>"; };
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsTableViewController.swift; sourceTree = "<group>"; };
+		47CCC1F82228D23D005DE571 /* Ressource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ressource.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */,
+				47CCC1F82228D23D005DE571 /* Ressource.swift */,
 				472774702215B86D007B4BBE /* URLManager.swift */,
 			);
 			path = Networking;
@@ -589,6 +592,7 @@
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
+				47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */,
 				47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
 				47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */,

@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gSc-D6-dVR">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gSc-D6-dVR">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reach_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-Wc-gRP">
-                                    <rect key="frame" x="60" y="8" width="255" height="20"/>
+                                    <rect key="frame" x="60" y="8" width="255" height="84"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +34,7 @@
                                 <constraint firstItem="fqC-Wc-gRP" firstAttribute="top" secondItem="gSc-D6-dVR" secondAttribute="top" constant="8" id="Nf6-YH-Eq9"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="rVT-WC-OtJ">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="rVT-WC-OtJ">
                             <rect key="frame" x="0.0" y="521" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
