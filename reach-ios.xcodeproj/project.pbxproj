@@ -49,6 +49,9 @@
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
 		47CCC1F12228CC7F005DE571 /* BrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */; };
 		47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1F82228D23D005DE571 /* Ressource.swift */; };
+		47CCC1FD2228E4A1005DE571 /* Training.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CCC1FC2228E4A1005DE571 /* Training.storyboard */; };
+		47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1FE2228E6D8005DE571 /* TrainingListViewController.swift */; };
+		47CCC2032228E8C2005DE571 /* TrainingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC2022228E8C2005DE571 /* TrainingListCell.swift */; };
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
@@ -104,6 +107,9 @@
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1F82228D23D005DE571 /* Ressource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ressource.swift; sourceTree = "<group>"; };
+		47CCC1FC2228E4A1005DE571 /* Training.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Training.storyboard; sourceTree = "<group>"; };
+		47CCC1FE2228E6D8005DE571 /* TrainingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListViewController.swift; sourceTree = "<group>"; };
+		47CCC2022228E8C2005DE571 /* TrainingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListCell.swift; sourceTree = "<group>"; };
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +217,7 @@
 				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
 				478C900C221CCFEF00245CF1 /* Report Sale */,
 				47ADFF632223026000AEFBD7 /* Profile */,
-				47ADFF66222343D800AEFBD7 /* Sharpen Skills */,
+				47ADFF66222343D800AEFBD7 /* Training */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				478C900A221CCF3500245CF1 /* Home.storyboard */,
+				47CCC1FC2228E4A1005DE571 /* Training.storyboard */,
 				478358142214058F00B33025 /* LaunchScreen.storyboard */,
 				47784EFA221F0A20000FD327 /* Login.storyboard */,
 				4783580F2214058D00B33025 /* Main.storyboard */,
@@ -373,13 +380,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		47ADFF66222343D800AEFBD7 /* Sharpen Skills */ = {
+		47ADFF66222343D800AEFBD7 /* Training */ = {
 			isa = PBXGroup;
 			children = (
-				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
-				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
+				47CCC2002228E7D3005DE571 /* Know Your Product */,
+				47CCC2012228E7F1005DE571 /* Sharpen Your Skills */,
 			);
-			path = "Sharpen Skills";
+			path = Training;
 			sourceTree = "<group>";
 		};
 		47ADFF6B222355F900AEFBD7 /* News */ = {
@@ -427,6 +434,24 @@
 				47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		47CCC2002228E7D3005DE571 /* Know Your Product */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
+				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
+			);
+			path = "Know Your Product";
+			sourceTree = "<group>";
+		};
+		47CCC2012228E7F1005DE571 /* Sharpen Your Skills */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC1FE2228E6D8005DE571 /* TrainingListViewController.swift */,
+				47CCC2022228E8C2005DE571 /* TrainingListCell.swift */,
+			);
+			path = "Sharpen Your Skills";
 			sourceTree = "<group>";
 		};
 		47CCC451221E126C001FE2D5 /* Daily Report */ = {
@@ -515,6 +540,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CCC1FD2228E4A1005DE571 /* Training.storyboard in Resources */,
 				478358162214058F00B33025 /* LaunchScreen.storyboard in Resources */,
 				478358132214058F00B33025 /* Assets.xcassets in Resources */,
 				478358112214058D00B33025 /* Main.storyboard in Resources */,
@@ -612,11 +638,13 @@
 				4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */,
 				478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */,
 				47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */,
+				47CCC2032228E8C2005DE571 /* TrainingListCell.swift in Sources */,
 				47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
 				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
+				47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
 				47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,

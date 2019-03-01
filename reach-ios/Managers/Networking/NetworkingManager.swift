@@ -42,48 +42,14 @@ extension URLSession {
         
         dataTask(with: resource.urlRequest) { (data, response, error) in
             
-            if let resp : HTTPURLResponse = response as? HTTPURLResponse {
-                completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
-            } else {
-                completion(data.flatMap(resource.parse), HttpStatus(code: 0))
-            }
+            DispatchQueue.main.async {
             
+                if let resp : HTTPURLResponse = response as? HTTPURLResponse {
+                    completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
+                } else {
+                    completion(data.flatMap(resource.parse), HttpStatus(code: 0))
+                }   
+            }
             }.resume()
     }
 }
-
-///////
-
-struct Episode: Codable {
-    var number: Int
-    var title: String
-}
-
-struct Collection: Codable {
-    var title: String
-}
-
-struct PostMan: Codable {
-    var url : String
-    var tester : String
-    var headers : Headers
-}
-
-struct Headers: Codable {
-    
-    var host : String
-    var zubara : String
-    var accept_encoding : String
-    
-    // when implementing custom key-value mapping
-    private enum CodingKeys: String, CodingKey {
-        case host
-        case zubara = "x-forwarded-proto"
-        case accept_encoding = "accept-encoding"
-    }
-}
-
-struct Premiere: Codable {
-    var url_logo : String
-}
-

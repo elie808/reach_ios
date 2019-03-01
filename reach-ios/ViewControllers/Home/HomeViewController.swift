@@ -78,6 +78,7 @@ extension HomeViewController : UICollectionViewDelegate {
     }
 }
 
+// Side Menu delegates
 extension HomeViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
