@@ -10,6 +10,11 @@ import Foundation
 
 struct NetworkingConstants {
     
+    /// Create complete URLs from relative paths, used by image ressources, etc.
+    static func getURL(path: String, parameters: [String: String] = [:]) -> URL? {
+        return baseURL.appendingPathComponent(path).appendingQueryParameters(parameters)
+    }
+    
     private struct Domains {
         static let baseURL = "http://18.185.199.168:3000/"
     }
@@ -28,5 +33,22 @@ struct NetworkingConstants {
     }
 
     
+    static let baseURL : URL! = URL(string: Domains.baseURL)
+    
     static let allCategories = Domains.baseURL + Training.allCategories
+}
+
+extension URL {
+    
+    func appendingQueryParameters(_ parameters: [String: Any]) -> URL? {
+        
+        var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = []
+        
+        for (key, value) in parameters {
+            urlComponents?.queryItems?.append(URLQueryItem(name:key, value: value as? String))
+        }
+        
+        return urlComponents?.url
+    }
 }

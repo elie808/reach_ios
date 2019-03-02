@@ -12,6 +12,7 @@ target 'reach-ios' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'UITextView+Placeholder'
   pod 'ZKUDID'
+  pod 'Kingfisher'
 
   pod 'SVProgressHUD'
 

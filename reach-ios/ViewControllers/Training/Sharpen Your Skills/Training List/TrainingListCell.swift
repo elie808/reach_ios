@@ -15,7 +15,8 @@ class TrainingListCell: GenericCollectionCell<TrainingListItems> {
     
     override var model : TrainingListItems! {
         didSet {
-//            imageView.image = UIImage(named: model.imageName)
+            // image at URL: http://reach.xtnd.io/cms/www/undefined. THis method is appending the BaseURL, so it's http://18.185.199.168:3000/http://reach.xtnd.io/cms/www/undefined. Does not work X-(
+            imageView.urlSetImage(model.image, #imageLiteral(resourceName: "TrainingSharpen"))
             titleLabel.text = model.category
         }
     }
