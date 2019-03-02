@@ -17,6 +17,7 @@ struct NetworkingConstants {
     
     private struct Domains {
         static let baseURL = "http://18.185.199.168:3000/"
+        static let cmsBaseURL = "http://reach.xtnd.io/cms/www/"
     }
     
     private struct Static {
@@ -34,8 +35,10 @@ struct NetworkingConstants {
 
     
     static let baseURL : URL! = URL(string: Domains.baseURL)
+    static let cmsBaseURL : URL! = URL(string: Domains.cmsBaseURL)
     
     static let allCategories = Domains.baseURL + Training.allCategories
+    static let trainingCategory = Domains.baseURL + Training.allCategories
 }
 
 extension URL {

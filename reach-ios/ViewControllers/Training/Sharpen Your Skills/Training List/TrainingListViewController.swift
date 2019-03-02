@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TrainingListItems : Codable {
+struct TrainingListItem : Codable {
     var image, category : String
     var id : Int
 }
@@ -21,7 +21,7 @@ class TrainingListViewController: UIViewController {
     
     // MARK: - Properties
     
-    var dataSource = GenericCollectionDataSource<TrainingListCell, TrainingListItems>()
+    var dataSource = GenericCollectionDataSource<TrainingListCell, TrainingListItem>()
     
     // MARK: - Views Life Cycle
     
@@ -30,7 +30,7 @@ class TrainingListViewController: UIViewController {
         
         collectionView.dataSource = dataSource
 
-        let trainingList = Resource<[TrainingListItems]>(get: URL(string:NetworkingConstants.allCategories)!)
+        let trainingList = Resource<[TrainingListItem]>(get: URL(string:NetworkingConstants.allCategories)!)
 
         URLSession.shared.load(trainingList) { (trainingListItems, status) in
             self.dataSource.data = trainingListItems ?? []
@@ -41,24 +41,26 @@ class TrainingListViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         switch segue.identifier {
-        case Segue.PromotionsList.toPromotionPDF:
-            if let promotion = sender {
-                if promotion is Promotion {
-                    
+            
+        case Segue.TrainingList.toTrainingByCategory:
+            if let category = sender {
+                if category is TrainingListItem {
+                    let vc : TrainingByCategoryTableViewController = segue.destination as! TrainingByCategoryTableViewController
+                    vc.trainingItem = category as? TrainingListItem
                 }
             }
         default: return
         }
     }
-    
 }
 
 extension TrainingListViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let promotion = dataSource.data[indexPath.row]
-//        performSegue(withIdentifier: Segue.PromotionsList.toPromotionPDF, sender: promotion)
+        let trainingItem = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.TrainingList.toTrainingByCategory, sender: trainingItem)
     }
     
 }

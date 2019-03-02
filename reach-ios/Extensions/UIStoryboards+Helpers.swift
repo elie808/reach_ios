@@ -49,5 +49,13 @@ struct Segue {
         static let toDailyReport = "ReportSaleToDailyReport"
         static let toProductList = "ReportSaleToProductList"
     }
+    
+    struct TrainingList {
+        static let toTrainingByCategory = "TrainingListToTrainingByCategoryVC"
+    }
 
+    struct TrainingCategory {
+        static let toPDF = "TrainingByCategoryToPDF"
+        static let toVideo = "TrainingByCategoryToVideo"
+    }
 }
