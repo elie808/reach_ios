@@ -16,10 +16,10 @@ class TrainingByCategoryCell: GenericTableCell<TrainingByCategory> {
     
     override var model : TrainingByCategory! {
         didSet {
-            cellImageView.urlSetImage(model.image, #imageLiteral(resourceName: "TrainingSharpen"))
+            cellImageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
+//            cellImageView.image = UIImage(data: try! Data(contentsOf: URL(string: model.image)! ))
             cellTitleLabel.text = model.title
             cellDesciptionLabel.text = model.description
-            //            cellImageView.image
         }
     }
 }
