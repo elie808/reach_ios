@@ -17,10 +17,10 @@ class NewsCell : GenericCollectionCell<NewsItem> {
     
     override var model : NewsItem! {
         didSet {
-            imageView?.image = UIImage(named: model.imageName)
-            titleLabel?.text = model.title
-            descriptionLabel?.text = model.description
-            dateLabel?.text = model.date
+            imageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
+            titleLabel?.text = model.name
+            dateLabel?.text = Date(timeIntervalSince1970: (model?.date)!).toString(withFormat: .DateFull)
+            descriptionLabel?.text = "Learn More"//model.description
         }
     }
     

@@ -19,6 +19,7 @@
 		47670A8A2229FC27008EEF6D /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */; };
 		47670A90222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */; };
 		47670A92222A1E7C008EEF6D /* TrainingByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */; };
+		47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A93222A42C8008EEF6D /* Date+Helpers.swift */; };
 		47784EFB221F0A20000FD327 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47784EFA221F0A20000FD327 /* Login.storyboard */; };
 		47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47784F00221F151B000FD327 /* LoginTableViewController.swift */; };
 		4783580C2214058D00B33025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783580B2214058D00B33025 /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 		47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryTableViewController.swift; sourceTree = "<group>"; };
 		47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryCell.swift; sourceTree = "<group>"; };
+		47670A93222A42C8008EEF6D /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		47784EFA221F0A20000FD327 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		47784F00221F151B000FD327 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		478358082214058D00B33025 /* reach-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reach-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,12 +263,13 @@
 			isa = PBXGroup;
 			children = (
 				47421A41221A239B00C9B3D4 /* GenericListView.swift */,
-				47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */,
+				47670A93222A42C8008EEF6D /* Date+Helpers.swift */,
 				47B0128E2226369900F2C305 /* String+Helpers.swift */,
+				47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */,
 				4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */,
+				47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */,
 				4783582822140C7300B33025 /* UIStoryboards+Helpers.swift */,
 				4783582A22140F6100B33025 /* UIViewController+Helpers.swift */,
-				47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
+				47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */,
 				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,

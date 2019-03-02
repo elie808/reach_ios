@@ -1329,7 +1329,7 @@
                 <viewControllerPlaceholder storyboardName="Training" id="YnN-8E-Cs0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUL-L2-6Z6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3040.8000000000002" y="-3070.6146926536735"/>
+            <point key="canvasLocation" x="2822" y="-2605"/>
         </scene>
     </scenes>
     <resources>
