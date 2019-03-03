@@ -22,6 +22,7 @@ struct NetworkingConstants {
     
     private struct News {
         static let allNews = "static/news"
+        static let newsDetails = "static/news/"
     }
     
     private struct Static {
@@ -43,6 +44,8 @@ struct NetworkingConstants {
     static let allCategories = Domains.baseURL + Training.allCategories
     static let trainingCategory = Domains.baseURL + Training.allCategories
     static let allNews = Domains.baseURL + News.allNews
+    static let newsDetails = Domains.baseURL + News.newsDetails
+    
 }
 
 extension URL {
