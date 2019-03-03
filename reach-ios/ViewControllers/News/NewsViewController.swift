@@ -14,14 +14,6 @@ struct NewsItem : Codable {
     let date : Double
 }
 
-//{
-//    "image": "http://reach.xtnd.io/cms/www/images/news/lenovo-yoga-c630-wos-laptop-012019-01-29-03-03-04.jpg",
-//    "date": 1548633600,
-//    "id": 6,
-//    "name": "HELP YOUR CUSTOMER TO CHOOSE A DREAM LENOVO LAPTOP",
-//    "description": "<p><a title=\"LEARN MORE\" href=\"https://www.lenovo.com/ae/en/laptops/c/Laptops\">LEARN MORE</a></p>"
-//},
-
 class NewsViewController: UIViewController {
 
     // MARK: - Outlets
@@ -36,11 +28,7 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        dataSource.data = [NewsItem(imageName: "dummy_pdf", title: "Love to Dance", date: "June 16 2018", description: "Lorem Ipsum is placeholder text commonly the graphic."),
-//        NewsItem(imageName: "dummy_pdf", title: "Lorem ipsum dolor sit amet consectetur", date: "June 16 2018", description: "Lorem Ipsum is placeholder text commonly the graphic."),
-//        NewsItem(imageName: "dummy_pdf", title: "Love to Dance", date: "June 16 2018", description: "Lorem Ipsum is placeholder text commonly the graphic. Lorem Ipsum is placeholder text commonly the graphic. Lorem Ipsum is placeholder text commonly the graphic."),]
-        
+
         collectionView.dataSource = dataSource
         
         let trainingList = Resource<[NewsItem]>(get: URL(string:NetworkingConstants.allNews)!)
@@ -54,6 +42,28 @@ class NewsViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
 
+        switch segue.identifier {
+        
+        case Segue.NewsList.toNewsDetails:
+            if let newsItem = sender {
+                if newsItem is NewsItem {
+                    let vc : NewsDetailsViewController = segue.destination as! NewsDetailsViewController
+                    vc.newsItemID = (newsItem as! NewsItem).id
+                    
+                }
+            }
+
+        default: return
+        }
+        
+    }
+}
+
+extension NewsViewController : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let newsItem = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.NewsList.toNewsDetails, sender: newsItem)
+    }
 }

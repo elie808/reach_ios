@@ -15,5 +15,16 @@ extension String {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
-    
+ 
+    func convertHTMLToString() -> NSAttributedString {
+        
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        
+//        let fontAttribute = [ NSAttributedString.Key.font: UIFont(name: "SF Mono", size: 14.0)]
+        
+        let htmlData = NSString(string: self).data(using: String.Encoding.unicode.rawValue)
+        let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+        
+        return attributedString
+    }
 }

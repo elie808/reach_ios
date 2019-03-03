@@ -32,16 +32,16 @@ struct Segue {
         static let toFeedbackForm = "BrandFeedbackToFeedbackFormVC"
     }
     
+    struct NewsList {
+        static let toNewsDetails = "NewsListToNewsDetailsVC"
+    }
+    
     struct ProductList {
         static let toReportSale = "ProductListToReportSaleVC"
     }
     
     struct PromotionsList {
         static let toPromotionPDF = "PromotionsListToPromotionPDFVC"
-    }
-    
-    struct QRScanner {
-        static let toReportSale = "QRScannerToReportSaleVC"
     }
     
     struct ReportSale {
@@ -57,5 +57,9 @@ struct Segue {
     struct TrainingCategory {
         static let toPDF = "TrainingByCategoryToPDF"
         static let toVideo = "TrainingByCategoryToVideo"
+    }
+    
+    struct QRScanner {
+        static let toReportSale = "QRScannerToReportSaleVC"
     }
 }

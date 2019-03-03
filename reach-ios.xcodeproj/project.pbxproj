@@ -20,6 +20,7 @@
 		47670A90222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */; };
 		47670A92222A1E7C008EEF6D /* TrainingByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */; };
 		47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A93222A42C8008EEF6D /* Date+Helpers.swift */; };
+		47670A96222A4F19008EEF6D /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A95222A4F19008EEF6D /* NewsDetailsViewController.swift */; };
 		47784EFB221F0A20000FD327 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47784EFA221F0A20000FD327 /* Login.storyboard */; };
 		47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47784F00221F151B000FD327 /* LoginTableViewController.swift */; };
 		4783580C2214058D00B33025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783580B2214058D00B33025 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryTableViewController.swift; sourceTree = "<group>"; };
 		47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryCell.swift; sourceTree = "<group>"; };
 		47670A93222A42C8008EEF6D /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		47670A95222A4F19008EEF6D /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		47784EFA221F0A20000FD327 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		47784F00221F151B000FD327 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		478358082214058D00B33025 /* reach-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reach-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,14 @@
 			path = "Training By Category";
 			sourceTree = "<group>";
 		};
+		47670A97222A4F23008EEF6D /* News Details */ = {
+			isa = PBXGroup;
+			children = (
+				47670A95222A4F19008EEF6D /* NewsDetailsViewController.swift */,
+			);
+			path = "News Details";
+			sourceTree = "<group>";
+		};
 		47784EFE221F14C2000FD327 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 				478C9002221C4F4500245CF1 /* Home */,
 				47784EFE221F14C2000FD327 /* Login */,
 				47CCC1F22228CD77005DE571 /* Register */,
+				47670A97222A4F23008EEF6D /* News Details */,
 				47ADFF6B222355F900AEFBD7 /* News */,
 				478C9005221C4F6C00245CF1 /* Performance */,
 				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
@@ -657,6 +668,7 @@
 				47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				47ADFF6A222355F000AEFBD7 /* NewsViewController.swift in Sources */,
+				47670A96222A4F19008EEF6D /* NewsDetailsViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				47CCC1F12228CC7F005DE571 /* BrandsTableViewController.swift in Sources */,
 				47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */,
