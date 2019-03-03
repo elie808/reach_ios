@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 enum HttpMethod<Body> {
     case get
@@ -39,11 +40,15 @@ struct HttpStatus {
 extension URLSession {
     
     func load<A>(_ resource: Resource<A>, completion: @escaping (A?, HttpStatus) -> ()) {
+    
+        SVProgressHUD.show()
         
         dataTask(with: resource.urlRequest) { (data, response, error) in
             
             DispatchQueue.main.async {
             
+                SVProgressHUD.dismiss()
+                
                 if let resp : HTTPURLResponse = response as? HTTPURLResponse {
                     completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
                 } else {
