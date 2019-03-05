@@ -70,7 +70,7 @@
                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-1K-9da">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-1K-9da">
                                             <rect key="frame" x="16" y="52" width="343" height="47"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -150,19 +150,130 @@
             <point key="canvasLocation" x="145" y="1021"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="b64-zG-xA0">
+        <scene sceneID="She-ZJ-dgA">
             <objects>
-                <viewController title="Settings" extendedLayoutIncludesOpaqueBars="YES" id="0lV-f1-7q4" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UGI-dm-76l">
+                <tableViewController storyboardIdentifier="SettingsVC" title="Settings" extendedLayoutIncludesOpaqueBars="YES" id="8je-p1-Ddf" customClass="SettingsTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="35n-XT-Sf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.19478169475045126" blue="0.41737392444559029" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="ORB-mr-IyL"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MfP-zP-m7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="AGi-ZE-HC6">
+                            <rect key="frame" x="0.0" y="130" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="sFP-fC-mBi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="65" id="J4k-N9-NL3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J4k-N9-NL3" id="8fl-OV-QD2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9Xx-ho-8VL">
+                                                    <rect key="frame" x="16" y="8" width="343" height="48.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNotification" translatesAutoresizingMaskIntoConstraints="NO" id="lpq-rZ-Oou">
+                                                            <rect key="frame" x="0.0" y="11" width="27" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="dUh-Mk-gI1"/>
+                                                                <constraint firstAttribute="width" constant="27" id="roX-zX-aNQ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UU-kZ-48P">
+                                                            <rect key="frame" x="43" y="14" width="235" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-ZU-uPF">
+                                                            <rect key="frame" x="294" y="9" width="51" height="31"/>
+                                                            <color key="onTintColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Xx-ho-8VL" firstAttribute="leading" secondItem="8fl-OV-QD2" secondAttribute="leading" constant="16" id="MOe-YA-cku"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Xx-ho-8VL" secondAttribute="bottom" constant="8" id="b4l-ak-eoV"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Xx-ho-8VL" secondAttribute="trailing" constant="16" id="ijd-Po-3TR"/>
+                                                <constraint firstItem="9Xx-ho-8VL" firstAttribute="top" secondItem="8fl-OV-QD2" secondAttribute="top" constant="8" id="tau-cA-HG5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="yqn-7U-fma">
+                                        <rect key="frame" x="0.0" y="65" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yqn-7U-fma" id="Kwz-AC-1dL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mEf-F2-Eeb">
+                                                    <rect key="frame" x="16" y="8" width="343" height="48.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLogout" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-vQ-Qxp">
+                                                            <rect key="frame" x="0.0" y="11" width="27" height="27"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="27" id="Zur-FR-L3q"/>
+                                                                <constraint firstAttribute="height" constant="27" id="jUG-rp-aMh"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ9-24-wOe">
+                                                            <rect key="frame" x="43" y="14" width="300" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mEf-F2-Eeb" firstAttribute="top" secondItem="Kwz-AC-1dL" secondAttribute="top" constant="8" id="7NK-EE-zPx"/>
+                                                <constraint firstAttribute="trailing" secondItem="mEf-F2-Eeb" secondAttribute="trailing" constant="16" id="TYo-8o-Mku"/>
+                                                <constraint firstAttribute="bottom" secondItem="mEf-F2-Eeb" secondAttribute="bottom" constant="8" id="gjh-4Y-Ps9"/>
+                                                <constraint firstItem="mEf-F2-Eeb" firstAttribute="leading" secondItem="Kwz-AC-1dL" secondAttribute="leading" constant="16" id="j7h-5o-5eH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="a4W-a8-Jb0" appends="YES" id="HUo-2H-feP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="8je-p1-Ddf" id="aDF-RN-KIg"/>
+                            <outlet property="delegate" destination="8je-p1-Ddf" id="fbw-4r-aw7"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <segue destination="1e9-Mo-t4w" kind="presentation" identifier="SettingsToLoginVC" id="9tB-CM-hx0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCo-na-EM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a4W-a8-Jb0">
+                    <connections>
+                        <action selector="didTapLogout:" destination="8je-p1-Ddf" id="35O-V9-6Lh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="145" y="2455"/>
+            <point key="canvasLocation" x="144.80000000000001" y="2449.9250374812596"/>
+        </scene>
+        <!--LoginNav-->
+        <scene sceneID="tlx-iU-qks">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginNav" id="1e9-Mo-t4w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQg-25-7Ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="2449"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconLogout" width="80" height="80"/>
+        <image name="iconNotification" width="80" height="80"/>
+    </resources>
 </document>

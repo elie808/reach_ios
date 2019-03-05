@@ -69,6 +69,8 @@
 		47F29F3C222E06BA0061E8E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */; };
 		47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F3E222E396E0061E8E2 /* FAQTableViewController.swift */; };
 		47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F41222E49640061E8E2 /* FAQCell.swift */; };
+		47F29F44222E5AB80061E8E2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F43222E5AB80061E8E2 /* PDFViewController.swift */; };
+		47F29F47222E66DA0061E8E2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F46222E66DA0061E8E2 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		47F29F3E222E396E0061E8E2 /* FAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
 		47F29F41222E49640061E8E2 /* FAQCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
+		47F29F43222E5AB80061E8E2 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		47F29F46222E66DA0061E8E2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,10 +261,12 @@
 				47CCC1F22228CD77005DE571 /* Register */,
 				47ADFF6B222355F900AEFBD7 /* News */,
 				47670A97222A4F23008EEF6D /* News Details */,
+				47F29F45222E5ABF0061E8E2 /* PDF Viewer */,
 				478C9005221C4F6C00245CF1 /* Performance */,
 				47ADFF632223026000AEFBD7 /* Profile */,
 				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
 				478C900C221CCFEF00245CF1 /* Report Sale */,
+				47F29F48222E677F0061E8E2 /* Settings */,
 				47F29F3D222E17840061E8E2 /* Side Menu */,
 				47ADFF66222343D800AEFBD7 /* Training */,
 			);
@@ -527,6 +533,22 @@
 			path = FAQ;
 			sourceTree = "<group>";
 		};
+		47F29F45222E5ABF0061E8E2 /* PDF Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				47F29F43222E5AB80061E8E2 /* PDFViewController.swift */,
+			);
+			path = "PDF Viewer";
+			sourceTree = "<group>";
+		};
+		47F29F48222E677F0061E8E2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				47F29F46222E66DA0061E8E2 /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,6 +716,7 @@
 				47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */,
 				47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
+				47F29F47222E66DA0061E8E2 /* SettingsTableViewController.swift in Sources */,
 				47ADFF6A222355F000AEFBD7 /* NewsViewController.swift in Sources */,
 				47670A96222A4F19008EEF6D /* NewsDetailsViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
@@ -719,6 +742,7 @@
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
+				47F29F44222E5AB80061E8E2 /* PDFViewController.swift in Sources */,
 				47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */,
 				47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,
