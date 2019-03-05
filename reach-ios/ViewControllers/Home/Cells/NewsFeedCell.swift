@@ -16,9 +16,9 @@ class NewsFeedCell: GenericCollectionCell<NewsFeedItem> {
     
     override var model : NewsFeedItem! {
         didSet {
-            textLabel?.text = model.title
-            subtitleLabel?.text = model.subtitle
-            imageView.image = UIImage(named: model.imageName)
+//            textLabel?.text = model.title
+            subtitleLabel?.text = model.title
+            imageView.urlSetImage(model.image)
         }
     }
 }

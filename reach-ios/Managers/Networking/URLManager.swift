@@ -13,7 +13,8 @@ struct NetworkingConstants {
     // MARK: - Routes
     
     private struct Domains {
-        static let baseURL = "http://18.185.199.168:3000/"
+//        static let baseURL = "http://18.185.199.168:3000/"
+        static let baseURL = "http://18.197.90.144:3000/"
         static let cmsBaseURL = "http://reach.xtnd.io/cms/www/"
     }
     
@@ -23,12 +24,12 @@ struct NetworkingConstants {
     }
     
     private struct Static {
+        static let about = "static/about"
         static let faq   = "static/faq"
         static let terms = "static/terms"
-        static let contact = "static/contact"
-        static let about = "static/about"
         static let privacy = "static/privacy"
         static let banners = "static/banners"
+        static let contact = "static/contact"
     }
     
     private struct Training {
@@ -41,13 +42,13 @@ struct NetworkingConstants {
     static let cmsBaseURL : URL! = URL(string: Domains.cmsBaseURL)
     
     static let about = Domains.baseURL + Static.about
-    static let termsAndConditions = Domains.baseURL + Static.terms
+    static let banners = Domains.baseURL + Static.banners
     static let faqs = Domains.baseURL + Static.faq
     static let allCategories = Domains.baseURL + Training.allCategories
-    static let trainingCategory = Domains.baseURL + Training.allCategories
     static let allNews = Domains.baseURL + News.allNews
     static let newsDetails = Domains.baseURL + News.newsDetails
-    
+    static let termsAndConditions = Domains.baseURL + Static.terms
+    static let trainingCategory = Domains.baseURL + Training.allCategories
     
     // MARK: - Helpers
     

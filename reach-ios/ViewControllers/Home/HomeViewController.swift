@@ -12,8 +12,9 @@ struct Person {
     let firstName, lastName : String
 }
 
-struct NewsFeedItem {
-    let imageName, title, subtitle : String
+struct NewsFeedItem : Codable {
+    let image, title, link : String
+    let id : Int
 }
 
 class HomeViewController: UIViewController {
@@ -37,8 +38,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionDataSource.data = [NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM"), NewsFeedItem(imageName: "dummy_promotion2", title: "Microsoft", subtitle: "Dynamics CRM") ]
-        collectionView.dataSource = collectionDataSource
+       initializeViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        profilePicture.animateProgress()
+        
+        let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
+        
+        URLSession.shared.load(banners) { (bannerItems, status) in
+            self.collectionDataSource.data = bannerItems!
+            self.collectionView.reloadData()
+        }
+    }
+
+    // MARK: - Helpers
+    
+    func initializeViews() {
         
         sideMenuDataSource.data = [SideMenuItem(name: "Home", image: "SideMenuHome"), SideMenuItem(name: "Help", image: "SideMenuHelp"), SideMenuItem(name: "FAQs", image: "SideMenuFAQ"), SideMenuItem(name: "About Us", image: "SideMenuAbout"), SideMenuItem(name: "Contact Us", image: "SideMenuContact"), SideMenuItem(name: "Terms & Conditions", image: "SideMenuTerms"), SideMenuItem(name: "Settings", image: "SideMenuSettings")]
         
@@ -47,14 +65,9 @@ class HomeViewController: UIViewController {
         sideMenuTableView.delegate = self
         
         self.navigationItem.titleView = searchBar
+        
+        collectionView.dataSource = collectionDataSource
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        profilePicture.animateProgress()
-    }
-
-    // MARK: - Helpers
     
     /// Convenience method to simplify and avoid using Storyboard segues
     func pushFromSideMenu(at index: Int) {
@@ -106,7 +119,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let bannerItem = collectionDataSource.data[indexPath.row]
+
+        guard let url = URL(string: bannerItem.link) else { return }
+        UIApplication.shared.open(url)
     }
 }
 
