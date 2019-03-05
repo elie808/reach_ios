@@ -66,6 +66,7 @@
 		47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */; };
 		47ED4C512220CEAB00D7EA09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */; };
 		47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */; };
+		47F29F3C222E06BA0061E8E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingMenuBar.swift; sourceTree = "<group>"; };
 		47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewController.swift; sourceTree = "<group>"; };
+		47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,10 +319,11 @@
 			isa = PBXGroup;
 			children = (
 				478C900A221CCF3500245CF1 /* Home.storyboard */,
-				47CCC1FC2228E4A1005DE571 /* Training.storyboard */,
 				478358142214058F00B33025 /* LaunchScreen.storyboard */,
 				47784EFA221F0A20000FD327 /* Login.storyboard */,
 				4783580F2214058D00B33025 /* Main.storyboard */,
+				47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */,
+				47CCC1FC2228E4A1005DE571 /* Training.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				478358112214058D00B33025 /* Main.storyboard in Resources */,
 				47784EFB221F0A20000FD327 /* Login.storyboard in Resources */,
 				478C900B221CCF3500245CF1 /* Home.storyboard in Resources */,
+				47F29F3C222E06BA0061E8E2 /* SideMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

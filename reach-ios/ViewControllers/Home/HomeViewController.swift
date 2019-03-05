@@ -53,12 +53,44 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         profilePicture.animateProgress()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        self.navigationItem.titleView = nil
-    }
 
+    // MARK: - Helpers
+    
+    /// Convenience method to simplify and avoid using Storyboard segues
+    func pushFromSideMenu(at index: Int) {
+        
+        var vcToPush = UIViewController()
+        
+        switch index {
+            
+        case 0: return
+            
+        case 1: // Help
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.Help.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+
+        case 2: // FAQ
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.FAQs.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            
+        case 3: // About
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.About.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            
+        case 4: // Contact
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.Contact.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            
+        case 5: // T&C
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.TermsAndConditions.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            
+        case 6: // Settings
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.Settings.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            
+        default: return
+        }
+        
+        if let navigator = self.navigationController {
+            navigator.pushViewController(vcToPush, animated: true)
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func didTapHamburger(_ sender: UIBarButtonItem) {
@@ -84,8 +116,7 @@ extension HomeViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         sideMenu.dismissMenu {
-            
-            print(self.sideMenuDataSource.data[indexPath.row].name)
+            self.pushFromSideMenu(at: indexPath.row)
         }
     }
     
