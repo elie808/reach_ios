@@ -51,8 +51,7 @@ class NewsDetailsViewController: UIViewController {
 
                 self.imageView.urlSetImage(newsItem?.image, #imageLiteral(resourceName: "LoginLogo"))
                 self.titleLabel.text = newsItem?.name
-//                self.dateLabel.text = Date(timeIntervalSince1970: (newsItem?.date)!).toString(withFormat: .DateFull)
-//                print(newsItem?.description.convertHTMLToString())
+                self.dateLabel.text = Date(timeIntervalSince1970: (newsItem?.date)!).toString(withFormat: .DateFull)
                 self.textView.attributedText = newsItem?.description.convertHTMLToString()
             }
         }

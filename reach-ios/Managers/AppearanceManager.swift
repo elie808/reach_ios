@@ -33,13 +33,13 @@ final class UIAppearanceManager {
 //        UITabBar.appearance().unselectedItemTintColor = UIColor.tabItemTitleTint
         
         // UINavigationBar Appearance
-//        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = UIColor.reachGreen
 //        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-//        UINavigationBar.appearance().barTintColor = UIColor.reachBlack
-//        UINavigationBar.appearance().isTranslucent = false
-//        UINavigationBar.appearance().barStyle = .black
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-//        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = false
         
         // SVProgressHUD Appearance
         SVProgressHUD.setDefaultStyle(.custom)
