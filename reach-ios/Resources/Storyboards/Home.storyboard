@@ -420,7 +420,7 @@
         <!--My Performance-->
         <scene sceneID="teA-Lc-0Uo">
             <objects>
-                <viewController title="My Performance" id="vwN-7R-iG0" customClass="PerformanceViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="My Performance" extendedLayoutIncludesOpaqueBars="YES" id="vwN-7R-iG0" customClass="PerformanceViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Fs-Km-fPD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -741,7 +741,7 @@
         <!--Promotions-->
         <scene sceneID="D7T-Th-ua7">
             <objects>
-                <viewController title="Promotions" id="Udn-Qc-Lhw" customClass="PromotionsViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Promotions" extendedLayoutIncludesOpaqueBars="YES" id="Udn-Qc-Lhw" customClass="PromotionsViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z0y-vN-xUF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1241,7 +1241,7 @@
         <!--Brand Feedback-->
         <scene sceneID="3RX-SR-ib9">
             <objects>
-                <viewController title="Brand Feedback" automaticallyAdjustsScrollViewInsets="NO" id="LJD-jz-936" customClass="BrandFeedbackViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Brand Feedback" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="LJD-jz-936" customClass="BrandFeedbackViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2H-Sv-Yz7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
