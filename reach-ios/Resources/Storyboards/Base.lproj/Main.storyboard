@@ -1279,7 +1279,7 @@
         <image name="TabNews_off" width="23.5" height="23.5"/>
         <image name="TabProfile" width="23.5" height="23.5"/>
         <image name="TabProfile_off" width="23.5" height="23.5"/>
-        <image name="TabReport" width="30" height="30"/>
+        <image name="TabReport" width="113.68421173095703" height="113.68421173095703"/>
         <image name="camera_frame" width="354" height="344"/>
         <image name="down_arrow" width="10" height="5"/>
         <image name="dummy_profile_pic" width="634" height="490"/>

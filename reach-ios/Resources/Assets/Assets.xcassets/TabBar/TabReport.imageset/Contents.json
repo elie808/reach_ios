@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "TabReport.png",
+      "filename" : "white reach arrow 30 x 30.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TabReport@2x.png",
+      "filename" : "white reach arrow 60 x 60.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TabReport@3x.png",
+      "filename" : "white reach arrow 90 x 90.png",
       "scale" : "3x"
     }
   ],

@@ -519,16 +519,16 @@
                                                     <rect key="frame" x="16" y="11" width="52" height="52"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="k8r-X5-KB4">
-                                                            <rect key="frame" x="7.5" y="9.5" width="37.5" height="32.5"/>
+                                                            <rect key="frame" x="3.5" y="9.5" width="45" height="32.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7t-bS-AYE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="37.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7t-bS-AYE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="17"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2Q-5l-ZRY">
-                                                                    <rect key="frame" x="0.0" y="18" width="37.5" height="14.5"/>
+                                                                    <rect key="frame" x="0.0" y="18" width="45" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -727,6 +727,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fjJ-21-ZHv"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="approvedPointsLabel" destination="tmS-DK-WC0" id="83T-p8-dhW"/>
                         <outlet property="pendingPointsLabel" destination="8Yh-Sa-2sd" id="2OW-Z2-L59"/>

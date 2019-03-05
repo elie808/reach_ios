@@ -122,17 +122,34 @@
         <!--About-->
         <scene sceneID="jlG-lX-PMH">
             <objects>
-                <viewController storyboardIdentifier="AboutVC" title="About" extendedLayoutIncludesOpaqueBars="YES" id="bAv-Ya-dhN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVC" title="About" extendedLayoutIncludesOpaqueBars="YES" id="bAv-Ya-dhN" customClass="AboutViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84E-fR-gCk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtE-Fn-VeG">
+                                <rect key="frame" x="16" y="20" width="343" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u59-a5-Xhf" firstAttribute="bottom" secondItem="XtE-Fn-VeG" secondAttribute="bottom" constant="8" id="8SS-Ru-2VK"/>
+                            <constraint firstItem="u59-a5-Xhf" firstAttribute="trailing" secondItem="XtE-Fn-VeG" secondAttribute="trailing" constant="16" id="fCM-Oc-3yl"/>
+                            <constraint firstItem="XtE-Fn-VeG" firstAttribute="top" secondItem="u59-a5-Xhf" secondAttribute="top" id="yZ0-Mx-FOS"/>
+                            <constraint firstItem="XtE-Fn-VeG" firstAttribute="leading" secondItem="u59-a5-Xhf" secondAttribute="leading" constant="16" id="yql-Qp-6kq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u59-a5-Xhf"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="XtE-Fn-VeG" id="YKW-o4-R8X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGy-xU-JKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="299"/>
+            <point key="canvasLocation" x="144.80000000000001" y="298.2008995502249"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="A6D-8J-JrV">
