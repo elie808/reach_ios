@@ -43,20 +43,66 @@
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="1735.6821589205399"/>
         </scene>
-        <!--FAQ-->
-        <scene sceneID="7tk-Wr-fUt">
+        <!--FAQs-->
+        <scene sceneID="RmH-ZF-spf">
             <objects>
-                <viewController storyboardIdentifier="FaqVC" title="FAQ" extendedLayoutIncludesOpaqueBars="YES" id="M5Y-78-hyP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Yf-da-GJd">
+                <tableViewController storyboardIdentifier="FaqVC" title="FAQs" extendedLayoutIncludesOpaqueBars="YES" id="ic6-SR-rLP" customClass="FAQTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PuU-HZ-B3x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="QFw-d4-fb7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DXG-dW-2Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="dDg-Ic-nnC">
+                            <rect key="frame" x="0.0" y="138" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tableCellID" rowHeight="110" id="4bq-cT-0YI" customClass="FAQCell" customModule="reach_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4bq-cT-0YI" id="KMN-NQ-h0Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-vX-aKd">
+                                            <rect key="frame" x="16" y="27" width="343" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdd-1K-9da">
+                                            <rect key="frame" x="16" y="52" width="343" height="47"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qdd-1K-9da" firstAttribute="trailing" secondItem="KMN-NQ-h0Y" secondAttribute="trailingMargin" id="HN4-Nz-ZaE"/>
+                                        <constraint firstItem="uaa-vX-aKd" firstAttribute="trailing" secondItem="KMN-NQ-h0Y" secondAttribute="trailingMargin" id="PCF-Jh-HTt"/>
+                                        <constraint firstItem="qdd-1K-9da" firstAttribute="leading" secondItem="KMN-NQ-h0Y" secondAttribute="leadingMargin" id="Se4-Ax-FIR"/>
+                                        <constraint firstItem="qdd-1K-9da" firstAttribute="top" secondItem="uaa-vX-aKd" secondAttribute="bottom" constant="8" id="aFo-5K-2Qe"/>
+                                        <constraint firstItem="uaa-vX-aKd" firstAttribute="leading" secondItem="KMN-NQ-h0Y" secondAttribute="leadingMargin" id="aaP-lO-PPc"/>
+                                        <constraint firstItem="uaa-vX-aKd" firstAttribute="top" secondItem="KMN-NQ-h0Y" secondAttribute="topMargin" constant="16" id="p80-Uu-Yii"/>
+                                        <constraint firstItem="qdd-1K-9da" firstAttribute="bottom" secondItem="KMN-NQ-h0Y" secondAttribute="bottomMargin" id="wyP-W1-hFR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answerTextView" destination="qdd-1K-9da" id="xlE-xI-JNg"/>
+                                    <outlet property="questionLabel" destination="uaa-vX-aKd" id="Vg0-Mn-oEZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ic6-SR-rLP" id="pFo-yf-4E1"/>
+                            <outlet property="delegate" destination="ic6-SR-rLP" id="VQ1-pf-8qQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEA-hX-rbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="-371"/>
+            <point key="canvasLocation" x="144.80000000000001" y="-382.75862068965517"/>
         </scene>
         <!--Help-->
         <scene sceneID="OyK-UK-8Eq">

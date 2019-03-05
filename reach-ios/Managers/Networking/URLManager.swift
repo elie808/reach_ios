@@ -41,6 +41,7 @@ struct NetworkingConstants {
     static let cmsBaseURL : URL! = URL(string: Domains.cmsBaseURL)
     
     static let termsAndConditions = Domains.baseURL + Static.terms
+    static let faqs = Domains.baseURL + Static.faq
     static let allCategories = Domains.baseURL + Training.allCategories
     static let trainingCategory = Domains.baseURL + Training.allCategories
     static let allNews = Domains.baseURL + News.allNews

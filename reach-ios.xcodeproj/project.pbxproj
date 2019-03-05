@@ -67,6 +67,8 @@
 		47ED4C512220CEAB00D7EA09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */; };
 		47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */; };
 		47F29F3C222E06BA0061E8E2 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */; };
+		47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F3E222E396E0061E8E2 /* FAQTableViewController.swift */; };
+		47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F29F41222E49640061E8E2 /* FAQCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,8 @@
 		47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewController.swift; sourceTree = "<group>"; };
 		47F29F3B222E06BA0061E8E2 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		47F29F3E222E396E0061E8E2 /* FAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
+		47F29F41222E49640061E8E2 /* FAQCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
 		641B5CB5B77FCC6338382EC7 /* Pods-reach-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.release.xcconfig"; sourceTree = "<group>"; };
 		86B60EF371E49B4F80C43634 /* Pods-reach-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reach-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reach-ios/Pods-reach-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C29E4B4A77B4AD88EE5682AB /* Pods_reach_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reach_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				47CCC451221E126C001FE2D5 /* Daily Report */,
+				47F29F40222E39730061E8E2 /* FAQ */,
 				47784EFF221F14F2000FD327 /* Feedback */,
 				478C9002221C4F4500245CF1 /* Home */,
 				47784EFE221F14C2000FD327 /* Login */,
@@ -513,6 +518,15 @@
 			path = "Side Menu";
 			sourceTree = "<group>";
 		};
+		47F29F40222E39730061E8E2 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				47F29F3E222E396E0061E8E2 /* FAQTableViewController.swift */,
+				47F29F41222E49640061E8E2 /* FAQCell.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +684,7 @@
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
 				47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
+				47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */,
@@ -705,6 +720,7 @@
 				47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
 				47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */,
+				47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
 				47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */,
