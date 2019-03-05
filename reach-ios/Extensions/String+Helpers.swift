@@ -15,14 +15,31 @@ extension String {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
+    
+    // MARK: - HTML
+    
+    /// Produce a CSS formatting string to append to any HTML text that needs formatting
+    static func formatHTML(size:CGFloat) -> String {
+        
+        let postFont = UIFont.systemFont(ofSize: size)
+        
+        // Additional formatting to <p> tag
+//        let paragraphStyle = "p{font-family: '\(String(describing: postFont.fontName))'; font-size: \(String(describing: postFont.pointSize)); color : \(String(describing: UIColor.red.toHex!))}"
+        
+        let body = "body{ font-family:'\(String(describing: postFont.fontName))'; font-size:\(String(describing: postFont.pointSize)); color: \(String(describing: UIColor.reachGray.toHex!)) }"
+
+        let formattingString = "<style>\(body)</style>"
+        
+        return formattingString
+    }
  
-    func convertHTMLToString() -> NSAttributedString {
+    func convertHTMLToString(withFormatting formatting:String? = "") -> NSAttributedString {
         
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
         
-//        let fontAttribute = [ NSAttributedString.Key.font: UIFont(name: "SF Mono", size: 14.0)]
-        
-        let htmlData = NSString(string: self).data(using: String.Encoding.unicode.rawValue)
+        let formatedString = formatting! + self
+
+        let htmlData = NSString(string: formatedString).data(using: String.Encoding.unicode.rawValue)
         let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
         
         return attributedString
