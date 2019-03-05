@@ -250,12 +250,13 @@
 				478C9002221C4F4500245CF1 /* Home */,
 				47784EFE221F14C2000FD327 /* Login */,
 				47CCC1F22228CD77005DE571 /* Register */,
-				47670A97222A4F23008EEF6D /* News Details */,
 				47ADFF6B222355F900AEFBD7 /* News */,
+				47670A97222A4F23008EEF6D /* News Details */,
 				478C9005221C4F6C00245CF1 /* Performance */,
+				47ADFF632223026000AEFBD7 /* Profile */,
 				47ADFF5D2222A74B00AEFBD7 /* Promotions */,
 				478C900C221CCFEF00245CF1 /* Report Sale */,
-				47ADFF632223026000AEFBD7 /* Profile */,
+				47F29F3D222E17840061E8E2 /* Side Menu */,
 				47ADFF66222343D800AEFBD7 /* Training */,
 			);
 			path = ViewControllers;
@@ -464,7 +465,6 @@
 			children = (
 				47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */,
 				47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */,
-				47CCC1EC22279A97005DE571 /* T&CViewController.swift */,
 			);
 			path = "Personal Info";
 			sourceTree = "<group>";
@@ -503,6 +503,14 @@
 				47CCC452221E139E001FE2D5 /* DailyReportCell.swift */,
 			);
 			path = "Daily Report";
+			sourceTree = "<group>";
+		};
+		47F29F3D222E17840061E8E2 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC1EC22279A97005DE571 /* T&CViewController.swift */,
+			);
+			path = "Side Menu";
 			sourceTree = "<group>";
 		};
 		562F2F89AA6AC1EF3905F9B4 /* Pods */ = {

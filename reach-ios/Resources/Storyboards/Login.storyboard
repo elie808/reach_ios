@@ -534,7 +534,7 @@
             <objects>
                 <tableViewController id="YQY-Hs-01c" customClass="PersonalInfoTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="USx-aD-8W5">
-                        <rect key="frame" x="0.0" y="0.0" width="366" height="543"/>
+                        <rect key="frame" x="0.0" y="0.0" width="366" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="rGw-Az-ruB">
@@ -1019,7 +1019,7 @@
                                                                 <color key="titleColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="GTK-An-fOB" kind="show" id="tf3-7n-KTi"/>
+                                                                <segue destination="FnZ-xU-49p" kind="show" id="eaA-je-pgd"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1042,7 +1042,8 @@
                             <outlet property="delegate" destination="YQY-Hs-01c" id="z9T-iH-mVB"/>
                         </connections>
                     </tableView>
-                    <size key="freeformSize" width="366" height="543"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="366" height="700"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFz-GS-681" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="1aA-is-qkZ">
@@ -1053,6 +1054,14 @@
             </objects>
             <point key="canvasLocation" x="1075" y="1199"/>
         </scene>
+        <!--TAndCVC-->
+        <scene sceneID="O23-mj-2QD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SideMenu" referencedIdentifier="TAndCVC" id="FnZ-xU-49p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3s-X5-JdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="1768"/>
+        </scene>
         <!--Company List Table View Controller-->
         <scene sceneID="oY4-ad-FLt">
             <objects>
@@ -1062,7 +1071,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="r1d-IN-5br">
-                            <rect key="frame" x="0.0" y="0.0" width="357" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -1092,41 +1101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USq-LJ-JUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="1821"/>
-        </scene>
-        <!--Terms & Conditions-->
-        <scene sceneID="86z-cu-p3c">
-            <objects>
-                <viewController title="Terms &amp; Conditions" id="GTK-An-fOB" customClass="T_CViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sXG-XG-zyP">
-                        <rect key="frame" x="0.0" y="0.0" width="366" height="443"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-5x-cmX">
-                                <rect key="frame" x="16" y="16" width="334" height="411"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="VHt-QB-c1i" firstAttribute="bottom" secondItem="M4s-5x-cmX" secondAttribute="bottom" constant="16" id="JJ0-Ak-WSa"/>
-                            <constraint firstItem="M4s-5x-cmX" firstAttribute="top" secondItem="VHt-QB-c1i" secondAttribute="top" constant="16" id="U0q-ie-7cB"/>
-                            <constraint firstItem="VHt-QB-c1i" firstAttribute="trailing" secondItem="M4s-5x-cmX" secondAttribute="trailing" constant="16" id="YwI-2i-Gyd"/>
-                            <constraint firstItem="M4s-5x-cmX" firstAttribute="leading" secondItem="VHt-QB-c1i" secondAttribute="leading" constant="16" id="kKI-hL-sDY"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="VHt-QB-c1i"/>
-                    </view>
-                    <connections>
-                        <outlet property="textView" destination="M4s-5x-cmX" id="yHT-vG-Ixb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3wd-9d-Mjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1554" y="1820"/>
+            <point key="canvasLocation" x="581" y="1882"/>
         </scene>
     </scenes>
     <resources>

@@ -13,22 +13,40 @@
         <!--Terms & Conditions-->
         <scene sceneID="5yg-19-7hO">
             <objects>
-                <viewController storyboardIdentifier="TAndCVC" title="Terms &amp; Conditions" extendedLayoutIncludesOpaqueBars="YES" id="tcV-hn-LWT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TAndCVC" title="Terms &amp; Conditions" extendedLayoutIncludesOpaqueBars="YES" id="tcV-hn-LWT" customClass="T_CViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dN6-Hs-Dfd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-9K-y3K">
+                                <rect key="frame" x="16" y="20" width="343" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IDI-9K-y3K" firstAttribute="leading" secondItem="58X-Y3-Qv9" secondAttribute="leading" constant="16" id="FQN-9s-pgx"/>
+                            <constraint firstItem="58X-Y3-Qv9" firstAttribute="trailing" secondItem="IDI-9K-y3K" secondAttribute="trailing" constant="16" id="Smf-4f-Ck3"/>
+                            <constraint firstItem="58X-Y3-Qv9" firstAttribute="bottom" secondItem="IDI-9K-y3K" secondAttribute="bottom" constant="8" id="rLv-7S-VCf"/>
+                            <constraint firstItem="IDI-9K-y3K" firstAttribute="top" secondItem="58X-Y3-Qv9" secondAttribute="top" id="u4f-5V-71A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="58X-Y3-Qv9"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="IDI-9K-y3K" id="096-uD-3Ff"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIE-cp-zxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="1736"/>
+            <point key="canvasLocation" x="144.80000000000001" y="1735.6821589205399"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="7tk-Wr-fUt">
             <objects>
-                <viewController storyboardIdentifier="FaqVC" title="FAQ" id="M5Y-78-hyP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FaqVC" title="FAQ" extendedLayoutIncludesOpaqueBars="YES" id="M5Y-78-hyP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Yf-da-GJd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +61,7 @@
         <!--Help-->
         <scene sceneID="OyK-UK-8Eq">
             <objects>
-                <viewController storyboardIdentifier="HelpVC" title="Help" id="MC7-yZ-0Z4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpVC" title="Help" extendedLayoutIncludesOpaqueBars="YES" id="MC7-yZ-0Z4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Trf-hY-DsD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +76,7 @@
         <!--About-->
         <scene sceneID="jlG-lX-PMH">
             <objects>
-                <viewController storyboardIdentifier="AboutVC" title="About" id="bAv-Ya-dhN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVC" title="About" extendedLayoutIncludesOpaqueBars="YES" id="bAv-Ya-dhN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84E-fR-gCk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +91,7 @@
         <!--Contact Us-->
         <scene sceneID="A6D-8J-JrV">
             <objects>
-                <viewController storyboardIdentifier="ContactVC" title="Contact Us" id="3gk-VJ-XDX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactVC" title="Contact Us" extendedLayoutIncludesOpaqueBars="YES" id="3gk-VJ-XDX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="poi-Uq-WBS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +106,7 @@
         <!--Settings-->
         <scene sceneID="b64-zG-xA0">
             <objects>
-                <viewController title="Settings" id="0lV-f1-7q4" sceneMemberID="viewController">
+                <viewController title="Settings" extendedLayoutIncludesOpaqueBars="YES" id="0lV-f1-7q4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UGI-dm-76l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
