@@ -49,6 +49,7 @@
 		47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */; };
 		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0128E2226369900F2C305 /* String+Helpers.swift */; };
+		47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */; };
 		47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */; };
 		47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EC22279A97005DE571 /* T&CViewController.swift */; };
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
@@ -118,6 +119,7 @@
 		47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackViewController.swift; sourceTree = "<group>"; };
 		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47B0128E2226369900F2C305 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1EC22279A97005DE571 /* T&CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "T&CViewController.swift"; sourceTree = "<group>"; };
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		4783581D2214081E00B33025 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				47CC223E22317A8200ED9119 /* Contact Us */,
 				47CCC451221E126C001FE2D5 /* Daily Report */,
 				47784EFF221F14F2000FD327 /* Feedback */,
 				478C9002221C4F4500245CF1 /* Home */,
@@ -459,6 +462,14 @@
 				47ADFF6C222359A900AEFBD7 /* NewsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		47CC223E22317A8200ED9119 /* Contact Us */ = {
+			isa = PBXGroup;
+			children = (
+				47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */,
+			);
+			path = "Contact Us";
 			sourceTree = "<group>";
 		};
 		47CCC1F22228CD77005DE571 /* Register */ = {
@@ -709,6 +720,7 @@
 			files = (
 				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
 				47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */,
+				47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */,
 				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,
