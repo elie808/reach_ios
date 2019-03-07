@@ -17,11 +17,14 @@ extension UIImageView {
             self.image = placeholder
             return
         }
-        
+
         var url : URL! = nil
+        
         if stringURL.contains(NetworkingConstants.baseURL.absoluteString) {
             url = URL(string: stringURL)
         } else if stringURL.contains(NetworkingConstants.cmsBaseURL.absoluteString) {
+            url = URL(string: stringURL)
+        } else if stringURL.contains(NetworkingConstants.ressourcesURL.absoluteString) {
             url = URL(string: stringURL)
         } else {
             url = NetworkingConstants.getURL(path: stringURL)
