@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
 import UIKit
 
 struct Resource<A> {
@@ -16,45 +17,19 @@ struct Resource<A> {
 
 extension Resource where A: Decodable {
     
-    /*
-     var request = URLRequest(endpoint: endpoint)
-     
-     #if DEBUG
-     print("--")
-     print("Request URL:")
-     print(endpoint.url)
-     print("--")
-     #endif
-     
-     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-     
-     if AuthenticationManager.isAuthenticated == true {
-     
-     let xDeviceID = Defaults[.xDeviceID]
-     
-     if xDeviceID != nil {
-     request.addValue(xDeviceID!, forHTTPHeaderField: "x-device-id")
-     }
-     
-     let jwtToken = Defaults[.authenticationData]?.token
-     
-     if jwtToken != nil {
-     request.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
-     }
-     
-     } else {
-     
-     if ZKUDID.value() != nil  {
-     let xDeviceUUID = ZKUDID.value()!
-     request.addValue(xDeviceUUID, forHTTPHeaderField: "x-device-uuid")
-     }
-     }
-     */
-    
     // GET
     init(get url: URL) {
         
         self.urlRequest = URLRequest(url: url)
+        
+//        if AuthenticationManager.isAuthenticated == true {
+        
+//            let jwtToken = Defaults[.authenticationData]?.token
+//
+//            if jwtToken != nil {
+//                urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
+//            }
+//        }
         
         self.parse = { data in
             try? JSONDecoder().decode(A.self, from: data)
@@ -65,12 +40,23 @@ extension Resource where A: Decodable {
     init<Body: Encodable>(url: URL, method: HttpMethod<Body>) {
         
         urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         urlRequest.httpMethod = method.method
         
         switch method {
         case .get: () // do nothing
         case .post(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
         }
+        
+//        if AuthenticationManager.isAuthenticated == true {
+//
+//            let jwtToken = Defaults[.authenticationData]?.token
+//
+//            if jwtToken != nil {
+//                self.urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
+//            }
+//        }
         
         self.parse = { data in
             try? JSONDecoder().decode(A.self, from: data)

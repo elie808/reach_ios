@@ -25,6 +25,9 @@ class LoginTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        usernameTextField.text = "devteam1@channelpro.co"
+        passwordTextField.text = "2234118Rr."
     }
     
     // MARK: - Helpers
@@ -62,6 +65,29 @@ class LoginTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func didTapLogin(_ sender: UIButton) {
+        
+        if formValid() == true {
+
+            guard let userName = usernameTextField.text else { return }
+            guard let password = passwordTextField.text else { return }
+
+            let postParameters = [
+                "email" : userName,
+                "password" : password
+            ]
+            
+            let loginAttempt = Resource<AuthenticationData>(url: URL(string:NetworkingConstants.login)!, method: HttpMethod.post(postParameters))
+            
+            URLSession.shared.load(loginAttempt) { (member, status) in
+     
+                if status.status == .Success {
+                    if let returnedMember = member {
+                        AuthenticationManager.persistToUserDefaults(authenticationData: returnedMember)
+                        self.performSegue(withIdentifier: Segue.Login.toMainVC, sender: nil)
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func didTapCreateAccount(_ sender: UIButton) {

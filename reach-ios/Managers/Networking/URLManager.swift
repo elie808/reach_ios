@@ -37,6 +37,7 @@ struct NetworkingConstants {
     }
 
     private struct User {
+        static let login = "members/login"
         static let profile = "members/profile"
     }
     
@@ -47,10 +48,11 @@ struct NetworkingConstants {
     static let cmsBaseURL : URL! = URL(string: Domains.cmsBaseURL)
     
     static let about    = Domains.baseURL + Static.about
-    static let banners  = Domains.baseURL + Static.banners
-    static let faqs     = Domains.baseURL + Static.faq
     static let allCategories = Domains.baseURL + Training.allCategories
     static let allNews  = Domains.baseURL + News.allNews
+    static let banners  = Domains.baseURL + Static.banners
+    static let faqs     = Domains.baseURL + Static.faq
+    static let login     = Domains.baseURL + User.login
     static let newsDetails = Domains.baseURL + News.newsDetails
     static let profile  = Domains.baseURL + User.profile
     static let termsAndConditions = Domains.baseURL + Static.terms

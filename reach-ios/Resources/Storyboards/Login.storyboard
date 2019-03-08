@@ -192,7 +192,6 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="didTapLogin:" destination="MmC-B5-ycb" eventType="touchDown" id="mz7-oq-ZF4"/>
-                                                        <segue destination="cpM-iP-3bZ" kind="showDetail" id="XxU-Bu-lkY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -276,6 +275,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="vYc-Pl-1au" id="vIs-pb-pCy"/>
                         <outlet property="usernameTextField" destination="dpd-al-dcm" id="2Ta-Ld-Ncc"/>
+                        <segue destination="cpM-iP-3bZ" kind="showDetail" identifier="LoginToMainVC" id="Qeh-LN-TGY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAU-6f-azG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,7 +1071,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="r1d-IN-5br">
-                            <rect key="frame" x="0.0" y="0.0" width="357" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>

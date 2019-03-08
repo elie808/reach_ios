@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
             vcToPush = self.instantiate(viewControllerID: ViewIdentifier.About.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
             
         case 4: // Contact
-            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.Contact.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)
+            vcToPush = self.instantiate(viewControllerID: ViewIdentifier.Contact.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UITableViewController.self)
             
         case 5: // T&C
             vcToPush = self.instantiate(viewControllerID: ViewIdentifier.TermsAndConditions.rawValue, storyBoard: UIStoryboard.SideMenu!, type: UIViewController.self)

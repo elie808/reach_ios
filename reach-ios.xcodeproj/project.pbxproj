@@ -52,6 +52,8 @@
 		47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */; };
 		47CC22422232781900ED9119 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22412232781900ED9119 /* HelpViewController.swift */; };
 		47CC224622327B2600ED9119 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC224522327B2600ED9119 /* HelpCell.swift */; };
+		47CC22482232B3BE00ED9119 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22472232B3BE00ED9119 /* User.swift */; };
+		47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22492232B58300ED9119 /* AuthenticationData.swift */; };
 		47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */; };
 		47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EC22279A97005DE571 /* T&CViewController.swift */; };
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
@@ -124,6 +126,8 @@
 		47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
 		47CC22412232781900ED9119 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		47CC224522327B2600ED9119 /* HelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
+		47CC22472232B3BE00ED9119 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		47CC22492232B58300ED9119 /* AuthenticationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationData.swift; sourceTree = "<group>"; };
 		47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1EC22279A97005DE571 /* T&CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "T&CViewController.swift"; sourceTree = "<group>"; };
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 		478358212214084E00B33025 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				47CC22472232B3BE00ED9119 /* User.swift */,
+				47CC22492232B58300ED9119 /* AuthenticationData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -757,6 +763,7 @@
 				47CC224622327B2600ED9119 /* HelpCell.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
+				47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */,
 				47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */,
 				47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
@@ -787,6 +794,7 @@
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
 				4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */,
 				4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */,
+				47CC22482232B3BE00ED9119 /* User.swift in Sources */,
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,

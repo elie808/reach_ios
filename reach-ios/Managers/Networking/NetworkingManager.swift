@@ -29,10 +29,16 @@ struct HttpStatus {
     
     var code : Int = 0
     
-    var message : String {
+    enum message {
+        case Success
+        case Failure
+        case Undefined
+    }
+    
+    var status : HttpStatus.message {
         switch self.code {
-        case 200...300: return "Success"
-        default: return "Undefined"
+        case 200...300: return .Success
+        default: return .Undefined
         }
     }
 }

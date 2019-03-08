@@ -32,6 +32,10 @@ struct Segue {
         static let toFeedbackForm = "BrandFeedbackToFeedbackFormVC"
     }
     
+    struct Login {
+        static let toMainVC = "LoginToMainVC"
+    }
+    
     struct NewsList {
         static let toNewsDetails = "NewsListToNewsDetailsVC"
     }
