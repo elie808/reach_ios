@@ -16,6 +16,7 @@ extension UIColor {
     static let reachGray    = #colorLiteral(red: 0.1333333333, green: 0.1647058824, blue: 0.2078431373, alpha: 1)
     static let reachGreen   = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
     static let reachYellow  = #colorLiteral(red: 0.968627451, green: 0.7803921569, blue: 0.003921568627, alpha: 1)
+    static let reachOrange  = #colorLiteral(red: 0.9882352941, green: 0.5058823529, blue: 0.007843137255, alpha: 1)
     static let reachWhite   = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.9)
 
     // MARK: - Computed Properties

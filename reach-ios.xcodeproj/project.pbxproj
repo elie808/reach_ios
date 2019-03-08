@@ -50,6 +50,8 @@
 		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0128E2226369900F2C305 /* String+Helpers.swift */; };
 		47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */; };
+		47CC22422232781900ED9119 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22412232781900ED9119 /* HelpViewController.swift */; };
+		47CC224622327B2600ED9119 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC224522327B2600ED9119 /* HelpCell.swift */; };
 		47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */; };
 		47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EC22279A97005DE571 /* T&CViewController.swift */; };
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
@@ -120,6 +122,8 @@
 		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47B0128E2226369900F2C305 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
+		47CC22412232781900ED9119 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		47CC224522327B2600ED9119 /* HelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
 		47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1EC22279A97005DE571 /* T&CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "T&CViewController.swift"; sourceTree = "<group>"; };
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +476,23 @@
 			path = "Contact Us";
 			sourceTree = "<group>";
 		};
+		47CC22432232782600ED9119 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				47CC22412232781900ED9119 /* HelpViewController.swift */,
+				47CC224522327B2600ED9119 /* HelpCell.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		47CC224422327AEC00ED9119 /* T&C */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC1EC22279A97005DE571 /* T&CViewController.swift */,
+			);
+			path = "T&C";
+			sourceTree = "<group>";
+		};
 		47CCC1F22228CD77005DE571 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +554,8 @@
 			children = (
 				47F29F4B222E79F40061E8E2 /* About */,
 				47F29F40222E39730061E8E2 /* FAQ */,
-				47CCC1EC22279A97005DE571 /* T&CViewController.swift */,
+				47CC22432232782600ED9119 /* Help */,
+				47CC224422327AEC00ED9119 /* T&C */,
 			);
 			path = "Side Menu";
 			sourceTree = "<group>";
@@ -726,11 +748,13 @@
 				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,
 				47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */,
+				47CC22422232781900ED9119 /* HelpViewController.swift in Sources */,
 				472774712215B86D007B4BBE /* URLManager.swift in Sources */,
 				47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */,
 				47F29F4A222E79EE0061E8E2 /* AboutViewController.swift in Sources */,
 				4712DBCE221B668D00D66D98 /* SideMenu.swift in Sources */,
 				47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */,
+				47CC224622327B2600ED9119 /* HelpCell.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */,
