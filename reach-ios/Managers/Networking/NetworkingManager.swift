@@ -13,6 +13,7 @@ import SVProgressHUD
 enum HttpMethod<Body> {
     case get
     case post(Body)
+    case patch(Body)
 }
 
 extension HttpMethod {
@@ -21,6 +22,7 @@ extension HttpMethod {
         switch self {
         case .get: return "GET"
         case .post: return "POST"
+        case .patch: return "PATCH"
         }
     }
 }

@@ -47,6 +47,7 @@ extension Resource where A: Decodable {
         switch method {
         case .get: () // do nothing
         case .post(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
+        case .patch(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
         }
         
         if AuthenticationManager.isAuthenticated == true {
@@ -61,6 +62,13 @@ extension Resource where A: Decodable {
         self.parse = { data in
             try? JSONDecoder().decode(A.self, from: data)
         }
+        
+        #if DEBUG
+        print("--")
+        print("URL:")
+        print(urlRequest.url)
+        print("--")
+        #endif
     }
 }
 
