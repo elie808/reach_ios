@@ -9,38 +9,15 @@
 import UIKit
 import MessageUI
 
-struct PerformanceItem {
-    let name, item : String
-    let points : Int
-    let status : Bool
+struct Sales : Codable {
+    let sales : [PerformanceItem]
+    let total_approved, total_pending : Int
 }
 
-class PerformanceCell: GenericTableCell<PerformanceItem> {
-    
-    @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var subtitleLabel : UILabel!
-    @IBOutlet weak var pointsLabel : UILabel!
-    @IBOutlet weak var pointsView : UIView!
-    @IBOutlet weak var statusLabel : UILabel!
-    @IBOutlet weak var statusView : UIImageView!
-    
-    override var model : PerformanceItem! {
-        didSet {
-            titleLabel.text = model.name
-            subtitleLabel.text = model.item
-            pointsLabel.text = String(model.points)
-            
-            if model.status == true {
-                statusLabel.text = "Approved"
-                statusLabel.textColor = .reachGreen
-                statusView.image = UIImage(named: "iconGreenTick")
-            } else {
-                statusLabel.text = "Pending"
-                statusLabel.textColor = .gray
-                statusView.image = UIImage(named: "iconGreyArrow")
-            }
-        }
-    }
+struct PerformanceItem : Codable {
+    let promotion, product : String
+    let points : Int
+    let approved : Bool
 }
 
 class PerformanceViewController: UIViewController {
@@ -48,11 +25,13 @@ class PerformanceViewController: UIViewController {
     // MARK: - Properties
     
     var dataSource = GenericTableDataSource<PerformanceCell, PerformanceItem>()
+    var user : User?
     
     // MARK: - Outlets
     
     @IBOutlet weak var profilePicture: ProfilePictureProgressView!
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var pointsLabel : UILabel!
     @IBOutlet weak var pendingPointsLabel : UILabel!
     @IBOutlet weak var approvedPointsLabel : UILabel!
     
@@ -61,14 +40,33 @@ class PerformanceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.data = [PerformanceItem(name: "Summer Deal", item: "Microsoft Surface", points: 200, status: true),
-                           PerformanceItem(name: "PC's Redington Promotion", item: "Office 365", points: 30500, status: false)]
-        tableView.dataSource = dataSource
+        intializeViews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        profilePicture.animateProgress()
+    fileprivate func intializeViews() {
+        
+        let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
+        
+        URLSession.shared.load(profile) { (user, status) in
+            self.profilePicture.profilePicture?.urlSetImage(user?.image)
+            self.profilePicture.totalPoints = (user?.totalApprovedPoints)!
+            self.profilePicture.maxPoints = (user?.maxPoints)!
+            self.profilePicture.animateProgress()
+            self.pointsLabel.text = "\(user?.totalApprovedPoints ?? 0)"
+            
+            self.user = user
+        }
+        
+        let performance = Resource<Sales>(get: URL(string:NetworkingConstants.sales)!)
+        
+        URLSession.shared.load(performance) { (salesObject, status) in
+            self.pendingPointsLabel.text = "\(salesObject?.total_pending ?? 0)"
+            self.approvedPointsLabel.text = "\(salesObject?.total_approved ?? 0)"
+            
+            self.dataSource.data = (salesObject?.sales)!
+            self.tableView.dataSource = self.dataSource
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Actions
@@ -83,16 +81,6 @@ class PerformanceViewController: UIViewController {
 //            showMailError()
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension PerformanceViewController : UITableViewDelegate {
@@ -108,16 +96,19 @@ extension PerformanceViewController : MFMailComposeViewControllerDelegate {
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
         
-        /* //-- EMail Body
-         Name:
-         Email:
-         Organization:
-         Phone:
-         */
+        var emailBody : String = ""
+        if let profile = user {
+            let name  = "Name: " + profile.firstName + " " + (self.user?.lastName)! + "\n"
+            let email = "Email: " + profile.email + "\n"
+            let org   = "Organization: " + profile.organization.name + "\n"
+            let phone = "Phone: " + profile.mobileNumber
+            
+            emailBody = name + email + org + phone
+        }
         
         composeVC.setToRecipients([Constants.reachEmail, Constants.pointsEmail])
         composeVC.setSubject("Redeem points")
-        composeVC.setMessageBody("boyd", isHTML: false)
+        composeVC.setMessageBody(emailBody, isHTML: false)
         
         return composeVC
     }

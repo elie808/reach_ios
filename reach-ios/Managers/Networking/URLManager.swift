@@ -23,6 +23,10 @@ struct NetworkingConstants {
         static let newsDetails = "static/news/"
     }
     
+    private struct Sales {
+        static let sales = "sales/"
+    }
+    
     private struct Static {
         static let about = "static/about"
         static let faq   = "static/faq"
@@ -55,6 +59,7 @@ struct NetworkingConstants {
     static let login     = Domains.baseURL + User.login
     static let newsDetails = Domains.baseURL + News.newsDetails
     static let profile  = Domains.baseURL + User.profile
+    static let sales  = Domains.baseURL + Sales.sales
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
     

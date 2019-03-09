@@ -14,6 +14,7 @@
 		4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746C2215AC0E007B4BBE /* AppearanceManager.swift */; };
 		4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */; };
 		472774712215B86D007B4BBE /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472774702215B86D007B4BBE /* URLManager.swift */; };
+		4741616222340116002E3B9E /* PerformanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741616122340116002E3B9E /* PerformanceCell.swift */; };
 		47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A41221A239B00C9B3D4 /* GenericListView.swift */; };
 		47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A43221A252300C9B3D4 /* HomeViewController.swift */; };
 		47670A8A2229FC27008EEF6D /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */; };
@@ -86,6 +87,7 @@
 		4727746C2215AC0E007B4BBE /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = "reach-ios/Managers/AppearanceManager.swift"; sourceTree = SOURCE_ROOT; };
 		4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		472774702215B86D007B4BBE /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		4741616122340116002E3B9E /* PerformanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceCell.swift; sourceTree = "<group>"; };
 		47421A41221A239B00C9B3D4 /* GenericListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListView.swift; sourceTree = "<group>"; };
 		47421A43221A252300C9B3D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				478C9003221C4F6700245CF1 /* PerformanceViewController.swift */,
+				4741616122340116002E3B9E /* PerformanceCell.swift */,
 			);
 			path = Performance;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */,
+				4741616222340116002E3B9E /* PerformanceCell.swift in Sources */,
 				47CCC1F92228D23D005DE571 /* Ressource.swift in Sources */,
 				47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
