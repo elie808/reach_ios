@@ -28,6 +28,8 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var org : Organization?
+    
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
@@ -46,6 +48,8 @@ class ProfileTableViewController: UITableViewController {
         
         URLSession.shared.load(profile) { (user, status) in
            
+            self.org = (user?.organization)!
+            
             self.profileImageView.urlSetImage(user?.image)
             
             self.firstNameTextfield.text? = user?.firstName ?? ""
@@ -55,7 +59,7 @@ class ProfileTableViewController: UITableViewController {
             self.dobTextField.text? = user?.mobileNumber ?? ""
             self.IAmTextField.text? = user?.gender ?? ""
             self.emailTextField.text? = user?.email ?? ""
-            self.companyTextField.text? = user?.organization.name ?? ""            
+            self.companyTextField.text? = user?.organization.name ?? ""
         }
     }
     
@@ -125,15 +129,26 @@ class ProfileTableViewController: UITableViewController {
         
         if formValid() == true {
             
+            guard let firstName = firstNameTextfield.text else { return }
+            guard let lastName = lastNameTextfield.text else { return }
+            guard let mobile = mobileTextField.text else { return }
+            guard let dob = dobTextField.text else { return }
+            guard let gender = IAmTextField.text else { return }
             
-//            {
-//                "first_name": "Andy",
-//                "last_name": "Abi Haidar",
-//                "mobile_number": "0096170198017",
-//                "date_of_birth": "1995-06-01",
-//                "gender": "Male",
-//                "image": 123,
-//                "organization": 2
+            let postParameters = [
+                "first_name": firstName,
+                "last_name": lastName,
+                "mobile_number": mobile,
+                "date_of_birth": dob,
+                "gender": gender,
+                "image": "123",
+                "organization": "3"//String(self.org!.id)
+                ]
+            
+            let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod.patch(postParameters))
+            
+//            URLSession.shared.load(updateProfile) { (updatedProfile, status) in
+//
 //            }
         }
     }
