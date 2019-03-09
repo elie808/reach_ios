@@ -14,17 +14,19 @@ class ProfileTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var barButton: UIBarButtonItem!
+    @IBOutlet weak var toolbar : UIToolbar!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var firstNameTextfield: SkyFloatingLabelTextField!
+    @IBOutlet weak var lastNameTextfield: SkyFloatingLabelTextField!
     @IBOutlet weak var mobileTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var dobTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var IAmTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var companyTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var typeTextField: SkyFloatingLabelTextField!
+//    @IBOutlet weak var typeTextField: SkyFloatingLabelTextField!
     
     // MARK: - Properties
-    
-    var editingProfile: Bool = false
     
     // MARK: - Views Life Cycle
     
@@ -33,21 +35,28 @@ class ProfileTableViewController: UITableViewController {
         initializeView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     // MARK: - Helpers
     
     func initializeView() {
+
+        self.mobileTextField.inputAccessoryView = self.toolbar
+        self.dobTextField.inputAccessoryView = self.toolbar
         
-        mobileTextField.text? = "test"
-        dobTextField.text? = "sads"
-        emailTextField.text? = ""
-        IAmTextField.text? = ""
-        companyTextField.text? = ""
-        typeTextField.text? = ""
+        let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
+        
+        URLSession.shared.load(profile) { (user, status) in
+           
+            self.profileImageView.urlSetImage(user?.image)
+            
+            self.firstNameTextfield.text? = user?.firstName ?? ""
+            self.lastNameTextfield.text? = user?.lastName ?? ""
+            
+            self.mobileTextField.text? = user?.mobileNumber ?? ""
+            self.dobTextField.text? = user?.mobileNumber ?? ""
+            self.IAmTextField.text? = user?.gender ?? ""
+            self.emailTextField.text? = user?.email ?? ""
+            self.companyTextField.text? = user?.organization.name ?? ""            
+        }
     }
     
     func formValid() -> Bool {
@@ -94,51 +103,38 @@ class ProfileTableViewController: UITableViewController {
             flag = true
         }
         
-        if typeTextField.text?.isEmpty == true {
-            typeTextField.errorMessage = String.cantBeEmpty
-            flag = false
-        } else {
-            typeTextField.errorMessage = nil
-            flag = true
-        }
+//        if typeTextField.text?.isEmpty == true {
+//            typeTextField.errorMessage = String.cantBeEmpty
+//            flag = false
+//        } else {
+//            typeTextField.errorMessage = nil
+//            flag = true
+//        }
         
         return flag
     }
     
     // MARK: - Actions
     
+    @IBAction func didTapDone(_ sender: UIBarButtonItem) {
+        mobileTextField.resignFirstResponder()
+        dobTextField.resignFirstResponder()
+    }
+    
     @IBAction func didTapEdit(_ sender: UIBarButtonItem) {
         
-        editingProfile = !editingProfile
-        barButton.title = editingProfile == true ? "Save" : "Edit"
-        
-        if editingProfile == true {
+        if formValid() == true {
             
-            mobileTextField.isEnabled = true
-            dobTextField.isEnabled = true
-            emailTextField.isEnabled = true
-            IAmTextField.isEnabled = true
-            companyTextField.isEnabled = true
-            typeTextField.isEnabled = true
             
-        } else {
-            
-            if formValid() == true {
-                
-                editingProfile = false
-                
-                mobileTextField.isEnabled = false
-                dobTextField.isEnabled   = false
-                emailTextField.isEnabled = false
-                IAmTextField.isEnabled   = false
-                companyTextField.isEnabled  = false
-                typeTextField.isEnabled     = false
-            
-            } else {
-                
-                editingProfile = true
-                barButton.title = "Edit"
-            }
+//            {
+//                "first_name": "Andy",
+//                "last_name": "Abi Haidar",
+//                "mobile_number": "0096170198017",
+//                "date_of_birth": "1995-06-01",
+//                "gender": "Male",
+//                "image": 123,
+//                "organization": 2
+//            }
         }
     }
     

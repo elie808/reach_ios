@@ -13,6 +13,7 @@ struct User: Codable {
     let firstName : String
     let lastName : String
     let mobileNumber : String
+    let dob : String
     let email : String
     let gender : String
     let image : String
@@ -29,6 +30,7 @@ struct User: Codable {
         case firstName = "first_name"
         case lastName = "last_name"
         case mobileNumber = "mobile_number"
+        case dob = "date_of_birth"
         case totalApprovedPoints = "total_approved_points"
         case maxPoints = "max_points"
     }
