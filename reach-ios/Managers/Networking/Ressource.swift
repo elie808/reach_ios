@@ -22,14 +22,14 @@ extension Resource where A: Decodable {
         
         self.urlRequest = URLRequest(url: url)
         
-//        if AuthenticationManager.isAuthenticated == true {
+        if AuthenticationManager.isAuthenticated == true {
         
-//            let jwtToken = Defaults[.authenticationData]?.token
-//
-//            if jwtToken != nil {
-//                urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
-//            }
-//        }
+            let jwtToken = Defaults[.authenticationData]?.token
+
+            if jwtToken != nil {
+                urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
+            }
+        }
         
         self.parse = { data in
             try? JSONDecoder().decode(A.self, from: data)
@@ -49,14 +49,14 @@ extension Resource where A: Decodable {
         case .post(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
         }
         
-//        if AuthenticationManager.isAuthenticated == true {
-//
-//            let jwtToken = Defaults[.authenticationData]?.token
-//
-//            if jwtToken != nil {
-//                self.urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
-//            }
-//        }
+        if AuthenticationManager.isAuthenticated == true {
+
+            let jwtToken = Defaults[.authenticationData]?.token
+
+            if jwtToken != nil {
+                self.urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
+            }
+        }
         
         self.parse = { data in
             try? JSONDecoder().decode(A.self, from: data)

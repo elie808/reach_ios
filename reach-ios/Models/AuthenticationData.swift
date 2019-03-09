@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
+import UIKit
 
-struct AuthenticationData : Codable {
+class AuthenticationData : Codable, DefaultsSerializable {
     public var token: String?
-//    public var member: User?
+    public var member: User?
 }

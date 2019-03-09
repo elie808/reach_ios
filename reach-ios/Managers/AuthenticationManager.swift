@@ -19,13 +19,18 @@ extension DefaultsKeys {
 // Add persistence methods here, as needed
 final class AuthenticationManager {
     
+    static var isAuthenticated: Bool {
+        return (Defaults[.authenticationData] == nil) ? false : true
+    }
+
     static func persistToUserDefaults(authenticationData: AuthenticationData) {
         Defaults[.authenticationData] = authenticationData
         Defaults.synchronize()
     }
-   
-    static var isAuthenticated: Bool {
-        return (Defaults[.authenticationData] == nil) ? false : true
+
+    static func logout() {
+        clearUserDefaults()
+//        Cache.deleteAllFiles()
     }
     
     private static func clearUserDefaults() {
@@ -34,10 +39,10 @@ final class AuthenticationManager {
     }
 }
 
-// Extension to support handling AuthenticationData in SwiftyUserDefaults Pod
-extension UserDefaults {
-    subscript(key: DefaultsKey<AuthenticationData?>) -> AuthenticationData? {
-        get { return unarchive(key) }
-        set { archive(key, newValue) }
-    }
-}
+//// Extension to support handling AuthenticationData in SwiftyUserDefaults Pod
+//extension UserDefaults {
+//    subscript(key: DefaultsKey<AuthenticationData?>) -> AuthenticationData? {
+//        get { return unarchive(key) }
+//        set { archive(key, newValue) }
+//    }
+//}

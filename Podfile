@@ -8,7 +8,7 @@ target 'reach-ios' do
   # Pods for reach-ios
   pod 'EAIntroView'
 
-  pod 'SwiftyUserDefaults'
+  pod 'SwiftyUserDefaults', '4.0.0-beta.1'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'UITextView+Placeholder'
   pod 'ZKUDID'

@@ -27,8 +27,7 @@ class SettingsTableViewController: UITableViewController {
         switch segue.identifier {
             
         case Segue.Settings.toLoginVC:
-            //TODO: Perform Logout cleanup
-            print("Bye bye")
+            AuthenticationManager.logout()
         
         default: return
         }
