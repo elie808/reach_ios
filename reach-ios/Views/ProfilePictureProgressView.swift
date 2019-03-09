@@ -12,7 +12,9 @@ class ProfilePictureProgressView: UIView {
 
     // MARK: - Properties
     
-    var circleProgressLayer : CircularProgress?
+    var totalPoints : Int = 0
+    var maxPoints : Int = 1
+    private var circleProgressLayer : CircularProgress?
     
     // MARK: - Outlets
     
@@ -22,14 +24,18 @@ class ProfilePictureProgressView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
-        circleProgressLayer = CircularProgress(center: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2),
-                                               radius: (self.frame.size.width/2) - 8,
-                                               color: UIColor.reachGreen, startAngle: 180, endAngle: 0)
-        self.layer.addSublayer(circleProgressLayer!)
     }
     
     func animateProgress() {
+        
+        let endAngle : CGFloat = CGFloat(((totalPoints * 180) / maxPoints) - 180)
+        
+        circleProgressLayer = CircularProgress(center: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2),
+                                               radius: (self.frame.size.width/2) - 8,
+                                               color: UIColor.reachGreen, startAngle: 180, endAngle: endAngle)
+        
+        self.layer.addSublayer(circleProgressLayer!)
+        
         circleProgressLayer?.animate(duration: 1)
     }
 }

@@ -44,8 +44,6 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        profilePicture.animateProgress()
-        
         let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
         
         URLSession.shared.load(banners) { (bannerItems, status) in
@@ -67,6 +65,16 @@ class HomeViewController: UIViewController {
         self.navigationItem.titleView = searchBar
         
         collectionView.dataSource = collectionDataSource
+        
+        let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
+        
+        URLSession.shared.load(profile) { (user, status) in
+            self.profilePicture.profilePicture.urlSetImage(user?.image)
+            self.profilePicture.totalPoints = (user?.totalApprovedPoints)!
+            self.profilePicture.maxPoints = (user?.maxPoints)!
+            self.profilePicture.animateProgress()
+            self.pointsLabel.text = "\(user?.totalApprovedPoints ?? 0)"
+        }
     }
     
     /// Convenience method to simplify and avoid using Storyboard segues
