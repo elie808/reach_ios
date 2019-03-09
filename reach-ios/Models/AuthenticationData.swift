@@ -8,9 +8,9 @@
 
 import Foundation
 import SwiftyUserDefaults
-import UIKit
 
-class AuthenticationData : Codable, DefaultsSerializable {
+// Conform to DefaultsSerializable to enable encoding custom types into SwiftyUserDefaults
+struct AuthenticationData : Codable, DefaultsSerializable {
     public var token: String?
     public var member: User?
 }

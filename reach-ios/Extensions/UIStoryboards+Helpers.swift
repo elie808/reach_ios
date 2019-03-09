@@ -11,17 +11,20 @@ import UIKit
 // MARK: - Storyboard and XIB Identifiers
 
 public enum StoryboardIdentifier: String {
+    case Login = "Login"
     case Main = "Main"
     case SideMenu = "SideMenu"
 }
 
 public enum ViewIdentifier: String {
-    case TermsAndConditions = "TAndCVC"
-    case FAQs = "FaqVC"
-    case Help = "HelpVC"
     case About = "AboutVC"
     case Contact = "ContactVC"
+    case FAQs = "FaqVC"
+    case Help = "HelpVC"
+    case LoginNav = "LoginNav"
+    case MainTab  = "mainTabVC"
     case Settings = "SettingsVC"
+    case TermsAndConditions = "TAndCVC"
 }
 
 // MARK: - Segue Identifiers
@@ -75,6 +78,13 @@ struct Segue {
 // MARK: - Storyboard Helpers
 
 extension UIStoryboard {
+    
+    class var Login: UIStoryboard {
+        struct Static {
+            static let instance: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Login.rawValue, bundle: nil)
+        }
+        return Static.instance
+    }
     
     class var Main: UIStoryboard {
         struct Static {
