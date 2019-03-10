@@ -71,7 +71,7 @@ struct NetworkingConstants {
     static let sales  = Domains.baseURL + Sales.sales
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
-    static let vendorsList  = Domains.baseURL + Vendors.allVendors
+    static let userVendorsList  = Domains.baseURL + Vendors.allVendors
     
     // MARK: - Helpers
     

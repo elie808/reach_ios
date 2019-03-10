@@ -25,7 +25,7 @@ class VendorListViewController: UIViewController {
         
         tableView.dataSource = dataSource
         
-        let vendors = Resource<[Company]>(get: URL(string: NetworkingConstants.vendorsList)!)
+        let vendors = Resource<[Company]>(get: URL(string: NetworkingConstants.userVendorsList)!)
         
         URLSession.shared.load(vendors) { (vendorsList, status) in
             if let list = vendorsList {
