@@ -840,24 +840,11 @@
         <!--View Controller-->
         <scene sceneID="tZw-JD-qGB">
             <objects>
-                <viewController id="3bD-dt-2kk" sceneMemberID="viewController">
+                <viewController id="3bD-dt-2kk" customClass="PDFViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S3J-qW-zmb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PDF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipl-1U-KRJ">
-                                <rect key="frame" x="171" y="323" width="32" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ipl-1U-KRJ" firstAttribute="leading" secondItem="DnY-nR-in6" secondAttribute="leading" constant="171" id="CRP-Ks-an5"/>
-                            <constraint firstItem="Ipl-1U-KRJ" firstAttribute="centerX" secondItem="S3J-qW-zmb" secondAttribute="centerX" id="kaT-Tf-ukT"/>
-                            <constraint firstItem="Ipl-1U-KRJ" firstAttribute="centerY" secondItem="S3J-qW-zmb" secondAttribute="centerY" id="oeS-ft-Pda"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DnY-nR-in6"/>
                     </view>
                 </viewController>

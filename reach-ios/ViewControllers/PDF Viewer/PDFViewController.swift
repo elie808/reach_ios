@@ -8,18 +8,33 @@
 
 import UIKit
 import PDFKit
+import WebKit
+import SVProgressHUD
 
 class PDFViewController: UIViewController {
     
+    // MARK: - Views Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SVProgressHUD.show()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        SVProgressHUD.dismiss()
+    }
+    
+    // MARK: - Methods
     
     func loadFromUrl(url: String){
         
-        let webView = UIWebView(frame: self.view.frame)
+        let webView = WKWebView(frame: self.view.frame)
+        self.view.addSubview(webView)
         
-        webView.loadRequest(URLRequest(url: URL(string:url)!))
+        webView.load(URLRequest(url: URL(string:url)!))
     }
     
     func loadFromLocal() {
@@ -35,15 +50,4 @@ class PDFViewController: UIViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

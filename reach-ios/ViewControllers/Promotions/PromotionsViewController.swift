@@ -47,7 +47,9 @@ class PromotionsViewController: UIViewController {
         case Segue.PromotionsList.toPromotionPDF:
             if let promotion = sender {
                 if promotion is Promotion {
-                    
+                    let vc = segue.destination as! PDFViewController
+                    vc.title = (promotion as! Promotion).name
+                    vc.loadFromUrl(url: (promotion as! Promotion).pdf )
                 }
             }
         default: return
