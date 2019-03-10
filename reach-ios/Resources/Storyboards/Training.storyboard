@@ -537,11 +537,27 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="fc9-aO-YuS" id="csy-xZ-Kte"/>
+                        <segue destination="a9F-o7-AW5" kind="show" id="Gvb-iL-zOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4a-9H-u2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3825" y="-3558"/>
+            <point key="canvasLocation" x="3825" y="-3685"/>
+        </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="5mj-I7-Nwa">
+            <objects>
+                <viewController id="a9F-o7-AW5" customClass="CategoriesViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jgC-fl-BFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wpz-d7-bua"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axu-0Y-aUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4582" y="-3685"/>
         </scene>
     </scenes>
     <resources>
