@@ -742,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JF-MM-zhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3118" y="-825"/>
+            <point key="canvasLocation" x="3118" y="-772"/>
         </scene>
         <!--Promotions-->
         <scene sceneID="D7T-Th-ua7">
@@ -759,7 +759,7 @@
                                     <size key="itemSize" width="343" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCellID" id="1yx-vv-BDF" customClass="PromotionCell" customModule="reach_ios" customModuleProvider="target">
@@ -769,7 +769,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HsH-SU-KDM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HsH-SU-KDM">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XU8-qx-AJP">
@@ -827,6 +827,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oky-Qt-07J"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="collectionView" destination="wYe-fF-4GJ" id="T2w-8D-HR8"/>
                         <segue destination="3bD-dt-2kk" kind="show" identifier="PromotionsListToPromotionPDFVC" id="U09-6O-LwK"/>

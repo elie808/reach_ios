@@ -19,14 +19,17 @@ extension String {
     // MARK: - HTML
     
     /// Produce a CSS formatting string to append to any HTML text that needs formatting
-    static func formatHTML(size:CGFloat) -> String {
+    static func formatHTML(size:CGFloat, fontColor: UIColor) -> String {
         
         let postFont = UIFont.systemFont(ofSize: size)
         
         // Additional formatting to <p> tag
 //        let paragraphStyle = "p{font-family: '\(String(describing: postFont.fontName))'; font-size: \(String(describing: postFont.pointSize)); color : \(String(describing: UIColor.red.toHex!))}"
+       
+        //TODO: FIX toHEX method bug that won't work for .black, .white
+        let colorSt = String(describing: UIColor.reachGray.toHex!) //== nil ? String(describing: UIColor.reachGray.toHex!) : String(describing: fontColor.toHex!)
         
-        let body = "body{ font-family:'\(String(describing: postFont.fontName))'; font-size:\(String(describing: postFont.pointSize)); color: \(String(describing: UIColor.reachGray.toHex!)) }"
+        let body = "body{ font-family:'\(String(describing: postFont.fontName))'; font-size:\(String(describing: postFont.pointSize)); color:\(colorSt) }"
 
         let formattingString = "<style>\(body)</style>"
         

@@ -16,9 +16,10 @@ class PromotionCell: GenericCollectionCell<Promotion> {
     
     override var model : Promotion! {
         didSet {
-            imageView.image = UIImage(named: model.imageName)
+            imageView.urlSetImage(model.image)
             titleLabel.text = model.name
-            subtitleLabel.text = model.description
+            let cooo = UIColor.white
+            subtitleLabel.attributedText = model.description.convertHTMLToString(withFormatting: String.formatHTML(size: 12.0, fontColor: cooo))
         }
     }
 }

@@ -22,7 +22,7 @@ class T_CViewController: UIViewController {
         let terms = Resource<Terms>(get: URL(string:NetworkingConstants.termsAndConditions)!)
         
         URLSession.shared.load(terms) { (termsObj, status) in
-            self.textView.attributedText = termsObj?.text.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0))
+            self.textView.attributedText = termsObj?.text.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
         }
         
     }

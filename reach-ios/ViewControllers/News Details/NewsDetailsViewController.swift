@@ -52,7 +52,7 @@ class NewsDetailsViewController: UIViewController {
                 self.imageView.urlSetImage(newsItem?.image, #imageLiteral(resourceName: "LoginLogo"))
                 self.titleLabel.text = newsItem?.name
                 self.dateLabel.text = Date(timeIntervalSince1970: (newsItem?.date)!).toString(withFormat: .DateFull)
-                self.textView.attributedText = newsItem?.description.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0))
+                self.textView.attributedText = newsItem?.description.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
             }
         }
     }

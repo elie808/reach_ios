@@ -16,7 +16,7 @@ class FAQCell: GenericTableCell<FAQItem> {
     override var model : FAQItem! {
         didSet {
             questionLabel.text = model.question
-            answerTextView.attributedText = model.answer.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0))
+            answerTextView.attributedText = model.answer.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
         }
     }
 }

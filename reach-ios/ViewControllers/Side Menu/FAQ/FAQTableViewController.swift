@@ -31,7 +31,7 @@ class FAQTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
  
-        let attributedString = dataSource.data[indexPath.row].answer.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0))
+        let attributedString = dataSource.data[indexPath.row].answer.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
         
         return attributedString.height(withConstrainedWidth: self.tableView.frame.size.width - 16) + 54
     }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct Promotion {
-    let name, description : String
-    let imageName : String
+struct Promotion : Codable {
+    let id, organization_id : Int
+    let name, pdf, start_date, end_date, description, image : String
 }
 
 class PromotionsViewController: UIViewController {
@@ -27,10 +27,17 @@ class PromotionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dataSource.data = [Promotion(name: "Summer Deal", description: "Lorem Ipsum set dolor amet", imageName: "dummy_promotion"),
-                           Promotion(name: "What will you do with your next 365 ?", description: "Lorem Ipsum set dolor amet", imageName: "dummy_promotion")]
+
         collectionView.dataSource = dataSource
+        
+        let promotions = Resource<[Promotion]>(get: URL(string: NetworkingConstants.allPromotions)!)
+        
+        URLSession.shared.load(promotions) { (promotions, status) in
+            if let list = promotions {
+                self.dataSource.data = list
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     // MARK: - Navigation
