@@ -43,6 +43,7 @@
 		47A1E3E522351E5D0034752A /* VendorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A1E3E422351E5D0034752A /* VendorListViewController.swift */; };
 		47A1E3ED223560B00034752A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A1E3EC223560B00034752A /* CategoriesViewController.swift */; };
 		47A1E3EF223573900034752A /* BrandsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A1E3EE223573900034752A /* BrandsCell.swift */; };
+		47A1E3F122357FCF0034752A /* SubCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A1E3F022357FCF0034752A /* SubCategoryTableViewController.swift */; };
 		47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */; };
 		47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */; };
 		47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */; };
@@ -121,6 +122,7 @@
 		47A1E3E422351E5D0034752A /* VendorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorListViewController.swift; sourceTree = "<group>"; };
 		47A1E3EC223560B00034752A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		47A1E3EE223573900034752A /* BrandsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCell.swift; sourceTree = "<group>"; };
+		47A1E3F022357FCF0034752A /* SubCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewController.swift; sourceTree = "<group>"; };
 		47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -458,6 +460,14 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		47A1E3F2223583860034752A /* SubCategories */ = {
+			isa = PBXGroup;
+			children = (
+				47A1E3F022357FCF0034752A /* SubCategoryTableViewController.swift */,
+			);
+			path = SubCategories;
+			sourceTree = "<group>";
+		};
 		47ADFF5D2222A74B00AEFBD7 /* Promotions */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +578,7 @@
 			children = (
 				47A1E3E8223560430034752A /* Vendors */,
 				47A1E3EB223560650034752A /* Categories */,
+				47A1E3F2223583860034752A /* SubCategories */,
 				47A1E3E722351E820034752A /* New Group */,
 			);
 			path = "Know Your Product";
@@ -836,6 +847,7 @@
 				47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */,
 				47CCC1FF2228E6D8005DE571 /* TrainingListViewController.swift in Sources */,
 				4783580C2214058D00B33025 /* AppDelegate.swift in Sources */,
+				47A1E3F122357FCF0034752A /* SubCategoryTableViewController.swift in Sources */,
 				47F29F44222E5AB80061E8E2 /* PDFViewController.swift in Sources */,
 				47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */,
 				47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */,

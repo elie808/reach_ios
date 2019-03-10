@@ -52,7 +52,9 @@ struct NetworkingConstants {
     private struct ProductTraining {
         static let allVendors = "products/vendors/all/training"
         static let vendorBase = "products/vendors/"
-        static let vendorTraining = "/training"
+        static let brandBase = "products/brands/"
+        static let categoryBase = "products/categories/"
+        static let training = "/training"
     }
     
     // MARK: - URLs
@@ -74,7 +76,9 @@ struct NetworkingConstants {
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
     static let userVendorsList  = Domains.baseURL + ProductTraining.allVendors
-    static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.vendorTraining }
+    static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.training }
+    static func brandTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.brandBase + String(id) + ProductTraining.training }
+    static func categoryTraining(forCategory id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
     
     // MARK: - Helpers
 
