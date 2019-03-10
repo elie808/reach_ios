@@ -8,8 +8,9 @@
 
 import UIKit
 
-struct Company {
-    let imageName, name : String
+struct Company : Codable {
+    let image, name : String
+    let id : Int
 }
 
 class BrandFeedbackViewController: UIViewController {
@@ -27,8 +28,8 @@ class BrandFeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.data = [Company(imageName: "", name: "Microsoft"), Company(imageName: "", name: "Dell")]
-        tableView.dataSource = dataSource
+//        dataSource.data = [Company(imageName: "", name: "Microsoft"), Company(imageName: "", name: "Dell")]
+//        tableView.dataSource = dataSource
     }
     
     // MARK: - Navigation

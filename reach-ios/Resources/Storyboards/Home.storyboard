@@ -247,16 +247,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-5g-N1v">
-                                <rect key="frame" x="99.5" y="156" width="176" height="20.5"/>
+                                <rect key="frame" x="134.5" y="156" width="106" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-88-X64">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="48" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe-Duke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qH-Ga-3sZ">
-                                        <rect key="frame" x="56" y="0.0" width="120" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qH-Ga-3sZ">
+                                        <rect key="frame" x="56" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.16470588235294117" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -321,6 +321,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="zO1-A6-XCN" id="qdf-zx-nOv"/>
+                        <outlet property="fullNameLabel" destination="9qH-Ga-3sZ" id="XUp-57-R8k"/>
                         <outlet property="pointsLabel" destination="ADQ-0S-WHM" id="JHd-s9-6uK"/>
                         <outlet property="profilePicture" destination="2sf-d3-y6h" id="ufv-9B-GpL"/>
                         <outlet property="searchBar" destination="jN0-Ke-9tK" id="ZWD-WI-Jlh"/>

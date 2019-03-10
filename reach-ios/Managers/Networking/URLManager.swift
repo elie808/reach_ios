@@ -45,6 +45,10 @@ struct NetworkingConstants {
         static let profile = "members/profile"
     }
     
+    private struct Vendors {
+        static let allVendors = "products/vendors/all/training"
+    }
+    
     // MARK: - URLs
     
     static let baseURL : URL! = URL(string: Domains.baseURL)
@@ -62,6 +66,7 @@ struct NetworkingConstants {
     static let sales  = Domains.baseURL + Sales.sales
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
+    static let vendorsList  = Domains.baseURL + Vendors.allVendors
     
     // MARK: - Helpers
     

@@ -15,7 +15,7 @@ class BrandFeedbackCell: GenericTableCell<Company> {
     
     override var model : Company! {
         didSet {
-            brandImageView?.image = UIImage(named: model.imageName)
+            brandImageView?.urlSetImage(model.image, #imageLiteral(resourceName: "Reach_logo_white"))
             nameLabel?.text = model.name
         }
     }

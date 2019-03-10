@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var pointsLabel : UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var profilePicture: ProfilePictureProgressView!
     @IBOutlet weak var collectionView : UICollectionView!
     @IBOutlet weak var sideMenuTableView : UITableView!
@@ -69,6 +70,10 @@ class HomeViewController: UIViewController {
         let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
         
         URLSession.shared.load(profile) { (user, status) in
+            
+            print("STATUS: ", status)
+            
+            self.fullNameLabel.text = (user?.firstName)! + " " + (user?.lastName)!
             self.profilePicture.profilePicture.urlSetImage(user?.image)
             self.profilePicture.totalPoints = (user?.totalApprovedPoints)!
             self.profilePicture.maxPoints = (user?.maxPoints)!

@@ -40,6 +40,7 @@
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
 		4791CDC4221AF994004CBB6B /* CurvedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */; };
+		47A1E3E522351E5D0034752A /* VendorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A1E3E422351E5D0034752A /* VendorListViewController.swift */; };
 		47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */; };
 		47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */; };
 		47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */; };
@@ -115,6 +116,7 @@
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedBottomView.swift; sourceTree = "<group>"; };
+		47A1E3E422351E5D0034752A /* VendorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorListViewController.swift; sourceTree = "<group>"; };
 		47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +428,15 @@
 			path = "Report Sale";
 			sourceTree = "<group>";
 		};
+		47A1E3E722351E820034752A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
+				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		47ADFF5D2222A74B00AEFBD7 /* Promotions */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,8 +545,8 @@
 		47CCC2002228E7D3005DE571 /* Know Your Product */ = {
 			isa = PBXGroup;
 			children = (
-				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
-				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
+				47A1E3E422351E5D0034752A /* VendorListViewController.swift */,
+				47A1E3E722351E820034752A /* New Group */,
 			);
 			path = "Know Your Product";
 			sourceTree = "<group>";
@@ -751,6 +762,7 @@
 			files = (
 				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
 				47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */,
+				47A1E3E522351E5D0034752A /* VendorListViewController.swift in Sources */,
 				47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */,
