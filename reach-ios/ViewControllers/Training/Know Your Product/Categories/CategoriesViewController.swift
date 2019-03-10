@@ -8,12 +8,37 @@
 
 import UIKit
 
+struct Brand : Codable {
+    let id, vendor_id : Int
+    let name, image : String
+}
+
 class CategoriesViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var collectionView : UICollectionView!
+    
+    // MARK: - Properties
+    
+    var vendor : Company?
+    var dataSource = GenericCollectionDataSource<BrandsCell, Brand>()
+    
+    // MARK: - Views Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        collectionView.dataSource = dataSource
+        
+        let brands = Resource<[Brand]>(get: URL(string: NetworkingConstants.vendorBrands(forVendorID: vendor?.id ?? 0) )! )
+        
+        URLSession.shared.load(brands) { (brandsList, status) in
+            if let list = brandsList {
+                self.dataSource.data = list
+                self.collectionView.reloadData()
+            }
+        }
     }
     
 
@@ -27,4 +52,23 @@ class CategoriesViewController: UIViewController {
     }
     */
 
+}
+
+
+extension CategoriesViewController : UICollectionViewDelegate {
+  
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension CategoriesViewController : UICollectionViewDelegateFlowLayout  {
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+//    }
+//
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

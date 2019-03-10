@@ -49,8 +49,10 @@ struct NetworkingConstants {
         static let profile = "members/profile"
     }
     
-    private struct Vendors {
+    private struct ProductTraining {
         static let allVendors = "products/vendors/all/training"
+        static let vendorBase = "products/vendors/"
+        static let vendorTraining = "/training"
     }
     
     // MARK: - URLs
@@ -71,10 +73,11 @@ struct NetworkingConstants {
     static let sales  = Domains.baseURL + Sales.sales
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
-    static let userVendorsList  = Domains.baseURL + Vendors.allVendors
+    static let userVendorsList  = Domains.baseURL + ProductTraining.allVendors
+    static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.vendorTraining }
     
     // MARK: - Helpers
-    
+
     /// Create complete URLs from relative paths, used by image ressources, etc.
     static func getURL(path: String, parameters: [String: String] = [:]) -> URL? {
         return baseURL.appendingPathComponent(path).appendingQueryParameters(parameters)

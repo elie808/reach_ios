@@ -39,6 +39,17 @@ class VendorListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        switch segue.identifier {
+        case Segue.UserVendorList.toCategories:
+            if let company = sender {
+                if company is Company {
+                    let vc = segue.destination as! CategoriesViewController
+                    vc.title = (company as! Company).name
+                    vc.vendor = company as? Company
+                }
+            }
+        default: return
+        }
     }
 }
 
@@ -49,7 +60,7 @@ extension VendorListViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let company = dataSource.data[indexPath.row]
-//        performSegue(withIdentifier: Segue.BrandFeedback.toFeedbackForm, sender: company)
+        let company = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.UserVendorList.toCategories, sender: company)
     }
 }

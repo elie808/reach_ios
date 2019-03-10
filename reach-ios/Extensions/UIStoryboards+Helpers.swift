@@ -70,6 +70,10 @@ struct Segue {
         static let toVideo = "TrainingByCategoryToVideo"
     }
     
+    struct UserVendorList {
+        static let toCategories = "VendorsToCategoriesVC"
+    }
+    
     struct QRScanner {
         static let toReportSale = "QRScannerToReportSaleVC"
     }
