@@ -10,7 +10,6 @@ import UIKit
 
 class RegisterFormCell: UICollectionViewCell {
     
-    
 }
 
 class RegisterViewController: UIViewController {
