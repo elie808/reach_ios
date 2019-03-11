@@ -47,7 +47,7 @@
 		47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */; };
 		47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */; };
 		47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */; };
-		47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */; };
+		47ADFF65222343D300AEFBD7 /* ProductMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF64222343D300AEFBD7 /* ProductMediaViewController.swift */; };
 		47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */; };
 		47ADFF6A222355F000AEFBD7 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF69222355F000AEFBD7 /* NewsViewController.swift */; };
 		47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6C222359A900AEFBD7 /* NewsCell.swift */; };
@@ -126,7 +126,7 @@
 		47ADFF5B2222A73E00AEFBD7 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		47ADFF5E2222AB7600AEFBD7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		47ADFF612223025A00AEFBD7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
-		47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpenSkillsViewController.swift; sourceTree = "<group>"; };
+		47ADFF64222343D300AEFBD7 /* ProductMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMediaViewController.swift; sourceTree = "<group>"; };
 		47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpenSkillsCell.swift; sourceTree = "<group>"; };
 		47ADFF69222355F000AEFBD7 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		47ADFF6C222359A900AEFBD7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
@@ -434,13 +434,13 @@
 			path = "Report Sale";
 			sourceTree = "<group>";
 		};
-		47A1E3E722351E820034752A /* New Group */ = {
+		47A1E3E722351E820034752A /* Product Media */ = {
 			isa = PBXGroup;
 			children = (
-				47ADFF64222343D300AEFBD7 /* SharpenSkillsViewController.swift */,
+				47ADFF64222343D300AEFBD7 /* ProductMediaViewController.swift */,
 				47ADFF672223470500AEFBD7 /* SharpenSkillsCell.swift */,
 			);
-			path = "New Group";
+			path = "Product Media";
 			sourceTree = "<group>";
 		};
 		47A1E3E8223560430034752A /* Vendors */ = {
@@ -579,7 +579,7 @@
 				47A1E3E8223560430034752A /* Vendors */,
 				47A1E3EB223560650034752A /* Categories */,
 				47A1E3F2223583860034752A /* SubCategories */,
-				47A1E3E722351E820034752A /* New Group */,
+				47A1E3E722351E820034752A /* Product Media */,
 			);
 			path = "Know Your Product";
 			sourceTree = "<group>";
@@ -853,7 +853,7 @@
 				47F29F3F222E396E0061E8E2 /* FAQTableViewController.swift in Sources */,
 				47ED4C532220F4B400D7EA09 /* PersonalInfoTableViewController.swift in Sources */,
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
-				47ADFF65222343D300AEFBD7 /* SharpenSkillsViewController.swift in Sources */,
+				47ADFF65222343D300AEFBD7 /* ProductMediaViewController.swift in Sources */,
 				47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */,
 				47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */,
 				47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */,

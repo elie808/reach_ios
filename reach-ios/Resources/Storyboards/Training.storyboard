@@ -360,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="5391" y="-2231"/>
         </scene>
-        <!--Know Better Your Product-->
+        <!--Media-->
         <scene sceneID="u2h-mc-a8s">
             <objects>
-                <viewController title="Know Better Your Product" id="PYw-bn-Pnr" customClass="SharpenSkillsViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Media" id="PYw-bn-Pnr" customClass="ProductMediaViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="20c-ml-zTu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgZ-7R-mbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="-3876"/>
+            <point key="canvasLocation" x="6330" y="-3878"/>
         </scene>
         <!--Vendors-->
         <scene sceneID="HVi-ho-k7S">
@@ -743,10 +743,13 @@
                             <outlet property="delegate" destination="cuv-HN-ce4" id="HP4-LP-nvm"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="PYw-bn-Pnr" kind="show" identifier="SubcategoriesToMediaVC" id="WJE-2S-e0a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8T-pZ-cmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5389.6000000000004" y="-3877.5112443778112"/>
+            <point key="canvasLocation" x="5390" y="-3878"/>
         </scene>
     </scenes>
     <resources>

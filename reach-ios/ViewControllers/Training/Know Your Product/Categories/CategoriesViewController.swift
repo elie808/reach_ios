@@ -83,7 +83,6 @@ class CategoriesViewController: UIViewController {
 
 }
 
-
 extension CategoriesViewController : UICollectionViewDelegate {
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -93,7 +92,6 @@ extension CategoriesViewController : UICollectionViewDelegate {
         
         URLSession.shared.load(brandTraining) { (trainingList, status) in
             if let list = trainingList {
-                print(list)
                 self.tableDataSource.data = list
                 self.tableView.reloadData()
             }

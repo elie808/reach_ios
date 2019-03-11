@@ -65,6 +65,10 @@ struct Segue {
         static let toLoginVC = "SettingsToLoginVC"
     }
     
+    struct SubCategories {
+        static let toMediaVC = "SubcategoriesToMediaVC"
+    }
+    
     struct TrainingList {
         static let toTrainingByCategory = "TrainingListToTrainingByCategoryVC"
     }

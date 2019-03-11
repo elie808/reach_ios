@@ -38,7 +38,6 @@ class SubCategoryTableViewController: UITableViewController {
         
         tableView.dataSource = tableDataSource
         
-        print(NetworkingConstants.categoryTraining(forCategory: (category?.id)!))
         let trainings = Resource<[SubCategory]>(get: URL(string: NetworkingConstants.categoryTraining(forCategory: category?.id ?? 0))!)
         
         URLSession.shared.load(trainings) { (trainingList, status) in
@@ -55,14 +54,29 @@ class SubCategoryTableViewController: UITableViewController {
         return 90
     }
     
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let subCategory = tableDataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.SubCategories.toMediaVC, sender: subCategory)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        switch segue.identifier {
+        
+        case Segue.SubCategories.toMediaVC:
+            if let subCategory = sender {
+                if subCategory is SubCategory {
+                    let vc = segue.destination as! ProductMediaViewController
+                    vc.title = (subCategory as! SubCategory).name
+                    vc.subCategory = subCategory as? SubCategory
+                }
+            }
+            
+        default: return
+        }
+        
     }
-    */
 
 }
