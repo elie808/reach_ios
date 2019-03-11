@@ -46,7 +46,9 @@ extension Resource where A: Decodable {
         
         switch method {
         case .get: () // do nothing
-        case .post(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
+        case .post(let body):
+            self.urlRequest.httpBody = try! JSONEncoder().encode(body)
+            print("BODY", body)
         case .patch(let body): self.urlRequest.httpBody = try! JSONEncoder().encode(body)
         }
         
