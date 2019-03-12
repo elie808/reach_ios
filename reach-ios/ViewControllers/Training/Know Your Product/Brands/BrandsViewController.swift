@@ -18,20 +18,7 @@ struct BrandTraining : Codable {
     let name, image : String
 }
 
-class BrandTrainingCell: GenericTableCell<BrandTraining> {
-    
-    @IBOutlet weak var cellImageView : UIImageView!
-    @IBOutlet weak var nameLabel : UILabel!
-    
-    override var model : BrandTraining! {
-        didSet {
-            cellImageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
-            nameLabel.text = model.name
-        }
-    }
-}
-
-class CategoriesViewController: UIViewController {
+class BrandsViewController: UIViewController {
 
     // MARK: - Outlets
     
@@ -68,12 +55,12 @@ class CategoriesViewController: UIViewController {
         
         switch segue.identifier {
             
-        case Segue.Categories.toSubcategories:
-            if let category = sender {
-                if category is BrandTraining {
-                    let vc = segue.destination as! SubCategoryTableViewController
-                    vc.title = (category as! BrandTraining).name
-                    vc.category = category as? BrandTraining
+        case Segue.Brands.toCategories:
+            if let brand = sender {
+                if brand is BrandTraining {
+                    let vc = segue.destination as! CategoryTableViewController
+                    vc.title = (brand as! BrandTraining).name
+                    vc.brand = brand as? BrandTraining
                 }
             }
             
@@ -83,7 +70,7 @@ class CategoriesViewController: UIViewController {
 
 }
 
-extension CategoriesViewController : UICollectionViewDelegate {
+extension BrandsViewController : UICollectionViewDelegate {
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -100,7 +87,7 @@ extension CategoriesViewController : UICollectionViewDelegate {
     
 }
 
-extension CategoriesViewController : UICollectionViewDelegateFlowLayout  {
+extension BrandsViewController : UICollectionViewDelegateFlowLayout  {
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
@@ -111,7 +98,7 @@ extension CategoriesViewController : UICollectionViewDelegateFlowLayout  {
     }
 }
 
-extension CategoriesViewController : UITableViewDelegate  {
+extension BrandsViewController : UITableViewDelegate  {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 128
@@ -119,6 +106,6 @@ extension CategoriesViewController : UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = tableDataSource.data[indexPath.row]
-        performSegue(withIdentifier: Segue.Categories.toSubcategories, sender: category)
+        performSegue(withIdentifier: Segue.Brands.toCategories, sender: category)
     }
 }

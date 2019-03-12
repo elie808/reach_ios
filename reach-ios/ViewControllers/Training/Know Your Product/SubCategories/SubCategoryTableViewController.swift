@@ -2,81 +2,60 @@
 //  SubCategoryTableViewController.swift
 //  reach-ios
 //
-//  Created by Elie El Khoury on 3/10/19.
+//  Created by Elie El Khoury on 3/12/19.
 //  Copyright © 2019 Elie El Khoury. All rights reserved.
 //
 
 import UIKit
 
 struct SubCategory : Codable {
-    let id : Int
-    let name, category : String
+    let name, image, part_number, description : String
+    let id, subcategory_id : Int
 }
 
-class SubCategoryCell: GenericTableCell<SubCategory> {
+class SubCategoryTableViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel : UILabel!
+    // MARK: - Outlets
     
-    override var model : SubCategory! {
-        didSet {
-            nameLabel.text = model.name
-        }
-    }
-}
-
-class SubCategoryTableViewController: UITableViewController {
-
+    @IBOutlet weak var tableView : UITableView!
+    
     // MARK: - Properties
     
-    var category : BrandTraining?
-    var tableDataSource = GenericTableDataSource<SubCategoryCell, SubCategory>()
+    var category : Category?
+    var dataSource = GenericTableDataSource<SharpenSkillsCell, SubCategory>()
     
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = tableDataSource
+        tableView.dataSource = dataSource
+    
+        let media = Resource<[SubCategory]>(get: URL(string: NetworkingConstants.subCategoryTraining(forCategoryID: category?.id ?? 0))! )
         
-        let trainings = Resource<[SubCategory]>(get: URL(string: NetworkingConstants.categoryTraining(forCategory: category?.id ?? 0))!)
-        
-        URLSession.shared.load(trainings) { (trainingList, status) in
+        URLSession.shared.load(media) { (trainingList, status) in
             if let list = trainingList {
-                self.tableDataSource.data = list
+                self.dataSource.data = list
                 self.tableView.reloadData()
             }
         }
-    }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let subCategory = tableDataSource.data[indexPath.row]
-        performSegue(withIdentifier: Segue.SubCategories.toMediaVC, sender: subCategory)
+        
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch segue.identifier {
-        
-        case Segue.SubCategories.toMediaVC:
-            if let subCategory = sender {
-                if subCategory is SubCategory {
-                    let vc = segue.destination as! ProductMediaViewController
-                    vc.title = (subCategory as! SubCategory).name
-                    vc.subCategory = subCategory as? SubCategory
-                }
-            }
-            
-        default: return
-        }
+    }
+    
+}
+
+extension SubCategoryTableViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-
 }

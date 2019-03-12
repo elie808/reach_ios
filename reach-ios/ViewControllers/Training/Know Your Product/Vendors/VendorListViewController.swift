@@ -43,7 +43,7 @@ class VendorListViewController: UIViewController {
         case Segue.UserVendorList.toCategories:
             if let company = sender {
                 if company is Company {
-                    let vc = segue.destination as! CategoriesViewController
+                    let vc = segue.destination as! BrandsViewController
                     vc.title = (company as! Company).name
                     vc.vendor = company as? Company
                 }

@@ -54,6 +54,7 @@ struct NetworkingConstants {
         static let vendorBase = "products/vendors/"
         static let brandBase = "products/brands/"
         static let categoryBase = "products/categories/"
+        static let subCategoryBase = "products/subcategories/"
         static let media = "/media"
         static let products = "products/"
         static let training = "/training"
@@ -80,8 +81,9 @@ struct NetworkingConstants {
     static let userVendorsList  = Domains.baseURL + ProductTraining.allVendors
     static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.training }
     static func brandTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.brandBase + String(id) + ProductTraining.training }
-    static func categoryTraining(forCategory id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
-    static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
+    static func categoryTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
+    static func subCategoryTraining(forCategoryID id:Int) -> String { return Domains.baseURL + ProductTraining.subCategoryBase + String(id) + ProductTraining.training }
+//    static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
     
     // MARK: - Helpers
 

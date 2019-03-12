@@ -8,18 +8,18 @@
 
 import UIKit
 
-class SharpenSkillsCell: GenericTableCell<ProductMedia> {
+class SharpenSkillsCell: GenericTableCell<SubCategory> {
     
     @IBOutlet weak var cellImageView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var dateLabel : UILabel!
     @IBOutlet weak var descriptionLabel : UILabel!
     
-    override var model : ProductMedia! {
+    override var model : SubCategory! {
         didSet {
             cellImageView.urlSetImage(model.image)
-            titleLabel.text = model.title
-            dateLabel.text = model.type
+            titleLabel.text = model.name
+            dateLabel.text = model.part_number
             descriptionLabel.text = model.description
         }
     }
