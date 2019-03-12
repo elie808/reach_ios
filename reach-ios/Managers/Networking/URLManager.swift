@@ -83,7 +83,7 @@ struct NetworkingConstants {
     static func brandTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.brandBase + String(id) + ProductTraining.training }
     static func categoryTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
     static func subCategoryTraining(forCategoryID id:Int) -> String { return Domains.baseURL + ProductTraining.subCategoryBase + String(id) + ProductTraining.training }
-//    static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
+    static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
     
     // MARK: - Helpers
 

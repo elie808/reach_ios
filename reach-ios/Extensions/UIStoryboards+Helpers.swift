@@ -36,7 +36,11 @@ struct Segue {
     }
     
     struct Brands {
-        static let toCategories = "CategoriesToSubcategoriesVC"
+        static let toCategories = "BrandsToCategoriesVC"
+    }
+    
+    struct Categories {
+        static let toSubCategories = "CategoriesToSubcategoriesVC"
     }
     
     struct Login {

@@ -456,7 +456,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="QG7-8a-c8C" id="8nb-wG-kJo"/>
-                        <segue destination="KNL-iC-KVW" kind="show" id="vZR-vO-E7o"/>
+                        <segue destination="KNL-iC-KVW" kind="show" identifier="SubcategoriesToMediaVC" id="vZR-vO-E7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgZ-7R-mbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -466,7 +466,7 @@
         <!--Media-->
         <scene sceneID="ZQ3-Pl-tYi">
             <objects>
-                <viewController title="Media" id="KNL-iC-KVW" sceneMemberID="viewController">
+                <viewController title="Media" id="KNL-iC-KVW" customClass="MediaTrainingViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQ8-B6-1XG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -475,11 +475,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="se9-xg-VxO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cK-sf-p35">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cK-sf-p35">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,13 +491,13 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="C0B-DY-5qk">
-                                    <rect key="frame" x="0.0" y="300" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="364" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCellID" rowHeight="120" id="WBx-ze-RiZ">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCellID" rowHeight="120" id="WBx-ze-RiZ" customClass="MediaTrainingCell" customModule="reach_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="244" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WBx-ze-RiZ" id="Mzh-q1-fcM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
@@ -511,22 +511,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-T5-E9U">
-                                                    <rect key="frame" x="117" y="17.5" width="37.5" height="85"/>
+                                                    <rect key="frame" x="117" y="-16" width="50" height="151.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-q8-xXK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="37.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-q8-xXK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-52-Lig">
-                                                            <rect key="frame" x="0.0" y="34" width="37.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-52-Lig">
+                                                            <rect key="frame" x="0.0" y="67.5" width="50" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-xj-L8i">
-                                                            <rect key="frame" x="0.0" y="68" width="37.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="134.5" width="50" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -543,13 +543,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImageView" destination="A23-EJ-50h" id="zWv-Uk-Qi2"/>
-                                            <outlet property="dateLabel" destination="eTk-52-Lig" id="5Im-m1-bIn"/>
-                                            <outlet property="descriptionLabel" destination="rXE-xj-L8i" id="r5t-XT-NaD"/>
-                                            <outlet property="titleLabel" destination="XGj-q8-xXK" id="1GV-jI-ebQ"/>
+                                            <outlet property="cellImageView" destination="A23-EJ-50h" id="0yM-lO-BrM"/>
+                                            <outlet property="dateLabel" destination="eTk-52-Lig" id="CfT-6v-xhm"/>
+                                            <outlet property="descriptionLabel" destination="rXE-xj-L8i" id="3Xg-ld-1pw"/>
+                                            <outlet property="titleLabel" destination="XGj-q8-xXK" id="czO-sO-Lww"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="KNL-iC-KVW" id="xKy-Km-79e"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -561,6 +564,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zdf-68-Kqr"/>
                     </view>
+                    <connections>
+                        <outlet property="headerImageView" destination="9cK-sf-p35" id="JR8-uv-QtA"/>
+                        <outlet property="tableView" destination="LFY-uj-ljE" id="T87-gm-s0O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2W-Sv-P9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -795,7 +802,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ddH-wb-jef" id="Uvz-D0-QOl"/>
                         <outlet property="tableView" destination="9aR-K3-Wvm" id="QlU-3A-a6l"/>
-                        <segue destination="cuv-HN-ce4" kind="show" identifier="CategoriesToSubcategoriesVC" id="q7c-Ov-8tI"/>
+                        <segue destination="cuv-HN-ce4" kind="show" identifier="BrandsToCategoriesVC" id="q7c-Ov-8tI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axu-0Y-aUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -857,7 +864,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="PYw-bn-Pnr" kind="show" identifier="SubcategoriesToMediaVC" id="WJE-2S-e0a"/>
+                        <segue destination="PYw-bn-Pnr" kind="show" identifier="CategoriesToSubcategoriesVC" id="WJE-2S-e0a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8T-pZ-cmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

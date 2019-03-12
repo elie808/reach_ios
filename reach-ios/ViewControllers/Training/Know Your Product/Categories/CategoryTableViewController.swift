@@ -56,7 +56,7 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let subCategory = tableDataSource.data[indexPath.row]
-        performSegue(withIdentifier: Segue.SubCategories.toMediaVC, sender: subCategory)
+        performSegue(withIdentifier: Segue.Categories.toSubCategories, sender: subCategory)
     }
     
     // MARK: - Navigation
@@ -65,7 +65,7 @@ class CategoryTableViewController: UITableViewController {
         
         switch segue.identifier {
         
-        case Segue.SubCategories.toMediaVC:
+        case Segue.Categories.toSubCategories:
             if let category = sender {
                 if category is Category {
                     let vc = segue.destination as! SubCategoryTableViewController

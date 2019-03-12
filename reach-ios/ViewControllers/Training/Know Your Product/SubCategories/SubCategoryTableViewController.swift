@@ -39,14 +39,26 @@ class SubCategoryTableViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-        
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+            
+        case Segue.SubCategories.toMediaVC:
+            if let subCategory = sender {
+                if subCategory is SubCategory {
+                    let vc = segue.destination as! MediaTrainingViewController
+                    vc.title = (subCategory as! SubCategory).name
+                    vc.subCategory = subCategory as? SubCategory
+                }
+            }
+            
+        default: return
+        }
     }
-    
 }
 
 extension SubCategoryTableViewController : UITableViewDelegate {
@@ -56,6 +68,7 @@ extension SubCategoryTableViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let subCategory = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.SubCategories.toMediaVC, sender: subCategory)
     }
 }
