@@ -60,9 +60,33 @@ class MediaTrainingViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func didTapBack(_ sender: UIButton) {
+        _ = navigationController?.popViewController(animated: true) 
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            
+        case Segue.SubCategories.toMediaVC:
+            if let subCategory = sender {
+                if subCategory is SubCategory {
+                    let vc = segue.destination as! MediaTrainingViewController
+                    vc.title = (subCategory as! SubCategory).name
+                    vc.subCategory = subCategory as? SubCategory
+                }
+            }
+            
+        default: return
+        }
     }
     
 }
