@@ -1,19 +1,19 @@
 //
-//  CompanyListTableViewController.swift
+//  OrganizationListTableViewController.swift
 //  reach-ios
 //
-//  Created by Elie El Khoury on 2/28/19.
+//  Created by Elie El Khoury on 3/13/19.
 //  Copyright © 2019 Elie El Khoury. All rights reserved.
 //
 
 import UIKit
 
-class CompanyListTableViewController: UITableViewController {
-
+class OrganizationListTableViewController: UITableViewController {
+    
     // MARK: - Properties
     
-    var dataSource : [Product] = []
-    var completeDataSource : [Product] = [] // use to revert back after done messing around with filtering
+    var dataSource : [Organization] = []
+    var completeDataSource : [Organization] = [] // use to revert back after done messing around with filtering
     
     // MARK: - Outlets
     
@@ -23,8 +23,14 @@ class CompanyListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let trainingList = Resource<[Organization]>(get: URL(string:NetworkingConstants.allOrganizations)!)
         
-        completeDataSource = dataSource
+        URLSession.shared.load(trainingList) { (trainingListItems, status) in
+            self.dataSource = trainingListItems ?? []
+            self.completeDataSource = self.dataSource
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,29 +45,29 @@ class CompanyListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segue.ProductList.toReportSale, sender: dataSource[indexPath.row])
+        //        performSegue(withIdentifier: Segue.ProductList.toReportSale, sender: dataSource[indexPath.row])
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        switch segue.identifier {
-            
-        case Segue.ProductList.toReportSale:
-            let vc : ReportSaleViewController = segue.destination as! ReportSaleViewController
-            if let product = sender {
-                if product is Product {
-                    vc.viewModel.productName = (product as! Product).name
-                }
-            }
-            
-        default: return
-        }
+        //        switch segue.identifier {
+        //
+        //        case Segue.ProductList.toReportSale:
+        //            let vc : ReportSaleViewController = segue.destination as! ReportSaleViewController
+        //            if let organization = sender {
+        //                if organization is Organization {
+        //                    vc.viewModel.productName = (product as! Product).name
+        //                }
+        //            }
+        //
+        //        default: return
+        //        }
     }
 }
 
-extension CompanyListTableViewController : UISearchBarDelegate {
+extension OrganizationListTableViewController : UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
@@ -90,8 +96,8 @@ extension CompanyListTableViewController : UISearchBarDelegate {
     
     fileprivate func displayResults(for text: String) {
         
-        let filteredData = dataSource.filter({( product : Product) -> Bool in
-            return product.name.lowercased().contains(text)
+        let filteredData = dataSource.filter({( organization : Organization) -> Bool in
+            return organization.name.lowercased().contains(text)
         })
         
         dataSource = filteredData

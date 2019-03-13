@@ -1067,15 +1067,18 @@
         <!--All Companies-->
         <scene sceneID="oY4-ad-FLt">
             <objects>
-                <tableViewController title="All Companies" id="6hk-Kh-2qt" customClass="CompanyListTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="All Companies" id="6hk-Kh-2qt" customClass="OrganizationListTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fXx-7L-nnn">
                         <rect key="frame" x="0.0" y="0.0" width="366" height="443"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="r1d-IN-5br">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="r1d-IN-5br">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="6hk-Kh-2qt" id="iMw-Xb-hrg"/>
+                            </connections>
                         </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="V5k-yN-F5z">
                             <rect key="frame" x="0.0" y="443" width="366" height="44"/>

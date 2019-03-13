@@ -21,6 +21,7 @@
 		4741616222340116002E3B9E /* PerformanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741616122340116002E3B9E /* PerformanceCell.swift */; };
 		47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A41221A239B00C9B3D4 /* GenericListView.swift */; };
 		47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A43221A252300C9B3D4 /* HomeViewController.swift */; };
+		475494AF2239789800AA4207 /* OrganizationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475494AE2239789800AA4207 /* OrganizationListTableViewController.swift */; };
 		47670A8A2229FC27008EEF6D /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */; };
 		47670A90222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */; };
 		47670A92222A1E7C008EEF6D /* TrainingByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */; };
@@ -62,7 +63,6 @@
 		47CC224622327B2600ED9119 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC224522327B2600ED9119 /* HelpCell.swift */; };
 		47CC22482232B3BE00ED9119 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22472232B3BE00ED9119 /* User.swift */; };
 		47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22492232B58300ED9119 /* AuthenticationData.swift */; };
-		47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */; };
 		47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EC22279A97005DE571 /* T&CViewController.swift */; };
 		47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */; };
 		47CCC1F12228CC7F005DE571 /* BrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */; };
@@ -101,6 +101,7 @@
 		4741616122340116002E3B9E /* PerformanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceCell.swift; sourceTree = "<group>"; };
 		47421A41221A239B00C9B3D4 /* GenericListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListView.swift; sourceTree = "<group>"; };
 		47421A43221A252300C9B3D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		475494AE2239789800AA4207 /* OrganizationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationListTableViewController.swift; sourceTree = "<group>"; };
 		47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryTableViewController.swift; sourceTree = "<group>"; };
 		47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryCell.swift; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 		47CC224522327B2600ED9119 /* HelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
 		47CC22472232B3BE00ED9119 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		47CC22492232B58300ED9119 /* AuthenticationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationData.swift; sourceTree = "<group>"; };
-		47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1EC22279A97005DE571 /* T&CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "T&CViewController.swift"; sourceTree = "<group>"; };
 		47CCC1EE2228CC44005DE571 /* VendorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorsTableViewController.swift; sourceTree = "<group>"; };
 		47CCC1F02228CC7F005DE571 /* BrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsTableViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +224,14 @@
 				4721F99C223968C1002CAFB2 /* VideoPlayerViewController.swift */,
 			);
 			path = "Video Player";
+			sourceTree = "<group>";
+		};
+		475494B02239789E00AA4207 /* Organization List */ = {
+			isa = PBXGroup;
+			children = (
+				475494AE2239789800AA4207 /* OrganizationListTableViewController.swift */,
+			);
+			path = "Organization List";
 			sourceTree = "<group>";
 		};
 		47670A8B222A1C1E008EEF6D /* Training List */ = {
@@ -581,6 +589,7 @@
 			children = (
 				47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */,
 				47ED4C502220CEAB00D7EA09 /* RegisterViewController.swift */,
+				475494B02239789E00AA4207 /* Organization List */,
 				47CCC1F42228CDEF005DE571 /* Personal Info */,
 				47CCC1F52228CE00005DE571 /* Vendors */,
 			);
@@ -591,7 +600,6 @@
 			isa = PBXGroup;
 			children = (
 				47ED4C522220F4B400D7EA09 /* PersonalInfoTableViewController.swift */,
-				47CCC1EA2227960A005DE571 /* CompanyListTableViewController.swift */,
 			);
 			path = "Personal Info";
 			sourceTree = "<group>";
@@ -860,7 +868,6 @@
 				4721F99A223817C9002CAFB2 /* MediaTrainingViewController.swift in Sources */,
 				4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */,
 				47CCC1F12228CC7F005DE571 /* BrandsTableViewController.swift in Sources */,
-				47CCC1EB2227960A005DE571 /* CompanyListTableViewController.swift in Sources */,
 				4712DBCC221B368700D66D98 /* NewsFeedCell.swift in Sources */,
 				47CCC1EF2228CC44005DE571 /* VendorsTableViewController.swift in Sources */,
 				47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */,
@@ -893,6 +900,7 @@
 				47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */,
 				47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */,
 				47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */,
+				475494AF2239789800AA4207 /* OrganizationListTableViewController.swift in Sources */,
 				47ED4C512220CEAB00D7EA09 /* RegisterViewController.swift in Sources */,
 				47A1E3ED223560B00034752A /* BrandsViewController.swift in Sources */,
 				47A1E3EF223573900034752A /* BrandsCell.swift in Sources */,

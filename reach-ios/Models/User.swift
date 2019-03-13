@@ -39,4 +39,6 @@ struct User: Codable {
 struct Organization : Codable {
     let id : Int
     let name : String
+    var organization_id : Int?
+    var parent_organizations : String?
 }
