@@ -13,30 +13,39 @@ import SVProgressHUD
 
 class PDFViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let webView = WKWebView()
+    
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        SVProgressHUD.show()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        SVProgressHUD.dismiss()
-    }
-    
+
     // MARK: - Methods
     
     func loadFromUrl(url: String){
         
-        let webView = WKWebView(frame: self.view.frame)
+        webView.frame = self.view.frame
         self.view.addSubview(webView)
+        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        
+        SVProgressHUD.show()
         
         webView.load(URLRequest(url: URL(string:url)!))
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+       
+        if keyPath == "estimatedProgress" {            
+            if webView.estimatedProgress >= 1.0 {
+                SVProgressHUD.dismiss()
+            }
+        }
+    }
+
     func loadFromLocal() {
         
         let pdfView = PDFView(frame: self.view.frame)
