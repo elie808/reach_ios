@@ -584,7 +584,8 @@
                     <connections>
                         <outlet property="headerImageView" destination="9cK-sf-p35" id="JR8-uv-QtA"/>
                         <outlet property="tableView" destination="LFY-uj-ljE" id="T87-gm-s0O"/>
-                        <segue destination="I8S-aa-eAG" kind="show" id="bOj-UE-usv"/>
+                        <segue destination="I8S-aa-eAG" kind="show" identifier="MediaToPDF" id="bOj-UE-usv"/>
+                        <segue destination="DES-2p-uMo" kind="show" identifier="MediaToVideo" id="dvj-8E-ye7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2W-Sv-P9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -902,7 +903,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRw-6F-pk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7919" y="-3878"/>
+            <point key="canvasLocation" x="7910" y="-4223"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aFN-ww-P8b">
+            <objects>
+                <viewController id="DES-2p-uMo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fdv-cc-Uj0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0QM-7G-iNF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABz-nB-9zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7910" y="-3517"/>
         </scene>
     </scenes>
     <resources>

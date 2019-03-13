@@ -47,6 +47,11 @@ struct Segue {
         static let toMainVC = "LoginToMainVC"
     }
     
+    struct Media {
+        static let toPDF = "MediaToPDF"
+        static let toVideo = "MediaToVideo"
+    }
+    
     struct NewsList {
         static let toNewsDetails = "NewsListToNewsDetailsVC"
     }

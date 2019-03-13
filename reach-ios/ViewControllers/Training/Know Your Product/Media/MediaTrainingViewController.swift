@@ -60,6 +60,11 @@ class MediaTrainingViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -74,14 +79,24 @@ class MediaTrainingViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ 
         switch segue.identifier {
             
-        case Segue.SubCategories.toMediaVC:
-            if let subCategory = sender {
-                if subCategory is SubCategory {
-                    let vc = segue.destination as! MediaTrainingViewController
-                    vc.title = (subCategory as! SubCategory).name
-                    vc.subCategory = subCategory as? SubCategory
+        case Segue.Media.toPDF:
+            if let mediaOj = sender {
+                if mediaOj is MediaTraining {
+                    let vc = segue.destination as! PDFViewController
+                    vc.title = (mediaOj as! MediaTraining).title
+                    vc.loadFromUrl(url: (mediaOj as! MediaTraining).url )
+                }
+            }
+            
+        case Segue.Media.toVideo:
+            if let mediaOj = sender {
+                if mediaOj is MediaTraining {
+//                    let vc = segue.destination as! PDFViewController
+//                    vc.title = (mediaOj as! MediaTraining).title
+//                    vc.loadFromUrl(url: (mediaOj as! MediaTraining).url )
                 }
             }
             
@@ -98,6 +113,14 @@ extension MediaTrainingViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let mediaObj = tableDataSource.data[indexPath.row]
+        
+        switch mediaObj.type {
+        case "Pdf": performSegue(withIdentifier: Segue.Media.toPDF, sender: mediaObj)
+        case "Video": performSegue(withIdentifier: Segue.Media.toVideo, sender: mediaObj)
+        default: return
+        }
         
     }
 }
