@@ -13,6 +13,11 @@ struct MediaTraining : Codable {
     let title, image, description, type, is_preferred, url : String
 }
 
+enum MediaType : String {
+    case video = "Video"
+    case pdf = "Pdf"
+}
+
 class MediaTrainingCell: GenericTableCell<MediaTraining> {
     
     @IBOutlet weak var cellImageView : UIImageView!
@@ -94,9 +99,9 @@ class MediaTrainingViewController: UIViewController {
         case Segue.Media.toVideo:
             if let mediaOj = sender {
                 if mediaOj is MediaTraining {
-//                    let vc = segue.destination as! PDFViewController
-//                    vc.title = (mediaOj as! MediaTraining).title
-//                    vc.loadFromUrl(url: (mediaOj as! MediaTraining).url )
+                    let vc = segue.destination as! VideoPlayerViewController
+                    vc.title = (mediaOj as! MediaTraining).title
+                    vc.urlString = (mediaOj as! MediaTraining).url
                 }
             }
             
@@ -117,8 +122,8 @@ extension MediaTrainingViewController : UITableViewDelegate {
         let mediaObj = tableDataSource.data[indexPath.row]
         
         switch mediaObj.type {
-        case "Pdf": performSegue(withIdentifier: Segue.Media.toPDF, sender: mediaObj)
-        case "Video": performSegue(withIdentifier: Segue.Media.toVideo, sender: mediaObj)
+        case MediaType.pdf.rawValue: performSegue(withIdentifier: Segue.Media.toPDF, sender: mediaObj)
+        case MediaType.video.rawValue: performSegue(withIdentifier: Segue.Media.toVideo, sender: mediaObj)
         default: return
         }
         

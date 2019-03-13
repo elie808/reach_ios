@@ -39,7 +39,7 @@ class PDFViewController: UIViewController {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
        
-        if keyPath == "estimatedProgress" {            
+        if keyPath == "estimatedProgress" {
             if webView.estimatedProgress >= 1.0 {
                 SVProgressHUD.dismiss()
             }

@@ -14,6 +14,7 @@
 		4721F99522380A60002CAFB2 /* BrandTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F99422380A60002CAFB2 /* BrandTrainingCell.swift */; };
 		4721F99822380D12002CAFB2 /* SubCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F99722380D12002CAFB2 /* SubCategoryTableViewController.swift */; };
 		4721F99A223817C9002CAFB2 /* MediaTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F999223817C9002CAFB2 /* MediaTrainingViewController.swift */; };
+		4721F99D223968C1002CAFB2 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F99C223968C1002CAFB2 /* VideoPlayerViewController.swift */; };
 		4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746C2215AC0E007B4BBE /* AppearanceManager.swift */; };
 		4727746F2215AC93007B4BBE /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */; };
 		472774712215B86D007B4BBE /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472774702215B86D007B4BBE /* URLManager.swift */; };
@@ -93,6 +94,7 @@
 		4721F99422380A60002CAFB2 /* BrandTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTrainingCell.swift; sourceTree = "<group>"; };
 		4721F99722380D12002CAFB2 /* SubCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewController.swift; sourceTree = "<group>"; };
 		4721F999223817C9002CAFB2 /* MediaTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTrainingViewController.swift; sourceTree = "<group>"; };
+		4721F99C223968C1002CAFB2 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		4727746C2215AC0E007B4BBE /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppearanceManager.swift; path = "reach-ios/Managers/AppearanceManager.swift"; sourceTree = SOURCE_ROOT; };
 		4727746E2215AC93007B4BBE /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		472774702215B86D007B4BBE /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
+		4721F99E223968C7002CAFB2 /* Video Player */ = {
+			isa = PBXGroup;
+			children = (
+				4721F99C223968C1002CAFB2 /* VideoPlayerViewController.swift */,
+			);
+			path = "Video Player";
+			sourceTree = "<group>";
+		};
 		47670A8B222A1C1E008EEF6D /* Training List */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +322,7 @@
 				47F29F48222E677F0061E8E2 /* Settings */,
 				47F29F3D222E17840061E8E2 /* Side Menu */,
 				47ADFF66222343D800AEFBD7 /* Training */,
+				4721F99E223968C7002CAFB2 /* Video Player */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -832,6 +843,7 @@
 				47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */,
 				47CC224622327B2600ED9119 /* HelpCell.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
+				4721F99D223968C1002CAFB2 /* VideoPlayerViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */,
 				4741616222340116002E3B9E /* PerformanceCell.swift in Sources */,

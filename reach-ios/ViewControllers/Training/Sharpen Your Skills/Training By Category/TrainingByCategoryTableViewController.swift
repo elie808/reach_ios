@@ -12,11 +12,6 @@ struct TrainingByCategory : Codable {
     var id : Int
     var title, image, description, url : String
     var type : String
-    
-    enum trainingType : String {
-        case video = "Video"
-        case pdf = "pdf"
-    }
 }
 
 class TrainingByCategoryTableViewController: UITableViewController {
@@ -65,8 +60,8 @@ class TrainingByCategoryTableViewController: UITableViewController {
         
         switch trainingItem.type {
             
-        case TrainingByCategory.trainingType.video.rawValue: performSegue(withIdentifier: Segue.TrainingCategory.toVideo, sender: trainingItem)
-        case TrainingByCategory.trainingType.pdf.rawValue: performSegue(withIdentifier: Segue.TrainingCategory.toPDF, sender: trainingItem)
+        case MediaType.video.rawValue: performSegue(withIdentifier: Segue.TrainingCategory.toVideo, sender: trainingItem)
+        case MediaType.pdf.rawValue: performSegue(withIdentifier: Segue.TrainingCategory.toPDF, sender: trainingItem)
         
         default: return
         }
@@ -79,18 +74,20 @@ class TrainingByCategoryTableViewController: UITableViewController {
         switch segue.identifier {
             
         case Segue.TrainingCategory.toVideo:
-            if let category = sender {
-                if category is TrainingListItem {
-//                    let vc : TrainingByCategoryTableViewController = segue.destination as! TrainingByCategoryTableViewController
-//                    vc.trainingItem = category as? TrainingListItem
+            if let trainingObj = sender {
+                if trainingObj is TrainingByCategory {
+                    let vc = segue.destination as! VideoPlayerViewController
+                    vc.title = (trainingObj as! TrainingByCategory).title
+                    vc.urlString = (trainingObj as! TrainingByCategory).url
                 }
             }
             
         case Segue.TrainingCategory.toPDF:
-            if let category = sender {
-                if category is TrainingListItem {
-                    //                    let vc : TrainingByCategoryTableViewController = segue.destination as! TrainingByCategoryTableViewController
-                    //                    vc.trainingItem = category as? TrainingListItem
+            if let trainingObj = sender {
+                if trainingObj is TrainingByCategory {
+                    let vc = segue.destination as! PDFViewController
+                    vc.title = (trainingObj as! TrainingByCategory).title
+                    vc.loadFromUrl(url: (trainingObj as! TrainingByCategory).url )
                 }
             }
         default: return
