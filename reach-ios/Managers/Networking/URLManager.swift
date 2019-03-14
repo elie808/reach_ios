@@ -64,6 +64,10 @@ struct NetworkingConstants {
         static let training = "/training"
     }
     
+    private struct Vendor {
+        static let brands = "products/vendors/all/"
+    }
+    
     // MARK: - URLs
     
     static let baseURL : URL! = URL(string: Domains.baseURL)
@@ -89,6 +93,9 @@ struct NetworkingConstants {
     static func categoryTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
     static func subCategoryTraining(forCategoryID id:Int) -> String { return Domains.baseURL + ProductTraining.subCategoryBase + String(id) + ProductTraining.training }
     static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
+    static func vendors(forOrganizationID id:Int) -> String { return Domains.baseURL + Vendor.brands + String(id) }
+    static func brands(foVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) }
+    
     
     // MARK: - Helpers
 

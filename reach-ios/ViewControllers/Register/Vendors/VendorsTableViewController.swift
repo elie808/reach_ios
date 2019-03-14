@@ -8,32 +8,75 @@
 
 import UIKit
 
-class VendorsTableViewController: UITableViewController {
+struct Vendor : Codable {
+    let id : Int
+    let name, image : String
+}
 
+class VendorCell: GenericTableCell<Vendor> {
+    
+    @IBOutlet weak var cellImageView : UIImageView!
+    @IBOutlet weak var nameLabel : UILabel!
+    
+    override var model : Vendor! {
+        didSet {
+            cellImageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
+            nameLabel.text = model.name
+        }
+    }
+}
+
+class VendorsTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
     var passOrganization : Organization?
+    var dataSource = GenericTableDataSource<VendorCell, Vendor>()
+    
+    // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.dataSource = dataSource
+        
+        getVendors()
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    func getVendors() {
+        
+        if let org = passOrganization {
+            
+            let vendorList = Resource<[Vendor]>(get: URL(string:NetworkingConstants.vendors(forOrganizationID: org.organization_id!))!)
+            
+            URLSession.shared.load(vendorList) { (vendorListItems, status) in
+                self.dataSource.data = vendorListItems!
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "VendorListToBrandsListVC" , sender: dataSource.data[indexPath.row])
+    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        switch segue.identifier {
+        case "VendorListToBrandsListVC":
+            let vc = segue.destination as? BrandsListTableViewController
+            if let vendorObj = sender {
+                if vendorObj is Vendor {
+                    vc?.passedVendor = sender as! Vendor
+                }
+            }
+            
+        default: return
+        }
+        
     }
-    */
-
 }

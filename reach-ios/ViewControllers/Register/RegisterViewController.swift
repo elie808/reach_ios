@@ -26,10 +26,10 @@ class RegisterViewController: UIViewController {
     let cellID = "cellID"
     let totalViewCount = 2
     var viewIndex = 0
-    
-    // embeded VCs
+
     var personalInfoVC : PersonalInfoTableViewController?
-    var vendorsVC : VendorsTableViewController?
+    var brandsFormVC : AddBrandsTableViewController?
+//    var vendorsVC : VendorsTableViewController?
     
     // MARK: - Views Life Cycle
     
@@ -50,7 +50,7 @@ class RegisterViewController: UIViewController {
                 
                 guard let selectedOrg = personalInfoVC?.selectedOrganization else { return }
                 
-                vendorsVC?.passOrganization = selectedOrg
+                brandsFormVC?.passOrganization = selectedOrg
                 
                 viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
                 scrollToViewAtIndex(index: viewIndex)
@@ -78,9 +78,14 @@ class RegisterViewController: UIViewController {
         case "embedPersonalInfo":
             personalInfoVC   = segue.destination as?  PersonalInfoTableViewController
             
-        case "embedVendors":
-            if segue.destination is VendorsTableViewController {
-                vendorsVC = segue.destination as? VendorsTableViewController
+//        case "embedVendors":
+//            if segue.destination is VendorsTableViewController {
+//                vendorsVC = segue.destination as? VendorsTableViewController
+//            }
+            
+        case "embedBrands":
+            if segue.destination is AddBrandsTableViewController {
+                brandsFormVC = segue.destination as? AddBrandsTableViewController
             }
             
         default: return

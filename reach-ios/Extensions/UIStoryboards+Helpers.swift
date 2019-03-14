@@ -60,6 +60,10 @@ struct Segue {
         static let toPersonalInfo = "OrganizationListToPersonalInfoVC"
     }
     
+    struct AddBrandList {
+        static let toVendorList = "BrandsListToOrganizationVendorsVC"
+    }
+    
     struct ProductList {
         static let toReportSale = "ProductListToReportSaleVC"
     }
