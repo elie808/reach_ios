@@ -7,29 +7,29 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class PersonalInfoTableViewController: UITableViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var companyTextField : SkyFloatingLabelTextField!
+    
+    // MARK: - Properties
+
+    var selectedOrganization : Organization?
+    
+    // MARK: - Views Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+    
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 0
-//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,13 +41,14 @@ class PersonalInfoTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindToPersonalInfoVC(segue : UIStoryboardSegue) {
+        companyTextField.text = selectedOrganization?.name
+        tableView.reloadData()
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
 }

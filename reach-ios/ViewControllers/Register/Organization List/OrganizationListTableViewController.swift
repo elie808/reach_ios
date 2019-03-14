@@ -45,25 +45,24 @@ class OrganizationListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        performSegue(withIdentifier: Segue.ProductList.toReportSale, sender: dataSource[indexPath.row])
+                performSegue(withIdentifier: Segue.OrganizationList.toPersonalInfo, sender: dataSource[indexPath.row])
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //        switch segue.identifier {
-        //
-        //        case Segue.ProductList.toReportSale:
-        //            let vc : ReportSaleViewController = segue.destination as! ReportSaleViewController
-        //            if let organization = sender {
-        //                if organization is Organization {
-        //                    vc.viewModel.productName = (product as! Product).name
-        //                }
-        //            }
-        //
-        //        default: return
-        //        }
+        switch segue.identifier {
+
+        case Segue.OrganizationList.toPersonalInfo:
+            let vc : PersonalInfoTableViewController = segue.destination as! PersonalInfoTableViewController
+                if let organization = sender {
+                    if organization is Organization {
+                        vc.selectedOrganization = organization as? Organization
+                    }
+                }
+        default: return
+        }
     }
 }
 
@@ -97,7 +96,7 @@ extension OrganizationListTableViewController : UISearchBarDelegate {
     fileprivate func displayResults(for text: String) {
         
         let filteredData = dataSource.filter({( organization : Organization) -> Bool in
-            return organization.name.lowercased().contains(text)
+            return organization.name.contains(text)
         })
         
         dataSource = filteredData

@@ -56,6 +56,10 @@ struct Segue {
         static let toNewsDetails = "NewsListToNewsDetailsVC"
     }
     
+    struct OrganizationList {
+        static let toPersonalInfo = "OrganizationListToPersonalInfoVC"
+    }
+    
     struct ProductList {
         static let toReportSale = "ProductListToReportSaleVC"
     }
