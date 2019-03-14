@@ -14,34 +14,43 @@ class PersonalInfoTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var companyTextField : SkyFloatingLabelTextField!
-    
+    @IBOutlet weak var TCButton : UIButton!
+
     // MARK: - Properties
 
     var selectedOrganization : Organization?
+    var acceptedTC : Bool = false
     
     // MARK: - Views Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setTCButtonState()
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    // MARK: - Helpers
     
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    fileprivate func setTCButtonState() {
+        
+        if acceptedTC == false {
+            TCButton.setBackgroundImage(UIImage(named: "SurveySelectRadio"), for: .normal)
+        } else {
+            TCButton.setBackgroundImage(UIImage(named: "SurveySelectedRadio"), for: .normal)
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func formValid() -> Bool {
+        return true
     }
-    */
+    
+    // MARK: - Actions
 
-
+    @IBAction func didTapAcceptTerms(_ sender: UITapGestureRecognizer) {
+        acceptedTC = !acceptedTC
+        setTCButtonState()
+    }
+    
     // MARK: - Navigation
 
     @IBAction func unwindToPersonalInfoVC(segue : UIStoryboardSegue) {

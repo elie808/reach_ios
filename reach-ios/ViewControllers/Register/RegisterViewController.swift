@@ -9,7 +9,6 @@
 import UIKit
 
 class RegisterFormCell: UICollectionViewCell {
-    
 }
 
 class RegisterViewController: UIViewController {
@@ -25,8 +24,12 @@ class RegisterViewController: UIViewController {
     // MARK: - Properties
     
     let cellID = "cellID"
-    let totalViewCount = 3
+    let totalViewCount = 2
     var viewIndex = 0
+    
+    // embeded VCs
+    var personalInfoVC : PersonalInfoTableViewController?
+    var vendorsVC : VendorsTableViewController?
     
     // MARK: - Views Life Cycle
     
@@ -40,8 +43,23 @@ class RegisterViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didTapNext(_ sender: UIButton) {
-        viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
-        scrollToViewAtIndex(index: viewIndex)
+        
+        if viewIndex == 0 {
+            
+            if personalInfoVC?.formValid() == true {
+                
+                guard let selectedOrg = personalInfoVC?.selectedOrganization else { return }
+                
+                vendorsVC?.passOrganization = selectedOrg
+                
+                viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
+                scrollToViewAtIndex(index: viewIndex)
+            }
+        } else if viewIndex == 1 {
+            
+            viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
+            print("GOOOO")
+        }
     }
     
     // MARK: - Helpers
@@ -54,6 +72,19 @@ class RegisterViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        switch segue.identifier {
+
+        case "embedPersonalInfo":
+            personalInfoVC   = segue.destination as?  PersonalInfoTableViewController
+            
+        case "embedVendors":
+            if segue.destination is VendorsTableViewController {
+                vendorsVC = segue.destination as? VendorsTableViewController
+            }
+            
+        default: return
+        }
     }
 }
 
@@ -66,11 +97,7 @@ extension RegisterViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! RegisterFormCell
-        let colors : [UIColor] = [.red, .gray, .blue]
-        cell.backgroundColor = colors[indexPath.item]
-        
-//        self.container1.frame = cell.frame
-        
+
         if indexPath.item == 0 {
             cell.addSubview(self.container1)
         } else if indexPath.item == 1 {
@@ -78,17 +105,6 @@ extension RegisterViewController : UICollectionViewDelegate, UICollectionViewDat
         } else {
             
         }
-        
-        
-//        switch indexPath.item {
-//        case 0:
-//            self.container1.frame = cell.frame
-//            cell.addSubview(self.container1)
-//        case 1:
-////            self.container2.frame = cell.frame
-////            cell.addSubview(self.container2)
-//        default: return UICollectionViewCell()
-//        }
         
         return cell
     }
