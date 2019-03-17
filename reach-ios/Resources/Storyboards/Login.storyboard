@@ -402,17 +402,26 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8o-6D-Jmf">
-                                            <rect key="frame" x="108" y="36" width="242" height="18"/>
+                                            <rect key="frame" x="108" y="36" width="209" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SurveySelectRadioGreen" translatesAutoresizingMaskIntoConstraints="NO" id="T3v-5u-SDD">
+                                            <rect key="frame" x="325" y="32.5" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="gNb-i5-RCU"/>
+                                                <constraint firstAttribute="width" constant="25" id="xfT-m4-Uky"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="V8o-6D-Jmf" firstAttribute="leading" secondItem="JZw-9C-OZa" secondAttribute="trailing" constant="16" id="2yT-ns-qUz"/>
+                                        <constraint firstItem="T3v-5u-SDD" firstAttribute="centerY" secondItem="VpZ-1S-jYI" secondAttribute="centerY" id="3rY-h6-XN9"/>
                                         <constraint firstItem="JZw-9C-OZa" firstAttribute="centerY" secondItem="VpZ-1S-jYI" secondAttribute="centerY" id="8R7-3m-kX6"/>
                                         <constraint firstItem="V8o-6D-Jmf" firstAttribute="centerY" secondItem="VpZ-1S-jYI" secondAttribute="centerY" id="UNE-Ee-Rgv"/>
-                                        <constraint firstItem="V8o-6D-Jmf" firstAttribute="trailing" secondItem="VpZ-1S-jYI" secondAttribute="trailingMargin" id="ZmR-mF-WJs"/>
+                                        <constraint firstItem="V8o-6D-Jmf" firstAttribute="trailing" secondItem="VpZ-1S-jYI" secondAttribute="trailingMargin" constant="-33" id="ZmR-mF-WJs"/>
+                                        <constraint firstItem="T3v-5u-SDD" firstAttribute="trailing" secondItem="VpZ-1S-jYI" secondAttribute="trailingMargin" id="aGu-80-EqQ"/>
                                         <constraint firstItem="JZw-9C-OZa" firstAttribute="leading" secondItem="VpZ-1S-jYI" secondAttribute="leadingMargin" constant="8" id="hAn-Te-66m"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -420,6 +429,7 @@
                                 <connections>
                                     <outlet property="cellImageView" destination="JZw-9C-OZa" id="aVq-rQ-XIe"/>
                                     <outlet property="nameLabel" destination="V8o-6D-Jmf" id="dFw-Tb-Eep"/>
+                                    <outlet property="selectionImageView" destination="T3v-5u-SDD" id="AsY-hW-8d5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -511,10 +521,13 @@
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="8"/>
+                                                    <integer key="value" value="6"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="didTapDelete:" destination="op3-74-d16" eventType="touchDown" id="gjv-d1-kTa"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rl0-ds-Lq7">
                                             <rect key="frame" x="100" y="36" width="179" height="18"/>
@@ -745,6 +758,9 @@
                                                             </constraints>
                                                             <state key="normal" image="RegistrationMaleOff"/>
                                                             <state key="selected" image="RegistrationMale"/>
+                                                            <connections>
+                                                                <action selector="didTapMale:" destination="YQY-Hs-01c" eventType="touchDown" id="gPi-z8-QtL"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGh-3F-dU5">
                                                             <rect key="frame" x="58" y="0.0" width="50" height="50"/>
@@ -754,6 +770,9 @@
                                                             </constraints>
                                                             <state key="normal" image="RegistrationFemaleOff"/>
                                                             <state key="selected" image="RegistrationFemale"/>
+                                                            <connections>
+                                                                <action selector="didTapFemale:" destination="YQY-Hs-01c" eventType="touchDown" id="lXD-EJ-Gd7"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -819,6 +838,9 @@
                                                             <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YQY-Hs-01c" id="M6e-tN-31K"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -876,6 +898,9 @@
                                                             <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YQY-Hs-01c" id="Dws-d8-xkj"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -900,7 +925,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="155" height="48"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                                     <real key="value" value="2"/>
@@ -935,12 +960,15 @@
                                                                     <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="YQY-Hs-01c" id="BmU-Ex-pxP"/>
+                                                            </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdC-25-bgT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                             <rect key="frame" x="163" y="0.0" width="155" height="48"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                                     <real key="value" value="2"/>
@@ -969,12 +997,15 @@
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
                                                                     <color key="value" red="0.76695421009999998" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="DOB"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="YYYY-MM-DD"/>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="title" value="DOB"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                     <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="YQY-Hs-01c" id="VCW-f3-5LU"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -998,7 +1029,7 @@
                                                     <rect key="frame" x="24" y="11" width="318" height="48"/>
                                                     <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                             <real key="value" value="2"/>
@@ -1033,6 +1064,9 @@
                                                             <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YQY-Hs-01c" id="QW3-87-Me2"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1089,6 +1123,9 @@
                                                             <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YQY-Hs-01c" id="UCT-6e-Yj2"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1187,7 +1224,7 @@
                                                                 <constraint firstAttribute="width" constant="30" id="hyI-Kn-5em"/>
                                                                 <constraint firstAttribute="height" constant="30" id="m05-XK-shq"/>
                                                             </constraints>
-                                                            <state key="normal" image="SurveySelectRadio"/>
+                                                            <state key="normal" image="SurveySelectRadioGreen"/>
                                                             <state key="selected" image="SurveySelectedRadio"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-jL-Jgn">
@@ -1214,7 +1251,7 @@
                                                 <constraint firstItem="jFy-ux-Z9n" firstAttribute="leading" secondItem="WTj-IS-quS" secondAttribute="leadingMargin" constant="8" id="UtR-nn-mfY"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="gsA-67-U9R" appends="YES" id="mXI-k9-ocg"/>
@@ -1233,6 +1270,14 @@
                     <connections>
                         <outlet property="TCButton" destination="MMC-3x-zp0" id="1sy-Gs-zdL"/>
                         <outlet property="companyTextField" destination="zZK-Ye-0ek" id="Nl2-Gf-Jxp"/>
+                        <outlet property="dobTextField" destination="gdC-25-bgT" id="bNx-Zg-XHl"/>
+                        <outlet property="emailTextField" destination="Nb0-Gs-rxy" id="TYy-12-2dZ"/>
+                        <outlet property="femaleButton" destination="IGh-3F-dU5" id="PEq-yW-2QG"/>
+                        <outlet property="firstNameTextField" destination="S2w-SE-hiF" id="AAx-bO-YTF"/>
+                        <outlet property="lastNameTextField" destination="x9d-RO-4Qy" id="yAA-T6-pCN"/>
+                        <outlet property="maleButton" destination="Ft3-p9-YzQ" id="eXm-H7-aJr"/>
+                        <outlet property="mobileTextField" destination="V6K-AU-QWS" id="Csw-7K-KAu"/>
+                        <outlet property="passwordTextField" destination="JAn-mg-FoP" id="ZsW-6w-oA1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFz-GS-681" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1311,7 +1356,7 @@
         <image name="RegistrationFemaleOff" width="46.5" height="46.5"/>
         <image name="RegistrationMale" width="46.5" height="46.5"/>
         <image name="RegistrationMaleOff" width="46.5" height="46.5"/>
-        <image name="SurveySelectRadio" width="23.5" height="23.5"/>
+        <image name="SurveySelectRadioGreen" width="23.5" height="23.5"/>
         <image name="SurveySelectedRadio" width="23.5" height="23.5"/>
         <image name="down_arrow" width="10" height="5"/>
         <image name="eye_off" width="26.5" height="26.5"/>

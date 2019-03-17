@@ -58,6 +58,18 @@ class RegisterViewController: UIViewController {
         } else if viewIndex == 1 {
             
             viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
+            
+            // get selected brand IDs from brandsFormVC
+            guard let brands = brandsFormVC?.getSelectedBrandIDs() else { return }
+            
+            
+            // get user entered info from PersonalInfoVC
+            
+            
+            
+            
+            // Make POST API Call
+            
             print("GOOOO")
         }
     }

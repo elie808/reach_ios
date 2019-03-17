@@ -11,6 +11,8 @@ import UIKit
 struct Brand : Codable {
     let id, vendor_id : Int
     let name, image : String
+    
+    var isSelected : Bool? = false
 }
 
 struct BrandTraining : Codable {

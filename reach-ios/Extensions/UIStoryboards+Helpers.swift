@@ -39,6 +39,10 @@ struct Segue {
         static let toCategories = "BrandsToCategoriesVC"
     }
     
+    struct BrandsList {
+        static let toAddBrands = "unwindToAddBrandsVC"
+    }
+    
     struct Categories {
         static let toSubCategories = "CategoriesToSubcategoriesVC"
     }
