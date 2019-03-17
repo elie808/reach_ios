@@ -33,4 +33,8 @@ extension String {
     static var emailFormatNotValid: String {
         return NSLocalizedString("Email format is not valid", comment: "error message")
     }
+    
+    static var wrongDateFormat: String {
+        return NSLocalizedString("Date format is not valid. Please enter it as YYYY-MM-DD", comment: "error message")
+    }
 }

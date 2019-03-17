@@ -16,6 +16,12 @@ extension String {
         return emailTest.evaluate(with: self)
     }
     
+    func isValidDate() -> Bool {
+        let dateRegEx = "[0-9]{4}-[0-9]{2}-[0-9]{2}"
+        let dateTest = NSPredicate(format: "SELF MATCHES %@", dateRegEx)
+        return dateTest.evaluate(with: self)
+    }
+    
     // MARK: - HTML
     
     /// Produce a CSS formatting string to append to any HTML text that needs formatting

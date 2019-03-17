@@ -34,6 +34,10 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         initializeView()
     }
 
@@ -65,57 +69,53 @@ class ProfileTableViewController: UITableViewController {
     
     func formValid() -> Bool {
         
-        var flag = true
+        var isValid = true
+        
+        guard let dob = dobTextField.text else { return false }
         
         if mobileTextField.text?.isEmpty == true {
             mobileTextField.errorMessage = String.cantBeEmpty
-            flag = false
+            isValid = false
         } else {
             mobileTextField.errorMessage = nil
-            flag = true
         }
         
         if dobTextField.text?.isEmpty == true {
             dobTextField.errorMessage = String.cantBeEmpty
-            flag = false
+            isValid = false
         } else {
             dobTextField.errorMessage = nil
-            flag = true
+        }
+        
+        if !dob.isEmpty && !dob.isValidDate() {
+            dobTextField.errorMessage = String.wrongDateFormat
+            isValid = false
+        } else {
+            dobTextField.errorMessage = nil
         }
         
         if emailTextField.text?.isEmpty == true {
             emailTextField.errorMessage = String.cantBeEmpty
-            flag = false
+            isValid = false
         } else {
             emailTextField.errorMessage = nil
-            flag = true
         }
         
         if IAmTextField.text?.isEmpty == true {
             IAmTextField.errorMessage = String.cantBeEmpty
-            flag = false
+            isValid = false
         } else {
             IAmTextField.errorMessage = nil
-            flag = true
         }
         
         if companyTextField.text?.isEmpty == true {
             companyTextField.errorMessage = String.cantBeEmpty
-            flag = false
+            isValid = false
         } else {
             companyTextField.errorMessage = nil
-            flag = true
         }
         
-//        if typeTextField.text?.isEmpty == true {
-//            typeTextField.errorMessage = String.cantBeEmpty
-//            flag = false
-//        } else {
-//            typeTextField.errorMessage = nil
-//            flag = true
-//        }
-        
-        return flag
+        return isValid
     }
     
     // MARK: - Actions
@@ -135,7 +135,7 @@ class ProfileTableViewController: UITableViewController {
             guard let dob = dobTextField.text else { return }
             guard let gender = IAmTextField.text else { return }
             
-            let postObject = postObj(first_name: firstName, last_name: lastName, mobile_number: mobile, date_of_birth: dob, gender: gender, image: 178, organization: self.org!.id)
+            let postObject = postObj(first_name: firstName, last_name: lastName, mobile_number: mobile, date_of_birth: dob, gender: gender, image: 1, organization: self.org!.id)
             
             let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod<postObj>.patch(postObject))
             
