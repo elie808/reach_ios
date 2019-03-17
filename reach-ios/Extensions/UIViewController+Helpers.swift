@@ -14,7 +14,7 @@ extension UIViewController {
     // MARK: - Properties
     
     enum BannerMessage : String {
-        case CheckinSuccess = "Participant(s) succesfully checked-in"
+        case SuccessUpdate = "Success"
         case CachingSuccess = "Could not reach server. Check-in saved on device"
         case CacheSyncSuccess = "Check-ins successfully uploaded to server"
         case DBRefreshSuccess = "Database successfully updated"
@@ -57,12 +57,15 @@ extension UIViewController {
     func showBanner(message : BannerMessage) {
         
         var title = "Success"
-        var image = UIImage(named: "checkmark_icon")
+        var subtitle = "Success"
+        var image = UIImage(named: "iconGreenTick")
         
         switch message {
             
-        case .CheckinSuccess:
-            image = UIImage(named: "banner_checkmark")
+        case .SuccessUpdate:
+            title = "Success"
+            subtitle = "Information is updated"
+            image = #imageLiteral(resourceName: "iconGreenTick")
             
         case .CachingSuccess:
             title = "Info"
@@ -76,9 +79,10 @@ extension UIViewController {
             image = UIImage(named: "banner_download")
         }
         
-        let banner = Banner(title: title, subtitle: message.rawValue, image: image, backgroundColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1) )
+        let banner = Banner(title: title, subtitle: subtitle, image: image, backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         //        banner.detailLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        banner.titleLabel.textColor = #colorLiteral(red: 0.4973498583, green: 0.7919111848, blue: 0.1769197583, alpha: 1)
+        banner.titleLabel.textColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
+        banner.detailLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         banner.dismissesOnTap = true
         banner.show(duration: 2.4)
     }
