@@ -28,6 +28,11 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Properties
     
+    struct postObj : Codable  {
+        let first_name, last_name, mobile_number, date_of_birth, gender : String
+        let image, organization : Int
+    }
+    
     var org : Organization?
     
     // MARK: - Views Life Cycle
@@ -147,10 +152,6 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
-    struct postObj : Codable  {
-        let first_name, last_name, mobile_number, date_of_birth, gender : String
-        let image, organization : Int
-    }
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
