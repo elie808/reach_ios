@@ -73,8 +73,10 @@ extension Resource where A: Decodable {
         #if DEBUG
         print("--")
         print("URL:")
-        print(urlRequest.url)
+        print(urlRequest.url!)
         print("--")
+        print("BODY:")
+        print(urlRequest.httpBody!)
         #endif
     }
 }

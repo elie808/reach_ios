@@ -56,7 +56,7 @@ class ProfileTableViewController: UITableViewController {
             self.lastNameTextfield.text? = user?.lastName ?? ""
             
             self.mobileTextField.text? = user?.mobileNumber ?? ""
-            self.dobTextField.text? = user?.mobileNumber ?? ""
+            self.dobTextField.text? = user?.dob ?? ""
             self.IAmTextField.text? = user?.gender ?? ""
             self.emailTextField.text? = user?.email ?? ""
             self.companyTextField.text? = user?.organization.name ?? ""
@@ -135,25 +135,22 @@ class ProfileTableViewController: UITableViewController {
             guard let dob = dobTextField.text else { return }
             guard let gender = IAmTextField.text else { return }
             
-            let postParameters = [
-                "first_name": firstName,
-                "last_name": lastName,
-                "mobile_number": mobile,
-                "date_of_birth": dob,
-                "gender": gender,
-                "image": "123",
-                "organization": "3"//String(self.org!.id)
-                ]
+            let postObject = postObj(first_name: firstName, last_name: lastName, mobile_number: mobile, date_of_birth: dob, gender: gender, image: 178, organization: self.org!.id)
             
-            let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod.patch(postParameters))
+            let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod<postObj>.patch(postObject))
             
-//            URLSession.shared.load(updateProfile) { (updatedProfile, status) in
-//
-//            }
+            URLSession.shared.load(updateProfile) { (updatedProfile, status) in
+                if status.code == 200 {
+                    self.showBanner(message: .SuccessUpdate)
+                }
+            }
         }
     }
     
-    
+    struct postObj : Codable  {
+        let first_name, last_name, mobile_number, date_of_birth, gender : String
+        let image, organization : Int
+    }
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
