@@ -35,10 +35,18 @@ class DailyReportViewController: UIViewController {
     
     // MARK: - Actions
     
-    
-    
     @IBAction func didTapSubmit(_ sender: UIButton) {
         
+        let rep = ReportSaleModel()
+        let sds = ReportSaleModel()
+        
+        let postObj = ["sales" : [rep, sds]]
+        
+        let sales = Resource<ReportSaleModel>(url: URL(string: "")!, method: HttpMethod.post(postObj))
+        
+        URLSession.shared.load(sales) { (response, status) in
+            print("STATUS: ",status)
+        }
         
 //        let report = ReportSaleModel(
         

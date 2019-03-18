@@ -11,15 +11,15 @@ import SkyFloatingLabelTextField
 
 struct ReportSaleModel : Codable {
     
+    var productID : Int = 0
     var productName : String = ""
+    
     var serialNumber : String = ""
     var additionalInfo : String = ""
     
-    var productID : Int = 0
     var image : Int = 0
 
     private enum CodingKeys: String, CodingKey {
-    
         case productName, image
         case serialNumber = "serial_number"
         case additionalInfo = "additional_info"
@@ -31,29 +31,27 @@ class ReportSaleViewController: UITableViewController {
 
     // MARK: - Properties
     
+    var selectedProduct : Product? // passed from ProductListTC
     var viewModel = ReportSaleModel()
-//    var productDataSource : [Product] = []
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var productNameLabel: UILabel!
-    
-//    @IBOutlet weak var productIDLabel: UILabel!
+
+    @IBOutlet weak var productNameTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productIDTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productImageView: UIImageView!
-    @IBOutlet weak var infoTextfield: UITextField!
+    @IBOutlet weak var infoTextfield: SkyFloatingLabelTextField!
     
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeView()
-        
-//        productDataSource = [Product(name: "Product 1"), Product(name: "Product 2")]
     }
     
+    // MARK: - Helpers
+    
     func initializeView() {
-        productNameLabel.text = viewModel.productName
+        productNameTextField.text = viewModel.productName
         productIDTextField.text = viewModel.serialNumber
         infoTextfield.text = viewModel.additionalInfo
     }
@@ -62,13 +60,18 @@ class ReportSaleViewController: UITableViewController {
         
         var isValid = true
         
-        if (productNameLabel.text?.isEmpty)! {
-//            nameTextField.errorMessage = String.addressNameRequired
+        if (productNameTextField.text?.isEmpty)! {
+            productNameTextField.errorMessage = .cantBeEmpty
             isValid = false
+        } else {
+            productNameTextField.errorMessage = nil
         }
         
         if (productIDTextField.text?.isEmpty)! {
+            productIDTextField.errorMessage = .cantBeEmpty
             isValid = false
+        } else {
+            productIDTextField.errorMessage = nil
         }
         
         if productImageView.image != nil {
@@ -76,10 +79,25 @@ class ReportSaleViewController: UITableViewController {
         }
 
         if (infoTextfield.text?.isEmpty)! {
+            infoTextfield.errorMessage = .cantBeEmpty
             isValid = false
+        } else {
+            infoTextfield.errorMessage = nil
         }
         
         return isValid
+    }
+    
+    /// Return an initiated data model with values from the VC
+    func bindToViewModel() -> ReportSaleModel {
+        
+        let model = ReportSaleModel(productID: selectedProduct != nil ? (selectedProduct?.id)! : viewModel.productID,
+                                    productName: productNameTextField.text!,
+                                    serialNumber: productIDTextField.text!,
+                                    additionalInfo: infoTextfield.text!,
+                                    image: 0)
+        
+        return model
     }
     
     // MARK: - Actions
@@ -103,9 +121,9 @@ class ReportSaleViewController: UITableViewController {
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
         
-//        if formValid() == true {
-//        }
-        performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: nil)
+        if formValid() == true {
+            performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: bindToViewModel())
+        }
     }
     
     // MARK: - Navigation
@@ -115,7 +133,7 @@ class ReportSaleViewController: UITableViewController {
         switch segue.identifier {
         
         case Segue.ProductList.toReportSale:
-            productNameLabel.text = viewModel.productName
+            productNameTextField.text = viewModel.productName
             
         case Segue.QRScanner.toReportSale:
             productIDTextField.text = viewModel.serialNumber
@@ -130,11 +148,11 @@ class ReportSaleViewController: UITableViewController {
 
         switch segue.identifier {
             
-//        case Segue.ReportSale.toQRScannerVC:
-            
-        case Segue.ReportSale.toProductList:
-            let vc : ProductListTableViewController = segue.destination as! ProductListTableViewController
-//            vc.dataSource = productDataSource
+        case Segue.ReportSale.toDailyReport:
+//            let vc = segue.destination as! DailyReportViewController
+            if let saleObj = sender, saleObj is ReportSaleModel {
+                //TODO: stuff
+            }
             
         default: return
         }
@@ -144,20 +162,7 @@ class ReportSaleViewController: UITableViewController {
 extension ReportSaleViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == productIDTextField {
-            if let text = textField.text, text.count > 0, !text.isEmpty {
-                viewModel.serialNumber = text
-            }
-            textField.resignFirstResponder()
-            
-        } else {
-            
-            if let text = textField.text {
-                viewModel.additionalInfo = text
-            }
-        }
-        
+        _ = formValid()
         return textField.resignFirstResponder()
     }
 }
