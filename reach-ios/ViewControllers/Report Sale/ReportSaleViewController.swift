@@ -8,8 +8,9 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import SwiftyUserDefaults
 
-struct ReportSaleModel : Codable {
+struct ReportSaleModel : Codable, DefaultsSerializable {
     
     var productID : Int = 0
     var productName : String = ""

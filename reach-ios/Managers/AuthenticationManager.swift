@@ -12,6 +12,7 @@ import SwiftyUserDefaults
 // Add Keys here for AuthenticationManager methods
 extension DefaultsKeys {
     static let authenticationData = DefaultsKey<AuthenticationData?>("authentication-data")
+    static let salesData = DefaultsKey<[ReportSaleModel]?>("sale-data")
 //    static let authenticationData = DefaultsKey<String?>("authentication-data")
 //    static let userAreaID = DefaultsKey<String?>("user-area-id")
 }
@@ -27,6 +28,12 @@ final class AuthenticationManager {
         Defaults[.authenticationData] = authenticationData
         Defaults.synchronize()
     }
+    
+    static func addToSalesData(dailySale: ReportSaleModel) {
+        var savedArray : [ReportSaleModel] = (Defaults[.salesData])!
+        Defaults[.salesData] = savedArray.append(dailySale)
+        Defaults.synchronize()
+    }
 
     static func logout() {
         clearUserDefaults()
@@ -38,11 +45,3 @@ final class AuthenticationManager {
         Defaults.synchronize()
     }
 }
-
-//// Extension to support handling AuthenticationData in SwiftyUserDefaults Pod
-//extension UserDefaults {
-//    subscript(key: DefaultsKey<AuthenticationData?>) -> AuthenticationData? {
-//        get { return unarchive(key) }
-//        set { archive(key, newValue) }
-//    }
-//}

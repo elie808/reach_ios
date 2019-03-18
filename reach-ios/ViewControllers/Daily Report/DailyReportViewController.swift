@@ -18,6 +18,7 @@ class DailyReportViewController: UIViewController {
     // MARK: - Properties
     
     var dataSource = GenericTableDataSource<DailyReportCell, DailyReport>()
+    var passedSale : ReportSaleModel?
     
     // MARK: - Outlets
     
@@ -37,27 +38,20 @@ class DailyReportViewController: UIViewController {
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
         
-        let rep = ReportSaleModel()
-        let sds = ReportSaleModel()
+        let sds = ReportSaleModel(productID: 32, productName: "random name", serialNumber: "111234", additionalInfo: "some info", image: 1)
+       
+        let postObj = ["sales" : [sds]]
         
-        let postObj = ["sales" : [rep, sds]]
-        
-        let sales = Resource<ReportSaleModel>(url: URL(string: "")!, method: HttpMethod.post(postObj))
+        let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
         
         URLSession.shared.load(sales) { (response, status) in
             print("STATUS: ",status)
         }
-        
-//        let report = ReportSaleModel(
-        
-//        {
-//            "sales": [{
-//            "product_id": 32,
-//            "serial_number": "111234",
-//            "additional_info": "Additional info here",
-//            "image": 1
-//            }]
-//        }
+//
+//        "product_id": 32,
+//        "serial_number": "111234",
+//        "additional_info": "Additional info here",
+//        "image": 0
     }
     
     // MARK: - Navigation
