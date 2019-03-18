@@ -33,6 +33,25 @@ class DailyReportViewController: UIViewController {
         tableView.dataSource = dataSource
     }
     
+    // MARK: - Actions
+    
+    
+    
+    @IBAction func didTapSubmit(_ sender: UIButton) {
+        
+        
+//        let report = ReportSaleModel(
+        
+//        {
+//            "sales": [{
+//            "product_id": 32,
+//            "serial_number": "111234",
+//            "additional_info": "Additional info here",
+//            "image": 1
+//            }]
+//        }
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

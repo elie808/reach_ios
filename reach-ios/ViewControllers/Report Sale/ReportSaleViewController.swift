@@ -9,18 +9,21 @@
 import UIKit
 
 struct ReportSaleModel : Codable {
+    
     var productName : String = ""
     var serialNumber : String = ""
     var additionalInfo : String = ""
-}
+    
+    var productID : Int = 0
+    var image : Int = 0
 
-//"product_id": 32,
-//            "serial_number": "111234",
-//            "additional_info": "Additional info here",
-//            "image": 1
-
-struct Product {
-    let name : String
+    private enum CodingKeys: String, CodingKey {
+    
+        case productName, image
+        case serialNumber = "serial_number"
+        case additionalInfo = "additional_info"
+        case productID = "product_id"
+    }
 }
 
 class ReportSaleViewController: UITableViewController {
@@ -28,7 +31,7 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Properties
     
     var viewModel = ReportSaleModel()
-    var productDataSource : [Product] = []
+//    var productDataSource : [Product] = []
     
     // MARK: - Outlets
     
@@ -43,7 +46,7 @@ class ReportSaleViewController: UITableViewController {
         super.viewDidLoad()
         initializeView()
         
-        productDataSource = [Product(name: "Product 1"), Product(name: "Product 2")]
+//        productDataSource = [Product(name: "Product 1"), Product(name: "Product 2")]
     }
     
     func initializeView() {
@@ -128,7 +131,7 @@ class ReportSaleViewController: UITableViewController {
             
         case Segue.ReportSale.toProductList:
             let vc : ProductListTableViewController = segue.destination as! ProductListTableViewController
-            vc.dataSource = productDataSource
+//            vc.dataSource = productDataSource
             
         default: return
         }

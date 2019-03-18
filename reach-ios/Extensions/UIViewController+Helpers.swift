@@ -15,7 +15,7 @@ extension UIViewController {
     
     enum BannerMessage : String {
         case SuccessUpdate = "Success"
-        case CachingSuccess = "Could not reach server. Check-in saved on device"
+        case NoResults = "No results found"
         case CacheSyncSuccess = "Check-ins successfully uploaded to server"
         case DBRefreshSuccess = "Database successfully updated"
     }
@@ -67,9 +67,10 @@ extension UIViewController {
             subtitle = "Information is updated"
             image = #imageLiteral(resourceName: "iconGreenTick")
             
-        case .CachingSuccess:
-            title = "Info"
-            image = UIImage(named: "banner_cache")
+        case .NoResults:
+            title = "Not Found"
+            subtitle = "No results found"
+//            image = UIImage(named: "banner_cache")
             
         case .CacheSyncSuccess:
             title = "Info"

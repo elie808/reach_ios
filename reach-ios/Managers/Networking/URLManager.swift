@@ -64,6 +64,11 @@ struct NetworkingConstants {
         static let training = "/training"
     }
     
+    private struct Search {
+        static let freeSearch = "products/search/"
+        static let serialSearch = "products/search/serial/"
+    }
+    
     private struct Vendor {
         static let brands = "products/vendors/all/"
     }
@@ -81,21 +86,23 @@ struct NetworkingConstants {
     static let allPromotions  = Domains.baseURL + Promotions.allPromotions
     static let banners  = Domains.baseURL + Static.banners
     static let faqs     = Domains.baseURL + Static.faq
-    static let login     = Domains.baseURL + User.login
+    static let login    = Domains.baseURL + User.login
     static let newsDetails = Domains.baseURL + News.newsDetails
     static let profile  = Domains.baseURL + User.profile
-    static let sales  = Domains.baseURL + Sales.sales
+    static let sales    = Domains.baseURL + Sales.sales
     static let termsAndConditions = Domains.baseURL + Static.terms
     static let trainingCategory   = Domains.baseURL + Training.allCategories
-    static let userVendorsList  = Domains.baseURL + ProductTraining.allVendors
-    static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.training }
+    static let userVendorsList    = Domains.baseURL + ProductTraining.allVendors
+    
+    static func brands(foVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) }
     static func brandTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.brandBase + String(id) + ProductTraining.training }
     static func categoryTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
-    static func subCategoryTraining(forCategoryID id:Int) -> String { return Domains.baseURL + ProductTraining.subCategoryBase + String(id) + ProductTraining.training }
     static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
+    static func search(byName searchString:String) -> String { return Domains.baseURL + Search.freeSearch + searchString }
+    static func search(bySerial searchString:String) -> String { return Domains.baseURL + Search.serialSearch + searchString }
+    static func subCategoryTraining(forCategoryID id:Int) -> String { return Domains.baseURL + ProductTraining.subCategoryBase + String(id) + ProductTraining.training }
+    static func vendorBrands(forVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) + ProductTraining.training }
     static func vendors(forOrganizationID id:Int) -> String { return Domains.baseURL + Vendor.brands + String(id) }
-    static func brands(foVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) }
-    
     
     // MARK: - Helpers
 
