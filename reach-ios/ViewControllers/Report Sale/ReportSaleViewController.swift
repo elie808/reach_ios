@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 struct ReportSaleModel : Codable {
     
@@ -36,7 +37,9 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productIDLabel: UILabel!
+    
+//    @IBOutlet weak var productIDLabel: UILabel!
+    @IBOutlet weak var productIDTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var infoTextfield: UITextField!
     
@@ -51,7 +54,7 @@ class ReportSaleViewController: UITableViewController {
     
     func initializeView() {
         productNameLabel.text = viewModel.productName
-        productIDLabel.text = viewModel.serialNumber
+        productIDTextField.text = viewModel.serialNumber
         infoTextfield.text = viewModel.additionalInfo
     }
     
@@ -64,7 +67,7 @@ class ReportSaleViewController: UITableViewController {
             isValid = false
         }
         
-        if (productIDLabel.text?.isEmpty)! {
+        if (productIDTextField.text?.isEmpty)! {
             isValid = false
         }
         
@@ -115,7 +118,7 @@ class ReportSaleViewController: UITableViewController {
             productNameLabel.text = viewModel.productName
             
         case Segue.QRScanner.toReportSale:
-            productIDLabel.text = viewModel.serialNumber
+            productIDTextField.text = viewModel.serialNumber
         
         default: return
         }
@@ -142,8 +145,17 @@ extension ReportSaleViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if let text = textField.text {
-            viewModel.additionalInfo = text
+        if textField == productIDTextField {
+            if let text = textField.text, text.count > 0, !text.isEmpty {
+                viewModel.serialNumber = text
+            }
+            textField.resignFirstResponder()
+            
+        } else {
+            
+            if let text = textField.text {
+                viewModel.additionalInfo = text
+            }
         }
         
         return textField.resignFirstResponder()
