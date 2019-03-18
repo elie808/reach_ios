@@ -122,15 +122,9 @@ class ReportSaleViewController: UITableViewController {
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
         
-//        if formValid() == true {
-        
-//            PersistenceManager.deleteAddSalesData()
-        
-            let shiii = ReportSaleModel(productID: 8, productName: "ANothas", serialNumber: "123454", additionalInfo: "info", image: 0)
-            PersistenceManager.addToSalesData(dailySale: shiii )
-            
+        if formValid() == true {
             performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: bindToViewModel())
-//        }
+        }
     }
     
     // MARK: - Navigation
@@ -156,9 +150,8 @@ class ReportSaleViewController: UITableViewController {
         switch segue.identifier {
             
         case Segue.ReportSale.toDailyReport:
-//            let vc = segue.destination as! DailyReportViewController
             if let saleObj = sender, saleObj is ReportSaleModel {
-                //TODO: stuff
+                PersistenceManager.addToSalesData(dailySale: (saleObj as! ReportSaleModel) )
             }
             
         default: return
