@@ -31,7 +31,7 @@ class HelpViewController: UIViewController {
         super.viewDidLoad()
         
         dataSource.data = [
-            HelpItem(title: "Selling can be fun ? \n We certainly think so!", description: "Engage, learn and earn with REACH through registering your sales team. Our app tunes your sales skills, and lets you earn a wide range of rewards.", image: #imageLiteral(resourceName: "MainPerformanceIcon"), circleColor: .reachGreen),
+            HelpItem(title: "Selling can be fun ? \n We certainly think so!", description: "Engage, learn and earn with REACH through registering your sales team. Our app tunes your sales skills, and lets you earn a wide range of rewards.", image: #imageLiteral(resourceName: "Help1one"), circleColor: .reachGreen),
             HelpItem(title: "Learn", description: "Become involved with your brand community. And get everything you need to know about the product that you are selling and the brand that you represent.", image: #imageLiteral(resourceName: "TrainingHowTo"), circleColor: .reachGreen),
             HelpItem(title: "Earn", description: "Become involved with your brand community. And get everything you need to know about the product that you are selling and the brand that you represent.", image: #imageLiteral(resourceName: "MainPromotionIcon"), circleColor: .reachGreen),
             HelpItem(title: "Report Sale", description: "Earn points for the sales and training that you make. Get the change to become best sales person of the year. Make your hard work pay off. \n \n Engage, learn and earn with REACH through registering your sales team. Our app tunes your sales skills, and lets you earn a wide range of rewards.", image: #imageLiteral(resourceName: "TabReport"), circleColor: .reachOrange),

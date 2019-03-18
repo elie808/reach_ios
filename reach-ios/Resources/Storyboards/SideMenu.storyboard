@@ -339,7 +339,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl3-eP-6RF">
                                                     <rect key="frame" x="130.5" y="109" width="100" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-wT-DX8">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-wT-DX8">
                                                             <rect key="frame" x="8" y="8" width="84" height="84"/>
                                                         </imageView>
                                                     </subviews>
