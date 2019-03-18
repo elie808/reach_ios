@@ -8,11 +8,16 @@
 
 import UIKit
 
-struct ReportSaleModel {
+struct ReportSaleModel : Codable {
     var productName : String = ""
     var serialNumber : String = ""
     var additionalInfo : String = ""
 }
+
+//"product_id": 32,
+//            "serial_number": "111234",
+//            "additional_info": "Additional info here",
+//            "image": 1
 
 struct Product {
     let name : String
