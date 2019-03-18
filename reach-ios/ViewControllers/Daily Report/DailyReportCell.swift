@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DailyReportCell: GenericTableCell<DailyReport> {
+class DailyReportCell: GenericTableCell<ReportSaleModel> {
     
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var serialLabel : UILabel!
     @IBOutlet weak var quantityLabel : UILabel!
     
-    override var model : DailyReport! {
+    override var model : ReportSaleModel! {
         didSet {
-            nameLabel.text = model.name
-            serialLabel.text = model.serial
-            quantityLabel.text = String(model.quantity)
+            nameLabel.text = model.productName
+            serialLabel.text = model.serialNumber
+            quantityLabel.text = "1"//String(model.quantity)
         }
     }
 }

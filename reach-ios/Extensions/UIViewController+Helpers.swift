@@ -15,9 +15,9 @@ extension UIViewController {
     
     enum BannerMessage : String {
         case SuccessUpdate = "Success"
-        case NoResults = "No results found"
-        case CacheSyncSuccess = "Check-ins successfully uploaded to server"
-        case DBRefreshSuccess = "Database successfully updated"
+        case SuccessPostingSales = "Sales post success"
+        case ErrorPosting = "No results found"
+        case NoResults = ""
     }
     
     // MARK: - AlertControllers
@@ -60,30 +60,37 @@ extension UIViewController {
         var subtitle = "Success"
         var image = UIImage(named: "iconGreenTick")
         
+        var defaultTitleColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
+        var defaultSubTitleColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
+
         switch message {
             
         case .SuccessUpdate:
             title = "Success"
             subtitle = "Information is updated"
             image = #imageLiteral(resourceName: "iconGreenTick")
+        
+        case .SuccessPostingSales:
+            title = "Success"
+            subtitle = "Your sales have been uploaded for approval"
+            image = #imageLiteral(resourceName: "iconGreenTick")
+            
+        case .ErrorPosting:
+            title = "Error"
+            subtitle = "There was an error posting sales data"
+            defaultTitleColor = #colorLiteral(red: 1, green: 0, blue: 0.4065560102, alpha: 1)
             
         case .NoResults:
             title = "Not Found"
             subtitle = "No results found"
 //            image = UIImage(named: "banner_cache")
-            
-        case .CacheSyncSuccess:
-            title = "Info"
-            image = UIImage(named: "banner_sync")
-            
-        case .DBRefreshSuccess:
-            image = UIImage(named: "banner_download")
         }
         
         let banner = Banner(title: title, subtitle: subtitle, image: image, backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) )
         //        banner.detailLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        banner.titleLabel.textColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
-        banner.detailLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        banner.titleLabel.textColor = defaultTitleColor
+        banner.detailLabel.textColor = defaultSubTitleColor
         banner.dismissesOnTap = true
         banner.show(duration: 2.4)
     }
