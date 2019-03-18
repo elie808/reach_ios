@@ -29,12 +29,6 @@ final class AuthenticationManager {
         Defaults.synchronize()
     }
     
-    static func addToSalesData(dailySale: ReportSaleModel) {
-        var savedArray : [ReportSaleModel] = (Defaults[.salesData])!
-        Defaults[.salesData] = savedArray.append(dailySale)
-        Defaults.synchronize()
-    }
-
     static func logout() {
         clearUserDefaults()
 //        Cache.deleteAllFiles()
@@ -42,6 +36,34 @@ final class AuthenticationManager {
     
     private static func clearUserDefaults() {
         Defaults[.authenticationData] = nil
+        Defaults.synchronize()
+    }
+}
+
+final class PersistenceManager {
+    
+    static func addToSalesData(dailySale: ReportSaleModel) {
+
+        if var savedArray = Defaults[.salesData], savedArray.count > 0 {
+            
+            savedArray.append(dailySale)
+            Defaults[.salesData] = savedArray
+            
+        } else {
+            
+            Defaults[.salesData] = [dailySale]
+        }
+        
+        Defaults.synchronize()
+    }
+    
+    static func getAllSavedSales() -> [ReportSaleModel]? {
+        guard let savedArray = Defaults[.salesData] else { return nil }
+        return savedArray
+    }
+    
+    static func deleteAddSalesData() {
+        Defaults[.salesData] = nil
         Defaults.synchronize()
     }
 }

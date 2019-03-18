@@ -37,16 +37,22 @@ class DailyReportViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
+
+        let shi  = PersistenceManager.getAllSavedSales()
         
-        let sds = ReportSaleModel(productID: 32, productName: "random name", serialNumber: "111234", additionalInfo: "some info", image: 1)
-       
-        let postObj = ["sales" : [sds]]
+        print(shi)
         
-        let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
+        PersistenceManager.deleteAddSalesData()
         
-        URLSession.shared.load(sales) { (response, status) in
-            print("STATUS: ",status)
-        }
+//        let sds = ReportSaleModel(productID: 32, productName: "random name", serialNumber: "111234", additionalInfo: "some info", image: 1)
+//
+//        let postObj = ["sales" : [sds]]
+//
+//        let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
+//
+//        URLSession.shared.load(sales) { (response, status) in
+//            print("STATUS: ",status)
+//        }
 //
 //        "product_id": 32,
 //        "serial_number": "111234",
