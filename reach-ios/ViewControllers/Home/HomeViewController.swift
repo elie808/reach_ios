@@ -70,9 +70,7 @@ class HomeViewController: UIViewController {
         let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
         
         URLSession.shared.load(profile) { (user, status) in
-            
-            print("STATUS: ", status)
-            
+
             self.fullNameLabel.text = (user?.firstName)! + " " + (user?.lastName)!
             self.profilePicture.profilePicture.urlSetImage(user?.image)
             self.profilePicture.totalPoints = (user?.totalApprovedPoints)!

@@ -209,16 +209,16 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiQ-4T-Gdt" customClass="CurvedBottomView" customModule="reach_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2i-WY-E8d">
-                                        <rect key="frame" x="40" y="52.5" width="79" height="14.5"/>
+                                        <rect key="frame" x="40" y="62.5" width="79" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nba-dJ-X3e">
-                                        <rect key="frame" x="297.5" y="48" width="37.5" height="18"/>
+                                        <rect key="frame" x="297.5" y="58" width="37.5" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADQ-0S-WHM">
                                                 <rect key="frame" x="0.0" y="0.0" width="10.5" height="18"/>
@@ -238,7 +238,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nba-dJ-X3e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Y2i-WY-E8d" secondAttribute="trailing" constant="8" symbolic="YES" id="9lk-2h-ONl"/>
-                                    <constraint firstAttribute="height" constant="90" id="WyD-wW-YrW"/>
+                                    <constraint firstAttribute="height" constant="100" id="WyD-wW-YrW"/>
                                     <constraint firstAttribute="bottom" secondItem="nba-dJ-X3e" secondAttribute="bottom" constant="24" id="gTC-Ij-xGK"/>
                                     <constraint firstItem="Y2i-WY-E8d" firstAttribute="leading" secondItem="wiQ-4T-Gdt" secondAttribute="leading" constant="40" id="sce-Zz-zSW"/>
                                     <constraint firstAttribute="bottom" secondItem="Y2i-WY-E8d" secondAttribute="bottom" constant="23" id="tDZ-Zs-x0c"/>
@@ -247,7 +247,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ePM-5g-N1v">
-                                <rect key="frame" x="134.5" y="156" width="106" height="50"/>
+                                <rect key="frame" x="134.5" y="172" width="106" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-88-X64">
                                         <rect key="frame" x="0.0" y="29.5" width="48" height="20.5"/>
@@ -264,7 +264,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sf-d3-y6h" customClass="ProfilePictureProgressView" customModule="reach_ios" customModuleProvider="target">
-                                <rect key="frame" x="123.5" y="20" width="128" height="128"/>
+                                <rect key="frame" x="123.5" y="36" width="128" height="128"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="REACH_logo" translatesAutoresizingMaskIntoConstraints="NO" id="u45-2d-am2">
                                         <rect key="frame" x="16" y="16" width="96" height="96"/>
@@ -306,7 +306,7 @@
                             <constraint firstItem="26j-cC-l6K" firstAttribute="trailing" secondItem="sfu-qW-T5B" secondAttribute="trailing" constant="16" id="eiO-WU-aeH"/>
                             <constraint firstItem="sfu-qW-T5B" firstAttribute="leading" secondItem="26j-cC-l6K" secondAttribute="leading" constant="16" id="gqW-NH-WMy"/>
                             <constraint firstItem="zO1-A6-XCN" firstAttribute="trailing" secondItem="26j-cC-l6K" secondAttribute="trailing" id="kGi-hN-dzm"/>
-                            <constraint firstItem="2sf-d3-y6h" firstAttribute="top" secondItem="26j-cC-l6K" secondAttribute="top" id="vC0-E4-2yy"/>
+                            <constraint firstItem="2sf-d3-y6h" firstAttribute="top" secondItem="26j-cC-l6K" secondAttribute="top" constant="16" id="vC0-E4-2yy"/>
                             <constraint firstItem="26j-cC-l6K" firstAttribute="bottom" secondItem="sfu-qW-T5B" secondAttribute="bottom" constant="32" id="wh8-lJ-NhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="26j-cC-l6K"/>
@@ -427,10 +427,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSt-Dq-MWs" customClass="CurvedBottomView" customModule="reach_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVx-ou-ghs">
-                                        <rect key="frame" x="40" y="53" width="76" height="15"/>
+                                        <rect key="frame" x="40" y="53" width="76" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -456,28 +456,28 @@
                                 <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="QVx-ou-ghs" firstAttribute="top" secondItem="sSt-Dq-MWs" secondAttribute="top" constant="53" id="BuJ-4A-Cos"/>
-                                    <constraint firstAttribute="height" constant="90" id="R6H-cd-KbG"/>
+                                    <constraint firstAttribute="height" constant="108" id="R6H-cd-KbG"/>
                                     <constraint firstItem="d2O-F9-RfF" firstAttribute="top" secondItem="sSt-Dq-MWs" secondAttribute="top" constant="49" id="azt-fk-sBE"/>
                                     <constraint firstItem="QVx-ou-ghs" firstAttribute="leading" secondItem="sSt-Dq-MWs" secondAttribute="leading" constant="40" id="b49-Ok-Ukf"/>
                                     <constraint firstAttribute="trailing" secondItem="d2O-F9-RfF" secondAttribute="trailing" constant="21" id="ed8-M1-e4T"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TCo-9H-DZb">
-                                <rect key="frame" x="0.0" y="90" width="375" height="497"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="p3r-rx-YBr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="PfL-yl-mVB">
-                                    <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="162" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCellID" rowHeight="74" id="RvA-go-pIB" customClass="PerformanceCell" customModule="reach_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="74"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RvA-go-pIB" id="9o9-dR-hUQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
@@ -690,7 +690,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1Y-Pz-CTI" customClass="ProfilePictureProgressView" customModule="reach_ios" customModuleProvider="target">
-                                <rect key="frame" x="123.5" y="20" width="128" height="128"/>
+                                <rect key="frame" x="123.5" y="36" width="128" height="128"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="REACH_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BrF-b2-uIf">
                                         <rect key="frame" x="16" y="16" width="96" height="96"/>
@@ -723,7 +723,7 @@
                         <constraints>
                             <constraint firstItem="F1Y-Pz-CTI" firstAttribute="centerX" secondItem="fjJ-21-ZHv" secondAttribute="centerX" id="14H-Lk-AQH"/>
                             <constraint firstItem="Ngv-RU-o7M" firstAttribute="leading" secondItem="fjJ-21-ZHv" secondAttribute="leading" id="1Lu-RV-3TQ"/>
-                            <constraint firstItem="F1Y-Pz-CTI" firstAttribute="top" secondItem="fjJ-21-ZHv" secondAttribute="top" id="1dQ-Ps-ZCq"/>
+                            <constraint firstItem="F1Y-Pz-CTI" firstAttribute="top" secondItem="fjJ-21-ZHv" secondAttribute="top" constant="16" id="1dQ-Ps-ZCq"/>
                             <constraint firstItem="sSt-Dq-MWs" firstAttribute="leading" secondItem="fjJ-21-ZHv" secondAttribute="leading" id="2PN-r7-oeX"/>
                             <constraint firstItem="Ngv-RU-o7M" firstAttribute="top" secondItem="TCo-9H-DZb" secondAttribute="bottom" id="9IM-qI-svp"/>
                             <constraint firstItem="TCo-9H-DZb" firstAttribute="leading" secondItem="fjJ-21-ZHv" secondAttribute="leading" id="B8O-W3-eUS"/>
