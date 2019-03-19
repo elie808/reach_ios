@@ -65,4 +65,31 @@ extension URLSession {
             }
             }.resume()
     }
+    
+    func upload<A>(_ resource: Resource<A>, completion: @escaping (A?, HttpStatus) -> ()) {
+
+        SVProgressHUD.show()
+
+        dataTask(with: resource.urlRequest as URLRequest) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+             
+                SVProgressHUD.dismiss()
+                
+                if let resp : HTTPURLResponse = response as? HTTPURLResponse {
+//                    guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+//                        print ("server error")
+//                        return
+//                    }
+//                    if resp.statusCode == 403 {
+//                        let errorObj = try? JSONDecoder().decode(ErrorResponse.self, from: data!)
+//                        print("ERROR Message: ", errorObj?.message)
+//                    }
+                    completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
+                } else {
+                    completion(data.flatMap(resource.parse), HttpStatus(code: 0))
+                }
+            }
+        }.resume()
+    }
 }
