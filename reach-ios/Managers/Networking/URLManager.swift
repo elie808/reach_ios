@@ -42,6 +42,7 @@ struct NetworkingConstants {
         static let privacy = "static/privacy"
         static let banners = "static/banners"
         static let contact = "static/contact"
+        static let imageUpload = "static/image/upload"
     }
     
     private struct Training {
@@ -86,6 +87,7 @@ struct NetworkingConstants {
     static let allPromotions  = Domains.baseURL + Promotions.allPromotions
     static let banners  = Domains.baseURL + Static.banners
     static let faqs     = Domains.baseURL + Static.faq
+    static let imageUpload = Domains.baseURL + Static.imageUpload
     static let login    = Domains.baseURL + User.login
     static let newsDetails = Domains.baseURL + News.newsDetails
     static let profile  = Domains.baseURL + User.profile

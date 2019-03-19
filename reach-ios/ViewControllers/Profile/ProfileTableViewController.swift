@@ -33,6 +33,7 @@ class ProfileTableViewController: UITableViewController {
         let image, organization : Int
     }
     
+    var pickedImageID : Int?
     var org : Organization?
     
     // MARK: - Views Life Cycle
@@ -125,6 +126,15 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Actions
     
+    @IBAction func didTapProfilePicture(_ sender: UITapGestureRecognizer) {
+        
+        let alertActions = [ UIAlertAction(title: "Take picture", style: .default) { (action) in self.openCamera() },
+                             UIAlertAction(title: "Choose picture from gallery", style: .default) { (action) in self.openGallery() },
+                             UIAlertAction(title: "Cancel", style: .cancel, handler: nil) ]
+        
+        present(UIAlertController.createActionSheet(title: "Add a photo", message: nil, actions: alertActions), animated: true, completion: nil)
+    }
+    
     @IBAction func didTapDone(_ sender: UIBarButtonItem) {
         mobileTextField.resignFirstResponder()
         dobTextField.resignFirstResponder()
@@ -140,7 +150,9 @@ class ProfileTableViewController: UITableViewController {
             guard let dob = dobTextField.text else { return }
             guard let gender = IAmTextField.text else { return }
             
-            let postObject = postObj(first_name: firstName, last_name: lastName, mobile_number: mobile, date_of_birth: dob, gender: gender, image: 1, organization: self.org!.id)
+            let postObject = postObj(first_name: firstName, last_name: lastName, mobile_number: mobile, date_of_birth: dob, gender: gender,
+                                     image: self.pickedImageID != nil ? self.pickedImageID! : 1,
+                                     organization: self.org!.id)
             
             let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod<postObj>.patch(postObject))
             
@@ -165,4 +177,22 @@ extension ProfileTableViewController : UITextFieldDelegate {
         return textField.resignFirstResponder()
     }
     
+}
+
+extension ProfileTableViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        dismiss(animated: true) {
+
+            let image = Resource<ImageObject>(upload: URL(string: NetworkingConstants.imageUpload)!, image: pickedImage)
+            
+            URLSession.shared.upload(image, completion: { (imageData, status) in
+                self.pickedImageID = imageData?.id
+                self.profileImageView.urlSetImage(imageData?.image)
+            })
+        }
+    }
 }
