@@ -40,6 +40,8 @@
 		4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582A22140F6100B33025 /* UIViewController+Helpers.swift */; };
 		4783582D2214104C00B33025 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582C2214104C00B33025 /* Banner.swift */; };
 		4783582F221416BB00B33025 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783582E221416BB00B33025 /* AuthenticationManager.swift */; };
+		4787ED502240A6150014DFC1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787ED4F2240A6150014DFC1 /* Image.swift */; };
+		4787ED522240A64A0014DFC1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4787ED512240A64A0014DFC1 /* ErrorResponse.swift */; };
 		478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9003221C4F6700245CF1 /* PerformanceViewController.swift */; };
 		478C9007221CBD2C00245CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9006221CBD2C00245CF1 /* Constants.swift */; };
 		478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */; };
@@ -124,6 +126,8 @@
 		4783582A22140F6100B33025 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		4783582C2214104C00B33025 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		4783582E221416BB00B33025 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		4787ED4F2240A6150014DFC1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		4787ED512240A64A0014DFC1 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		478C9003221C4F6700245CF1 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		478C9006221CBD2C00245CF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSaleViewController.swift; sourceTree = "<group>"; };
@@ -387,8 +391,10 @@
 		478358212214084E00B33025 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				47CC22472232B3BE00ED9119 /* User.swift */,
 				47CC22492232B58300ED9119 /* AuthenticationData.swift */,
+				4787ED512240A64A0014DFC1 /* ErrorResponse.swift */,
+				4787ED4F2240A6150014DFC1 /* Image.swift */,
+				47CC22472232B3BE00ED9119 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -851,6 +857,7 @@
 				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
 				47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */,
 				47A1E3E522351E5D0034752A /* VendorListViewController.swift in Sources */,
+				4787ED502240A6150014DFC1 /* Image.swift in Sources */,
 				47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				47485678223D61D1002F2004 /* AddBrandCell.swift in Sources */,
@@ -896,6 +903,7 @@
 				47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */,
 				4721F99522380A60002CAFB2 /* BrandTrainingCell.swift in Sources */,
 				4721F99822380D12002CAFB2 /* SubCategoryTableViewController.swift in Sources */,
+				4787ED522240A64A0014DFC1 /* ErrorResponse.swift in Sources */,
 				47CCC2032228E8C2005DE571 /* TrainingListCell.swift in Sources */,
 				47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
