@@ -10,10 +10,25 @@ import UIKit
 
 class AddBrandsTableViewController: UITableViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var addBrandButton: UIButton!
+    
     // MARK: - Properties
     
-    var passOrganization : Organization?
     var dataSource : [Brand] = [] //GenericTableDataSource<AddBrandCell, Brand>()
+    
+    var passOrganization : Organization? {
+        didSet {
+            if passOrganization != nil {
+                addBrandButton.backgroundColor = .reachGreen
+                addBrandButton.isEnabled = true
+            } else {
+                addBrandButton.backgroundColor = .lightGray
+                addBrandButton.isEnabled = false
+            }
+        }
+    }
     
     // MARK: - Views Life Cycle
     

@@ -20,7 +20,7 @@ class RegisterFormCell: UICollectionViewCell {
 class RegisterViewController: UIViewController {
 
     // MARK: - Outlets
-    
+    @IBOutlet weak var slidingMenuBar : SlidingMenuBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -32,10 +32,11 @@ class RegisterViewController: UIViewController {
     let cellID = "cellID"
     let totalViewCount = 2
     var viewIndex = 0
+    var personalInfoFormValid : Bool = false
 
     var personalInfoVC : PersonalInfoTableViewController?
     var brandsFormVC : AddBrandsTableViewController?
-//    var vendorsVC : VendorsTableViewController?
+
     
     // MARK: - Views Life Cycle
     
@@ -56,6 +57,8 @@ class RegisterViewController: UIViewController {
             
             if personalInfoVC?.formValid() == true {
 
+                personalInfoFormValid = true
+                
                 guard let selectedOrg = personalInfoVC?.selectedOrganization else { return }
                 brandsFormVC?.passOrganization = selectedOrg
             
@@ -71,7 +74,7 @@ class RegisterViewController: UIViewController {
             // get selected brand IDs from brandsFormVC
             guard let selectedBrands = brandsFormVC?.getSelectedBrandIDs() else { return }
             
-            if selectedBrands.count > 0 {
+            if personalInfoFormValid == true && selectedBrands.count > 0 {
             
                 userToRegister = personalInfoVC?.getUserInfo()
                 userToRegister?.brands = selectedBrands
@@ -141,13 +144,24 @@ extension RegisterViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if collectionView == self.collectionView {
+            
+        } else { //sliding bar
+            viewIndex = indexPath.row
+            scrollToViewAtIndex(index: indexPath.row)
+        }
     }
+    
 }
 
 extension RegisterViewController : UICollectionViewDelegateFlowLayout  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        if collectionView == self.collectionView {
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        } else { //sliding bar
+            return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

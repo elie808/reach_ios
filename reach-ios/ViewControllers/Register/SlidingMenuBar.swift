@@ -8,6 +8,11 @@
 
 import UIKit
 
+class SlidingMenuBarCell : UICollectionViewCell {
+    @IBOutlet weak var cellImageView : UIImageView!
+    @IBOutlet weak var cellTextLabel : UILabel!
+}
+
 class SlidingMenuBar: UIView {
 
 //    @IBOutlet weak var mainV
@@ -25,29 +30,25 @@ class SlidingMenuBar: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    private func initializeViews() {
-//        collectionView.dataSource = self
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
-//        collectionView.frame = self.frame
-//        addSubview(collectionView)
-    }
 }
 
-extension SlidingMenuBar : UICollectionViewDelegate, UICollectionViewDataSource {
+extension SlidingMenuBar : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = .red
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SlidingMenuBarCell
+        
+        if indexPath.row == 0 {
+            cell.cellTextLabel.text = "Personal Info"
+        } else {
+            cell.cellTextLabel.text = "Brands"
+        }
+        
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
     }
 }
 

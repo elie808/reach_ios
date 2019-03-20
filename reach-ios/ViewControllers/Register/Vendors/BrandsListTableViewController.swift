@@ -37,8 +37,8 @@ class BrandsListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var passedVendor : Vendor?
     var dataSource = GenericTableDataSource<BrandsListCell, Brand>()
+    var passedVendor : Vendor?
     
     // MARK: - Views Life Cycle
     
