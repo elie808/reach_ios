@@ -31,6 +31,7 @@ class RegisterViewController: UIViewController {
     var personalInfoVC : PersonalInfoTableViewController?
     var brandsFormVC : AddBrandsTableViewController?
 
+    var userToRegister : RegisterUserObject?
     
     // MARK: - Views Life Cycle
     
@@ -41,11 +42,30 @@ class RegisterViewController: UIViewController {
         container2.frame.size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
+    fileprivate func post() {
+        
+        let userToPost = Resource<RegisterUserObject>(url: URL(string: NetworkingConstants.register)!, method: .post(userToRegister!))
+        
+        URLSession.shared.load(userToPost) { (response, status) in
+            
+            switch status.code {
+                
+            case 200:
+                self.show(alert: "Success", message: (response?.message)!, buttonTitle: "Ok", onSuccess: {
+                    _ = self.navigationController?.popViewController(animated: true)
+                })
+                
+            case 422: self.show(alert: "Error", message: "Account already exists", buttonTitle: "Ok", onSuccess: nil)
+                
+            default: self.show(alert: "Error", message: "There was an error submitting your form. Please check your fields before submition", buttonTitle: "Ok", onSuccess: nil)
+            }
+        }
+        
+    }
+    
     // MARK: - Actions
     
     @IBAction func didTapNext(_ sender: UIButton) {
-        
-        var userToRegister : RegisterUserObject?
         
         if viewIndex == 0 {
             
@@ -73,16 +93,7 @@ class RegisterViewController: UIViewController {
                 userToRegister = personalInfoVC?.getUserInfo()
                 userToRegister?.brands = selectedBrands
                 
-                // Make POST API Call
-                let userToPost = Resource<RegisterUserObject>(url: URL(string: NetworkingConstants.register)!, method: .post(userToRegister!))
-                
-                URLSession.shared.load(userToPost) { (response, status) in
-                    if status.code == 200 {
-                        self.show(alert: "Success", message: (response?.message)!, buttonTitle: "Ok", onSuccess: {
-                            _ = self.navigationController?.popViewController(animated: true)
-                        })
-                    }
-                }
+                post()
             }
         }
     }

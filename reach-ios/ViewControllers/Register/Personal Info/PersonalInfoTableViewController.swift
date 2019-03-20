@@ -67,7 +67,7 @@ class PersonalInfoTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        stubs()
+//        stubs()
     }
 
     private func stubs() {
