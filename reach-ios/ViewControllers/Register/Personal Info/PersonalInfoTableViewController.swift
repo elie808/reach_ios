@@ -192,7 +192,8 @@ class PersonalInfoTableViewController: UITableViewController {
                                   gender: selectedGender,
                                   organization: (selectedOrganization?.id)!,
                                   image_id: 0,
-                                  brands:[])
+                                  brands:[],
+                                  message:nil)
     }
     
     // MARK: - Actions

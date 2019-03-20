@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct RegisterUserObject : Codable {
-    var first_name, last_name, mobile_number, date_of_birth, email, password, gender : String
-    var organization, image_id : Int
-    var brands : [Int]
-}
-
 class RegisterFormCell: UICollectionViewCell {
 }
 
@@ -84,7 +78,7 @@ class RegisterViewController: UIViewController {
                 
                 URLSession.shared.load(userToPost) { (response, status) in
                     if status.code == 200 {
-                        self.show(alert: "Success", message: "Thanks you for registering....", buttonTitle: "Ok", onSuccess: {
+                        self.show(alert: "Success", message: (response?.message)!, buttonTitle: "Ok", onSuccess: {
                             _ = self.navigationController?.popViewController(animated: true)
                         })
                     }
