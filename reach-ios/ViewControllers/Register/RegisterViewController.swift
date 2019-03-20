@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct RegisterUserObject : Codable {
+    let first_name, last_name, mobile_number, date_of_birth, email, password, gender : String
+    var organization, image_id : Int
+    var brands : [Int]
+}
+
 class RegisterFormCell: UICollectionViewCell {
 }
 
@@ -44,29 +50,29 @@ class RegisterViewController: UIViewController {
     
     @IBAction func didTapNext(_ sender: UIButton) {
         
+        var userToRegister : RegisterUserObject?
+        
         if viewIndex == 0 {
             
             if personalInfoVC?.formValid() == true {
-                
+
                 guard let selectedOrg = personalInfoVC?.selectedOrganization else { return }
-                
                 brandsFormVC?.passOrganization = selectedOrg
+            
+                nextButton.setTitle("Done", for: .normal)
                 
                 viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
                 scrollToViewAtIndex(index: viewIndex)
             }
         } else if viewIndex == 1 {
-            
+
             viewIndex = viewIndex < totalViewCount-1 ? viewIndex + 1 : viewIndex
             
             // get selected brand IDs from brandsFormVC
-            guard let brands = brandsFormVC?.getSelectedBrandIDs() else { return }
+            guard let selectedBrands = brandsFormVC?.getSelectedBrandIDs() else { return }
             
-            
-            // get user entered info from PersonalInfoVC
-            
-            
-            
+            userToRegister = personalInfoVC?.getUserInfo()
+            userToRegister?.brands = selectedBrands
             
             // Make POST API Call
             
@@ -89,12 +95,7 @@ class RegisterViewController: UIViewController {
 
         case "embedPersonalInfo":
             personalInfoVC   = segue.destination as?  PersonalInfoTableViewController
-            
-//        case "embedVendors":
-//            if segue.destination is VendorsTableViewController {
-//                vendorsVC = segue.destination as? VendorsTableViewController
-//            }
-            
+    
         case "embedBrands":
             if segue.destination is AddBrandsTableViewController {
                 brandsFormVC = segue.destination as? AddBrandsTableViewController

@@ -27,8 +27,6 @@ class BrandsListCell: GenericTableCell<Brand> {
             
         }
     }
-    
-    
 }
 
 class BrandsListTableViewController: UITableViewController {

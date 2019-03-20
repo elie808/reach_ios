@@ -23,31 +23,63 @@ class PersonalInfoTableViewController: UITableViewController {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var companyTextField : SkyFloatingLabelTextField!
-    @IBOutlet weak var TCButton : UIButton!
+    @IBOutlet weak var TCButton : UIImageView!
 
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var TCLabel: UILabel!
+    
     // MARK: - Properties
 
     var selectedOrganization : Organization?
-    var acceptedTC : Bool = false
+    var acceptedTC : Bool = false {
+        didSet {
+            if acceptedTC == false {
+                TCButton.image = #imageLiteral(resourceName: "SurveySelectRadioGreen")
+            } else {
+                TCButton.image = #imageLiteral(resourceName: "SelectedRadioGreen")
+            }
+        }
+    }
+    
+    private enum Gender : String {
+        case Male = "Male"
+        case Female = "Female"
+    }
+    
+    var selectedGender : String = "" {
+        didSet {
+            switch selectedGender {
+            
+            case Gender.Male.rawValue:
+                maleButton.setImage(#imageLiteral(resourceName: "RegistrationMale"), for: .normal)
+                femaleButton.setImage(#imageLiteral(resourceName: "RegistrationFemaleOff"), for: .normal)
+                
+            case Gender.Female.rawValue:
+                femaleButton.setImage(#imageLiteral(resourceName: "RegistrationFemale"), for: .normal)
+                maleButton.setImage(#imageLiteral(resourceName: "RegistrationMaleOff"), for: .normal)
+                
+            default: return
+            }
+        }
+    }
     
     // MARK: - Views Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setTCButtonState()
+        stubs()
     }
 
-    // MARK: - Helpers
-    
-    fileprivate func setTCButtonState() {
-        
-        if acceptedTC == false {
-            TCButton.setBackgroundImage(UIImage(named: "SurveySelectRadioGreen"), for: .normal)
-        } else {
-            TCButton.setBackgroundImage(UIImage(named: "SelectedRadioGreen"), for: .normal)
-        }
+    private func stubs() {
+        firstNameTextField.text = "First"
+        lastNameTextField.text = "Last"
+        mobileTextField.text = "123456789"
+        dobTextField.text = "1995-02-123"
+        emailTextField.text = "testwr@mail.com"
+        passwordTextField.text = "password"
     }
+    
+    // MARK: - Helpers
     
     func formValid() -> Bool {
         
@@ -89,6 +121,20 @@ class PersonalInfoTableViewController: UITableViewController {
             dobTextField.errorMessage = nil
         }
         
+        if dob.isValidDate() {
+            dobTextField.errorMessage = String.wrongDateFormat
+            isValid = false
+        } else {
+            dobTextField.errorMessage = nil
+        }
+        
+        if email.isEmpty {
+            emailTextField.errorMessage = String.cantBeEmpty
+            isValid = false
+        } else {
+            emailTextField.errorMessage = nil
+        }
+        
         if !email.isEmpty && !email.isValidEmail() {
             emailTextField.errorMessage = String.emailFormatNotValid
             isValid = false
@@ -117,24 +163,50 @@ class PersonalInfoTableViewController: UITableViewController {
             companyTextField.errorMessage = nil
         }
         
+        if selectedGender == "" {
+            isValid = false
+            genderLabel.textColor = .red
+        } else {
+            genderLabel.textColor = .reachGreen
+        }
+        
+        if acceptedTC == false {
+            isValid = false
+            TCLabel.textColor = .red
+        } else {
+            TCLabel.textColor = .black
+        }
+        
         return isValid
+    }
+    
+    /// Used to send information to RegisterVC
+    func getUserInfo() -> RegisterUserObject {
+
+        return RegisterUserObject(first_name: firstNameTextField.text!,
+                                  last_name: lastNameTextField.text!,
+                                  mobile_number: mobileTextField.text!,
+                                  date_of_birth: dobTextField.text!,
+                                  email : emailTextField.text!,
+                                  password : passwordTextField.text!,
+                                  gender: selectedGender,
+                                  organization: (selectedOrganization?.id)!,
+                                  image_id: 0,
+                                  brands:[])
     }
     
     // MARK: - Actions
 
     @IBAction func didTapMale(_ sender: UIButton) {
-        femaleButton.setBackgroundImage(UIImage(named: "RegistrationFemaleOff"), for: .normal)
-        maleButton.setBackgroundImage(UIImage(named: "RegistrationMale"), for: .normal)
+        selectedGender = Gender.Male.rawValue
     }
     
     @IBAction func didTapFemale(_ sender: UIButton) {
-        femaleButton.setBackgroundImage(UIImage(named: "RegistrationFemale"), for: .normal)
-        maleButton.setBackgroundImage(UIImage(named: "RegistrationMaleOff"), for: .normal)
+        selectedGender = Gender.Female.rawValue
     }
     
     @IBAction func didTapAcceptTerms(_ sender: UITapGestureRecognizer) {
         acceptedTC = !acceptedTC
-        setTCButtonState()
     }
     
     // MARK: - Navigation
@@ -145,5 +217,27 @@ class PersonalInfoTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+}
+
+extension PersonalInfoTableViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == firstNameTextField {
+            return lastNameTextField.becomeFirstResponder()
+        } else if textField == lastNameTextField {
+            return mobileTextField.becomeFirstResponder()
+        } else if textField == mobileTextField {
+            return dobTextField.becomeFirstResponder()
+        } else if textField == dobTextField {
+            return emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            return passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            return textField.resignFirstResponder()
+        } else {
+            return textField.resignFirstResponder()
+        }
     }
 }

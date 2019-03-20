@@ -26,8 +26,8 @@ class LoginTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        usernameTextField.text = "test@mail.com"//"devteam1@channelpro.co"
-        passwordTextField.text = "password"//"2234118Rr."
+//        usernameTextField.text = "test@mail.com"//"devteam1@channelpro.co"
+//        passwordTextField.text = "password"//"2234118Rr."
     }
     
     // MARK: - Helpers
