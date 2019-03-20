@@ -9,7 +9,7 @@
 import UIKit
 
 struct RegisterUserObject : Codable {
-    let first_name, last_name, mobile_number, date_of_birth, email, password, gender : String
+    var first_name, last_name, mobile_number, date_of_birth, email, password, gender : String
     var organization, image_id : Int
     var brands : [Int]
 }
@@ -71,12 +71,22 @@ class RegisterViewController: UIViewController {
             // get selected brand IDs from brandsFormVC
             guard let selectedBrands = brandsFormVC?.getSelectedBrandIDs() else { return }
             
-            userToRegister = personalInfoVC?.getUserInfo()
-            userToRegister?.brands = selectedBrands
+            if selectedBrands.count > 0 {
             
-            // Make POST API Call
-            
-            print("GOOOO")
+                userToRegister = personalInfoVC?.getUserInfo()
+                userToRegister?.brands = selectedBrands
+                
+                // Make POST API Call
+                let userToPost = Resource<RegisterUserObject>(url: URL(string: NetworkingConstants.register)!, method: .post(userToRegister!))
+                
+                URLSession.shared.load(userToPost) { (response, status) in
+                    if status.code == 200 {
+                        self.show(alert: "Success", message: "Thanks you for registering....", buttonTitle: "Ok", onSuccess: {
+                            _ = self.navigationController?.popViewController(animated: true)
+                        })
+                    }
+                }
+            }
         }
     }
     
@@ -84,7 +94,9 @@ class RegisterViewController: UIViewController {
     
     func scrollToViewAtIndex(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
+        collectionView.isScrollEnabled = true
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        collectionView.isScrollEnabled = false
     }
     
     // MARK: - Navigation

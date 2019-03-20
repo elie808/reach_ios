@@ -58,7 +58,20 @@ extension URLSession {
                 SVProgressHUD.dismiss()
                 
                 if let resp : HTTPURLResponse = response as? HTTPURLResponse {
-                    completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
+
+                    #if DEBUG
+                    print("--")
+                    print("STATUS:")
+                    print(resp.statusCode)
+                    #endif
+                    
+                    if resp.statusCode >= 200 && resp.statusCode <= 300 {
+                        completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
+                    } else {
+                        let errorObj = try? JSONDecoder().decode(ErrorResponse.self, from: data!)
+                        print("ERROR Message: ", errorObj?.message as Any)
+                    }
+
                 } else {
                     completion(data.flatMap(resource.parse), HttpStatus(code: 0))
                 }   

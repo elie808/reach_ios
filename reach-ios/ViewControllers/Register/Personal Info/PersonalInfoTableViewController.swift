@@ -74,7 +74,7 @@ class PersonalInfoTableViewController: UITableViewController {
         firstNameTextField.text = "First"
         lastNameTextField.text = "Last"
         mobileTextField.text = "123456789"
-        dobTextField.text = "1995-02-123"
+        dobTextField.text = "1995-02-12"
         emailTextField.text = "testwr@mail.com"
         passwordTextField.text = "password"
     }
@@ -121,7 +121,7 @@ class PersonalInfoTableViewController: UITableViewController {
             dobTextField.errorMessage = nil
         }
         
-        if dob.isValidDate() {
+        if !dob.isValidDate() {
             dobTextField.errorMessage = String.wrongDateFormat
             isValid = false
         } else {
