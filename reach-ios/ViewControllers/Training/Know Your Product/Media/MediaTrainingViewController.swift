@@ -29,8 +29,8 @@ class MediaTrainingCell: GenericTableCell<MediaTraining> {
         didSet {
             cellImageView.urlSetImage(model.image)
             titleLabel.text = model.title
-            dateLabel.text = model.type
-            descriptionLabel.text = model.description
+//            dateLabel.text = model.type
+//            descriptionLabel.text = model.description
         }
     }
 }
