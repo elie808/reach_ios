@@ -38,24 +38,18 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       initializeViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
-        
-        URLSession.shared.load(banners) { (bannerItems, status) in
-            self.collectionDataSource.data = bannerItems!
-            self.collectionView.reloadData()
-        }
+        initializeViews()
+        getBanners()
     }
 
     // MARK: - Helpers
     
-    func initializeViews() {
+    fileprivate func initializeViews() {
         
         sideMenuDataSource.data = [SideMenuItem(name: "Home", image: "SideMenuHome"), SideMenuItem(name: "Help", image: "SideMenuHelp"), SideMenuItem(name: "FAQs", image: "SideMenuFAQ"), SideMenuItem(name: "About Us", image: "SideMenuAbout"), SideMenuItem(name: "Contact Us", image: "SideMenuContact"), SideMenuItem(name: "Terms & Conditions", image: "SideMenuTerms"), SideMenuItem(name: "Settings", image: "SideMenuSettings")]
         
@@ -77,6 +71,16 @@ class HomeViewController: UIViewController {
             self.profilePicture.maxPoints = (user?.maxPoints)!
             self.profilePicture.animateProgress()
             self.pointsLabel.text = "\(user?.totalApprovedPoints ?? 0)"
+        }
+    }
+    
+    fileprivate func getBanners() {
+        
+        let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
+        
+        URLSession.shared.load(banners) { (bannerItems, status) in
+            self.collectionDataSource.data = bannerItems!
+            self.collectionView.reloadData()
         }
     }
     
