@@ -11,6 +11,7 @@ import UIKit
 struct Product : Codable {
     let name, image, description, part_number : String
     let id : Int
+    var promotions_products_id : Int?
 }
 
 class ProductListTableViewController: UITableViewController {
@@ -75,7 +76,7 @@ class ProductListTableViewController: UITableViewController {
                 if product is Product {
                     vc.selectedProduct = (product as! Product)
                     vc.viewModel.productName = (product as! Product).name
-                    vc.viewModel.productID = (product as! Product).id
+                    vc.viewModel.productID = (product as! Product).promotions_products_id!
                 }
             }
             

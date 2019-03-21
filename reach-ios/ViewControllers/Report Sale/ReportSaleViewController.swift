@@ -8,25 +8,6 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-import SwiftyUserDefaults
-
-struct ReportSaleModel : Codable, DefaultsSerializable {
-    
-    var productID : Int = 0
-    var productName : String = ""
-    
-    var serialNumber : String = ""
-    var additionalInfo : String = ""
-    
-    var image : Int = 0
-
-    private enum CodingKeys: String, CodingKey {
-        case productName, image
-        case serialNumber = "serial_number"
-        case additionalInfo = "additional_info"
-        case productID = "product_id"
-    }
-}
 
 class ReportSaleViewController: UITableViewController {
 
@@ -39,6 +20,7 @@ class ReportSaleViewController: UITableViewController {
 
     @IBOutlet weak var productNameTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productIDTextField : SkyFloatingLabelTextField!
+    @IBOutlet weak var productImageLabel : UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var infoTextfield: SkyFloatingLabelTextField!
     
@@ -75,8 +57,11 @@ class ReportSaleViewController: UITableViewController {
             productIDTextField.errorMessage = nil
         }
         
-        if productImageView.image != nil {
+        if productImageView.image == nil {
             isValid = false
+            productImageLabel.textColor = #colorLiteral(red: 0.7669542101, green: 0, blue: 0.003921568627, alpha: 1)
+        } else {
+            productImageLabel.textColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
         }
 
         if (infoTextfield.text?.isEmpty)! {
@@ -92,7 +77,7 @@ class ReportSaleViewController: UITableViewController {
     /// Return an initiated data model with values from the VC
     func bindToViewModel() -> ReportSaleModel {
         
-        let model = ReportSaleModel(productID: selectedProduct != nil ? (selectedProduct?.id)! : viewModel.productID,
+        let model = ReportSaleModel(productID: selectedProduct != nil ? (selectedProduct?.promotions_products_id)! : viewModel.productID,
                                     productName: productNameTextField.text!,
                                     serialNumber: productIDTextField.text!,
                                     additionalInfo: infoTextfield.text!,
@@ -142,6 +127,7 @@ class ReportSaleViewController: UITableViewController {
         default: return
         }
         
+        _ = formValid()
         tableView.reloadData()
     }
     
@@ -173,6 +159,9 @@ extension ReportSaleViewController : UIImagePickerControllerDelegate, UINavigati
         
         let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        dismiss(animated: true) { self.productImageView.image = pickedImage }
+        dismiss(animated: true) {
+            self.productImageView.image = pickedImage
+            self.formValid()
+        }
     }
 }
