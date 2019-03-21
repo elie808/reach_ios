@@ -12,27 +12,34 @@ class DailyReportViewController: UIViewController {
 
     // MARK: - Properties
     
-    var dataSource = GenericTableDataSource<DailyReportCell, ReportSaleModel>()
-    var passedSale : ReportSaleModel?
+    var dataSource : [ReportSaleModel] = [] {
+        didSet {
+            if dataSource.count == 0 {
+                submitButton.backgroundColor = .lightGray
+                submitButton.isEnabled = false
+            } else {
+                submitButton.backgroundColor = .reachGreen
+                submitButton.isEnabled = true
+            }
+        }
+    }
     
     // MARK: - Outlets
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var submitButton : UIButton!
     
     // MARK: - Views Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        tableView.dataSource = dataSource
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let savedSales = PersistenceManager.getAllSavedSales() {
-            dataSource.data.removeAll()
-            dataSource.data = savedSales
+        if let savedSales = PersistenceManager.getAllSavedSales(), savedSales.count > 0 {
+            dataSource.removeAll()
+            dataSource.append(contentsOf: savedSales)
+            tableView.reloadData()
+        } else {
+            dataSource.removeAll()
             tableView.reloadData()
         }
     }
@@ -43,25 +50,27 @@ class DailyReportViewController: UIViewController {
 
         guard let salesList = PersistenceManager.getAllSavedSales() else { return }
 
-        let postObj = ["sales" : salesList]
-//
-        let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
-
-        URLSession.shared.load(sales) { (response, status) in
-
-            if status.code == 200 {
+        if salesList.count > 0 {
+         
+            let postObj = ["sales" : salesList]
+            
+            let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
+            
+            URLSession.shared.load(sales) { (response, status) in
                 
-                self.showBanner(message: .SuccessPostingSales)
-                
-                PersistenceManager.deleteAddSalesData()
-                self.dataSource.data.removeAll()
-                self.tableView.reloadData()
-                
-            } else if status.code == 403 {
-                self.showBanner(message: .ErrorPosting)
+                if status.code == 200 {
+                    
+                    self.showBanner(message: .SuccessPostingSales)
+                    
+                    PersistenceManager.deleteAddSalesData()
+                    self.dataSource.removeAll()
+                    self.tableView.reloadData()
+                    
+                } else if status.code == 403 {
+                    self.showBanner(message: .ErrorPosting)
+                }
             }
         }
-
     }
     
     // MARK: - Navigation
@@ -71,13 +80,30 @@ class DailyReportViewController: UIViewController {
     }
 }
 
-
-extension DailyReportViewController : UITableViewDelegate {
+extension DailyReportViewController : UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        PersistenceManager.removeSalesObject(saleToRemove: dataSource.data[indexPath.row])
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        dataSource.data.remove(at: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellID", for: indexPath) as! DailyReportCell
+        cell.model = dataSource[indexPath.row]
+        cell.cellIndex = indexPath
+        cell.cellDelegate = self
+        
+        return cell
+    }
+}
+
+extension DailyReportViewController : DailyReportCellDelegate {
+
+    func deleteSaleItem(atIndex index: IndexPath) {
+        
+        PersistenceManager.removeSalesObject(saleToRemove: dataSource[index.row])
+        
+        dataSource.remove(at: index.row)
         
         let range = NSMakeRange(0, self.tableView.numberOfSections)
         let sections = NSIndexSet(indexesIn: range)

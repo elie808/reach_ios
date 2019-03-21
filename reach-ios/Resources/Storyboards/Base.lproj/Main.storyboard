@@ -41,7 +41,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KIR-pg-HIE">
-                                                    <rect key="frame" x="23" y="27" width="321" height="80"/>
+                                                    <rect key="frame" x="23" y="27" width="266" height="80"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VX8-cJ-Zki">
                                                             <rect key="frame" x="0.0" y="0.0" width="111.5" height="50"/>
@@ -52,7 +52,7 @@
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-d2-ihN">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-d2-ihN">
                                                                     <rect key="frame" x="61.5" y="0.0" width="50" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,7 +69,7 @@
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTh-Rc-mqc">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTh-Rc-mqc">
                                                                     <rect key="frame" x="77" y="0.0" width="50" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,15 +79,37 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lza-qy-U3h">
+                                                    <rect key="frame" x="297" y="27" width="55" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.62152086299999998" blue="0.073718000239999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="6Xt-4h-FJL"/>
+                                                        <constraint firstAttribute="width" constant="55" id="ZCC-gT-qd3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didTapDelete:" destination="uvh-as-xTY" eventType="touchDown" id="koG-ie-Nee"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KIR-pg-HIE" secondAttribute="trailing" constant="16" id="897-X9-W4b"/>
                                                 <constraint firstItem="fd7-pa-Rer" firstAttribute="leading" secondItem="RdW-ji-7tb" secondAttribute="leadingMargin" constant="8" id="EYv-4b-qJE"/>
                                                 <constraint firstItem="fd7-pa-Rer" firstAttribute="top" secondItem="RdW-ji-7tb" secondAttribute="topMargin" constant="8" id="Eay-lv-EhC"/>
+                                                <constraint firstItem="Lza-qy-U3h" firstAttribute="leading" secondItem="KIR-pg-HIE" secondAttribute="trailing" constant="8" id="G8W-GF-Ng8"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KIR-pg-HIE" secondAttribute="bottom" constant="8" id="GkS-Ck-Aei"/>
                                                 <constraint firstItem="KIR-pg-HIE" firstAttribute="leading" secondItem="RdW-ji-7tb" secondAttribute="leadingMargin" constant="8" id="NBW-0A-onv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lza-qy-U3h" secondAttribute="trailing" constant="8" id="Oes-kN-Jib"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fd7-pa-Rer" secondAttribute="trailing" constant="8" id="YO3-FD-F89"/>
                                                 <constraint firstItem="KIR-pg-HIE" firstAttribute="top" secondItem="fd7-pa-Rer" secondAttribute="bottom" constant="8" id="dqF-Jd-2Ux"/>
+                                                <constraint firstItem="Lza-qy-U3h" firstAttribute="top" secondItem="fd7-pa-Rer" secondAttribute="bottom" constant="8" id="xHd-ss-8Fa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -98,12 +120,13 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="3qO-7k-87s" id="7Ut-MF-tuh"/>
                                     <outlet property="delegate" destination="3qO-7k-87s" id="mI3-qh-ggT"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-Zs-5jc">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-Zs-5jc">
                                 <rect key="frame" x="16" y="511" width="343" height="35"/>
-                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ydP-Pa-fkL"/>
                                 </constraints>
@@ -136,6 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Daily Report" id="TiF-ER-ojU"/>
                     <connections>
+                        <outlet property="submitButton" destination="MPk-Zs-5jc" id="n5T-8e-LOd"/>
                         <outlet property="tableView" destination="z2x-JJ-qvP" id="hvJ-lf-MJl"/>
                     </connections>
                 </viewController>
