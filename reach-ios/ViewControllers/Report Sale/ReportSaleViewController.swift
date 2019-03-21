@@ -39,6 +39,13 @@ class ReportSaleViewController: UITableViewController {
         infoTextfield.text = viewModel.additionalInfo
     }
     
+    func resetForm() {
+        productNameTextField.text = ""
+        productIDTextField.text = ""
+        productImageView.image = nil
+        infoTextfield.text = ""
+    }
+    
     func formValid() -> Bool {
         
         var isValid = true
@@ -127,7 +134,6 @@ class ReportSaleViewController: UITableViewController {
         default: return
         }
         
-        _ = formValid()
         tableView.reloadData()
     }
     
@@ -138,6 +144,7 @@ class ReportSaleViewController: UITableViewController {
         case Segue.ReportSale.toDailyReport:
             if let saleObj = sender, saleObj is ReportSaleModel {
                 PersistenceManager.addToSalesData(dailySale: (saleObj as! ReportSaleModel) )
+                resetForm()
             }
             
         default: return
@@ -161,7 +168,7 @@ extension ReportSaleViewController : UIImagePickerControllerDelegate, UINavigati
         
         dismiss(animated: true) {
             self.productImageView.image = pickedImage
-            self.formValid()
+            _ = self.formValid()
         }
     }
 }

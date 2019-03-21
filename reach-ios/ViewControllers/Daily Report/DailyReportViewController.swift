@@ -8,11 +8,6 @@
 
 import UIKit
 
-//struct DailyReport {
-//    let name, serial : String
-//    let quantity : Int
-//}
-
 class DailyReportViewController: UIViewController {
 
     // MARK: - Properties
@@ -28,9 +23,7 @@ class DailyReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        dataSource.data = [DailyReport(name: "Dell Optilex 3000 series / PC's Redington", serial: "T0EC1872ISD", quantity: 3),
-//        DailyReport(name: "Dell Optilex 12 000 series / PC's Redington Optimum Prime Flex", serial: "T0EC1872ISD", quantity: 1)]
+
         tableView.dataSource = dataSource
     }
     
@@ -75,5 +68,19 @@ class DailyReportViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+    }
+}
+
+
+extension DailyReportViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        PersistenceManager.removeSalesObject(saleToRemove: dataSource.data[indexPath.row])
+        
+        dataSource.data.remove(at: indexPath.row)
+        
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
     }
 }

@@ -56,6 +56,17 @@ final class PersistenceManager {
         
         Defaults.synchronize()
     }
+
+    static func removeSalesObject(saleToRemove: ReportSaleModel) {
+        
+        if var savedArray = Defaults[.salesData], savedArray.count > 0 {
+            
+            savedArray.removeAll (where: { saleToRemove.productID == $0.productID })
+            
+            Defaults[.salesData] = savedArray
+            Defaults.synchronize()
+        }
+    }
     
     static func getAllSavedSales() -> [ReportSaleModel]? {
         guard let savedArray = Defaults[.salesData] else { return nil }
