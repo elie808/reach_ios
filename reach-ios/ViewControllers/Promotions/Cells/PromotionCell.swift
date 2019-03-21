@@ -18,8 +18,8 @@ class PromotionCell: GenericCollectionCell<Promotion> {
         didSet {
             imageView.urlSetImage(model.image)
             titleLabel.text = model.name
-            let cooo = UIColor.white
-            subtitleLabel.attributedText = model.description.convertHTMLToString(withFormatting: String.formatHTML(size: 12.0, fontColor: cooo))
+//            let cooo = UIColor.white
+//            subtitleLabel.attributedText = model.description.convertHTMLToString(withFormatting: String.formatHTML(size: 12.0, fontColor: cooo))
         }
     }
 }

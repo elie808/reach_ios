@@ -199,7 +199,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-5W-lIa" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                    <rect key="frame" x="16" y="28" width="8" height="44"/>
+                                                    <rect key="frame" x="16" y="28" width="315" height="44"/>
                                                     <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -244,24 +244,25 @@
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-sp-eiI">
-                                                    <rect key="frame" x="32" y="49" width="20" height="20"/>
+                                                    <rect key="frame" x="339" y="49" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="6wn-1K-hI9"/>
-                                                        <constraint firstAttribute="height" constant="20" id="RUW-Ro-o0I"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Wmg-lW-JjZ"/>
+                                                        <constraint firstAttribute="width" constant="20" id="lIR-L4-ihE"/>
                                                     </constraints>
                                                     <state key="normal" image="down_arrow"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="top" secondItem="TcY-K5-2Uj" secondAttribute="bottom" constant="21" id="3en-a3-CvQ"/>
-                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="leading" secondItem="9gR-5W-lIa" secondAttribute="trailing" constant="8" id="ByQ-gz-luU"/>
+                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="top" secondItem="TcY-K5-2Uj" secondAttribute="bottom" constant="21" id="Be2-lx-Kli"/>
                                                 <constraint firstItem="TcY-K5-2Uj" firstAttribute="top" secondItem="7Qa-Ph-1zz" secondAttribute="topMargin" id="ECS-8w-zNN"/>
-                                                <constraint firstItem="9gR-5W-lIa" firstAttribute="leading" secondItem="7Qa-Ph-1zz" secondAttribute="leading" constant="16" id="TvC-j0-D4K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9gR-5W-lIa" secondAttribute="bottom" constant="-3" id="OZ4-7a-EF1"/>
                                                 <constraint firstItem="TcY-K5-2Uj" firstAttribute="leading" secondItem="7Qa-Ph-1zz" secondAttribute="leadingMargin" id="Wrx-gU-z8X"/>
-                                                <constraint firstAttribute="bottom" secondItem="9gR-5W-lIa" secondAttribute="bottom" constant="8" id="pfL-Xy-ChJ"/>
-                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="bottom" secondItem="7Qa-Ph-1zz" secondAttribute="bottomMargin" id="qni-zZ-LdE"/>
+                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="leading" secondItem="9gR-5W-lIa" secondAttribute="trailing" constant="8" symbolic="YES" id="hGT-ef-8R5"/>
+                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="trailing" secondItem="TcY-K5-2Uj" secondAttribute="trailing" id="kPt-hY-YEe"/>
+                                                <constraint firstItem="uYJ-sp-eiI" firstAttribute="bottom" secondItem="7Qa-Ph-1zz" secondAttribute="bottomMargin" id="l3g-el-9wV"/>
+                                                <constraint firstItem="9gR-5W-lIa" firstAttribute="leading" secondItem="TcY-K5-2Uj" secondAttribute="leading" id="mRC-D4-u9y"/>
+                                                <constraint firstItem="9gR-5W-lIa" firstAttribute="top" secondItem="TcY-K5-2Uj" secondAttribute="bottom" id="pZZ-hZ-0Tz"/>
                                                 <constraint firstItem="TcY-K5-2Uj" firstAttribute="trailing" secondItem="7Qa-Ph-1zz" secondAttribute="trailingMargin" id="u52-SR-uic"/>
-                                                <constraint firstItem="9gR-5W-lIa" firstAttribute="top" secondItem="TcY-K5-2Uj" secondAttribute="bottom" id="vmJ-Ad-SnY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
@@ -910,7 +911,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gDX-RU-MlZ">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gDX-RU-MlZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -954,7 +955,7 @@
                                     </connections>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1O-DD-d5U">
-                                    <rect key="frame" x="100" y="162" width="48" height="39"/>
+                                    <rect key="frame" x="100" y="162" width="48" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="48" id="BqR-Mn-Q2f"/>
                                     </constraints>
@@ -963,7 +964,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKF-JH-vjN" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                    <rect key="frame" x="156" y="148" width="72" height="53"/>
+                                    <rect key="frame" x="156" y="148" width="72" height="17"/>
                                     <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -1005,7 +1006,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-IC-VIO" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                    <rect key="frame" x="236" y="148" width="71" height="53"/>
+                                    <rect key="frame" x="236" y="148" width="71" height="17"/>
                                     <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
