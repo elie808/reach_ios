@@ -18,7 +18,8 @@ class ProductListTableViewController: UITableViewController {
     // MARK: - Properties
     
     var dataSource : [Product] = []
-
+    var completeDataSource : [Product] = [] // use to revert back after done messing around with filtering
+    
     // MARK: - Outlets
     
     @IBOutlet weak var searchBar : UISearchBar!
@@ -27,6 +28,24 @@ class ProductListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let search = Resource<[Product]>(get: URL(string: NetworkingConstants.productsUnderPromotion)!)
+        
+        URLSession.shared.load(search) { (results, status) in
+            
+            if let list = results, list.count > 0 {
+                self.dataSource.append(contentsOf: list)
+                self.tableView.reloadData()
+                self.searchBar.resignFirstResponder()
+                
+                self.dataSource = list
+                self.completeDataSource = self.dataSource
+                self.tableView.reloadData()
+                
+            } else {
+                self.showBanner(message: .NoResults)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,38 +91,16 @@ extension ProductListTableViewController : UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         if (searchText.count > 0) && searchBar.text?.isEmpty == false {
-//            displayResults(for: searchText)
+            displayResults(for: searchText)
         } else {
             resetDataSource()
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        if let searchText = searchBar.text, searchText.count > 0, !searchText.isEmpty {
-    
-            let search = Resource<[Product]>(get: URL(string: NetworkingConstants.search(byName: searchText))!)
-
-            URLSession.shared.load(search) { (results, status) in
-                if status.code == 200 {
-                    if let list = results, list.count > 0 {
-                        
-                        self.resetDataSource()
-                        self.dataSource.append(contentsOf: list)
-                        self.tableView.reloadData()
-                        self.searchBar.resignFirstResponder()
-                    } else {
-                        self.showBanner(message: .NoResults)
-                    }
-                }
-            }
-
-        } else {
-            resetDataSource()
-            reset(searchBar)
-        }
+        resetDataSource()
+        reset(searchBar)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -113,8 +110,17 @@ extension ProductListTableViewController : UISearchBarDelegate {
     
     // MARK: - Helpers
     
+    fileprivate func displayResults(for text: String) {
+        let filteredData = dataSource.filter({( product : Product) -> Bool in
+            return product.name.localizedCaseInsensitiveContains(text)
+        })
+        
+        dataSource = filteredData
+        tableView.reloadData()
+    }
+    
     fileprivate func resetDataSource() {
-        dataSource.removeAll()
+        dataSource = completeDataSource
         tableView.reloadData()
     }
     

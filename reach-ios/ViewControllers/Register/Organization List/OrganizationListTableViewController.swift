@@ -45,7 +45,7 @@ class OrganizationListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                performSegue(withIdentifier: Segue.OrganizationList.toPersonalInfo, sender: dataSource[indexPath.row])
+        performSegue(withIdentifier: Segue.OrganizationList.toPersonalInfo, sender: dataSource[indexPath.row])
     }
     
     // MARK: - Navigation
