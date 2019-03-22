@@ -57,6 +57,17 @@ class HomeSearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        switch segue.identifier {
+            
+        case Segue.HomeSearch.toTraining:
+            if let product = sender, product is Product {
+                let vc = segue.destination as! MediaTrainingViewController
+                vc.subCategory = SubCategory(name: "", image: "", part_number: "", description: "", id : (product as! Product).id, subcategory_id : 0)
+            }
+            
+        default: return
+        }
+        
     }
 }
 
@@ -68,6 +79,6 @@ extension HomeSearchViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = dataSource.data[indexPath.row]
-//        performSegue(withIdentifier: Segue.BrandFeedback.toFeedbackForm, sender: company)
+        performSegue(withIdentifier: Segue.HomeSearch.toTraining, sender: product)
     }
 }

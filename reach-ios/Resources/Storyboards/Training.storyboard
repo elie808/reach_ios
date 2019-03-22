@@ -466,7 +466,7 @@
         <!--Media-->
         <scene sceneID="ZQ3-Pl-tYi">
             <objects>
-                <viewController title="Media" id="KNL-iC-KVW" customClass="MediaTrainingViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MediaTrainingVC" title="Media" id="KNL-iC-KVW" customClass="MediaTrainingViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQ8-B6-1XG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -511,22 +511,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-T5-E9U">
-                                                    <rect key="frame" x="117" y="18" width="50" height="84"/>
+                                                    <rect key="frame" x="117" y="18" width="243" height="84"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGj-q8-xXK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-52-Lig">
-                                                            <rect key="frame" x="0.0" y="17" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="17" width="243" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-xj-L8i">
-                                                            <rect key="frame" x="0.0" y="84" width="50" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="84" width="243" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -539,6 +539,7 @@
                                                 <constraint firstItem="Xvf-T5-E9U" firstAttribute="centerY" secondItem="Mzh-q1-fcM" secondAttribute="centerY" id="6gi-Ln-upu"/>
                                                 <constraint firstItem="A23-EJ-50h" firstAttribute="centerY" secondItem="Mzh-q1-fcM" secondAttribute="centerY" id="Kbe-pm-lhb"/>
                                                 <constraint firstItem="A23-EJ-50h" firstAttribute="leading" secondItem="Mzh-q1-fcM" secondAttribute="leading" constant="16" id="RjZ-ne-sTK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xvf-T5-E9U" secondAttribute="trailing" id="TPc-Yd-hFa"/>
                                                 <constraint firstItem="Xvf-T5-E9U" firstAttribute="leading" secondItem="A23-EJ-50h" secondAttribute="trailing" constant="16" id="UZC-2I-rmn"/>
                                             </constraints>
                                         </tableViewCellContentView>

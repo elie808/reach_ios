@@ -23,6 +23,7 @@ public enum ViewIdentifier: String {
     case Help = "HelpVC"
     case LoginNav = "LoginNav"
     case MainTab  = "mainTabVC"
+    case MediaTraining = "MediaTrainingVC"
     case Settings = "SettingsVC"
     case TermsAndConditions = "TAndCVC"
 }
@@ -53,6 +54,10 @@ struct Segue {
     
     struct Home {
         static let toSearch = "HomeToHomeSearchVC"
+    }
+    
+    struct HomeSearch {
+        static let toTraining = "HomeSearchToMediaTrainingVC"
     }
     
     struct Login {

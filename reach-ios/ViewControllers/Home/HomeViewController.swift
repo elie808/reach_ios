@@ -63,14 +63,15 @@ class HomeViewController: UIViewController {
         
         let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
         
-        URLSession.shared.load(profile) { (user, status) in
-
-            self.fullNameLabel.text = (user?.firstName)! + " " + (user?.lastName)!
-            self.profilePicture.profilePicture.urlSetImage(user?.image)
-            self.profilePicture.totalPoints = (user?.totalApprovedPoints)!
-            self.profilePicture.maxPoints = (user?.maxPoints)!
-            self.profilePicture.animateProgress()
-            self.pointsLabel.text = "\(user?.totalApprovedPoints ?? 0)"
+        URLSession.shared.load(profile) { (response, status) in
+            if let user = response {
+                self.fullNameLabel.text = user.firstName + " " + user.lastName
+                self.profilePicture.profilePicture.urlSetImage(user.image)
+                self.profilePicture.totalPoints = user.totalApprovedPoints
+                self.profilePicture.maxPoints = user.maxPoints
+                self.profilePicture.animateProgress()
+                self.pointsLabel.text = "\(user.totalApprovedPoints )"
+            }
         }
     }
     
@@ -79,8 +80,10 @@ class HomeViewController: UIViewController {
         let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
         
         URLSession.shared.load(banners) { (bannerItems, status) in
-            self.collectionDataSource.data = bannerItems!
-            self.collectionView.reloadData()
+            if let banner = bannerItems, banner.count > 0 {
+                self.collectionDataSource.data = banner
+                self.collectionView.reloadData()
+            }
         }
     }
     

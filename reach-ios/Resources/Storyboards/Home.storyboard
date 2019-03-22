@@ -1337,10 +1337,10 @@
             </objects>
             <point key="canvasLocation" x="2822" y="-2605"/>
         </scene>
-        <!--Results-->
+        <!--Search Results-->
         <scene sceneID="lS5-8Q-nTZ">
             <objects>
-                <viewController title="Results" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="U2h-6V-Nlx" customClass="HomeSearchViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Results" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="U2h-6V-Nlx" customClass="HomeSearchViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CD0-lF-cKY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1422,6 +1422,7 @@
                     <connections>
                         <outlet property="emptyView" destination="1PP-8I-UhD" id="DoU-Nd-0ph"/>
                         <outlet property="tableView" destination="mX6-tm-VQK" id="wjK-nM-7ff"/>
+                        <segue destination="KaG-fi-PJp" kind="show" identifier="HomeSearchToMediaTrainingVC" id="smx-Pi-eoI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1y-sL-9V2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1445,6 +1446,14 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="3057" y="-772"/>
+        </scene>
+        <!--MediaTrainingVC-->
+        <scene sceneID="fav-ks-dpK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Training" referencedIdentifier="MediaTrainingVC" id="KaG-fi-PJp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJV-Ia-Z7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3764" y="-773"/>
         </scene>
     </scenes>
     <resources>

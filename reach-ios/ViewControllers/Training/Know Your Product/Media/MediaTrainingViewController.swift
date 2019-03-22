@@ -61,6 +61,9 @@ class MediaTrainingViewController: UIViewController {
             if let list = mediaList {
                 self.tableDataSource.data = list
                 self.tableView.reloadData()
+                if (self.subCategory?.image.isEmpty)! || self.subCategory?.image.count == 0 {
+                    self.headerImageView.urlSetImage(list.first?.image)
+                }
             }
         }
     }
