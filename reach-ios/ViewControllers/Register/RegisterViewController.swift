@@ -46,21 +46,15 @@ class RegisterViewController: UIViewController {
         
         let userToPost = Resource<RegisterUserObject>(url: URL(string: NetworkingConstants.register)!, method: .post(userToRegister!))
         
-        URLSession.shared.load(userToPost) { (response, status) in
+        URLSession.shared.load(userToPost, completion: { (response, status) in
             
-            switch status.code {
-                
-            case 200:
-                self.show(alert: "Success", message: (response?.message)!, buttonTitle: "Ok", onSuccess: {
-                    _ = self.navigationController?.popViewController(animated: true)
-                })
-                
-            case 422: self.show(alert: "Error", message: "Account already exists", buttonTitle: "Ok", onSuccess: nil)
-                
-            default: self.show(alert: "Error", message: "There was an error submitting your form. Please check your fields before submition", buttonTitle: "Ok", onSuccess: nil)
-            }
+            self.show(alert: "Success", message: (response?.message)!, buttonTitle: "Ok", onSuccess: {
+                _ = self.navigationController?.popViewController(animated: true)
+            })
+            
+        }) { (error, status) in
+            self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
         }
-        
     }
     
     // MARK: - Actions

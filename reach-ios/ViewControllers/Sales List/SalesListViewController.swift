@@ -44,6 +44,12 @@ class SalesListViewController: UIViewController {
         }
     }
     
+    fileprivate func animateTableView() {
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+    }
+    
     // MARK: - Actions
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
@@ -64,7 +70,8 @@ class SalesListViewController: UIViewController {
                 
                 PersistenceManager.removeAllSales()
                 self.dataSource.removeAll()
-                self.tableView.reloadData()
+                
+                self.animateTableView()
                 
             }) { (error, status) in
                 self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
@@ -120,8 +127,6 @@ extension SalesListViewController : DailyReportCellDelegate {
         PersistenceManager.remove(saleObject: dataSource[index.row])
         dataSource.remove(at: index.row)
         
-        let range = NSMakeRange(0, self.tableView.numberOfSections)
-        let sections = NSIndexSet(indexesIn: range)
-        tableView.reloadSections(sections as IndexSet, with: .automatic)
+        animateTableView()
     }
 }
