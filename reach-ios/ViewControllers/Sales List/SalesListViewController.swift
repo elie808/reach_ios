@@ -67,7 +67,7 @@ class SalesListViewController: UIViewController {
                 self.tableView.reloadData()
                 
             }) { (error, status) in
-                self.show(alert: "Error \(String(describing: error?.code))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
+                self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
             }
             
         }
