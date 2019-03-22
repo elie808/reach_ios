@@ -77,6 +77,14 @@ class DailyReportViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        switch segue.identifier {
+        case Segue.DailyReport.toEditSale:
+            if let reportSaleItem = sender, reportSaleItem is ReportSaleModel {
+                let vc = segue.destination as? EditSaleViewController
+                vc!.viewModel = reportSaleItem as! ReportSaleModel
+            }
+        default: return
+        }
     }
 }
 
@@ -94,6 +102,14 @@ extension DailyReportViewController : UITableViewDataSource {
         cell.cellDelegate = self
         
         return cell
+    }
+}
+
+extension DailyReportViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let saleObject = dataSource[indexPath.row]
+        performSegue(withIdentifier: Segue.DailyReport.toEditSale, sender: saleObject)
     }
 }
 

@@ -48,6 +48,7 @@
 		478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */; };
 		478C900B221CCF3500245CF1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478C900A221CCF3500245CF1 /* Home.storyboard */; };
 		478DB7C72243F27B00343708 /* ReportSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DB7C62243F27B00343708 /* ReportSaleModel.swift */; };
+		478DB7C922445D7600343708 /* EditSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478DB7C822445D7600343708 /* EditSaleViewController.swift */; };
 		4791CDBC221AC01F004CBB6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */; };
 		4791CDC0221AE544004CBB6B /* ProfilePictureProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */; };
 		4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791CDC1221AF176004CBB6B /* CircularProgress.swift */; };
@@ -136,6 +137,7 @@
 		478C9008221CBEAF00245CF1 /* ReportSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSaleViewController.swift; sourceTree = "<group>"; };
 		478C900A221CCF3500245CF1 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		478DB7C62243F27B00343708 /* ReportSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSaleModel.swift; sourceTree = "<group>"; };
+		478DB7C822445D7600343708 /* EditSaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSaleViewController.swift; sourceTree = "<group>"; };
 		4791CDBB221AC01F004CBB6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePictureProgressView.swift; path = "reach-ios/Views/ProfilePictureProgressView.swift"; sourceTree = SOURCE_ROOT; };
 		4791CDC1221AF176004CBB6B /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				47CC223E22317A8200ED9119 /* Contact Us */,
 				47CCC451221E126C001FE2D5 /* Daily Report */,
+				478DB7CA22445D9F00343708 /* Edit Sale */,
 				47784EFF221F14F2000FD327 /* Feedback */,
 				478C9002221C4F4500245CF1 /* Home */,
 				47784EFE221F14C2000FD327 /* Login */,
@@ -497,6 +500,14 @@
 				47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */,
 			);
 			path = "Report Sale";
+			sourceTree = "<group>";
+		};
+		478DB7CA22445D9F00343708 /* Edit Sale */ = {
+			isa = PBXGroup;
+			children = (
+				478DB7C822445D7600343708 /* EditSaleViewController.swift */,
+			);
+			path = "Edit Sale";
 			sourceTree = "<group>";
 		};
 		47A1E3E722351E820034752A /* SubCategories */ = {
@@ -911,6 +922,7 @@
 				4721F99522380A60002CAFB2 /* BrandTrainingCell.swift in Sources */,
 				4721F99822380D12002CAFB2 /* SubCategoryTableViewController.swift in Sources */,
 				4787ED522240A64A0014DFC1 /* ErrorResponse.swift in Sources */,
+				478DB7C922445D7600343708 /* EditSaleViewController.swift in Sources */,
 				47CCC2032228E8C2005DE571 /* TrainingListCell.swift in Sources */,
 				47ADFF682223470500AEFBD7 /* SharpenSkillsCell.swift in Sources */,
 				4783582B22140F6100B33025 /* UIViewController+Helpers.swift in Sources */,
