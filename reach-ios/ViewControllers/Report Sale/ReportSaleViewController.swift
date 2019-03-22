@@ -13,19 +13,22 @@ class ReportSaleViewController: UITableViewController {
 
     // MARK: - Properties
     
-    var viewModel = Sale()
-    var selectedProduct : Product? { // passed from ProductListTC
+    var viewModel : SaleViewModel = SaleViewModel() {
         didSet {
-            if let product = selectedProduct {
+            if let product = viewModel.product {
                 if product.image_required == 1 {
-                    imageOptionlLabel.isHidden = true
+                    if let label = imageOptionlLabel{
+                        label.isHidden = true
+                    }
                 } else {
-                    imageOptionlLabel.isHidden = false
+                    if let label = imageOptionlLabel{
+                        label.isHidden = false
+                    }
                 }
             }
         }
     }
-    
+
     // MARK: - Outlets
 
     @IBOutlet weak var productNameTextField : SkyFloatingLabelTextField!
@@ -45,13 +48,12 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Helpers
     
     func initializeView() {
-        productNameTextField.text = viewModel.productName
-        productIDTextField.text = viewModel.serialNumber
-        infoTextfield.text = viewModel.additionalInfo
+        productNameTextField.text = viewModel.product?.name
+        productIDTextField.text = viewModel.sale.serialNumber
+        infoTextfield.text = viewModel.sale.additionalInfo
     }
     
     func resetForm() {
-        selectedProduct = nil
         imageOptionlLabel.isHidden = true
         productNameTextField.text = ""
         productIDTextField.text = ""
@@ -70,7 +72,7 @@ class ReportSaleViewController: UITableViewController {
             productNameTextField.errorMessage = nil
         }
         
-        guard let product = selectedProduct else { return false }
+        guard let product = viewModel.product else { return false }
         
         if (productIDTextField.text?.isEmpty)! {
             productIDTextField.errorMessage = .cantBeEmpty
@@ -104,13 +106,12 @@ class ReportSaleViewController: UITableViewController {
     
     /// Return an initiated data model with values from the VC
     func bindToViewModel() -> Sale {
-        
-        let model = Sale(productID: selectedProduct != nil ? (selectedProduct?.promotions_products_id)! : viewModel.productID,
-                                    productName: productNameTextField.text!,
-                                    serialNumber: productIDTextField.text!,
-                                    additionalInfo: infoTextfield.text!,
-                                    image: 0)
-        
+
+        let model = Sale(productID: (viewModel.product?.promotions_products_id)!,
+                         productName: productNameTextField.text!,
+                         serialNumber: productIDTextField.text!,
+                         additionalInfo: infoTextfield.text!, image: 0)
+
         return model
     }
     
@@ -146,10 +147,10 @@ class ReportSaleViewController: UITableViewController {
         switch segue.identifier {
         
         case Segue.ProductList.toReportSale:
-            productNameTextField.text = viewModel.productName
+            productNameTextField.text = viewModel.product?.name
             
         case Segue.QRScanner.toReportSale:
-            productIDTextField.text = viewModel.serialNumber
+            productIDTextField.text = viewModel.sale.serialNumber
         
         default: return
         }
@@ -163,8 +164,7 @@ class ReportSaleViewController: UITableViewController {
             
         case Segue.ReportSale.toDailyReport:
             if let saleObj = sender, saleObj is Sale {
-                
-                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: selectedProduct!)
+                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: viewModel.product)
                 PersistenceManager.save(saleObject: salesView)
                 resetForm()
             }

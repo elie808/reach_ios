@@ -11,8 +11,8 @@ import SwiftyUserDefaults
 
 // Persisted on device. Handy for editing sale objects
 struct SaleViewModel : Codable, DefaultsSerializable {
-    let sale : Sale
-    let product : Product
+    var sale : Sale = Sale()
+    var product : Product?
     //TODO: Add UIImage support (problematic with De/Encoding
 }
 

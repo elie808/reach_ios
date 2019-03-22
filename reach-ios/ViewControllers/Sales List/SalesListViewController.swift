@@ -33,8 +33,7 @@ class SalesListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        if let savedSales = PersistenceManager.getAllSavedSales(), savedSales.count > 0 {
+
         if let savedSales = PersistenceManager.allSavedSales(), savedSales.count > 0 {
             dataSource.removeAll()
             dataSource.append(contentsOf: savedSales)
@@ -82,9 +81,9 @@ class SalesListViewController: UIViewController {
 
         switch segue.identifier {
         case Segue.DailyReport.toEditSale:
-            if let reportSaleItem = sender, reportSaleItem is Sale {
-                let vc = segue.destination as? ReportSaleViewController
-                vc!.viewModel = reportSaleItem as! Sale
+                if let reportSaleItem = sender, reportSaleItem is SaleViewModel {
+                    let vc = segue.destination as? ReportSaleViewController
+                    vc?.viewModel = (reportSaleItem as? SaleViewModel)!
             }
         default: return
         }

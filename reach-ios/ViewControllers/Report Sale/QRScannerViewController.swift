@@ -123,10 +123,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             let vc : ReportSaleViewController = segue.destination as! ReportSaleViewController
             if let code = sender {
                 if code is String {
-                    vc.viewModel.serialNumber = code as! String
+                    vc.viewModel.sale.serialNumber = code as! String
                 }
             }
-            
         default: return
         }
     }

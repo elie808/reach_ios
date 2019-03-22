@@ -75,9 +75,7 @@ class ProductListTableViewController: UITableViewController {
             let vc : ReportSaleViewController = segue.destination as! ReportSaleViewController
             if let product = sender {
                 if product is Product {
-                    vc.selectedProduct = (product as! Product)
-                    vc.viewModel.productName = (product as! Product).name
-                    vc.viewModel.productID = (product as! Product).promotions_products_id!
+                    vc.viewModel.product = (product as! Product)
                 }
             }
             

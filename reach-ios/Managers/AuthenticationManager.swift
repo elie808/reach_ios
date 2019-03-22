@@ -57,7 +57,7 @@ final class PersistenceManager {
     static func remove(saleObject: SaleViewModel) {
         
         if var savedArray = Defaults[.sales], savedArray.count > 0 {
-            savedArray.removeAll(where: { saleObject.product.id == $0.product.id } )
+            savedArray.removeAll(where: { saleObject.product?.id == $0.product?.id } )
             Defaults[.sales] = savedArray
             Defaults.synchronize()
         }
