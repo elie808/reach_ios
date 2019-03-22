@@ -12,6 +12,7 @@ struct Product : Codable {
     let name, image, description, part_number : String
     let id : Int
     var promotions_products_id : Int?
+    var image_required, description_required, serial_number_required : Int?
 }
 
 class ProductListTableViewController: UITableViewController {
