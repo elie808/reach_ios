@@ -13,14 +13,25 @@ class ReportSaleViewController: UITableViewController {
 
     // MARK: - Properties
     
-    var selectedProduct : Product? // passed from ProductListTC
     var viewModel = Sale()
+    var selectedProduct : Product? { // passed from ProductListTC
+        didSet {
+            if let product = selectedProduct {
+                if product.image_required == 1 {
+                    imageOptionlLabel.isHidden = true
+                } else {
+                    imageOptionlLabel.isHidden = false
+                }
+            }
+        }
+    }
     
     // MARK: - Outlets
 
     @IBOutlet weak var productNameTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productIDTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productImageLabel : UILabel!
+    @IBOutlet weak var imageOptionlLabel : UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var infoTextfield: SkyFloatingLabelTextField!
     
@@ -40,6 +51,8 @@ class ReportSaleViewController: UITableViewController {
     }
     
     func resetForm() {
+        selectedProduct = nil
+        imageOptionlLabel.isHidden = true
         productNameTextField.text = ""
         productIDTextField.text = ""
         productImageView.image = nil
@@ -57,6 +70,8 @@ class ReportSaleViewController: UITableViewController {
             productNameTextField.errorMessage = nil
         }
         
+        guard let product = selectedProduct else { return false }
+        
         if (productIDTextField.text?.isEmpty)! {
             productIDTextField.errorMessage = .cantBeEmpty
             isValid = false
@@ -64,20 +79,26 @@ class ReportSaleViewController: UITableViewController {
             productIDTextField.errorMessage = nil
         }
         
-        if productImageView.image == nil {
-            isValid = false
-            productImageLabel.textColor = #colorLiteral(red: 0.7669542101, green: 0, blue: 0.003921568627, alpha: 1)
-        } else {
-            productImageLabel.textColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
-        }
-
-        if (infoTextfield.text?.isEmpty)! {
-            infoTextfield.errorMessage = .cantBeEmpty
-            isValid = false
-        } else {
-            infoTextfield.errorMessage = nil
+        if product.serial_number_required == 1 {
+            if product.image_required == 1 {
+                if productImageView.image == nil {
+                    isValid = false
+                    productImageLabel.textColor = #colorLiteral(red: 0.7669542101, green: 0, blue: 0.003921568627, alpha: 1)
+                } else {
+                    productImageLabel.textColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
+                }
+            }
         }
         
+        if product.description_required == 1 {
+            if (infoTextfield.text?.isEmpty)! {
+                infoTextfield.errorMessage = .cantBeEmpty
+                isValid = false
+            } else {
+                infoTextfield.errorMessage = nil
+            }
+        }
+
         return isValid
     }
     
@@ -113,7 +134,6 @@ class ReportSaleViewController: UITableViewController {
     }
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
-        
         if formValid() == true {
             performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: bindToViewModel())
         }

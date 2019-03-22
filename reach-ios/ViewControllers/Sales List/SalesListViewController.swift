@@ -80,7 +80,7 @@ class SalesListViewController: UIViewController {
         switch segue.identifier {
         case Segue.DailyReport.toEditSale:
             if let reportSaleItem = sender, reportSaleItem is Sale {
-                let vc = segue.destination as? EditSaleViewController
+                let vc = segue.destination as? ReportSaleViewController
                 vc!.viewModel = reportSaleItem as! Sale
             }
         default: return
