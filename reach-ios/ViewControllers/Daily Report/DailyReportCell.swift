@@ -12,7 +12,7 @@ protocol DailyReportCellDelegate {
     func deleteSaleItem(atIndex index:IndexPath)
 }
 
-class DailyReportCell: GenericTableCell<ReportSaleModel> {
+class DailyReportCell: GenericTableCell<Sale> {
     
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var serialLabel : UILabel!
@@ -21,7 +21,7 @@ class DailyReportCell: GenericTableCell<ReportSaleModel> {
     var cellDelegate : DailyReportCellDelegate?
     var cellIndex : IndexPath  = []
     
-    override var model : ReportSaleModel! {
+    override var model : Sale! {
         didSet {
             nameLabel.text = model.productName
             serialLabel.text = model.serialNumber

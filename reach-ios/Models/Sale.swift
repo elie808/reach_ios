@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyUserDefaults
 
-struct ReportSaleModel : Codable, DefaultsSerializable {
+struct Sale : Codable, DefaultsSerializable {
     
     var productID : Int = 0
     var productName : String = ""

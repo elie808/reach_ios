@@ -12,7 +12,7 @@ import SwiftyUserDefaults
 // Add Keys here for AuthenticationManager methods
 extension DefaultsKeys {
     static let authenticationData = DefaultsKey<AuthenticationData?>("authentication-data")
-    static let salesData = DefaultsKey<[ReportSaleModel]?>("sale-data")
+    static let salesData = DefaultsKey<[Sale]?>("sale-data")
 //    static let authenticationData = DefaultsKey<String?>("authentication-data")
 //    static let userAreaID = DefaultsKey<String?>("user-area-id")
 }
@@ -42,7 +42,7 @@ final class AuthenticationManager {
 
 final class PersistenceManager {
     
-    static func addToSalesData(dailySale: ReportSaleModel) {
+    static func addToSalesData(dailySale: Sale) {
 
         if var savedArray = Defaults[.salesData], savedArray.count > 0 {
             
@@ -57,7 +57,7 @@ final class PersistenceManager {
         Defaults.synchronize()
     }
 
-    static func removeSalesObject(saleToRemove: ReportSaleModel) {
+    static func removeSalesObject(saleToRemove: Sale) {
         
         if var savedArray = Defaults[.salesData], savedArray.count > 0 {
             
@@ -68,7 +68,7 @@ final class PersistenceManager {
         }
     }
     
-    static func getAllSavedSales() -> [ReportSaleModel]? {
+    static func getAllSavedSales() -> [Sale]? {
         guard let savedArray = Defaults[.salesData] else { return nil }
         return savedArray
     }

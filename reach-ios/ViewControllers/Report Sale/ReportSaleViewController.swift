@@ -14,7 +14,7 @@ class ReportSaleViewController: UITableViewController {
     // MARK: - Properties
     
     var selectedProduct : Product? // passed from ProductListTC
-    var viewModel = ReportSaleModel()
+    var viewModel = Sale()
     
     // MARK: - Outlets
 
@@ -82,9 +82,9 @@ class ReportSaleViewController: UITableViewController {
     }
     
     /// Return an initiated data model with values from the VC
-    func bindToViewModel() -> ReportSaleModel {
+    func bindToViewModel() -> Sale {
         
-        let model = ReportSaleModel(productID: selectedProduct != nil ? (selectedProduct?.promotions_products_id)! : viewModel.productID,
+        let model = Sale(productID: selectedProduct != nil ? (selectedProduct?.promotions_products_id)! : viewModel.productID,
                                     productName: productNameTextField.text!,
                                     serialNumber: productIDTextField.text!,
                                     additionalInfo: infoTextfield.text!,
@@ -142,8 +142,8 @@ class ReportSaleViewController: UITableViewController {
         switch segue.identifier {
             
         case Segue.ReportSale.toDailyReport:
-            if let saleObj = sender, saleObj is ReportSaleModel {
-                PersistenceManager.addToSalesData(dailySale: (saleObj as! ReportSaleModel) )
+            if let saleObj = sender, saleObj is Sale {
+                PersistenceManager.addToSalesData(dailySale: (saleObj as! Sale) )
                 resetForm()
             }
             

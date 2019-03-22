@@ -12,7 +12,7 @@ class SalesListViewController: UIViewController {
 
     // MARK: - Properties
     
-    var dataSource : [ReportSaleModel] = [] {
+    var dataSource : [Sale] = [] {
         didSet {
             if dataSource.count == 0 {
                 submitButton.backgroundColor = .lightGray
@@ -54,7 +54,7 @@ class SalesListViewController: UIViewController {
          
             let postObj = ["sales" : salesList]
             
-            let sales = Resource<ReportSaleModel>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
+            let sales = Resource<Sale>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
             
             URLSession.shared.load(sales) { (response, status) in
                 
@@ -79,9 +79,9 @@ class SalesListViewController: UIViewController {
 
         switch segue.identifier {
         case Segue.DailyReport.toEditSale:
-            if let reportSaleItem = sender, reportSaleItem is ReportSaleModel {
+            if let reportSaleItem = sender, reportSaleItem is Sale {
                 let vc = segue.destination as? EditSaleViewController
-                vc!.viewModel = reportSaleItem as! ReportSaleModel
+                vc!.viewModel = reportSaleItem as! Sale
             }
         default: return
         }
