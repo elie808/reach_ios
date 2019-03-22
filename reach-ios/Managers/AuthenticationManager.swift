@@ -12,7 +12,6 @@ import SwiftyUserDefaults
 // Add Keys here for AuthenticationManager methods
 extension DefaultsKeys {
     static let authenticationData = DefaultsKey<AuthenticationData?>("authentication-data")
-    static let salesData = DefaultsKey<[Sale]?>("sale-data")
     static let sales = DefaultsKey<[SaleViewModel]?>("sales-list")
 //    static let authenticationData = DefaultsKey<String?>("authentication-data")
 //    static let userAreaID = DefaultsKey<String?>("user-area-id")
@@ -42,7 +41,7 @@ final class AuthenticationManager {
 }
 
 final class PersistenceManager {
-        
+    
     static func save(saleObject: SaleViewModel) {
         
         if var savedArray = Defaults[.sales], savedArray.count > 0 {
