@@ -163,6 +163,9 @@ class ReportSaleViewController: UITableViewController {
             
         case Segue.ReportSale.toDailyReport:
             if let saleObj = sender, saleObj is Sale {
+                
+                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: selectedProduct!)
+                PersistenceManager.save(saleObject: salesView)
                 PersistenceManager.addToSalesData(dailySale: (saleObj as! Sale) )
                 resetForm()
             }

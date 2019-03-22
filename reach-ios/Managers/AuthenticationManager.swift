@@ -13,6 +13,7 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     static let authenticationData = DefaultsKey<AuthenticationData?>("authentication-data")
     static let salesData = DefaultsKey<[Sale]?>("sale-data")
+    static let sales = DefaultsKey<[SaleViewModel]?>("sales-list")
 //    static let authenticationData = DefaultsKey<String?>("authentication-data")
 //    static let userAreaID = DefaultsKey<String?>("user-area-id")
 }
@@ -75,6 +76,40 @@ final class PersistenceManager {
     
     static func deleteAddSalesData() {
         Defaults[.salesData] = nil
+        Defaults.synchronize()
+    }
+    
+    //////////
+    
+    
+    static func save(saleObject: SaleViewModel) {
+        
+        if var savedArray = Defaults[.sales], savedArray.count > 0 {
+            savedArray.append(saleObject)
+            Defaults[.sales] = savedArray
+        } else {
+            Defaults[.sales] = [saleObject]
+        }
+        
+        Defaults.synchronize()
+    }
+    
+    static func remove(saleObject: SaleViewModel) {
+        
+        if var savedArray = Defaults[.sales], savedArray.count > 0 {
+            savedArray.removeAll(where: { saleObject.product.id == $0.product.id } )
+            Defaults[.sales] = savedArray
+            Defaults.synchronize()
+        }
+    }
+    
+    static func allSavedSales() -> [SaleViewModel]? {
+        guard let savedArray = Defaults[.sales] else { return nil }
+        return savedArray
+    }
+    
+    static func removeAllSales() {
+        Defaults[.sales] = nil
         Defaults.synchronize()
     }
 }

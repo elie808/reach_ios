@@ -9,6 +9,14 @@
 import Foundation
 import SwiftyUserDefaults
 
+// Persisted on device. Handy for editing sale objects
+struct SaleViewModel : Codable, DefaultsSerializable {
+    let sale : Sale
+    let product : Product
+    //TODO: Add UIImage support (problematic with De/Encoding
+}
+
+// Object used to POST to server
 struct Sale : Codable, DefaultsSerializable {
     
     var productID : Int = 0
