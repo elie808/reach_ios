@@ -13,8 +13,6 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     static let authenticationData = DefaultsKey<AuthenticationData?>("authentication-data")
     static let sales = DefaultsKey<[SaleViewModel]?>("sales-list")
-//    static let authenticationData = DefaultsKey<String?>("authentication-data")
-//    static let userAreaID = DefaultsKey<String?>("user-area-id")
 }
 
 // Add persistence methods here, as needed
@@ -31,7 +29,6 @@ final class AuthenticationManager {
     
     static func logout() {
         clearUserDefaults()
-//        Cache.deleteAllFiles()
     }
     
     private static func clearUserDefaults() {

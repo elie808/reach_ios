@@ -47,6 +47,39 @@ struct HttpStatus {
 
 extension URLSession {
     
+    func load<A>(_ resource: Resource<A>, completion: @escaping (A?, HttpStatus) -> (), errors: ( (ErrorResponse?, HttpStatus) -> () )? ) {
+        
+        SVProgressHUD.show()
+        
+        dataTask(with: resource.urlRequest) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+                
+                SVProgressHUD.dismiss()
+                
+                if let resp : HTTPURLResponse = response as? HTTPURLResponse {
+                    
+                    #if DEBUG
+                    print("--")
+                    print("STATUS:")
+                    print(resp.statusCode)
+                    #endif
+                    
+                    if resp.statusCode >= 200 && resp.statusCode <= 300 {
+                        
+                        completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
+                    
+                    } else { // TODO: Abstract into an Error completion handler. Keep HTTP Status for now
+                        
+                        let errorObj = try? JSONDecoder().decode(ErrorResponse.self, from: data!)
+                        print("ERROR Message: ", errorObj?.message as Any)
+                        errors!(errorObj, HttpStatus(code: resp.statusCode))
+                    }
+                    
+                }
+            } }.resume()
+    }
+    
     func load<A>(_ resource: Resource<A>, completion: @escaping (A?, HttpStatus) -> ()) {
     
         SVProgressHUD.show()

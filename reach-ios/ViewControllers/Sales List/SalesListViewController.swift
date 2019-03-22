@@ -58,20 +58,18 @@ class SalesListViewController: UIViewController {
             
             let sales = Resource<Sale>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
             
-            URLSession.shared.load(sales) { (response, status) in
+            URLSession.shared.load(sales, completion: { (response, status) in
                 
-                if status.code == 200 {
-                    
-                    self.showBanner(message: .SuccessPostingSales)
-
-                    PersistenceManager.removeAllSales()
-                    self.dataSource.removeAll()
-                    self.tableView.reloadData()
-                    
-                } else if status.code == 403 {
-                    self.showBanner(message: .ErrorPosting)
-                }
+                self.showBanner(message: .SuccessPostingSales)
+                
+                PersistenceManager.removeAllSales()
+                self.dataSource.removeAll()
+                self.tableView.reloadData()
+                
+            }) { (error, status) in
+                self.show(alert: "Error \(String(describing: error?.code))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
             }
+            
         }
     }
     
