@@ -69,7 +69,7 @@ extension URLSession {
                         
                         completion(data.flatMap(resource.parse), HttpStatus(code: resp.statusCode))
                     
-                    } else { // TODO: Abstract into an Error completion handler. Keep HTTP Status for now
+                    } else {
                         
                         let errorObj = try? JSONDecoder().decode(ErrorResponse.self, from: data!)
                         print("ERROR Message: ", errorObj?.message as Any)

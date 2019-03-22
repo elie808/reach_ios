@@ -22,6 +22,7 @@
 		4741616222340116002E3B9E /* PerformanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741616122340116002E3B9E /* PerformanceCell.swift */; };
 		47421A42221A239B00C9B3D4 /* GenericListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A41221A239B00C9B3D4 /* GenericListView.swift */; };
 		47421A44221A252300C9B3D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47421A43221A252300C9B3D4 /* HomeViewController.swift */; };
+		4743475D2244B8460055D929 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743475C2244B8460055D929 /* HomeSearchViewController.swift */; };
 		47485673223B1740002F2004 /* AddBrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47485672223B1740002F2004 /* AddBrandsTableViewController.swift */; };
 		47485675223B187F002F2004 /* BrandsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47485674223B187F002F2004 /* BrandsListTableViewController.swift */; };
 		47485678223D61D1002F2004 /* AddBrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47485677223D61D1002F2004 /* AddBrandCell.swift */; };
@@ -108,6 +109,7 @@
 		4741616122340116002E3B9E /* PerformanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceCell.swift; sourceTree = "<group>"; };
 		47421A41221A239B00C9B3D4 /* GenericListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListView.swift; sourceTree = "<group>"; };
 		47421A43221A252300C9B3D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4743475C2244B8460055D929 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
 		47485672223B1740002F2004 /* AddBrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBrandsTableViewController.swift; sourceTree = "<group>"; };
 		47485674223B187F002F2004 /* BrandsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsListTableViewController.swift; sourceTree = "<group>"; };
 		47485677223D61D1002F2004 /* AddBrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBrandCell.swift; sourceTree = "<group>"; };
@@ -238,6 +240,14 @@
 			path = "Video Player";
 			sourceTree = "<group>";
 		};
+		4743475E2244B8500055D929 /* Home Search */ = {
+			isa = PBXGroup;
+			children = (
+				4743475C2244B8460055D929 /* HomeSearchViewController.swift */,
+			);
+			path = "Home Search";
+			sourceTree = "<group>";
+		};
 		47485676223D61BB002F2004 /* Add Brands */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +348,7 @@
 				47CC223E22317A8200ED9119 /* Contact Us */,
 				47784EFF221F14F2000FD327 /* Feedback */,
 				478C9002221C4F4500245CF1 /* Home */,
+				4743475E2244B8500055D929 /* Home Search */,
 				47784EFE221F14C2000FD327 /* Login */,
 				47CCC1F22228CD77005DE571 /* Register */,
 				47ADFF6B222355F900AEFBD7 /* News */,
@@ -867,6 +878,7 @@
 				47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */,
 				4791CDC2221AF176004CBB6B /* CircularProgress.swift in Sources */,
 				47485678223D61D1002F2004 /* AddBrandCell.swift in Sources */,
+				4743475D2244B8460055D929 /* HomeSearchViewController.swift in Sources */,
 				47ADFF6D222359A900AEFBD7 /* NewsCell.swift in Sources */,
 				478C9007221CBD2C00245CF1 /* Constants.swift in Sources */,
 				4783582922140C7300B33025 /* UIStoryboards+Helpers.swift in Sources */,

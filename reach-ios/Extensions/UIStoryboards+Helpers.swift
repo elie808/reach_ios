@@ -51,6 +51,10 @@ struct Segue {
         static let toEditSale = "DailyReportToEditSaleVC"
     }
     
+    struct Home {
+        static let toSearch = "HomeToHomeSearchVC"
+    }
+    
     struct Login {
         static let toMainVC = "LoginToMainVC"
     }

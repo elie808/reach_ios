@@ -128,6 +128,17 @@ class HomeViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        
+        case Segue.Home.toSearch:
+            if let searchText = sender, searchText is String, (searchText as! String).count > 0 {
+                let vc = segue.destination as! HomeSearchViewController
+                vc.searchText = searchText as? String
+            }
+        default: return
+        }
+        
     }
 }
 
@@ -169,10 +180,10 @@ extension HomeViewController : UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        searchBar.showsCancelButton = false
-        searchBar.resignFirstResponder()
-        //TODO: SEGUE
-//        performSegue(withIdentifier: "zbre", sender: nil)
+        if let text = searchBar.text?.trimmingCharacters(in: .whitespaces), text.count > 0, !text.isEmpty {
+            performSegue(withIdentifier: Segue.Home.toSearch, sender: text)
+            searchBar.showsCancelButton = false
+            searchBar.resignFirstResponder()
+        }
     }
 }
