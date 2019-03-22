@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyReportViewController: UIViewController {
+class SalesListViewController: UIViewController {
 
     // MARK: - Properties
     
@@ -88,7 +88,7 @@ class DailyReportViewController: UIViewController {
     }
 }
 
-extension DailyReportViewController : UITableViewDataSource {
+extension SalesListViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
@@ -105,7 +105,7 @@ extension DailyReportViewController : UITableViewDataSource {
     }
 }
 
-extension DailyReportViewController : UITableViewDelegate {
+extension SalesListViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let saleObject = dataSource[indexPath.row]
@@ -113,7 +113,7 @@ extension DailyReportViewController : UITableViewDelegate {
     }
 }
 
-extension DailyReportViewController : DailyReportCellDelegate {
+extension SalesListViewController : DailyReportCellDelegate {
 
     func deleteSaleItem(atIndex index: IndexPath) {
         

@@ -80,7 +80,7 @@
 		47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */; };
 		47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */; };
 		47CCC44E221DF5A2001FE2D5 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */; };
-		47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */; };
+		47CCC450221E125A001FE2D5 /* SalesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC44F221E125A001FE2D5 /* SalesListViewController.swift */; };
 		47CCC453221E139E001FE2D5 /* DailyReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC452221E139E001FE2D5 /* DailyReportCell.swift */; };
 		47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */; };
 		47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */; };
@@ -169,7 +169,7 @@
 		47CCC449221DABF9001FE2D5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		47CCC44B221DECA6001FE2D5 /* UIAlertController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Helpers.swift"; sourceTree = "<group>"; };
 		47CCC44D221DF5A2001FE2D5 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
-		47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
+		47CCC44F221E125A001FE2D5 /* SalesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesListViewController.swift; sourceTree = "<group>"; };
 		47CCC452221E139E001FE2D5 /* DailyReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportCell.swift; sourceTree = "<group>"; };
 		47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormTableViewController.swift; sourceTree = "<group>"; };
 		47ED4C4E22205E5300D7EA09 /* SlidingMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingMenuBar.swift; sourceTree = "<group>"; };
@@ -674,7 +674,7 @@
 		47CCC451221E126C001FE2D5 /* Daily Report */ = {
 			isa = PBXGroup;
 			children = (
-				47CCC44F221E125A001FE2D5 /* DailyReportViewController.swift */,
+				47CCC44F221E125A001FE2D5 /* SalesListViewController.swift */,
 				47CCC452221E139E001FE2D5 /* DailyReportCell.swift */,
 			);
 			path = "Daily Report";
@@ -898,7 +898,7 @@
 				47ADFF622223025A00AEFBD7 /* ProfileTableViewController.swift in Sources */,
 				47CCC44C221DECA6001FE2D5 /* UIAlertController+Helpers.swift in Sources */,
 				47ADFF5C2222A73E00AEFBD7 /* PromotionsViewController.swift in Sources */,
-				47CCC450221E125A001FE2D5 /* DailyReportViewController.swift in Sources */,
+				47CCC450221E125A001FE2D5 /* SalesListViewController.swift in Sources */,
 				47784F01221F151B000FD327 /* LoginTableViewController.swift in Sources */,
 				478C9004221C4F6700245CF1 /* PerformanceViewController.swift in Sources */,
 				47F29F47222E66DA0061E8E2 /* SettingsTableViewController.swift in Sources */,
