@@ -12,7 +12,7 @@ class SalesListViewController: UIViewController {
 
     // MARK: - Properties
     
-    var dataSource : [Sale] = [] {
+    var dataSource : [SaleViewModel] = [] {
         didSet {
             if dataSource.count == 0 {
                 submitButton.backgroundColor = .lightGray
@@ -34,7 +34,8 @@ class SalesListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let savedSales = PersistenceManager.getAllSavedSales(), savedSales.count > 0 {
+//        if let savedSales = PersistenceManager.getAllSavedSales(), savedSales.count > 0 {
+        if let savedSales = PersistenceManager.allSavedSales(), savedSales.count > 0 {
             dataSource.removeAll()
             dataSource.append(contentsOf: savedSales)
             tableView.reloadData()
@@ -48,11 +49,13 @@ class SalesListViewController: UIViewController {
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
 
-        guard let salesList = PersistenceManager.getAllSavedSales() else { return }
+        guard let savedSaleModels = PersistenceManager.allSavedSales() else { return }
 
-        if salesList.count > 0 {
+        if savedSaleModels.count > 0 {
+            
+            let allSales = savedSaleModels.map( { $0.sale} )
          
-            let postObj = ["sales" : salesList]
+            let postObj = ["sales" : allSales]
             
             let sales = Resource<Sale>(url: URL(string: NetworkingConstants.sales)!, method: HttpMethod.post(postObj))
             
@@ -61,8 +64,8 @@ class SalesListViewController: UIViewController {
                 if status.code == 200 {
                     
                     self.showBanner(message: .SuccessPostingSales)
-                    
-                    PersistenceManager.deleteAddSalesData()
+
+                    PersistenceManager.removeAllSales()
                     self.dataSource.removeAll()
                     self.tableView.reloadData()
                     
@@ -97,7 +100,7 @@ extension SalesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellID", for: indexPath) as! DailyReportCell
-        cell.model = dataSource[indexPath.row]
+        cell.model = dataSource[indexPath.row].sale
         cell.cellIndex = indexPath
         cell.cellDelegate = self
         
@@ -116,9 +119,8 @@ extension SalesListViewController : UITableViewDelegate {
 extension SalesListViewController : DailyReportCellDelegate {
 
     func deleteSaleItem(atIndex index: IndexPath) {
-        
-        PersistenceManager.removeSalesObject(saleToRemove: dataSource[index.row])
-        
+
+        PersistenceManager.remove(saleObject: dataSource[index.row])
         dataSource.remove(at: index.row)
         
         let range = NSMakeRange(0, self.tableView.numberOfSections)

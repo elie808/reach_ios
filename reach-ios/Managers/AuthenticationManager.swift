@@ -42,46 +42,7 @@ final class AuthenticationManager {
 }
 
 final class PersistenceManager {
-    
-    static func addToSalesData(dailySale: Sale) {
-
-        if var savedArray = Defaults[.salesData], savedArray.count > 0 {
-            
-            savedArray.append(dailySale)
-            Defaults[.salesData] = savedArray
-            
-        } else {
-            
-            Defaults[.salesData] = [dailySale]
-        }
         
-        Defaults.synchronize()
-    }
-
-    static func removeSalesObject(saleToRemove: Sale) {
-        
-        if var savedArray = Defaults[.salesData], savedArray.count > 0 {
-            
-            savedArray.removeAll (where: { saleToRemove.productID == $0.productID })
-            
-            Defaults[.salesData] = savedArray
-            Defaults.synchronize()
-        }
-    }
-    
-    static func getAllSavedSales() -> [Sale]? {
-        guard let savedArray = Defaults[.salesData] else { return nil }
-        return savedArray
-    }
-    
-    static func deleteAddSalesData() {
-        Defaults[.salesData] = nil
-        Defaults.synchronize()
-    }
-    
-    //////////
-    
-    
     static func save(saleObject: SaleViewModel) {
         
         if var savedArray = Defaults[.sales], savedArray.count > 0 {

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupApp()
         
         setupRootViewController()
-        
+        PersistenceManager.deleteAddSalesData()
         return true
     }
 

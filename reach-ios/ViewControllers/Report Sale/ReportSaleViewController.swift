@@ -166,7 +166,6 @@ class ReportSaleViewController: UITableViewController {
                 
                 let salesView = SaleViewModel(sale: (saleObj as! Sale), product: selectedProduct!)
                 PersistenceManager.save(saleObject: salesView)
-                PersistenceManager.addToSalesData(dailySale: (saleObj as! Sale) )
                 resetForm()
             }
             
