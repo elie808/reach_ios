@@ -14,6 +14,7 @@ class ProfilePictureProgressView: UIView {
     
     var totalPoints : Int = 0
     var maxPoints : Int = 1
+    private var animationDuration : Double = 1.5
     private var circleProgressLayer : CircularProgress?
     
     // MARK: - Outlets
@@ -36,6 +37,6 @@ class ProfilePictureProgressView: UIView {
         
         self.layer.addSublayer(circleProgressLayer!)
         
-        circleProgressLayer?.animate(duration: 1)
+        circleProgressLayer?.animate(duration: animationDuration)
     }
 }
