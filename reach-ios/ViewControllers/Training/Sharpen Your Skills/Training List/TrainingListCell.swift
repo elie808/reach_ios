@@ -13,9 +13,19 @@ class TrainingListCell: GenericCollectionCell<TrainingListItem> {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var cellIndex : IndexPath! {
+        didSet {
+            switch cellIndex.row % 3 {
+            case 0: self.backgroundColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
+            case 1: self.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7803921569, blue: 0.003921568627, alpha: 1)
+            case 2: self.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.5058823529, blue: 0.007843137255, alpha: 1)
+            default: self.backgroundColor = #colorLiteral(red: 0, green: 0.7098039216, blue: 0.7098039216, alpha: 1)
+            }
+        }
+    }
+    
     override var model : TrainingListItem! {
         didSet {
-            // image at URL: http://reach.xtnd.io/cms/www/undefined. THis method is appending the BaseURL, so it's http://18.185.199.168:3000/http://reach.xtnd.io/cms/www/undefined. Does not work X-(
             imageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
             titleLabel.text = model.category
         }

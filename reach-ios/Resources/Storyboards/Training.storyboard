@@ -232,6 +232,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
+                                    <outlet property="dataSource" destination="OdT-mv-BTK" id="bNY-hY-CIE"/>
                                     <outlet property="delegate" destination="OdT-mv-BTK" id="tRc-43-qEi"/>
                                 </connections>
                             </collectionView>
