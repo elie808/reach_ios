@@ -16,10 +16,6 @@ final class UIAppearanceManager {
         // Status Bar Appearance
 //        UIApplication.shared.statusBarStyle = .lightContent
         
-        // UITabBarItem Appearance
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.reachBlack], for: .normal)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.reachBlack], for: .selected)
-        
         // UIBarButtonItem Appearance
 //        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
         
@@ -30,7 +26,11 @@ final class UIAppearanceManager {
         // UITabBar Appearance
 //        UITabBar.appearance().tintColor = UIColor.reachBlack
 //        UITabBar.appearance().barTintColor = UIColor.white
-//        UITabBar.appearance().unselectedItemTintColor = UIColor.tabItemTitleTint
+        UITabBar.appearance().unselectedItemTintColor = .white
+        
+        // UITabBarItem Appearance
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.reachBlack], for: .normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.reachBlack], for: .selected)
         
         // UINavigationBar Appearance
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)

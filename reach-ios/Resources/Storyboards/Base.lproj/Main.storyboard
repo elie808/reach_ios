@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="3qO-7k-87s" customClass="SalesListViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Dg-s0-hRc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z2x-JJ-qvP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="596"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="MCL-le-zeN">
                                     <rect key="frame" x="0.0" y="154" width="375" height="70"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-Zs-5jc">
-                                <rect key="frame" x="16" y="624" width="343" height="35"/>
+                                <rect key="frame" x="16" y="511" width="343" height="35"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ydP-Pa-fkL"/>
@@ -173,7 +173,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ReportSaleViewController" id="wLd-JA-TT0" customClass="ReportSaleViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyh-9O-7rf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="zf5-S9-Jon">
@@ -570,7 +570,7 @@
             <objects>
                 <tableViewController id="s0O-L6-Jom" customClass="ProductListTableViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgG-RN-WIc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="Search product by name" translucent="NO" id="Lwe-dR-4J8">
@@ -597,7 +597,7 @@
                             </connections>
                         </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="MXE-fY-aQm">
-                            <rect key="frame" x="0.0" y="659" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="566" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -640,18 +640,18 @@
             <objects>
                 <viewController id="B49-R0-dXM" customClass="QRScannerViewController" customModule="reach_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RDB-8b-hhP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_frame" translatesAutoresizingMaskIntoConstraints="NO" id="bWp-A3-Kd9">
-                                <rect key="frame" x="67.5" y="223.5" width="240" height="240"/>
+                                <rect key="frame" x="67.5" y="157" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="KiD-A5-meF"/>
                                     <constraint firstAttribute="width" constant="240" id="M9s-f2-zKA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-ca-Roo">
-                                <rect key="frame" x="16" y="28" width="343" height="0.0"/>
+                                <rect key="frame" x="16" y="8" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -879,7 +879,7 @@
         <scene sceneID="sV4-q9-b0N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="if3-dc-dg9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="TabHome_off" selectedImage="TabHome" id="xEf-Si-aJ9"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="TabHome" selectedImage="TabHome" id="xEf-Si-aJ9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="qSd-bM-gaW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -921,7 +921,7 @@
         <scene sceneID="kih-Oo-dh0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5nG-ps-iO0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Daily Report" image="TabDailyReport_off" selectedImage="TabDailyReport" id="TxE-tq-Ryv"/>
+                    <tabBarItem key="tabBarItem" title="Daily Report" image="TabDailyReport" selectedImage="TabDailyReport" id="TxE-tq-Ryv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="w6Z-0t-cfg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -952,7 +952,7 @@
         <scene sceneID="Hyn-JN-tXt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1he-TB-FPZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="TabProfile_off" selectedImage="TabProfile" id="IaM-Ql-67D"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="TabProfile" selectedImage="TabProfile" id="IaM-Ql-67D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="4GR-g2-3il">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1485,7 +1485,7 @@
         <scene sceneID="ak3-vh-b6o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WV7-VE-JY9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="TabNews_off" selectedImage="TabNews" id="CYs-1c-yFq"/>
+                    <tabBarItem key="tabBarItem" title="News" image="TabNews" selectedImage="TabNews" id="CYs-1c-yFq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rqY-gf-87X">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1510,19 +1510,15 @@
     <resources>
         <image name="REACH_logo" width="328.75201416015625" height="143.5679931640625"/>
         <image name="TabDailyReport" width="23.5" height="23.5"/>
-        <image name="TabDailyReport_off" width="23.5" height="23.5"/>
         <image name="TabHome" width="23.5" height="23.5"/>
-        <image name="TabHome_off" width="23.5" height="23.5"/>
         <image name="TabNews" width="23.5" height="23.5"/>
-        <image name="TabNews_off" width="23.5" height="23.5"/>
         <image name="TabProfile" width="23.5" height="23.5"/>
-        <image name="TabProfile_off" width="23.5" height="23.5"/>
         <image name="TabReport" width="113.68421173095703" height="113.68421173095703"/>
         <image name="camera_frame" width="354" height="344"/>
         <image name="down_arrow" width="10" height="5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dPg-2I-RTs"/>
+        <segue reference="6oG-9E-Rc3"/>
         <segue reference="ljQ-g1-vwG"/>
     </inferredMetricsTieBreakers>
 </document>
