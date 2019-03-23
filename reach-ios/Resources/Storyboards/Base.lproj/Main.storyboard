@@ -422,10 +422,32 @@
                                                         <outletCollection property="gestureRecognizers" destination="qNB-hc-sIC" appends="YES" id="aRv-ft-hJt"/>
                                                     </connections>
                                                 </imageView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-Cj-MVE">
+                                                    <rect key="frame" x="304" y="36" width="55" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.62152086299999998" blue="0.073718000239999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="C41-bT-5Pl"/>
+                                                        <constraint firstAttribute="height" constant="30" id="cES-Lf-Ktt"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didTapRemovePhoto:" destination="wLd-JA-TT0" eventType="touchDown" id="vSg-Hm-p6M"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="7sF-Cj-MVE" firstAttribute="top" secondItem="Gi5-8W-DJH" secondAttribute="bottom" constant="8" id="4cw-VF-Rxr"/>
                                                 <constraint firstItem="6jh-x7-eb7" firstAttribute="leading" secondItem="HWt-uG-sqV" secondAttribute="leadingMargin" id="E20-jJ-rBq"/>
                                                 <constraint firstItem="6jh-x7-eb7" firstAttribute="top" secondItem="Gi5-8W-DJH" secondAttribute="bottom" constant="8" id="F6r-GC-exG"/>
+                                                <constraint firstItem="7sF-Cj-MVE" firstAttribute="trailing" secondItem="HWt-uG-sqV" secondAttribute="trailingMargin" id="ItW-Ja-fy6"/>
                                                 <constraint firstItem="Gi5-8W-DJH" firstAttribute="leading" secondItem="HWt-uG-sqV" secondAttribute="leadingMargin" id="NPT-Nu-cpj"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="6jh-x7-eb7" secondAttribute="trailing" constant="199" id="SQ6-Nd-zW4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gi5-8W-DJH" secondAttribute="trailing" constant="158" id="e4n-Pw-3UD"/>
@@ -523,6 +545,7 @@
                         <outlet property="productImageLabel" destination="Aof-yI-Ly6" id="xew-6u-POb"/>
                         <outlet property="productImageView" destination="6jh-x7-eb7" id="3lK-RR-CZV"/>
                         <outlet property="productNameTextField" destination="9gR-5W-lIa" id="OUy-kc-bE7"/>
+                        <outlet property="removeImageButton" destination="7sF-Cj-MVE" id="vDA-dU-ILC"/>
                         <segue destination="3qO-7k-87s" kind="show" identifier="ReportSaleToDailyReport" id="ljQ-g1-vwG"/>
                         <segue destination="B49-R0-dXM" kind="show" identifier="ReportSaleToQRScannerVC" id="iGK-p3-Qcu"/>
                         <segue destination="s0O-L6-Jom" kind="show" identifier="ReportSaleToProductList" id="7sO-3I-0mh"/>

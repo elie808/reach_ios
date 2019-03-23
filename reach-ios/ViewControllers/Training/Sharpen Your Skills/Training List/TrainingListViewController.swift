@@ -60,9 +60,7 @@ extension TrainingListViewController : UICollectionViewDataSource {
         return dataSource.count
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCellID", for: indexPath) as! TrainingListCell
         cell.model = dataSource[indexPath.row]
         cell.cellIndex = indexPath

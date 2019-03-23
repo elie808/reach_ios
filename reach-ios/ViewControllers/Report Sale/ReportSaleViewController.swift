@@ -35,8 +35,9 @@ class ReportSaleViewController: UITableViewController {
     @IBOutlet weak var productIDTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var productImageLabel : UILabel!
     @IBOutlet weak var imageOptionlLabel : UILabel!
-    @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var infoTextfield: SkyFloatingLabelTextField!
+    @IBOutlet weak var removeImageButton : UIButton!
+    @IBOutlet weak var productImageView: UIImageView!
     
     // MARK: - Views Life Cycle
     
@@ -134,6 +135,12 @@ class ReportSaleViewController: UITableViewController {
         present(UIAlertController.createActionSheet(title: "Add a photo", message: nil, actions: alertActions), animated: true, completion: nil)
     }
     
+    @IBAction func didTapRemovePhoto(_ sender: UIButton) {
+        productImageView.image?.remove(from: productImageView)
+        viewModel.sale.image = 0
+        self.removeImageButton.isHidden = true
+    }
+    
     @IBAction func didTapSubmit(_ sender: UIButton) {
         if formValid() == true {
             performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: bindToViewModel())
@@ -190,6 +197,7 @@ extension ReportSaleViewController : UIImagePickerControllerDelegate, UINavigati
         
         dismiss(animated: true) {
             self.productImageView.image = pickedImage
+            self.removeImageButton.isHidden = false
             _ = self.formValid()
         }
     }
