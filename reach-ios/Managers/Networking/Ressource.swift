@@ -72,7 +72,7 @@ extension Resource where A: Decodable {
     init(upload url: URL, image: UIImage) {
         
         let boundary = "Boundary-\(NSUUID().uuidString)"
-        let image_data = image.jpegData(compressionQuality: 0.3)
+        let image_data = image.jpegData(compressionQuality: 0.0)
         let fileMame = "image.png"
         let mimetype = "image/png"
         let body = NSMutableData()

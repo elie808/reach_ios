@@ -85,11 +85,13 @@ class SalesListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         switch segue.identifier {
+            
         case Segue.DailyReport.toEditSale:
                 if let reportSaleItem = sender, reportSaleItem is SaleViewModel {
                     let vc = segue.destination as? ReportSaleViewController
                     vc?.viewModel = (reportSaleItem as? SaleViewModel)!
             }
+            
         default: return
         }
     }

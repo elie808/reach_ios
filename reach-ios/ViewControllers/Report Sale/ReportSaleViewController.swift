@@ -56,10 +56,23 @@ class ReportSaleViewController: UITableViewController {
     
     func resetForm() {
         imageOptionlLabel.isHidden = true
+        removeImageButton.isHidden = true
         productNameTextField.text = ""
         productIDTextField.text = ""
         productImageView.image = nil
         infoTextfield.text = ""
+    }
+    
+    /// Return an initiated data model with values from the VC
+    func bindToViewModel() -> Sale {
+        
+        let model = Sale(productID: (viewModel.product?.promotions_products_id)!,
+                         productName: productNameTextField.text!,
+                         serialNumber: productIDTextField.text!,
+                         additionalInfo: infoTextfield.text!,
+                         image: 0)
+        
+        return model
     }
     
     func formValid() -> Bool {
@@ -105,17 +118,6 @@ class ReportSaleViewController: UITableViewController {
         return isValid
     }
     
-    /// Return an initiated data model with values from the VC
-    func bindToViewModel() -> Sale {
-
-        let model = Sale(productID: (viewModel.product?.promotions_products_id)!,
-                         productName: productNameTextField.text!,
-                         serialNumber: productIDTextField.text!,
-                         additionalInfo: infoTextfield.text!, image: 0)
-
-        return model
-    }
-    
     // MARK: - Actions
 
     @IBAction func didTapProduct(_ sender: UIButton) {
@@ -142,13 +144,49 @@ class ReportSaleViewController: UITableViewController {
     }
     
     @IBAction func didTapSubmit(_ sender: UIButton) {
+       
         if formValid() == true {
-            performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: bindToViewModel())
+            
+            var model = bindToViewModel()
+            
+            // Upload image before dismissing view
+            if viewModel.product?.image_required == 1 && self.productImageView.image != nil {
+                
+                let image = Resource<ImageObject>(upload: URL(string: NetworkingConstants.imageUpload)!, image: self.productImageView.image!)
+                
+                URLSession.shared.upload(image, completion: { (imageData, status) in
+                    if let data = imageData {
+                        model.image = data.id
+                        self.performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender:model )
+                    } else {
+                        self.show(alert: "Error", message: "There was a problem uploading your image", buttonTitle: "Ok", onSuccess: nil)
+                    }
+                })
+            
+            } else {
+                
+                self.performSegue(withIdentifier: Segue.ReportSale.toDailyReport, sender: model)
+            }
         }
     }
     
     // MARK: - Navigation
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+            
+        case Segue.ReportSale.toDailyReport:
+            if let saleObj = sender, saleObj is Sale {
+                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: viewModel.product)
+                PersistenceManager.save(saleObject: salesView)
+                resetForm()
+            }
+            
+        default: return
+        }
+    }
+    
     @IBAction func unwindToReportSaleVC(segue: UIStoryboardSegue) {
 
         switch segue.identifier {
@@ -163,21 +201,6 @@ class ReportSaleViewController: UITableViewController {
         }
         
         tableView.reloadData()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        switch segue.identifier {
-            
-        case Segue.ReportSale.toDailyReport:
-            if let saleObj = sender, saleObj is Sale {
-                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: viewModel.product)
-                PersistenceManager.save(saleObject: salesView)
-                resetForm()
-            }
-            
-        default: return
-        }
     }
 }
 
