@@ -24,21 +24,50 @@ class NewsViewController: UIViewController {
     
     var dataSource = GenericCollectionDataSource<GenericCollectionCell<NewsItem>, NewsItem>()
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.reachGreen
+        return refreshControl
+    }()
+    
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.dataSource = dataSource
+        collectionView.addSubview(self.refreshControl)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getNews()
+    }
+    
+    // MARK: - Helpers
+    
+    fileprivate func getNews() {
         
         let trainingList = Resource<[NewsItem]>(get: URL(string:NetworkingConstants.allNews)!)
         
         URLSession.shared.load(trainingList) { (trainingListItems, status) in
+            self.dataSource.data.removeAll()
             self.dataSource.data = trainingListItems ?? []
             self.collectionView.reloadData()
         }
     }
-
+    
+    // MARK: - Actions
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        getNews()
+        collectionView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
