@@ -71,6 +71,8 @@ class FeedbackFormTableViewController: UITableViewController {
         super.viewDidLoad()
         
         textView.inputAccessoryView = toolBar
+        textView.layer.borderWidth = 1.0;
+        textView.layer.borderColor = UIColor.white.cgColor
         
         ratingList = [FeedbackRating(isSelected: false, value: RatingValues.excellent.rawValue),
                       FeedbackRating(isSelected: false, value: RatingValues.veryGood.rawValue),
@@ -86,46 +88,19 @@ class FeedbackFormTableViewController: UITableViewController {
                 if survey.questions.count > 0 {
                     self.questionLabel.text = survey.questions.first?.question
                 } else {
-                    self.emptySurveyView.frame = self.tableView.frame
-                    self.view.addSubview(self.emptySurveyView)
+                    self.showEmptyView()
                 }
             } else {
-                self.emptySurveyView.frame = self.tableView.frame
-                self.view.addSubview(self.emptySurveyView)
+                self.showEmptyView()
             }
         }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
-    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
-        case 1...5:
-            let cell = super.tableView(tableView, cellForRowAt: indexPath) as! FeedbackFormCell
-            cell.configure(with: ratingList[indexPath.row-1])
-            return cell
-            
-        default: return super.tableView(tableView, cellForRowAt: indexPath)
-        }
-    }
+    // MARK: - Helpers
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        switch indexPath.row {
-        
-        case 1...5:
-            for i in 0...ratingList.count-1 {
-                ratingList[i].isSelected = false
-            }
-            ratingList[indexPath.row-1].isSelected = true
-            
-            tableView.reloadData()
-            
-        default: return
-        }
+    fileprivate func showEmptyView() {
+        self.emptySurveyView.frame = self.tableView.frame
+        self.view.addSubview(self.emptySurveyView)
     }
     
     // MARK: - Actions
@@ -166,6 +141,42 @@ class FeedbackFormTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension FeedbackFormTableViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+            
+        case 1...5:
+            let cell = super.tableView(tableView, cellForRowAt: indexPath) as! FeedbackFormCell
+            cell.configure(with: ratingList[indexPath.row-1])
+            return cell
+            
+        default: return super.tableView(tableView, cellForRowAt: indexPath)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+            
+        case 1...5:
+            for i in 0...ratingList.count-1 {
+                ratingList[i].isSelected = false
+            }
+            ratingList[indexPath.row-1].isSelected = true
+            
+            tableView.reloadData()
+            
+        default: return
+        }
+    }
 }
 
 extension FeedbackFormTableViewController : UITextViewDelegate {

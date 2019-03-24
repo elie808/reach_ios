@@ -94,6 +94,7 @@ struct NetworkingConstants {
     static let allNews  = Domains.baseURL + News.allNews
     static let allPromotions  = Domains.baseURL + Promotions.allPromotions
     static let banners  = Domains.baseURL + Static.banners
+    static let contact  = Domains.baseURL + Static.contact
     static let faqs     = Domains.baseURL + Static.faq
     static let imageUpload = Domains.baseURL + Static.imageUpload
     static let login    = Domains.baseURL + User.login
