@@ -9,10 +9,13 @@
 import UIKit
 import SkyFloatingLabelTextField
 
+struct Message : Codable {
+    let title, message : String
+}
+
 class ContactUsTableViewController: UITableViewController {
 
     // MARK: - Outlets
-    
     
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var titleTextField: SkyFloatingLabelTextField!
@@ -63,18 +66,17 @@ class ContactUsTableViewController: UITableViewController {
         
         if formValid() == true {
             
+            let postObj = Message(title: titleTextField.text!, message: messageTextView.text)
+            
+            let message = Resource<Message>(url: URL(string:NetworkingConstants.contact )!, method: HttpMethod<Message>.post(postObj))
+            
+            URLSession.shared.load(message, completion: { (response, status) in
+                _ = self.navigationController?.popViewController(animated: true)
+            }) { (error, status) in
+                self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
+            }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension ContactUsTableViewController : UITextFieldDelegate {
