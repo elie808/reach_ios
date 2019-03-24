@@ -52,6 +52,11 @@ class ReportSaleViewController: UITableViewController {
         productNameTextField.text = viewModel.product?.name
         productIDTextField.text = viewModel.sale.serialNumber
         infoTextfield.text = viewModel.sale.additionalInfo
+        
+        if let image = viewModel.imageData {
+            productImageView.image = UIImage(data: image)
+            removeImageButton.isHidden = false
+        }
     }
     
     func resetForm() {
@@ -138,8 +143,10 @@ class ReportSaleViewController: UITableViewController {
     }
     
     @IBAction func didTapRemovePhoto(_ sender: UIButton) {
+        
         productImageView.image?.remove(from: productImageView)
         viewModel.sale.image = 0
+        viewModel.imageData = nil
         self.removeImageButton.isHidden = true
     }
     
@@ -178,7 +185,10 @@ class ReportSaleViewController: UITableViewController {
             
         case Segue.ReportSale.toDailyReport:
             if let saleObj = sender, saleObj is Sale {
-                let salesView = SaleViewModel(sale: (saleObj as! Sale), product: viewModel.product)
+                // persist Form to device
+                let salesView = SaleViewModel(sale: (saleObj as! Sale),
+                                              product: viewModel.product,
+                                              imageData: productImageView.image != nil ? productImageView.image?.pngData() : nil)
                 PersistenceManager.save(saleObject: salesView)
                 resetForm()
             }

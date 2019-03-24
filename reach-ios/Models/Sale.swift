@@ -13,7 +13,8 @@ import SwiftyUserDefaults
 struct SaleViewModel : Codable, DefaultsSerializable {
     var sale : Sale = Sale()
     var product : Product?
-    //TODO: Add UIImage support (problematic with De/Encoding
+    
+    var imageData : Data?
 }
 
 // Object used to POST to server
