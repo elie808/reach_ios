@@ -13,6 +13,23 @@ struct FeedbackRating {
     let value : Int
 }
 
+
+//{
+//    "id": 7,
+//    "title": "Survey Redington 27/1/2019",
+//    "organization_id": 4,
+//    "createdAt": null,
+//    "updatedAt": null,
+//    "countt": 0,
+//    "questions": [
+//        {
+//        "id": 5,
+//        "feedback_survey_id": 7,
+//        "question": "question test 27/1/2019"
+//        }
+//    ]
+//}
+
 class FeedbackFormCell: UITableViewCell {
     @IBOutlet weak var cellAccessoryImageView : UIImageView!
     
@@ -33,6 +50,7 @@ class FeedbackFormTableViewController: UITableViewController {
 
     // MARK: - Properties
     
+    var passedOrganization : Organization?
     var ratingList : [FeedbackRating] = []
     
     // MARK: - Outlets

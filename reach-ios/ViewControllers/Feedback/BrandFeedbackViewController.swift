@@ -13,6 +13,17 @@ struct Company : Codable {
     let id : Int
 }
 
+class OrganizationCell: GenericTableCell<Organization> {
+    
+    @IBOutlet weak var nameLabel : UILabel!
+    
+    override var model : Organization! {
+        didSet {
+            nameLabel?.text = model.name
+        }
+    }
+}
+
 class BrandFeedbackViewController: UIViewController {
 
     // MARK: - Outlets
@@ -21,20 +32,39 @@ class BrandFeedbackViewController: UIViewController {
 
     // MARK: - Properties
     
-    var dataSource = GenericTableDataSource<BrandFeedbackCell, Company>()
+    var dataSource = GenericTableDataSource<OrganizationCell, Organization>()
     
     // MARK: - Navigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        dataSource.data = [Company(imageName: "", name: "Microsoft"), Company(imageName: "", name: "Dell")]
-//        tableView.dataSource = dataSource
+        tableView.dataSource = dataSource
+        
+        let feedbackOrganizations = Resource<[Organization]>(get: URL(string: NetworkingConstants.userOrganizations)!)
+        
+        URLSession.shared.load(feedbackOrganizations) { (response, status) in
+            if let orgList = response {
+                self.dataSource.data = orgList
+                self.tableView.reloadData()
+            }
+        }
     }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+        switch segue.identifier {
+        
+        case Segue.BrandFeedback.toFeedbackForm:
+            if let org = sender, org is Organization {
+                let vc = segue.destination as! FeedbackFormTableViewController
+                vc.passedOrganization = org as? Organization
+            }
+        
+        default: return
+        }
         
     }
 }
@@ -46,7 +76,7 @@ extension BrandFeedbackViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {   
-        let company = dataSource.data[indexPath.row]
-        performSegue(withIdentifier: Segue.BrandFeedback.toFeedbackForm, sender: company)
+        let organization = dataSource.data[indexPath.row]
+        performSegue(withIdentifier: Segue.BrandFeedback.toFeedbackForm, sender: organization)
     }
 }
