@@ -41,28 +41,59 @@ final class PersistenceManager {
     
     static func save(saleObject: SaleViewModel) {
         
+        // create unique identifier
+        var obj = saleObject
+        obj.id = Date().timeIntervalSince1970
+        
         if var savedArray = Defaults[.sales], savedArray.count > 0 {
-            savedArray.append(saleObject)
+            
+            savedArray.append(obj)
             Defaults[.sales] = savedArray
+            
         } else {
-            Defaults[.sales] = [saleObject]
+            
+            Defaults[.sales] = [obj]
         }
         
         Defaults.synchronize()
     }
     
-    static func remove(saleObject: SaleViewModel) {
-        
-        if var savedArray = Defaults[.sales], savedArray.count > 0 {
-            savedArray.removeAll(where: { saleObject.product?.id == $0.product?.id } )
-            Defaults[.sales] = savedArray
-            Defaults.synchronize()
+    static func update(saleObject: SaleViewModel) {
+
+        if let savedArray = Defaults[.sales], savedArray.count > 0 {
+            
+            let similarSavedObjects = savedArray.filter({ ($0.id == saleObject.id) })
+
+            // if saleObject already exists, remove it, and re-save the version passed as an argument -> effectively updating the model on disk
+            if similarSavedObjects.count >= 1 {
+ 
+                self.remove(saleObject: similarSavedObjects.first!)
+                
+                if var updatedArray = Defaults[.sales], updatedArray.count > 0 {
+                    updatedArray.append(saleObject)
+                    Defaults[.sales] = updatedArray
+                } else {
+                  Defaults[.sales] = [saleObject]
+                }
+                
+            }
         }
+        
+        Defaults.synchronize()
     }
     
     static func allSavedSales() -> [SaleViewModel]? {
         guard let savedArray = Defaults[.sales] else { return nil }
         return savedArray
+    }
+    
+    static func remove(saleObject: SaleViewModel) {
+        
+        if var savedArray = Defaults[.sales], savedArray.count > 0 {
+            savedArray.removeAll(where: { ($0.id == saleObject.id) })
+            Defaults[.sales] = savedArray
+            Defaults.synchronize()
+        }
     }
     
     static func removeAllSales() {

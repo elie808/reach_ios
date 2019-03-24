@@ -15,6 +15,8 @@ struct SaleViewModel : Codable, DefaultsSerializable {
     var product : Product?
     
     var imageData : Data?
+    
+    var id : Double?
 }
 
 // Object used to POST to server

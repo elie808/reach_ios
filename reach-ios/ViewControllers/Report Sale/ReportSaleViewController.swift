@@ -12,7 +12,7 @@ import SkyFloatingLabelTextField
 class ReportSaleViewController: UITableViewController {
 
     // MARK: - Properties
-    
+    var isUpdatingExistingSale : Bool = false
     var viewModel : SaleViewModel = SaleViewModel() {
         didSet {
             if let product = viewModel.product {
@@ -184,12 +184,21 @@ class ReportSaleViewController: UITableViewController {
         switch segue.identifier {
             
         case Segue.ReportSale.toDailyReport:
+            
             if let saleObj = sender, saleObj is Sale {
+            
                 // persist Form to device
                 let salesView = SaleViewModel(sale: (saleObj as! Sale),
                                               product: viewModel.product,
-                                              imageData: productImageView.image != nil ? productImageView.image?.pngData() : nil)
-                PersistenceManager.save(saleObject: salesView)
+                                              imageData: productImageView.image != nil ? productImageView.image?.pngData() : nil,
+                                              id: viewModel.id)
+                
+                if isUpdatingExistingSale == true {
+                    PersistenceManager.update(saleObject: salesView)
+                } else {
+                    PersistenceManager.save(saleObject: salesView)
+                }
+                
                 resetForm()
             }
             

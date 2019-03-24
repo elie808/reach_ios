@@ -90,6 +90,7 @@ class SalesListViewController: UIViewController {
                 if let reportSaleItem = sender, reportSaleItem is SaleViewModel {
                     let vc = segue.destination as? ReportSaleViewController
                     vc?.viewModel = (reportSaleItem as? SaleViewModel)!
+                    vc?.isUpdatingExistingSale = true
             }
             
         default: return
