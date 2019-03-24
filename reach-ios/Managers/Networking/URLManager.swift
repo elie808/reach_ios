@@ -18,6 +18,11 @@ struct NetworkingConstants {
         static let cmsBaseURL   = "http://reach.xtnd.io/cms/www/"
     }
     
+    private struct Feedback {
+        static let feedback = "feedback/"
+        static let feedbackSurvey = "feedback/survey/"
+    }
+    
     private struct News {
         static let allNews = "static/news"
         static let newsDetails = "static/news/"
@@ -105,6 +110,8 @@ struct NetworkingConstants {
     static func brands(foVendorID id:Int) -> String { return Domains.baseURL + ProductTraining.vendorBase + String(id) }
     static func brandTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.brandBase + String(id) + ProductTraining.training }
     static func categoryTraining(forBrandID id:Int) -> String { return Domains.baseURL + ProductTraining.categoryBase + String(id) + ProductTraining.training }
+    static func feedbackSurvey(forOrgID id:Int) -> String { return Domains.baseURL + Feedback.feedback + String(id) }
+    static func postFeedbackSurvey(forSurveyID id:Int) -> String { return Domains.baseURL + Feedback.feedbackSurvey + String(id) }
     static func mediaTraining(forSubCategory id:Int) -> String { return Domains.baseURL + ProductTraining.products + String(id) + ProductTraining.media }
     static func search(byName searchString:String) -> String { return Domains.baseURL + Search.freeSearch + searchString }
     static func search(bySerial searchString:String) -> String { return Domains.baseURL + Search.serialSearch + searchString }

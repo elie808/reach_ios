@@ -66,6 +66,7 @@
 		47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */; };
 		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0128E2226369900F2C305 /* String+Helpers.swift */; };
+		47C4F58222473E5700E012E5 /* FeedbackFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4F58122473E5700E012E5 /* FeedbackFormCell.swift */; };
 		47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */; };
 		47CC22422232781900ED9119 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22412232781900ED9119 /* HelpViewController.swift */; };
 		47CC224622327B2600ED9119 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC224522327B2600ED9119 /* HelpCell.swift */; };
@@ -155,6 +156,7 @@
 		47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackViewController.swift; sourceTree = "<group>"; };
 		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47B0128E2226369900F2C305 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		47C4F58122473E5700E012E5 /* FeedbackFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormCell.swift; sourceTree = "<group>"; };
 		47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
 		47CC22412232781900ED9119 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		47CC224522327B2600ED9119 /* HelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
@@ -302,9 +304,8 @@
 		47784EFF221F14F2000FD327 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */,
-				47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */,
-				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
+				47C4F58422473E7E00E012E5 /* Organizations Feedback */,
+				47C4F58322473E7300E012E5 /* Survey */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -595,6 +596,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		47C4F58322473E7300E012E5 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				47CCC454221E2721001FE2D5 /* FeedbackFormTableViewController.swift */,
+				47C4F58122473E5700E012E5 /* FeedbackFormCell.swift */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		47C4F58422473E7E00E012E5 /* Organizations Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */,
+				47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */,
+			);
+			path = "Organizations Feedback";
+			sourceTree = "<group>";
+		};
 		47CC223E22317A8200ED9119 /* Contact Us */ = {
 			isa = PBXGroup;
 			children = (
@@ -873,6 +892,7 @@
 			files = (
 				47CCC455221E2721001FE2D5 /* FeedbackFormTableViewController.swift in Sources */,
 				47670A94222A42C8008EEF6D /* Date+Helpers.swift in Sources */,
+				47C4F58222473E5700E012E5 /* FeedbackFormCell.swift in Sources */,
 				47A1E3E522351E5D0034752A /* VendorListViewController.swift in Sources */,
 				4787ED502240A6150014DFC1 /* Image.swift in Sources */,
 				47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */,
