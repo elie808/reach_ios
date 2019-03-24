@@ -78,6 +78,20 @@ class ProfileTableViewController: UITableViewController {
         var isValid = true
         
         guard let dob = dobTextField.text else { return false }
+  
+        if firstNameTextfield.text?.isEmpty == true {
+            firstNameTextfield.errorMessage = String.cantBeEmpty
+            isValid = false
+        } else {
+            firstNameTextfield.errorMessage = nil
+        }
+        
+        if lastNameTextfield.text?.isEmpty == true {
+            lastNameTextfield.errorMessage = String.cantBeEmpty
+            isValid = false
+        } else {
+            lastNameTextfield.errorMessage = nil
+        }
         
         if mobileTextField.text?.isEmpty == true {
             mobileTextField.errorMessage = String.cantBeEmpty
