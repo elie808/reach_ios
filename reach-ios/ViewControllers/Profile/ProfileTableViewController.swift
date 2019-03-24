@@ -170,10 +170,10 @@ class ProfileTableViewController: UITableViewController {
             
             let updateProfile = Resource<AuthenticationData>(url: URL(string: NetworkingConstants.profile)!, method: HttpMethod<postObj>.patch(postObject))
             
-            URLSession.shared.load(updateProfile) { (updatedProfile, status) in
-                if status.code == 200 {
-                    self.showBanner(message: .SuccessUpdate)
-                }
+            URLSession.shared.load(updateProfile, completion: { (updatedProfile, status) in
+                self.showBanner(message: .SuccessUpdate)
+            }) { (errorObj, status) in
+                self.show(alert: "Error \(String(describing:(errorObj?.code)!))", message: errorObj?.message ?? "An error has occured", buttonTitle: "OK", onSuccess: nil)
             }
         }
     }
