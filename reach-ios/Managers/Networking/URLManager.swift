@@ -60,6 +60,7 @@ struct NetworkingConstants {
         static let login = "members/login"
         static let profile = "members/profile"
         static let register = "members/register"
+        static let oneSignal = "members/onesignal"
     }
     
     private struct ProductTraining {
@@ -99,6 +100,7 @@ struct NetworkingConstants {
     static let imageUpload = Domains.baseURL + Static.imageUpload
     static let login    = Domains.baseURL + User.login
     static let newsDetails = Domains.baseURL + News.newsDetails
+    static let oneSignalID = Domains.baseURL + User.oneSignal
     static let userOrganizations = Domains.baseURL + Organizations.userOrganizations
     static let productsUnderPromotion = Domains.baseURL + Promotions.products
     static let profile  = Domains.baseURL + User.profile

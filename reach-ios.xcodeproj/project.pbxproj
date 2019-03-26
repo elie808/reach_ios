@@ -66,6 +66,8 @@
 		47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */; };
 		47ADFF72222366EA00AEFBD7 /* BrandFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */; };
 		47B0128F2226369900F2C305 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0128E2226369900F2C305 /* String+Helpers.swift */; };
+		47B5ECED2249E0E3001F67D6 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5ECEC2249E0E3001F67D6 /* AppDelegate+Notifications.swift */; };
+		47B5ECEF2249E6C1001F67D6 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5ECEE2249E6C1001F67D6 /* PushNotification.swift */; };
 		47C4F58222473E5700E012E5 /* FeedbackFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C4F58122473E5700E012E5 /* FeedbackFormCell.swift */; };
 		47CC224022317AC200ED9119 /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */; };
 		47CC22422232781900ED9119 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CC22412232781900ED9119 /* HelpViewController.swift */; };
@@ -156,6 +158,8 @@
 		47ADFF6F222362DA00AEFBD7 /* BrandFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackViewController.swift; sourceTree = "<group>"; };
 		47ADFF71222366EA00AEFBD7 /* BrandFeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFeedbackCell.swift; sourceTree = "<group>"; };
 		47B0128E2226369900F2C305 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		47B5ECEC2249E0E3001F67D6 /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
+		47B5ECEE2249E6C1001F67D6 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		47C4F58122473E5700E012E5 /* FeedbackFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormCell.swift; sourceTree = "<group>"; };
 		47CC223F22317AC200ED9119 /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewController.swift; sourceTree = "<group>"; };
 		47CC22412232781900ED9119 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				4783580B2214058D00B33025 /* AppDelegate.swift */,
+				47B5ECEC2249E0E3001F67D6 /* AppDelegate+Notifications.swift */,
 				47835830221417D600B33025 /* Constants */,
 				4783581F2214083D00B33025 /* Extensions */,
 				478358202214084600B33025 /* Managers */,
@@ -410,6 +415,7 @@
 				47CC22492232B58300ED9119 /* AuthenticationData.swift */,
 				4787ED512240A64A0014DFC1 /* ErrorResponse.swift */,
 				4787ED4F2240A6150014DFC1 /* Image.swift */,
+				47B5ECEE2249E6C1001F67D6 /* PushNotification.swift */,
 				4721F5822242124C00BC0F62 /* RegisterUserObject.swift */,
 				478DB7C62243F27B00343708 /* Sale.swift */,
 				47CC22472232B3BE00ED9119 /* User.swift */,
@@ -939,6 +945,7 @@
 				47670A90222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift in Sources */,
 				478C9009221CBEAF00245CF1 /* ReportSaleViewController.swift in Sources */,
 				47670A8A2229FC27008EEF6D /* UIImageView+Helpers.swift in Sources */,
+				47B5ECED2249E0E3001F67D6 /* AppDelegate+Notifications.swift in Sources */,
 				47ADFF5F2222AB7600AEFBD7 /* PromotionCell.swift in Sources */,
 				4721F99522380A60002CAFB2 /* BrandTrainingCell.swift in Sources */,
 				4721F99822380D12002CAFB2 /* SubCategoryTableViewController.swift in Sources */,
@@ -961,6 +968,7 @@
 				4712DBD0221B7CCD00D66D98 /* SideMenuCell.swift in Sources */,
 				47485675223B187F002F2004 /* BrandsListTableViewController.swift in Sources */,
 				47CCC44A221DABF9001FE2D5 /* QRScannerViewController.swift in Sources */,
+				47B5ECEF2249E6C1001F67D6 /* PushNotification.swift in Sources */,
 				47ED4C4F22205E5300D7EA09 /* SlidingMenuBar.swift in Sources */,
 				47CCC1ED22279A97005DE571 /* T&CViewController.swift in Sources */,
 				47485673223B1740002F2004 /* AddBrandsTableViewController.swift in Sources */,
