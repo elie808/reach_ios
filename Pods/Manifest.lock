@@ -3,6 +3,7 @@ PODS:
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
   - Kingfisher (5.2.0)
+  - OneSignal (2.9.5)
   - SkyFloatingLabelTextField (3.6.0)
   - SVProgressHUD (2.2.5)
   - SwiftyUserDefaults (4.0.0-beta.1)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - EAIntroView
   - Kingfisher
+  - OneSignal (< 3.0, >= 2.6.2)
   - SkyFloatingLabelTextField (~> 3.0)
   - SVProgressHUD
   - SwiftyUserDefaults (= 4.0.0-beta.1)
@@ -23,6 +25,7 @@ SPEC REPOS:
     - EAIntroView
     - EARestrictedScrollView
     - Kingfisher
+    - OneSignal
     - SkyFloatingLabelTextField
     - SVProgressHUD
     - SwiftyUserDefaults
@@ -33,12 +36,13 @@ SPEC CHECKSUMS:
   EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyUserDefaults: d26f8e8d8ef800e20642276ffa7566313e36c9a3
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   ZKUDID: f283dbf371b9561c8a6d516c9f1274276ec17e89
 
-PODFILE CHECKSUM: 51d4aa3eb281cc379ea959a3881124e10a8b926a
+PODFILE CHECKSUM: 442e489aeee30a149d5b381cf2a789dd2ffd3db3
 
 COCOAPODS: 1.5.0

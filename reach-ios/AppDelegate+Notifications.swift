@@ -8,8 +8,43 @@
 
 import Foundation
 import UIKit
-import UserNotifications
-//import Firebase
+import OneSignal
+
+let oneSignalAppID = "4b5535c7-4e14-4ae1-89aa-97577bc469df"
+let oneSignalAPIKey = "ZjYxY2UyMDktMTg2ZS00MTQyLWIwMTItNGIwMDViMDNjYjU1"
+
+extension AppDelegate {
+    
+    func configureOneSignal(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        OneSignal.initWithLaunchOptions(launchOptions, appId: oneSignalAppID, handleNotificationAction: nil, settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
+        
+        // Recommend moving the below line to prompt for push after informing the user about how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        #if DEBUG
+        // Print full message.
+        print(userInfo)
+        #endif
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        #if DEBUG
+        // Print full message.
+        print(userInfo)
+        #endif
+
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+}
 
 //extension AppDelegate : MessagingDelegate {
 //
@@ -50,65 +85,48 @@ import UserNotifications
 //        API.request(Endpoints.updateToken(JSON(postParameters)).endpoint) { (result, isFromCache) in
 //        }
 //    }
-//
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-//        #if DEBUG
-//        // Print full message.
-//        print(userInfo)
-//        #endif
-//    }
-//
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        #if DEBUG
-//        // Print full message.
-//        print(userInfo)
-//        #endif
-//
-//        completionHandler(UIBackgroundFetchResult.newData)
-//    }
 //}
 
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
 
-//@available(iOS 10, *)
-//extension AppDelegate : UNUserNotificationCenterDelegate {
-//
-//    // Receive displayed notifications for iOS 10 devices.
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        let userInfo = notification.request.content.userInfo
-//
-//        #if DEBUG
-//        // Print full message.
-//        print(userInfo)
-//        #endif
-//
-//        completionHandler([.alert,.sound,.badge])
-//    }
-//
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//
-//        let userInfo = response.notification.request.content.userInfo
-//
-//        #if DEBUG
-//        // Print full message.
-//        print(userInfo)
-//        #endif
-//
-//        //TODO: Show Notificaitons
-//        showNotifications()
-//        completionHandler()
-//    }
-//
-//    func showNotifications() {
-//
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+
+        #if DEBUG
+        // Print full message.
+        print(userInfo)
+        #endif
+
+        completionHandler([.alert,.sound,.badge])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        let userInfo = response.notification.request.content.userInfo
+
+        #if DEBUG
+        // Print full message.
+        print(userInfo)
+        #endif
+
+        //TODO: Show Notificaitons
+        showNotifications()
+        completionHandler()
+    }
+
+    func showNotifications() {
+
 //        let notificationsViewController = UIStoryboard.UserAccount.instantiateViewController(withIdentifier: NotificationsViewController.className) as! NotificationsViewController
-//
+
 //        if let tabController = tabBarController {
 //            tabController.selectedIndex = 3
 //
 //            let navController = tabController.viewControllers![3] as! UINavigationController
 //            navController.pushViewController(notificationsViewController, animated: true)
 //        }
-//
-//    }
-//}
+
+    }
+}
 

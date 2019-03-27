@@ -138,3 +138,13 @@ extension LoginTableViewController : MFMailComposeViewControllerDelegate {
     }
 }
 
+extension LoginTableViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case usernameTextField: return passwordTextField.becomeFirstResponder()
+        default: return textField.resignFirstResponder()
+        }
+    }
+}

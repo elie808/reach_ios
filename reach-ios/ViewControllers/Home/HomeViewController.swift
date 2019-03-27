@@ -45,9 +45,24 @@ class HomeViewController: UIViewController {
         
         initializeViews()
         getBanners()
+        sendOneSignalID()
     }
-
+    
     // MARK: - Helpers
+
+    fileprivate func sendOneSignalID() {
+        
+        let pushObj = PushNotification(id : oneSignalAPIKey, onesignal_id: nil)
+        
+        let oneSignal = Resource<PushNotification>(url: URL(string: NetworkingConstants.oneSignalID)!, method: HttpMethod<PushNotification>.post(pushObj))
+        
+        URLSession.shared.load(oneSignal) { (response, status) in
+            // response =
+            // {
+            //    "onesignal_id": "tester"
+            // }
+        }
+    }
     
     fileprivate func initializeViews() {
         
