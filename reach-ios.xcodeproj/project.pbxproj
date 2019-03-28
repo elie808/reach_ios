@@ -27,6 +27,8 @@
 		47485675223B187F002F2004 /* BrandsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47485674223B187F002F2004 /* BrandsListTableViewController.swift */; };
 		47485678223D61D1002F2004 /* AddBrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47485677223D61D1002F2004 /* AddBrandCell.swift */; };
 		475494AF2239789800AA4207 /* OrganizationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475494AE2239789800AA4207 /* OrganizationListTableViewController.swift */; };
+		476057D9224D100900797820 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476057D8224D100900797820 /* DatePickerView.swift */; };
+		476057DB224D102900797820 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 476057DA224D102900797820 /* DatePickerView.xib */; };
 		47670A8A2229FC27008EEF6D /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */; };
 		47670A90222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */; };
 		47670A92222A1E7C008EEF6D /* TrainingByCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */; };
@@ -146,6 +148,8 @@
 		47485674223B187F002F2004 /* BrandsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsListTableViewController.swift; sourceTree = "<group>"; };
 		47485677223D61D1002F2004 /* AddBrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBrandCell.swift; sourceTree = "<group>"; };
 		475494AE2239789800AA4207 /* OrganizationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationListTableViewController.swift; sourceTree = "<group>"; };
+		476057D8224D100900797820 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		476057DA224D102900797820 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		47670A892229FC27008EEF6D /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		47670A8F222A1D30008EEF6D /* TrainingByCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryTableViewController.swift; sourceTree = "<group>"; };
 		47670A91222A1E7C008EEF6D /* TrainingByCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingByCategoryCell.swift; sourceTree = "<group>"; };
@@ -423,8 +427,9 @@
 			children = (
 				4783582C2214104C00B33025 /* Banner.swift */,
 				4791CDC1221AF176004CBB6B /* CircularProgress.swift */,
-				4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */,
 				4791CDC3221AF994004CBB6B /* CurvedBottomView.swift */,
+				476057D8224D100900797820 /* DatePickerView.swift */,
+				4791CDBF221AE544004CBB6B /* ProfilePictureProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 		47835826221408CF00B33025 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				476057DA224D102900797820 /* DatePickerView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -917,6 +923,7 @@
 			files = (
 				47CCC1FD2228E4A1005DE571 /* Training.storyboard in Resources */,
 				478358162214058F00B33025 /* LaunchScreen.storyboard in Resources */,
+				476057DB224D102900797820 /* DatePickerView.xib in Resources */,
 				478358132214058F00B33025 /* Assets.xcassets in Resources */,
 				478358112214058D00B33025 /* Main.storyboard in Resources */,
 				47784EFB221F0A20000FD327 /* Login.storyboard in Resources */,
@@ -1031,6 +1038,7 @@
 				47F29F42222E49640061E8E2 /* FAQCell.swift in Sources */,
 				47CC224622327B2600ED9119 /* HelpCell.swift in Sources */,
 				47ADFF70222362DA00AEFBD7 /* BrandFeedbackViewController.swift in Sources */,
+				476057D9224D100900797820 /* DatePickerView.swift in Sources */,
 				4721F99D223968C1002CAFB2 /* VideoPlayerViewController.swift in Sources */,
 				4727746D2215AC0E007B4BBE /* AppearanceManager.swift in Sources */,
 				47CC224A2232B58300ED9119 /* AuthenticationData.swift in Sources */,
