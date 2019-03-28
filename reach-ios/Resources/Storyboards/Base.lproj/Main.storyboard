@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9f3-G5-HYo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9f3-G5-HYo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -508,7 +508,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                             <color key="value" red="0.1333333333" green="0.1647058824" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Invoice number"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Insert comments"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value=" "/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value=" "/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="text" value=" "/>
@@ -983,7 +983,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gDX-RU-MlZ">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="gDX-RU-MlZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1027,10 +1027,10 @@
                                     </connections>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QXJ-eo-tZB">
-                                    <rect key="frame" x="84" y="152" width="207" height="45"/>
+                                    <rect key="frame" x="84" y="152" width="207" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1O-DD-d5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="48" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="48" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1139,7 +1139,7 @@
                                 <constraint firstItem="3ey-lD-4XX" firstAttribute="top" secondItem="gDX-RU-MlZ" secondAttribute="top" constant="16" id="ssD-Qu-Ejc"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="T7h-e6-Qfu">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="T7h-e6-Qfu">
                             <rect key="frame" x="0.0" y="485" width="375" height="197"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1509,12 +1509,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="REACH_logo" width="328.75201416015625" height="143.5679931640625"/>
+        <image name="REACH_logo" width="1141.5" height="498.5"/>
         <image name="TabDailyReport" width="23.5" height="23.5"/>
         <image name="TabHome" width="23.5" height="23.5"/>
         <image name="TabNews" width="23.5" height="23.5"/>
         <image name="TabProfile" width="23.5" height="23.5"/>
-        <image name="TabReport" width="113.68421173095703" height="113.68421173095703"/>
+        <image name="TabReport" width="30" height="30"/>
         <image name="camera_frame" width="354" height="344"/>
         <image name="down_arrow" width="10" height="5"/>
     </resources>
