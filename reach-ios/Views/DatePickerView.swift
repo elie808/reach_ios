@@ -50,10 +50,4 @@ class DatePickerView: UIView {
             //            self.delegate?.keyWasTapped(character: sender.titleLabel!.text!) // could alternatively send a tag value
         }
     }
-    
-    //    @IBAction func keyTapped(sender: UIButton) {
-    //        if delegate != nil {
-    //            self.delegate?.keyWasTapped(character: sender.titleLabel!.text!) // could alternatively send a tag value
-    //        }
-    //    }
 }

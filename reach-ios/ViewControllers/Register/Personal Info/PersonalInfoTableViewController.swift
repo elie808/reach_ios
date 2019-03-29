@@ -68,6 +68,8 @@ class PersonalInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        stubs()
+//        let sdsiu = DatePickerView()
+//        dobTextField.inputView = sdsiu
     }
 
     private func stubs() {

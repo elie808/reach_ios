@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
         
         initializeViews()
         getBanners()
-        sendOneSignalID()
+//        sendOneSignalID()
     }
     
     // MARK: - Helpers
