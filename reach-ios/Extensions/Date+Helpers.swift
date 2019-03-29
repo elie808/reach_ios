@@ -13,6 +13,7 @@ enum DateFormat : String {
     case DateJust = "dd/MM/YY"
     case DateHour = "dd/MM/YY - HH:mm"
     case HourMinute = "HH:mm"
+    case YearMonthDay = "yyyy-MM-dd"
     case JSON = "yyyy-MM-dd HH:mm:ss"
     case Unix = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
 }

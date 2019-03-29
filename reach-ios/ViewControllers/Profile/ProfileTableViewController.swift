@@ -25,6 +25,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var IAmTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var companyTextField: SkyFloatingLabelTextField!
 //    @IBOutlet weak var typeTextField: SkyFloatingLabelTextField!
+    @IBOutlet var datePickerView: UIView!
     
     // MARK: - Properties
     
@@ -40,6 +41,7 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dobTextField.inputView = datePickerView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,7 +54,7 @@ class ProfileTableViewController: UITableViewController {
     func initializeView() {
 
         self.mobileTextField.inputAccessoryView = self.toolbar
-        self.dobTextField.inputAccessoryView = self.toolbar
+//        self.dobTextField.inputAccessoryView = self.toolbar
         
         let profile = Resource<User>(get: URL(string: NetworkingConstants.profile)!)
         
@@ -152,6 +154,15 @@ class ProfileTableViewController: UITableViewController {
     @IBAction func didTapDone(_ sender: UIBarButtonItem) {
         mobileTextField.resignFirstResponder()
         dobTextField.resignFirstResponder()
+    }
+    
+    @IBAction func didTapDoneDatePicker(_ sender: UIBarButtonItem) {
+        dobTextField.resignFirstResponder()
+    }
+    
+    @IBAction func didSelectDate(_ sender: UIDatePicker) {
+        let selectedDate = sender.date
+        dobTextField.text = selectedDate.toString(withFormat: .YearMonthDay)
     }
     
     @IBAction func didTapEdit(_ sender: UIBarButtonItem) {

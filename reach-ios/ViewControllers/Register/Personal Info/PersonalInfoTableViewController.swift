@@ -27,10 +27,12 @@ class PersonalInfoTableViewController: UITableViewController {
 
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var TCLabel: UILabel!
+    @IBOutlet var datePickerView: UIView!
     
     // MARK: - Properties
 
     var selectedOrganization : Organization?
+    
     var acceptedTC : Bool = false {
         didSet {
             if acceptedTC == false {
@@ -68,8 +70,7 @@ class PersonalInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        stubs()
-//        let sdsiu = DatePickerView()
-//        dobTextField.inputView = sdsiu
+        dobTextField.inputView = datePickerView
     }
 
     private func stubs() {
@@ -200,6 +201,10 @@ class PersonalInfoTableViewController: UITableViewController {
     
     // MARK: - Actions
 
+    @IBAction func didTapDoneOnDatePicker(_ sender: UIBarButtonItem) {
+        dobTextField.resignFirstResponder()
+    }
+    
     @IBAction func didTapMale(_ sender: UIButton) {
         selectedGender = Gender.Male.rawValue
     }
@@ -210,6 +215,11 @@ class PersonalInfoTableViewController: UITableViewController {
     
     @IBAction func didTapAcceptTerms(_ sender: UITapGestureRecognizer) {
         acceptedTC = !acceptedTC
+    }
+    
+    @IBAction func didSelectDate(_ sender: UIDatePicker) {
+        let selectedDate = sender.date
+        dobTextField.text = selectedDate.toString(withFormat: .YearMonthDay)
     }
     
     // MARK: - Navigation

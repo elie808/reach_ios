@@ -1451,6 +1451,7 @@
                         <outlet property="IAmTextField" destination="GmU-4j-GZd" id="eHc-zZ-prc"/>
                         <outlet property="barButton" destination="oPh-n4-AD5" id="qI8-wL-cW0"/>
                         <outlet property="companyTextField" destination="8zR-xS-OSR" id="Tzn-pJ-7TT"/>
+                        <outlet property="datePickerView" destination="tKZ-jz-mxZ" id="VXg-mY-pwH"/>
                         <outlet property="dobTextField" destination="T2h-cu-qhZ" id="KVo-1I-rFz"/>
                         <outlet property="emailTextField" destination="7Wd-OJ-mhS" id="Qts-ei-cGh"/>
                         <outlet property="firstNameTextfield" destination="DKF-JH-vjN" id="yZw-nb-Ut8"/>
@@ -1460,6 +1461,46 @@
                         <outlet property="toolbar" destination="UTw-5j-Hws" id="63f-ke-gml"/>
                     </connections>
                 </tableViewController>
+                <view contentMode="scaleToFill" id="tKZ-jz-mxZ">
+                    <rect key="frame" x="0.0" y="0.0" width="361" height="226"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-kf-78w">
+                            <rect key="frame" x="0.0" y="64" width="361" height="162"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="qJA-YD-BH3"/>
+                            </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="575562788.17159498">
+                                <!--2019-03-29 14:33:08 +0000-->
+                            </date>
+                            <connections>
+                                <action selector="didSelectDate:" destination="D2t-Sb-hB3" eventType="valueChanged" id="OQr-Pd-Rn0"/>
+                            </connections>
+                        </datePicker>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73x-KC-IPA">
+                            <rect key="frame" x="0.0" y="20" width="361" height="44"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="Pqz-07-62Z"/>
+                                <barButtonItem style="done" systemItem="done" id="jst-tb-hmK">
+                                    <color key="tintColor" red="0.0" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="didTapDoneDatePicker:" destination="D2t-Sb-hB3" id="se8-2I-pKl"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dL5-kf-78w" firstAttribute="leading" secondItem="AMi-2n-qGb" secondAttribute="leading" id="0Ha-VM-Nwq"/>
+                        <constraint firstItem="dL5-kf-78w" firstAttribute="top" secondItem="73x-KC-IPA" secondAttribute="bottom" id="DHi-iC-HUI"/>
+                        <constraint firstItem="73x-KC-IPA" firstAttribute="trailing" secondItem="AMi-2n-qGb" secondAttribute="trailing" id="LRE-Mg-ePY"/>
+                        <constraint firstItem="dL5-kf-78w" firstAttribute="trailing" secondItem="AMi-2n-qGb" secondAttribute="trailing" id="avn-a8-Oe3"/>
+                        <constraint firstItem="dL5-kf-78w" firstAttribute="bottom" secondItem="AMi-2n-qGb" secondAttribute="bottom" id="haV-dZ-uja"/>
+                        <constraint firstItem="73x-KC-IPA" firstAttribute="leading" secondItem="AMi-2n-qGb" secondAttribute="leading" id="n5X-RH-8O6"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="AMi-2n-qGb"/>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pP-ze-JHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="UTw-5j-Hws">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
