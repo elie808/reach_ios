@@ -100,6 +100,12 @@ class SalesListViewController: UIViewController {
 
 extension SalesListViewController : UITableViewDataSource {
     
+    func removeSale(at index: IndexPath) {
+        PersistenceManager.remove(saleObject: dataSource[index.row])
+        dataSource.remove(at: index.row)
+        animateTableView()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -107,9 +113,10 @@ extension SalesListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellID", for: indexPath) as! DailyReportCell
+        
         cell.model = dataSource[indexPath.row].sale
         cell.cellIndex = indexPath
-        cell.cellDelegate = self
+        cell.didTapRemove = self.removeSale
         
         return cell
     }
@@ -120,16 +127,5 @@ extension SalesListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let saleObject = dataSource[indexPath.row]
         performSegue(withIdentifier: Segue.DailyReport.toEditSale, sender: saleObject)
-    }
-}
-
-extension SalesListViewController : DailyReportCellDelegate {
-
-    func deleteSaleItem(atIndex index: IndexPath) {
-
-        PersistenceManager.remove(saleObject: dataSource[index.row])
-        dataSource.remove(at: index.row)
-        
-        animateTableView()
     }
 }

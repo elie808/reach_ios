@@ -8,17 +8,13 @@
 
 import UIKit
 
-protocol DailyReportCellDelegate {
-    func deleteSaleItem(atIndex index:IndexPath)
-}
-
 class DailyReportCell: GenericTableCell<Sale> {
     
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var serialLabel : UILabel!
     @IBOutlet weak var quantityLabel : UILabel!
     
-    var cellDelegate : DailyReportCellDelegate?
+    var didTapRemove: ((IndexPath) -> Void)?
     var cellIndex : IndexPath  = []
     
     override var model : Sale! {
@@ -30,8 +26,6 @@ class DailyReportCell: GenericTableCell<Sale> {
     }
     
     @IBAction func didTapDelete(_ sender: UIButton) {
-        if let delegate = cellDelegate {
-            delegate.deleteSaleItem(atIndex: self.cellIndex)
-        }
+        didTapRemove?(cellIndex)
     }
 }
