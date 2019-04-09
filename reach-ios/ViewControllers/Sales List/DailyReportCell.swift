@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyReportCell: GenericTableCell<Sale> {
+class DailyReportCell: GenericTableCell<SaleViewModel> {
     
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var serialLabel : UILabel!
@@ -18,11 +18,19 @@ class DailyReportCell: GenericTableCell<Sale> {
     var didTapRemove: ((IndexPath) -> Void)?
     var cellIndex : IndexPath  = []
     
-    override var model : Sale! {
+    override var model : SaleViewModel! {
         didSet {
-            nameLabel.text = model.productName
-            serialLabel.text = model.serialNumber
-            quantityLabel.text = "1"//String(model.quantity)
+            nameLabel.text = model.sale.productName
+            serialLabel.text = model.sale.serialNumber
+            quantityLabel.text = "1" //String(model.quantity)
+            
+            if let imageData = model.imageData {
+                self.saleImageView.image = UIImage(data: imageData)
+            } else {
+                if let imageView = self.saleImageView {
+                    imageView.removeFromSuperview()
+                }
+            }
         }
     }
     

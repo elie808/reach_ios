@@ -114,21 +114,9 @@ extension SalesListViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellID", for: indexPath) as! DailyReportCell
         
-        print(dataSource[indexPath.row])
-        
-        cell.model = dataSource[indexPath.row].sale
+        cell.model = dataSource[indexPath.row]
         cell.cellIndex = indexPath
         cell.didTapRemove = self.removeSale
-        
-//        if let imageData = dataSource[indexPath.row].imageData {
-//            if let image = cell.saleImageView {
-//                image.image = UIImage(data: imageData)
-//            }
-//        } else {
-//            if let image = cell.saleImageView {
-//                image.removeFromSuperview()
-//            }
-//        }
         
         return cell
     }
@@ -138,9 +126,9 @@ extension SalesListViewController : UITableViewDataSource {
         let saleViewModel = dataSource[indexPath.row]
         
         if saleViewModel.imageData != nil {
-            return 200
+            return 230
         } else {
-            return 126
+            return 100
         }
     }
 }
