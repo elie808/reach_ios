@@ -77,15 +77,18 @@ class LoginTableViewController: UITableViewController {
             ]
             
             let loginAttempt = Resource<AuthenticationData>(url: URL(string:NetworkingConstants.login)!, method: HttpMethod.post(postParameters))
-            
-            URLSession.shared.load(loginAttempt) { (member, status) in
-     
+
+            URLSession.shared.load(loginAttempt, completion: { (member, status) in
+               
                 if status.status == .Success {
                     if let returnedMember = member {
                         AuthenticationManager.persistToUserDefaults(authenticationData: returnedMember)
                         self.performSegue(withIdentifier: Segue.Login.toMainVC, sender: nil)
                     }
                 }
+                
+            }) { (error, status) in
+                self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
             }
         }
     }
