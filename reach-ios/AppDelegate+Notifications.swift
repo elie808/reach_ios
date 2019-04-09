@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import OneSignal
+import SwiftyUserDefaults
 
 let oneSignalAppID = "4b5535c7-4e14-4ae1-89aa-97577bc469df"
 let oneSignalAPIKey = "ZjYxY2UyMDktMTg2ZS00MTQyLWIwMTItNGIwMDViMDNjYjU1"
@@ -17,49 +18,28 @@ extension AppDelegate {
     
     func configureOneSignal(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: true]
-        
-        OneSignal.initWithLaunchOptions(launchOptions, appId: oneSignalAppID, handleNotificationAction: nil, settings: onesignalInitSettings)
-        
-        print("Push notificatio STATE: ")
-        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
-        
-        let hasPrompted = status.permissionStatus.hasPrompted
-        print("hasPrompted = \(hasPrompted)")
-        let userStatus = status.permissionStatus.status
-        print("userStatus = \(userStatus)")
-        
-        let isSubscribed = status.subscriptionStatus.subscribed
-        print("isSubscribed = \(isSubscribed)")
-        let userSubscriptionSetting = status.subscriptionStatus.userSubscriptionSetting
-        print("userSubscriptionSetting = \(userSubscriptionSetting)")
-        let userID = status.subscriptionStatus.userId
-        print("userID = \(userID ?? "")")
-        let pushToken = status.subscriptionStatus.pushToken
-        print("pushToken = \(String(describing: pushToken))")
-
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
-        
-        /////////////
-        
-        // Recommend moving the below line to prompt for push after informing the user about how your app will use them.
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("\n \n \n")
-            print("User accepted notifications: \(accepted)")
-            
-            if let token = pushToken {
-            
-                let pushObj = PushNotification(id : token, onesignal_id: nil)
-                let oneSignal = Resource<PushNotification>(url: URL(string: NetworkingConstants.oneSignalID)!, method: HttpMethod<PushNotification>.post(pushObj))
-                
-                URLSession.shared.load(oneSignal) { (response, status) in
-                    print("\n \n \nONE SIGNAL RESPOSNE:")
-                    print(response!)
-                    print("\n \n \n")
-                }
-            }
-            
-        })
+//        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: true]
+//        
+//        OneSignal.initWithLaunchOptions(launchOptions, appId: oneSignalAppID, handleNotificationAction: nil, settings: onesignalInitSettings)
+//        
+//        print("Push notificatio STATE: ")
+//        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+//        
+//        let hasPrompted = status.permissionStatus.hasPrompted
+//        print("hasPrompted = \(hasPrompted)")
+//        let userStatus = status.permissionStatus.status
+//        print("userStatus = \(userStatus)")
+//        
+//        let isSubscribed = status.subscriptionStatus.subscribed
+//        print("isSubscribed = \(isSubscribed)")
+//        let userSubscriptionSetting = status.subscriptionStatus.userSubscriptionSetting
+//        print("userSubscriptionSetting = \(userSubscriptionSetting)")
+//        let userID = status.subscriptionStatus.userId
+//        print("userID = \(userID ?? "")")
+//        let pushToken = status.subscriptionStatus.pushToken
+//        print("pushToken = \(String(describing: pushToken))")
+//
+//        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

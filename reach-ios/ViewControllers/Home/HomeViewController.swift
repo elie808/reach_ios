@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 struct Person {
     let firstName, lastName : String
@@ -51,17 +52,30 @@ class HomeViewController: UIViewController {
     // MARK: - Helpers
 
     fileprivate func sendOneSignalID() {
+
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let pushToken = status.subscriptionStatus.pushToken
         
-        let pushObj = PushNotification(id : oneSignalAPIKey, onesignal_id: nil)
-        
-        let oneSignal = Resource<PushNotification>(url: URL(string: NetworkingConstants.oneSignalID)!, method: HttpMethod<PushNotification>.post(pushObj))
-        
-        URLSession.shared.load(oneSignal) { (response, status) in
-            // response =
-            // {
-            //    "onesignal_id": "tester"
-            // }
-        }
+        // Recommend moving the below line to prompt for push after informing the user about how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("\n \n")
+            print("User accepted notifications: \(accepted)")
+            
+            if let token = pushToken {
+                
+                let jwtToken = "cd9647ce-fbeb-4936-96a7-8abee8b2171f"//Defaults[.authenticationData]?.token
+                
+                let pushObj = PushNotification(id : jwtToken, onesignal_id: nil)
+                let oneSignal = Resource<PushNotification>(url: URL(string: NetworkingConstants.oneSignalID)!, method: HttpMethod<PushNotification>.post(pushObj))
+                
+                URLSession.shared.load(oneSignal) { (response, status) in
+                    print("\n \nONE SIGNAL RESPOSNE:")
+                    print(response!)
+                    print("\n \n")
+                }
+            }
+            
+        })
     }
     
     fileprivate func initializeViews() {

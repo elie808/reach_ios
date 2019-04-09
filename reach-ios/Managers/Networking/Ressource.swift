@@ -58,6 +58,9 @@ extension Resource where A: Decodable {
 
             if jwtToken != nil {
                 self.urlRequest.addValue("Bearer" + " " + jwtToken!, forHTTPHeaderField: "Authorization")
+                print("--")
+                print("JWT TOKEN:")
+                print("Bearer" + " " + jwtToken!)
             }
         }
         
