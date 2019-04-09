@@ -13,6 +13,7 @@ class DailyReportCell: GenericTableCell<Sale> {
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var serialLabel : UILabel!
     @IBOutlet weak var quantityLabel : UILabel!
+    @IBOutlet weak var saleImageView : UIImageView!
     
     var didTapRemove: ((IndexPath) -> Void)?
     var cellIndex : IndexPath  = []
