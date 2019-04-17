@@ -74,7 +74,6 @@ class HomeViewController: UIViewController {
                     print("\n \n")
                 }
             }
-            
         })
     }
     

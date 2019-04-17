@@ -27,16 +27,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>REACH might need to use your location to send you relevant push notifications</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>REACH might need to use your location to send you relevant push notifications</string>
 	<key>NSCameraUsageDescription</key>
 	<string>The app needs permission to access your camera to enable scanning.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>REACH might need to use your location to send you relevant push notifications</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>REACH might need to use your location to send you relevant push notifications</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
