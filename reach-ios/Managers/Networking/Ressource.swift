@@ -61,6 +61,8 @@ extension Resource where A: Decodable {
                 print("--")
                 print("JWT TOKEN:")
                 print("Bearer" + " " + jwtToken!)
+            } else {
+                print("!! NO TOKEN SAVED !!")
             }
         }
         

@@ -88,7 +88,11 @@ class LoginTableViewController: UITableViewController {
                 }
                 
             }) { (error, status) in
-                self.show(alert: "Error \(String(describing:(error?.code)!))", message: (error?.message)!, buttonTitle: "OK", onSuccess: nil)
+                
+                guard let errorObj = error else {
+                    self.show(alert: "Error", message: "An unnknown error has occured", buttonTitle: "OK", onSuccess: nil)
+                    return }
+                self.show(alert: "Error \(String(describing:(errorObj.code)))", message: (errorObj.message), buttonTitle: "OK", onSuccess: nil)
             }
         }
     }

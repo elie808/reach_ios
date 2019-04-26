@@ -15,7 +15,7 @@ struct Person {
 
 struct NewsFeedItem : Codable {
     let image, title, link : String
-    let id : Int
+    var id : Int?
 }
 
 class HomeViewController: UIViewController {
@@ -107,11 +107,20 @@ class HomeViewController: UIViewController {
         
         let banners = Resource<[NewsFeedItem]>(get: URL(string:NetworkingConstants.banners)!)
         
-        URLSession.shared.load(banners) { (bannerItems, status) in
+        URLSession.shared.load(banners, completion: { (bannerItems, status) in
+            
             if let banner = bannerItems, banner.count > 0 {
                 self.collectionDataSource.data = banner
                 self.collectionView.reloadData()
+            } else {
+                print("NO Banners found")
             }
+            
+        }) { (error, status) in
+            
+            guard let errorObj = error else { self.show(alert: "Error", message: "An unnknown error has occured", buttonTitle: "OK", onSuccess: nil)
+                return }
+            self.show(alert: "Error \(String(describing:(errorObj.code)))", message: (errorObj.message), buttonTitle: "OK", onSuccess: nil)
         }
     }
     
