@@ -88,8 +88,8 @@ class NewsViewController: UIViewController {
             if let newsItem = sender {
                 if newsItem is NewsItem {
                     let vc : NewsDetailsViewController = segue.destination as! NewsDetailsViewController
+                    vc.newsItem = newsItem as! NewsItem
 //                    vc.newsItemID = (newsItem as! NewsItem).id
-                    
                 }
             }
 

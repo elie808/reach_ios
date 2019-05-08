@@ -33,28 +33,37 @@ class NewsDetailsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var newsItemID : Int?
+//    var newsItemID : Int?
+    var newsItem : NewsItem?
     
     // MARK: - Views Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let newsID = newsItemID {
-         
-            let idString = String(describing:newsID)
-            let newsDetails = Resource<NewsDetail>(get: URL(string:NetworkingConstants.newsDetails+"\(idString)")!)
+        if let item = newsItem {
             
-            print(NetworkingConstants.newsDetails+"\(idString)")
-            
-            URLSession.shared.load(newsDetails) { (newsItem, status) in
-
-                self.imageView.urlSetImage(newsItem?.image, #imageLiteral(resourceName: "LoginLogo"))
-                self.titleLabel.text = newsItem?.name
-                self.dateLabel.text = Date(timeIntervalSince1970: (newsItem?.date)!).toString(withFormat: .DateFull)
-                self.textView.attributedText = newsItem?.description.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
-            }
+            self.imageView.urlSetImage(item.image, #imageLiteral(resourceName: "LoginLogo"))
+            self.titleLabel.text = item.name
+            self.dateLabel.text = item.date //Date(timeIntervalSince1970: (item.date)).toString(withFormat: .DateFull)
+            self.textView.attributedText = item.description.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
         }
+        
+//        if let newsID = newsItemID {
+//
+//            let idString = String(describing:newsID)
+//            let newsDetails = Resource<NewsDetail>(get: URL(string:NetworkingConstants.newsDetails+"\(idString)")!)
+//
+//            print(NetworkingConstants.newsDetails+"\(idString)")
+//
+//            URLSession.shared.load(newsDetails) { (newsItem, status) in
+//
+//                self.imageView.urlSetImage(newsItem?.image, #imageLiteral(resourceName: "LoginLogo"))
+//                self.titleLabel.text = newsItem?.name
+//                self.dateLabel.text = Date(timeIntervalSince1970: (newsItem?.date)!).toString(withFormat: .DateFull)
+//                self.textView.attributedText = newsItem?.description.convertHTMLToString(withFormatting: String.formatHTML(size: 14.0, fontColor: .reachGray))
+//            }
+//        }
     }
     
     /*
