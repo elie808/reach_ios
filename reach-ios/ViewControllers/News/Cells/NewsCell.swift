@@ -19,8 +19,8 @@ class NewsCell : GenericCollectionCell<NewsItem> {
         didSet {
             imageView.urlSetImage(model.image, #imageLiteral(resourceName: "LoginLogo"))
             titleLabel?.text = model.name
-            dateLabel?.text = Date(timeIntervalSince1970: (model?.date)!).toString(withFormat: .DateFull)
-            descriptionLabel?.text = "Learn More"//model.description
+            dateLabel?.text = model.date //Date(timeIntervalSince1970: (model?.date)!).toString(withFormat: .DateFull)
+            descriptionLabel?.text = "Learn More" //model.description
         }
     }
     

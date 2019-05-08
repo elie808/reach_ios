@@ -9,10 +9,18 @@
 import UIKit
 
 struct NewsItem : Codable {
-    let image, name, description : String
-    let id : Int
-    let date : Double
+//    let image, name, description : String
+//    var id : Int?
+    var image : String?
+    let name : String
+    let date : String
+    let description : String
 }
+
+//"name": "HELP YOUR CUSTOMER TO CHOOSE A DREAM LENOVO LAPTOP",
+//"image": "http://test.channelpro.co/images/news/lenovo-yoga-c630-wos-laptop-012019-01-29-03-03-04.jpg",
+//"description": "<p><a title=\"LEARN MORE\" href=\"https://www.lenovo.com/ae/en/laptops/c/Laptops\">LEARN MORE</a></p>",
+//"date": "2019-01-28"
 
 class NewsViewController: UIViewController {
 
@@ -50,12 +58,14 @@ class NewsViewController: UIViewController {
     
     fileprivate func getNews() {
         
-        let trainingList = Resource<[NewsItem]>(get: URL(string:NetworkingConstants.allNews)!)
+        let newsList = Resource<[NewsItem]>(get: URL(string:NetworkingConstants.allNews)!)
         
-        URLSession.shared.load(trainingList) { (trainingListItems, status) in
+        URLSession.shared.load(newsList, completion: { (newsItems, status) in
             self.dataSource.data.removeAll()
-            self.dataSource.data = trainingListItems ?? []
+            self.dataSource.data = newsItems ?? []
             self.collectionView.reloadData()
+        }) { (error, status) in
+            
         }
     }
     
@@ -78,7 +88,7 @@ class NewsViewController: UIViewController {
             if let newsItem = sender {
                 if newsItem is NewsItem {
                     let vc : NewsDetailsViewController = segue.destination as! NewsDetailsViewController
-                    vc.newsItemID = (newsItem as! NewsItem).id
+//                    vc.newsItemID = (newsItem as! NewsItem).id
                     
                 }
             }
