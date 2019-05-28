@@ -1,30 +1,30 @@
+test@channelpro.co
+123456
 
+Bib: 6304
+Bib-pins: 6310
+safety-pins: 6309
 
+--------------
 
-• Online checkout with payment and email confirmation (woo commerce)
-• Add fields: Qty, numbers/ranges,
+- Parse UI and populate data model
+- Add data Validation
+- Add X on Canvas element to Delete (use https://github.com/pixolith/fabricjs-customise-controls-extension/tree/next)
+√ Rework Range UI
+- Remove Quantity editing from Cart  (google : function wc_remove_quantity_field_from_cart() {)
+- On payment success, send customer an order summary email + confirmation
+- export to image A4 png and email it
+- Check integrating user Account
 • export it to salesforce
-• export to image A4 png and email it
-- bib examples: https://www.facebook.com/pg/premiertiming/photos/?tab=album&album_id=1320965361250243
-- https://sportstiksstore.com/running.html
+
+Menu:
+- 2, 3: No design. Just range and pins
+- 4: Link to Contact Us form
 
 - Bib number text un-deletable. Always on top of all other objects
-- Change rotate circle icon to circle
-- Add quantity label for Full Box
-- Add Export
-√ Rework range UI
-- Change bib number text to NOT times enw roman
 
-• Page to add on website
-- Stock bibs: Show number range UIs 1-1000. Add pins
-- Premier Sports bibs:
-- Bespoke bibs: Link to editor
-- Custom bibs: Contact form
-
-• Export journeys
 - Export an image of the design.
 - Save 2 versions. One with the number and the other without
-- Add meta-data for ranges, pins, etc.
 - Ideally export all this info to SalesForce directly. And email sharon when that happens
 
 ----------------
@@ -60,32 +60,3 @@ Both:
 - Install LinkedIn Sales Navigator. Use a tracker to see who opened email
 
 ----------------
-
-- Flexible about the model. Output driven
-- Main challenge: Open ended deadlines with TedMob
-- Goal: Find someone who's willing to have vested stake. And deliver quality.
-- Have a partner with a long term technical vision. Technical advisor. Product designer
-- Solution driven project management; Call the proper deadlines and resolve issues
-- Flexibility to share resources, and be able to integrate those resources within Reach if/when needed
-
-- What's your biggest hurdle to hiring someone full time now ? Cost. And time to on-board.. Open to hire a CTO who will handle managing the software vendors if needed to outsource
-- Do you have an investor ? Looking to get 3-4 more clients, and get investors then
-- Open for profit sharing ?
-- Open to share revenue numbers ?
-- Why not close with anyone in Leb ? Having really looked around here. Decided to invest money instead of giving up equity
-- 2 clients already signed and will start paying in March. 3 prospective clients in the pipeline
-
-[AnyHashable("aps"): {
-    alert = "Ignore this Notification";
-    "mutable-content" = 1;
-    sound = default;
-}, AnyHashable("custom"): {
-    a =     {
-        foo = bar;
-    };
-    i = "f396444c-227a-4aa8-b8e9-e16ade1556b6";
-}]
-
-- Remove warnings
-- Progressview shouldnt be blocking on PDF/Video viewer. Replace with linear Loader. Figure out on RegisterVC and UpdateProfileVC
-- Implement notifications
