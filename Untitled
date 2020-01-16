@@ -1,62 +1,64 @@
 test@channelpro.co
 123456
 
-Bib: 6304
-Bib-pins: 6310
-safety-pins: 6309
+- Login integration
+- Shipping adaptable pricing
+- PDF export
+- Google fonts
 
---------------
 
-- Parse UI and populate data model
-- Add data Validation
-- Add X on Canvas element to Delete (use https://github.com/pixolith/fabricjs-customise-controls-extension/tree/next)
-√ Rework Range UI
-- Remove Quantity editing from Cart  (google : function wc_remove_quantity_field_from_cart() {)
-- On payment success, send customer an order summary email + confirmation
-- export to image A4 png and email it
-- Check integrating user Account
-• export it to salesforce
 
-Menu:
-- 2, 3: No design. Just range and pins
-- 4: Link to Contact Us form
+Reduce size of elements Note 2  Elie El Khoury Elie E. Schedule…
 
-- Bib number text un-deletable. Always on top of all other objects
+Make preview button open in a new tab 2  Elie El Khoury Elie E. Schedule…
 
-- Export an image of the design.
-- Save 2 versions. One with the number and the other without
-- Ideally export all this info to SalesForce directly. And email sharon when that happens
+Fix alignment in accordion Note 2  Elie El Khoury Elie E. Schedule…
 
-----------------
+Fix icons Note 2  Elie El Khoury Elie E. Schedule…
 
-- Providing platforms, tools, and services such as Data Bricks’ Unified Analytics Platform, Imply’s Druid, Optimizely, Instabase, Gigster and Sigopt to enable this new style of decision making
-- Providing “full stack” solutions for specific roles in an organization, such as sales (People.ai), marketing (ActionIQ, Cresta.ai), support (PagerDuty, Dialpad), R&D (Github), legal (Everlaw), HR and finance (Accolade), and so on
-- Providing “full stack” for specific industries, such as automotive (DeepMap, Applied Intuition), financial services , energy, mining (KoBold Metals), logistics (Samsara), government (OpenGov), defense (Shield.ai), retail, and technology
+When I add text, I can't select it to expand/move/rotate 2  Elie El Khoury Elie E. Schedule…
 
-----------------
+Color picker either defaults to either black or white (in the darkness right hand thingie) so when a user changes colors, nothing happens. Can it be defaulted to medium? Note 1  Elie El Khoury Elie E. Schedule…
 
-https://www.linkedin.com/pulse/20130624114114-69244073-6-ways-to-get-me-to-email-you-back/
+When inserting an image, the image should be the bottom most layer; currently it covers the number and the band 2  Elie El Khoury Elie E. Schedule…
 
-- Write a specific personalized Subject: Include name, and what my solution offers (Jo have you considered expanding into the MENA)
-- Inn subject line: Incite curiosity or utility :
-“Advice for a fellow teleological people-person,”
-“I do not want anything from you,”
-“Your book kept me up all night,”
-“I will fly up and see you; you interest me”
-“Dan Pink would want me to write a creative subject line here”
+The adjustment handles require some icons Note 2  Elie El Khoury Elie E. Schedule…
 
-Utility:
-“Applying your techniques to recovering addicts”
-“Getting you to Atlanta”
+There's no cart icon  Elie El Khoury Elie E. Schedule…
 
-Both:
-“Can you help give away 4 million dollars a year?” [Here, the sender cleverly went on to clarify, “I know the subject sounds like something you'd get from Nigeria, but…”]
+"Add to cart and design another bib" does not follow the behavior in the prototype Note  Elie El Khoury Elie E. Schedule…
 
-- Pain + Solution. What is my solution for a problem they might be having ? (cheap labor for high cost projects)
-- Tell them why I chose THEM. What makes them so interesting to me ? SHow that I know their work, and how it is intersting to me.
-- Show them my track record. Avoid "I", focus on "You". Highlight a similarity between us (empathy). Referennce some work in their porfolio (building this app for you, would have cost you X $ with us)
-- Finish with a Call to action, in the form of a question
-- Say thanks and show gratitude !!!
-- Install LinkedIn Sales Navigator. Use a tracker to see who opened email
+Nothing happens when I click Checkout in the bib designer 1  Elie El Khoury Elie E. Schedule…
 
-----------------
+Checkout experience does not follow prototype Note  Elie El Khoury Elie E. Schedule…
+
+No account management/create account/login available 1  Elie El Khoury Elie E. Schedule…
+
+Checkout breadcrumbs
+
+-------------
+
+- When adding a new page;
+A) GO to CPanel;
+under public html - wp-content - themes - startit-child
+- Create newFileName.php (copy bib-menu.php)
+
+
+Go to wordpress
+Add new Page -> give it a title - Publish visibility Private
+Take the page address, and point the menu button href to it
+
+Create Child-Theme for the new page (step A)
+
+* Add images to the cPanel folder where the .php files live
+
+-------------
+
+08:25 - Intro Right hand complete - Slow
+
+33:07 - Verse left hand complete - Slow
+34:20 - Verse left hand complete - Full Speed
+
+36:00 - Verse Right hand pt1. - breakdown
+38:28 - Verse Right hand pt1. - complete
+39:53 - Verse Right hand full -

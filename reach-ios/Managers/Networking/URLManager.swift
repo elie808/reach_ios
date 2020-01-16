@@ -13,8 +13,8 @@ struct NetworkingConstants {
     // MARK: - Routes
     
     private struct Domains {
-        static let ressourceURL = "http://test.channelpro.co"
-        static let baseURL      = "http://test.channelpro.co:3000/"
+        static let ressourceURL = "http://reach.channelpro.co/"//"http://test.channelpro.co"
+        static let baseURL      = "http://reach.channelpro.co:3000/"//"http://test.channelpro.co:3000/"//"52.28.63.115:3000/"//
         static let cmsBaseURL   = "http://reach.xtnd.io/cms/www/"
     }
 
